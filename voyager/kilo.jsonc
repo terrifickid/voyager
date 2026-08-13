@@ -7,4 +7,6 @@
       "enabled": true,
     },
   },
+  // kilo.jsonc
+  "instructions": ["./kilocode/rules/rtk-rules.md"],
 }
