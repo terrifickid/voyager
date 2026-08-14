@@ -1,6 +1,9 @@
 <script>
 	import { browser } from '$app/environment';
 	import { initEngine, streamChat, webllm } from '$lib/webllm/engine.svelte.js';
+	import { log, EVENT, serializeError, presence } from '$lib/logger.js';
+
+	const chatLog = log.child({ component: 'chat', function: 'page' });
 
 	let messages = $state([]);
 	let input = $state('');
@@ -25,8 +28,31 @@
 	async function handleSend(event) {
 		event.preventDefault();
 		const text = input.trim();
-		if (!text) return;
-		if (webllm.status !== 'ready') return;
+		const opLog = chatLog.child({ step: 'chat:send', turns: messages.length });
+
+		if (!text) {
+			opLog.warn(
+				{ type: EVENT.VALIDATION_ERROR, reason: 'empty_input' },
+				'Send rejected: empty input'
+			);
+			return;
+		}
+		if (webllm.status !== 'ready') {
+			opLog.warn(
+				{ type: EVENT.VALIDATION_ERROR, reason: 'engine_not_ready' },
+				'Send rejected: engine not ready'
+			);
+			return;
+		}
+
+		opLog.info(
+			{
+				type: EVENT.JOB_START,
+				turn: messages.length,
+				inputLength: presence(text)
+			},
+			'Send started'
+		);
 
 		const userMsg = { role: 'user', content: text };
 		messages = [...messages, userMsg];
@@ -35,23 +61,65 @@
 		messages = [...messages, { role: 'assistant', content: '' }];
 		const i = messages.length - 1;
 
-		const history = messages.slice(0, i).map((m) => ({ role: m.role, content: m.content }));
+		const history = messages
+			.slice(0, i)
+			.map((m) => ({ role: m.role, content: m.content }));
 
+		let tokensDelivered = 0;
 		try {
-			await streamChat(history, (token) => {
-				const current = messages[i];
-				messages[i] = { ...current, content: current.content + token };
-			});
+			await streamChat(
+				history,
+				(token) => {
+					tokensDelivered += 1;
+					const current = messages[i];
+					messages[i] = { ...current, content: current.content + token };
+				}
+			);
+			opLog.info(
+				{
+					type: EVENT.JOB_SUCCESS,
+					turn: messages.length,
+					tokensDelivered
+				},
+				'Send succeeded'
+			);
 		} catch (err) {
-			messages[i] = { ...messages[i], content: `(error: ${String(err?.message ?? err)})` };
+			const errInfo = serializeError(err, { function: 'handleSend' });
+			opLog.error(
+				{
+					type: EVENT.JOB_FAILURE,
+					turn: messages.length,
+					tokensDelivered,
+					err: errInfo
+				},
+				`Send failed: ${errInfo.message}`
+			);
+			messages[i] = { ...messages[i], content: `(error: ${errInfo.message})` };
 		}
 	}
 
 	function handleClear() {
+		chatLog.info(
+			{
+				type: EVENT.JOB_START,
+				step: 'chat:clear',
+				previousTurns: messages.length,
+				reason: 'user_clear'
+			},
+			'Chat cleared'
+		);
 		messages = [];
 	}
 
 	function handleRetry() {
+		chatLog.info(
+			{
+				type: EVENT.JOB_START,
+				step: 'chat:retry',
+				reason: 'user_retry'
+			},
+			'Retry requested'
+		);
 		initEngine();
 	}
 

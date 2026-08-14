@@ -24,6 +24,7 @@
 		"@auth/sveltekit": "^1.11.3",
 		"@mlc-ai/web-llm": "^0.2.84",
 		"@upstash/redis": "^1.38.2",
-		"node-fetch": "^3.3.2"
+		"node-fetch": "^3.3.2",
+		"pino": "^9.5.0"
 	}
 }
