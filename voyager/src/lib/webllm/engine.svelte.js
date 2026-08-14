@@ -3,6 +3,13 @@ import { log, EVENT, serializeError, presence } from '$lib/logger.js';
 
 const MODEL = 'Qwen2.5-1.5B-Instruct-q4f16_1-MLC';
 
+const SYSTEM_PROMPT =
+	'You are Voyager, a Caribbean travel concierge. ' +
+	'You coordinate transportation, monitor weather, ' +
+	'and proactively suggest activities. You communicate ' +
+	'via text/email with drivers, businesses, and clients. ' +
+	"You are warm, efficient, and anticipate needs before they're voiced.";
+
 const componentLog = log.child({ component: 'webllm', function: 'engine' });
 
 export const webllm = $state({
@@ -92,11 +99,17 @@ export async function streamChat(messages, onToken, signal) {
 	const opLog = componentLog.child({
 		step: 'engine:chat',
 		messageCount: messages.length,
-		hasSignal: presence(signal)
+		hasSignal: presence(signal),
+		hasSystemPrompt: presence(SYSTEM_PROMPT)
 	});
 
 	opLog.info(
-		{ type: EVENT.JOB_START, messageCount: messages.length, hasSignal: presence(signal) },
+		{
+			type: EVENT.JOB_START,
+			messageCount: messages.length,
+			hasSignal: presence(signal),
+			hasSystemPrompt: presence(SYSTEM_PROMPT)
+		},
 		'Chat stream started'
 	);
 
@@ -108,6 +121,8 @@ export async function streamChat(messages, onToken, signal) {
 		throw new Error('Engine not ready');
 	}
 
+	const payload = [{ role: 'system', content: SYSTEM_PROMPT }, ...messages];
+
 	webllm.status = 'generating';
 	let tokensDelivered = 0;
 	try {
@@ -116,7 +131,7 @@ export async function streamChat(messages, onToken, signal) {
 			'Calling webllm chat.completions.create'
 		);
 		const iter = await webllm.engine.chat.completions.create({
-			messages,
+			messages: payload,
 			stream: true,
 			signal
 		});
