@@ -37,3 +37,7 @@ const userContextMessage = $derived.by(() => {
 export function getUserContextMessage() {
   return userContextMessage;
 }
+
+export function getUserContextSystemText() {
+  return userContextMessage.content;
+}

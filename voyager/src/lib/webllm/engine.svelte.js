@@ -3,7 +3,7 @@ import { log, EVENT, serializeError, presence } from '$lib/logger.js';
 
 const MODEL = 'Qwen2.5-1.5B-Instruct-q4f16_1-MLC';
 
-const SYSTEM_PROMPT =
+export const SYSTEM_PROMPT =
 	'You are Voyager, a Caribbean travel concierge. ' +
 	'You coordinate transportation, monitor weather, ' +
 	'and proactively suggest activities. You communicate ' +
@@ -95,7 +95,7 @@ export async function initEngine() {
 	return initPromise;
 }
 
-export async function streamChat(messages, onToken, signal) {
+export async function streamChat(messages, onToken, signal, system = SYSTEM_PROMPT) {
 	const opLog = componentLog.child({
 		step: 'engine:chat',
 		messageCount: messages.length,
@@ -121,7 +121,7 @@ export async function streamChat(messages, onToken, signal) {
 		throw new Error('Engine not ready');
 	}
 
-	const payload = [{ role: 'system', content: SYSTEM_PROMPT }, ...messages];
+	const payload = [{ role: 'system', content: system }, ...messages];
 
 	webllm.status = 'generating';
 	let tokensDelivered = 0;
