@@ -380,57 +380,79 @@
   });
 </script>
 
-<main class="wrap">
-  <header>
-    <h1>{config.title}</h1>
-    <p>{config.subtitle}</p>
+<main class="max-w-2xl mx-auto flex flex-col gap-8 text-slate-100">
+  <header class="flex flex-col gap-1">
+    <h1 class="text-2xl font-semibold">{config.title}</h1>
+    <p class="text-slate-400">{config.subtitle}</p>
   </header>
 
-  <section class="panel">
-    <fieldset>
-      <legend>{archetypeField.label}</legend>
-      <p class="help">{archetypeField.help}</p>
-      <div class="arches">
+  <section class="flex flex-col gap-8">
+    <section class="flex flex-col gap-3">
+      <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-300">
+        {archetypeField.label}
+      </h2>
+      <p class="text-sm text-slate-400 -mt-2">{archetypeField.help}</p>
+      <div class="grid grid-cols-1 gap-2">
         {#each archetypeField.options as opt (opt.id)}
-          <label class="arch" class:on={form.archetype === opt.id}>
+          <label
+            class="flex items-center gap-3 p-3 rounded-lg border cursor-pointer transition-colors
+                   border-slate-700 hover:border-slate-500
+                   {form.archetype === opt.id ? 'bg-blue-600/15 border-blue-500' : ''}"
+          >
             <input
               type="radio"
               name="archetype"
               value={opt.id}
               bind:group={form.archetype}
+              class="hidden"
             />
-            <span class="icon">{opt.icon}</span>
-            <span class="body">
-              <strong>{opt.label}</strong>
-              <small>{opt.description}</small>
+            <span class="text-2xl">{opt.icon}</span>
+            <span class="flex flex-col">
+              <strong class="font-medium text-slate-100">{opt.label}</strong>
+              <small class="text-sm text-slate-400">{opt.description}</small>
             </span>
           </label>
         {/each}
       </div>
-    </fieldset>
+    </section>
 
     {#each tagsField.groups as group (group.id)}
-      <fieldset>
-        <legend>{group.label}</legend>
-        <div class="tags">
+      <section class="flex flex-col gap-3">
+        <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-300">
+          {group.label}
+        </h2>
+        <div class="flex flex-wrap gap-2">
           {#each group.options as opt (opt.id)}
-            <label class="tag" class:on={form.tags.includes(opt.id)}>
-              <input type="checkbox" value={opt.id} bind:group={form.tags} />
+            <label
+              class="px-3 py-1.5 rounded-full border text-sm cursor-pointer transition-colors
+                     border-slate-700 text-slate-200 hover:border-slate-500
+                     {form.tags.includes(opt.id) ? 'bg-blue-600 border-blue-600 text-white' : ''}"
+            >
+              <input
+                type="checkbox"
+                value={opt.id}
+                bind:group={form.tags}
+                class="hidden"
+              />
               <span>{opt.label}</span>
             </label>
           {/each}
         </div>
-      </fieldset>
+      </section>
     {/each}
 
-    <fieldset>
-      <legend>{budgetField.label}</legend>
-      <p class="help">{budgetField.help}</p>
-      <div class="budget">
+    <section class="flex flex-col gap-3">
+      <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-300">
+        {budgetField.label}
+      </h2>
+      <p class="text-sm text-slate-400 -mt-2">{budgetField.help}</p>
+      <div class="flex gap-2">
         {#each budgetLevels as level (level)}
           <button
             type="button"
-            class:on={form.budget === level}
+            class="flex-1 py-2 rounded-lg border text-lg tracking-widest transition-colors cursor-pointer
+                   border-slate-700 bg-slate-800 text-slate-100 hover:border-slate-500
+                   {form.budget === level ? 'bg-blue-600 border-blue-600 text-white' : ''}"
             onclick={() => {
               form.budget = level;
             }}
@@ -439,248 +461,52 @@
           </button>
         {/each}
       </div>
-    </fieldset>
+    </section>
 
-    <fieldset>
-      <legend>{noteField.label}</legend>
+    <section class="flex flex-col gap-3">
+      <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-300">
+        {noteField.label}
+      </h2>
       <textarea
         bind:value={form.note}
         placeholder={noteField.placeholder}
         maxlength={noteField.maxLength}
         rows="3"
+        class="w-full p-3 rounded-lg border border-slate-700 bg-slate-800 text-slate-100 placeholder:text-slate-500 resize-y"
       ></textarea>
-    </fieldset>
+    </section>
   </section>
 
-  <section class="personality">
-    <h2>Live personality</h2>
+  <section class="flex flex-col gap-3 p-4 rounded-xl bg-slate-900 border border-slate-800">
+    <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-300">
+      Live personality
+    </h2>
     {#if hasSignal}
-      <p class="type">
-        Closest type: <strong>{type.icon} {type.label}</strong>
+      <p class="text-slate-200">
+        Closest type: <strong class="font-semibold">{type.icon} {type.label}</strong>
       </p>
-      <div class="traits">
+      <div class="flex flex-col gap-2">
         {#each config.scoring.traits as t (t.key)}
-          <div class="trait">
-            <span class="tname">{t.display}</span>
-            <span class="track">
-              <span class="zero"></span>
+          <div class="flex items-center gap-3 text-sm">
+            <span class="w-40 shrink-0 text-slate-400">{t.display}</span>
+            <span class="relative flex-1 h-3 bg-slate-700 rounded-full overflow-hidden">
+              <span class="absolute left-1/2 top-0 bottom-0 w-px bg-slate-500"></span>
               <span
-                class="fill"
-                class:neg={personality[t.key] < 0}
+                class="absolute top-0 bottom-0 rounded-full
+                       {personality[t.key] < 0 ? 'bg-amber-500' : 'bg-emerald-500'}"
                 style={fillStyle(personality[t.key])}
               ></span>
             </span>
-            <span class="score">{personality[t.key].toFixed(2)}</span>
+            <span class="w-12 text-right font-mono tabular-nums text-slate-300">
+              {personality[t.key].toFixed(2)}
+            </span>
           </div>
         {/each}
       </div>
     {:else}
-      <p class="muted">
+      <p class="text-slate-400">
         Pick an archetype or a few tags — your type appears here in real time.
       </p>
     {/if}
   </section>
-
-  <details>
-    <summary>State + payload (live JSON)</summary>
-    <pre>{JSON.stringify(snapshot, null, 2)}</pre>
-  </details>
 </main>
-
-<style>
-  .wrap {
-    max-width: 720px;
-    margin: 0 auto;
-    font-family:
-      system-ui,
-      -apple-system,
-      sans-serif;
-    color: #1a1a1a;
-  }
-  header h1 {
-    font-size: 1.5rem;
-    margin-bottom: 0.25rem;
-  }
-  header p {
-    color: #666;
-    margin-top: 0;
-  }
-
-  .panel {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-  }
-  fieldset {
-    border: 1px solid #e3e3e3;
-    border-radius: 10px;
-    padding: 1rem;
-  }
-  legend {
-    font-weight: 600;
-    padding: 0 0.4rem;
-  }
-  .help {
-    color: #888;
-    font-size: 0.85rem;
-    margin: 0 0 0.75rem;
-  }
-
-  .arches {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
-  }
-  .arch {
-    display: flex;
-    gap: 0.75rem;
-    align-items: center;
-    padding: 0.6rem 0.75rem;
-    border: 1px solid #e3e3e3;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-  .arch input {
-    display: none;
-  }
-  .arch .icon {
-    font-size: 1.4rem;
-  }
-  .arch .body {
-    display: flex;
-    flex-direction: column;
-  }
-  .arch small {
-    color: #777;
-  }
-  .arch.on {
-    border-color: #3b82f6;
-    background: #eff6ff;
-  }
-
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  .tag {
-    padding: 0.4rem 0.75rem;
-    border: 1px solid #e3e3e3;
-    border-radius: 999px;
-    cursor: pointer;
-    font-size: 0.9rem;
-  }
-  .tag input {
-    display: none;
-  }
-  .tag.on {
-    background: #3b82f6;
-    border-color: #3b82f6;
-    color: #fff;
-  }
-
-  .budget {
-    display: flex;
-    gap: 0.5rem;
-  }
-  .budget button {
-    flex: 1;
-    padding: 0.5rem;
-    border: 1px solid #e3e3e3;
-    background: #fff;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    letter-spacing: 2px;
-  }
-  .budget button.on {
-    background: #3b82f6;
-    border-color: #3b82f6;
-    color: #fff;
-  }
-
-  textarea {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 0.6rem;
-    border: 1px solid #e3e3e3;
-    border-radius: 8px;
-    font: inherit;
-    resize: vertical;
-  }
-
-  .personality {
-    margin-top: 1.5rem;
-    padding: 1rem;
-    border-radius: 10px;
-    background: #fafafa;
-    border: 1px solid #eee;
-  }
-  .personality h2 {
-    font-size: 1rem;
-    margin: 0 0 0.5rem;
-  }
-  .type {
-    margin: 0 0 0.75rem;
-  }
-  .traits {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  .trait {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.85rem;
-  }
-  .tname {
-    width: 150px;
-    color: #555;
-  }
-  .track {
-    position: relative;
-    flex: 1;
-    height: 12px;
-    background: #eee;
-    border-radius: 6px;
-  }
-  .zero {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    background: #bbb;
-  }
-  .fill {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    background: #22c55e;
-    border-radius: 6px;
-  }
-  .fill.neg {
-    background: #ef4444;
-  }
-  .score {
-    width: 44px;
-    text-align: right;
-    font-variant-numeric: tabular-nums;
-  }
-  .muted {
-    color: #999;
-  }
-
-  details {
-    margin-top: 1rem;
-  }
-  details pre {
-    background: #0f172a;
-    color: #e2e8f0;
-    padding: 0.75rem;
-    border-radius: 8px;
-    overflow: auto;
-    font-size: 0.8rem;
-  }
-</style>
