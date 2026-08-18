@@ -15,6 +15,8 @@
   //   <TravelPrefsForm onchange={(s) => console.log(s)} />
   // =====================================================================
 
+  import { user } from '$lib/stores/user.svelte.js';
+
   const CONFIG = {
     version: 1,
     formId: "voyager-travel-prefs",
@@ -286,13 +288,10 @@
   // ---- props -----------------------------------------------------------
   let { config = CONFIG, onchange } = $props();
 
-  // ---- state: ONE stateful object, two-way bound ------------------------
-  let form = $state({
-    archetype: config.emptyState.archetype,
-    tags: [...config.emptyState.tags],
-    budget: config.emptyState.budget,
-    note: config.emptyState.note,
-  });
+  // ---- state: bind directly to the user store's preferences form ---------
+  // `user.preferences.form` is a deeply reactive $state proxy, so `bind:group`
+  // and `bind:value` continue to work and every nested edit propagates.
+  const form = user.preferences.form;
 
   // ---- helpers ----------------------------------------------------------
   const clamp = (v, lo = -1, hi = 1) => Math.max(lo, Math.min(hi, v));
@@ -376,6 +375,7 @@
 
   // ---- emit on every change ---------------------------------------------
   $effect(() => {
+    user.setPreferences(snapshot);
     onchange?.(snapshot);
   });
 </script>
