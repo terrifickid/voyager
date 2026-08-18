@@ -1,0 +1,6 @@
+const response = await engine.chat.completions.create({
+  messages: [
+    { role: "system", content: "Use the following context to answer questions:\n<context>Your injected context/data here</context>" },
+    { role: "user", content: "Your actual prompt here" }
+  ]
+});
