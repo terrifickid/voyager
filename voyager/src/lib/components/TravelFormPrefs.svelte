@@ -450,9 +450,10 @@
         {#each budgetLevels as level (level)}
           <button
             type="button"
+            aria-pressed={form.budget === level}
             class="flex-1 py-2 rounded-lg border text-lg tracking-widest transition-colors cursor-pointer
-                   border-slate-700 bg-slate-800 text-slate-100 hover:border-slate-500
-                   {form.budget === level ? 'bg-blue-600 border-blue-600 text-white' : ''}"
+                   border-slate-700 text-slate-100 hover:border-slate-500
+                   {form.budget === level ? 'bg-blue-600 border-blue-600 text-white' : 'bg-slate-800'}"
             onclick={() => {
               form.budget = level;
             }}
