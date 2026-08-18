@@ -3,7 +3,7 @@ class UserStore {
   email = $state(null);
   name = $state(null);
   preferences = $state({
-    form: { archetype: null, tags: [], budget: 3, note: '' },
+    form: { archetype: null, tags: [], budget: null, note: null },
     personality: { openness: 0, conscientiousness: 0, extraversion: 0, agreeableness: 0, neuroticism: 0 },
     type: null,
   });

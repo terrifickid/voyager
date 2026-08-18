@@ -2,6 +2,7 @@
 	import { browser } from '$app/environment';
 	import { initEngine, streamChat, webllm } from '$lib/webllm/engine.svelte.js';
 	import { log, EVENT, serializeError, presence } from '$lib/logger.js';
+	import { getUserContextMessage } from '$lib/preferences/contextPrompt.svelte.js';
 
 	const chatLog = log.child({ component: 'chat', function: 'page' });
 
@@ -61,9 +62,10 @@
 		messages = [...messages, { role: 'assistant', content: '' }];
 		const i = messages.length - 1;
 
-		const history = messages
-			.slice(0, i)
-			.map((m) => ({ role: m.role, content: m.content }));
+		const history = [
+			getUserContextMessage(),
+			...messages.slice(0, i).map((m) => ({ role: m.role, content: m.content })),
+		];
 
 		let tokensDelivered = 0;
 		try {
