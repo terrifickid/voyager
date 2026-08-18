@@ -1,0 +1,129 @@
+Understood. You are absolutely right—`stay`, `meal`, and `activity` are the fundamental categorical pillars of how a person spends their day, especially in a travel or daily living context. You rest/live at a base, you eat, and you go do something. 
+
+I have stripped out all the unnecessary additions and reverted strictly to those three core concepts. The descriptions have been updated to perfectly reflect your logic: `stay` is where you live/rest, `meal` is what you eat, and `activity` is what you go do.
+
+Here is the clean, strictly categorized JSON Schema:
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Universal Day Plan",
+  "description": "A daily schedule model divided into four chronological stages: morning, afternoon, evening, and late_night. Each stage strictly enforces the three categorical pillars of daily life: where you stay (rest/live), what you eat, and what activity you do.",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "The specific calendar date for this plan. Used to anchor the schedule to a specific day. Formatted as YYYY-MM-DD."
+    },
+    "morning": {
+      "description": "The schedule block for the morning stage of the day. Dictates where you wake up/stay, what you eat for breakfast, and what you go do.",
+      "$ref": "#/$defs/stage"
+    },
+    "afternoon": {
+      "description": "The schedule block for the afternoon stage of the day. Dictates where you are based, what you eat for lunch, and what you go do.",
+      "$ref": "#/$defs/stage"
+    },
+    "evening": {
+      "description": "The schedule block for the evening stage of the day. Dictates where you return to/stay, what you eat for dinner, and what you go do.",
+      "$ref": "#/$defs/stage"
+    },
+    "late_night": {
+      "description": "The schedule block for the late night stage of the day. Dictates where you return home/stay, any late night eating, and any late night activities before resting.",
+      "$ref": "#/$defs/stage"
+    }
+  },
+  "required": [
+    "morning",
+    "afternoon",
+    "evening",
+    "late_night"
+  ],
+  "$defs": {
+    "stage": {
+      "type": "object",
+      "description": "Defines the structure of a single day stage. It requires exactly three categorical properties: where the person stays (rests/lives), what they eat (meal), and what they go do (activity).",
+      "properties": {
+        "stay": {
+          "description": "The base location or accommodation where the person lives or rests. In a travel context, this is where you stay or return home to before or after your activities.",
+          "$ref": "#/$defs/stay"
+        },
+        "meal": {
+          "description": "The meal block detailing exactly what the person is going to eat during this stage. This is a vital property to ensure dietary needs and meal planning are accounted for.",
+          "$ref": "#/$defs/meal"
+        },
+        "activity": {
+          "description": "The activity block detailing exactly what the person is going to go do during this stage. This represents the primary action or event of the time block.",
+          "$ref": "#/$defs/activity"
+        }
+      },
+      "required": [
+        "stay",
+        "meal",
+        "activity"
+      ]
+    },
+    "stay": {
+      "type": "object",
+      "description": "Represents the physical location or accommodation where the person is based, living, or resting for this part of the day.",
+      "properties": {
+        "location": {
+          "type": "string",
+          "description": "The name or address of the accommodation or base of operations (e.g., 'Home', 'Grand Hotel', 'AirBnb on 5th St')."
+        },
+        "notes": {
+          "type": "string",
+          "description": "Important details regarding the stay, such as check-in instructions, room numbers, or simply that this is where the person returns to rest."
+        }
+      },
+      "required": [
+        "location"
+      ]
+    },
+    "meal": {
+      "type": "object",
+      "description": "Represents the dining block. The strict focus of this block is what the person is going to eat.",
+      "properties": {
+        "food": {
+          "type": "string",
+          "description": "The specific food or meals that will be eaten (e.g., 'Steak and eggs', 'Vegan buffet', 'Street food tour')."
+        },
+        "location": {
+          "type": "string",
+          "description": "Where the eating will take place (e.g., 'Hotel Restaurant', 'Central Park', 'Dining Room at Home')."
+        },
+        "notes": {
+          "type": "string",
+          "description": "Dietary restrictions, calorie goals, or reservation details."
+        }
+      },
+      "required": [
+        "food",
+        "location"
+      ]
+    },
+    "activity": {
+      "type": "object",
+      "description": "Represents the action or event block. The strict focus of this block is what the person is going to go do.",
+      "properties": {
+        "action": {
+          "type": "string",
+          "description": "The primary event or task taking place (e.g., 'Museum tour', 'Deep work session', 'Hiking', 'Late night movie')."
+        },
+        "location": {
+          "type": "string",
+          "description": "Where the activity takes place."
+        },
+        "notes": {
+          "type": "string",
+          "description": "Requirements for the activity, such as 'Bring tickets', 'Wear formal attire', or 'Bring laptop'."
+        }
+      },
+      "required": [
+        "action",
+        "location"
+      ]
+    }
+  }
+}
+```
