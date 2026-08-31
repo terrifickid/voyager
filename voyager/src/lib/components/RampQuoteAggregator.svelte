@@ -120,7 +120,7 @@
 						<div class="flex items-center gap-2">
 							<span class="text-xs text-muted">Reputation</span>
 							<span class="flex items-center gap-1" aria-label={`Reputation ${q.node.reputation} of 100`}>
-								{#each dots(q.node.reputation) as on (on)}
+								{#each dots(q.node.reputation) as on, di (di)}
 									<span
 										class="inline-block h-2 w-2 rounded-full {on ? 'bg-ink' : 'bg-bone-300'}"
 									></span>
