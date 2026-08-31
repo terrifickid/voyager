@@ -15,9 +15,12 @@
 <!-- 1. Top ribbon -->
 <div class="w-full" style="background: var(--lime); color: var(--lime-ink);">
 	<div class="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-3 gap-y-1 px-6 py-2.5 text-[13px] font-medium">
-		<span>Plan trips in your browser. No API key. No account.</span>
-		<a href="/plan" class="inline-flex items-center gap-1 underline underline-offset-2 decoration-[1.5px] font-semibold">
-			See how
+		<span>
+			<span class="font-semibold">Voyager Live</span> — our project submission for the
+			<span class="font-semibold">FutureCarribean buildathon</span>.
+		</span>
+		<a href="/docs" class="inline-flex items-center gap-1 underline underline-offset-2 decoration-[1.5px] font-semibold">
+			Read the docs
 			<span aria-hidden="true" class="text-[1.05em] leading-none">›</span>
 		</a>
 	</div>
@@ -27,16 +30,19 @@
 <section class="mx-auto max-w-6xl px-6 pt-20 pb-20 lg:pt-28 lg:pb-28">
 	<div class="grid grid-cols-1 items-center gap-16 lg:grid-cols-[1.05fr_1fr]">
 		<div class="flex flex-col gap-8">
-			<span class="eyebrow">Local-first AI travel</span>
-			<h1 class="font-display text-[56px] sm:text-[72px] lg:text-[92px] text-ink">
-				Plan trips<br />you'll actually<br />want to take.
+			<span class="eyebrow">Plan your trip · Pay for it safely</span>
+			<h1 class="font-display text-[56px] sm:text-[72px] lg:text-[92px] text-ink leading-[0.95]">
+				Plan it.<br />Pay it.<br />Take the trip.
 			</h1>
 			<p class="max-w-xl text-lg leading-relaxed text-ink-2">
-				Plan a trip you can actually take, in your browser. Tell Voyager where you're going and how you travel. It builds a day-by-day plan from real places, your personality, and your budget.
+				Tell Voyager where you're going and how you travel. It builds a day-by-day plan from real places, your style, and your budget — right in your browser.
+			</p>
+			<p class="max-w-xl text-lg leading-relaxed text-ink-2">
+				Ready to book? <span class="font-semibold text-ink">Voyager Pay</span> handles the money. It keeps scammers out, and routes your booking to the vendors who actually deserve it.
 			</p>
 			<div class="flex flex-wrap items-center gap-3">
 				<Cta variant="primary" href="/plan">Plan a trip</Cta>
-				<Cta variant="secondary" href="#how">See how it works</Cta>
+				<Cta variant="secondary" href="/pay/security">How payments work</Cta>
 			</div>
 		</div>
 		<div class="lg:pl-6">
@@ -50,14 +56,14 @@
 	<div class="rounded-[32px] bg-bone-100 p-10 sm:p-14">
 		<SectionHeader
 			eyebrow="How it works"
-			title="One prompt. One honest itinerary."
-			lede="Three steps. Plain English. Nothing leaves your browser."
+			title="Three steps. The booking comes last."
+			lede="Plan in your browser. Pay on an open market. The safest part is the part that touches your money."
 		/>
 		<ol class="mt-12 flex flex-col gap-6">
 			{#each [
-				{ n: 1, t: 'Describe how you travel', b: 'A sentence about pace, food, and what you skip. Voyager turns it into a structured preference set.' },
-				{ n: 2, t: 'Get a draft, grounded in real places', b: 'A small model in your tab drafts a day-by-day plan. A local places fixture ranks real candidates against each block.' },
-				{ n: 3, t: 'Save it, share a link, edit as you go', b: 'Trips live on your device. Share a read-only link with whoever is coming. Edit a day and the next link already shows it.' }
+				{ n: 1, t: 'Answer seven prompts.', b: 'Destination, dates, who\'s coming, how you like to move, what you skip. Voyager turns it into a rubric your planner and your bank can both read.' },
+				{ n: 2, t: 'Get a draft from real places.', b: 'A model on your device drafts a day-by-day plan. A local places index ranks real candidates against each block, so nothing on the page is invented — only the order is.' },
+				{ n: 3, t: 'Vendors compete. You pay the winner.', b: 'Independent operators — hotels, hosts, tours — bid for each booking on price and quality. No one pays to be ranked higher, so the slot goes to whoever actually earned it. Voyager Pay settles the winner.' }
 			] as step (step.n)}
 				<li class="flex gap-5 rounded-[28px] bg-bone-200 p-6">
 					<span class="font-display text-3xl text-ink leading-none">{step.n}</span>
@@ -172,10 +178,10 @@
 			<div class="flex flex-col gap-4">
 				<span class="eyebrow">Voyager Pay — built in</span>
 				<h2 class="font-display text-[32px] sm:text-[40px] lg:text-[48px] text-ink leading-[1.05]">
-					Secure by design. Fair competitive marketplace.
+					Vendors compete. You win.
 				</h2>
 				<p class="max-w-md text-base leading-relaxed text-ink-2">
-					Voyager Pay is a payment layer with no custody and a federation of independent operators that compete on rate, fee, and reputation. The ranking widget below is a demo of how a wallet picks a node.
+					Voyager Pay runs the booking as an open market. Independent vendors compete for your trip on price and quality — no one pays to be ranked higher, so the ones who deserve the business are the ones who get it.
 				</p>
 				<div class="flex flex-wrap items-center gap-3">
 					<Cta variant="tertiary" href="/pay/security">How Voyager Pay works</Cta>

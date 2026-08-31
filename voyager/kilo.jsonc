@@ -12,5 +12,6 @@
     "./kilocode/rules/logging.md",
     "./kilocode/rules/usability.md",
     "./kilocode/rules/clear-communications.md",
+    "./kilocode/rules/sales-copy.md",
   ],
 }
