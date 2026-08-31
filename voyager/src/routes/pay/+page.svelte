@@ -11,26 +11,37 @@
 </svelte:head>
 
 <!-- §0 hero -->
-<section class="mx-auto max-w-6xl px-6 pt-20 pb-20 lg:pt-28 lg:pb-28">
+<section class="mx-auto max-w-6xl px-6 pt-20 pb-12 lg:pt-28 lg:pb-16">
 	<div class="flex flex-col gap-8">
 		<span class="eyebrow">Open payments protocol</span>
 		<h1 class="font-display text-[44px] sm:text-[56px] lg:text-[64px] text-ink max-w-4xl leading-[1.02]">
-			Voyager Pay. Money that moves like a Nostr note.
+			Voyager Pay is the payment layer inside Voyager. Here's how it works.
 		</h1>
 		<p class="max-w-2xl text-lg leading-relaxed text-ink-2">
 			Voyager Pay is an open protocol for sending money on the open web. There is no custodian in the middle and no account to lose. No platform can deplatform you. Signed events move over Nostr (a public message network). Settlement runs on Lightning (a fast Bitcoin payment network). A federation of competing market makers — called Mostro nodes — bridges fiat and Bitcoin.
 		</p>
 		<div class="flex flex-wrap items-center gap-3">
-			<Cta variant="secondary" href="/docs">Documentation</Cta>
-			<Cta variant="primary" href="#ramp">See the ramp</Cta>
+			<Cta variant="primary" href="#how-it-flows">See how it flows</Cta>
+			<Cta variant="secondary" href="/docs">Read the docs</Cta>
 		</div>
 	</div>
 </section>
 
-<!-- Problem band -->
-<section class="mx-auto max-w-6xl px-6 pb-20">
+<!-- In-page TOC -->
+<nav class="mx-auto max-w-6xl px-6 pb-16" aria-label="On this page">
+	<ul class="flex flex-wrap gap-x-6 gap-y-2 text-[15px] font-medium">
+		<li><a href="#why" class="text-ink underline underline-offset-4 decoration-[1.5px]">Why this exists</a></li>
+		<li><a href="#invariants" class="text-ink underline underline-offset-4 decoration-[1.5px]">Design invariants</a></li>
+		<li><a href="#how-it-flows" class="text-ink underline underline-offset-4 decoration-[1.5px]">How a payment flows</a></li>
+		<li><a href="#ramp" class="text-ink underline underline-offset-4 decoration-[1.5px]">The fiat ramp</a></li>
+		<li><a href="#risks" class="text-ink underline underline-offset-4 decoration-[1.5px]">Risks &amp; limits</a></li>
+	</ul>
+</nav>
+
+<!-- Why this exists (was "status quo") -->
+<section id="why" class="mx-auto max-w-6xl px-6 pb-20 scroll-mt-20">
 	<div class="rounded-[32px] bg-bone-100 p-8 sm:p-12">
-		<span class="eyebrow">The status quo</span>
+		<span class="eyebrow">Why this exists</span>
 		<p class="mt-4 max-w-3xl text-lg leading-relaxed text-ink-2">
 			Sending money online today means trusting a custodian with your balance, your identity, and your future access. The wallet, the KYC vendor (the "know your customer" identity check), and the payment processor are all counterparties. Each one can fail, freeze, or disappear. The protocol itself was never the bottleneck.
 		</p>
@@ -38,7 +49,7 @@
 </section>
 
 <!-- §0 five design invariants -->
-<section class="mx-auto max-w-6xl px-6 pb-20">
+<section id="invariants" class="mx-auto max-w-6xl px-6 pb-20 scroll-mt-20">
 	<SectionHeader
 		eyebrow="Design invariants"
 		title="Five design invariants."
@@ -115,7 +126,7 @@
 </section>
 
 <!-- §6 + §7.5 how it flows -->
-<section id="how" class="mx-auto max-w-6xl px-6 pb-20">
+<section id="how-it-flows" class="mx-auto max-w-6xl px-6 pb-20 scroll-mt-20">
 	<SectionHeader
 		eyebrow="How a payment flows"
 		title="Seven steps, no magic."
@@ -143,7 +154,7 @@
 </section>
 
 <!-- §7 fiat ramp -->
-<section id="ramp" class="mx-auto max-w-6xl px-6 pb-20">
+<section id="ramp" class="mx-auto max-w-6xl px-6 pb-20 scroll-mt-20">
 	<div class="rounded-[32px] bg-bone-100 p-8 sm:p-12">
 		<SectionHeader
 			eyebrow="The fiat ramp"
@@ -181,8 +192,8 @@
 <section class="mx-auto max-w-6xl px-6 pb-20">
 	<SectionHeader
 		eyebrow="EROI defense"
-		title="Why this is honest money."
-		lede="Three properties a custodial rail can’t give you."
+		title="Three properties a custodial rail can't give you."
+		lede="We think this design is hard to attack. The next section lists the risks that remain anyway."
 	/>
 	<div class="mt-6">
 		<Cta variant="tertiary" href="/docs/voyager-pay-eroi-audit">Read the full EROI audit</Cta>
@@ -212,12 +223,12 @@
 	</div>
 </section>
 
-<!-- §12 threat shake-out -->
-<section class="mx-auto max-w-6xl px-6 pb-20">
+<!-- §12 threat shake-out + §13 out of scope (combined under #risks) -->
+<section id="risks" class="mx-auto max-w-6xl px-6 pb-20 scroll-mt-20">
 	<SectionHeader
-		eyebrow="Threat shake-out"
+		eyebrow="Risks & limits"
 		title="What can still go wrong."
-		lede="Honest list of the risks that remain. None of them are fatal."
+		lede="Honest list of the risks that remain. None of them are fatal — but each one shapes the design."
 	/>
 	<dl class="mt-10 grid grid-cols-1 gap-x-10 gap-y-6 md:grid-cols-2">
 		<div class="flex flex-col gap-2 border-b border-bone-200 pb-6">
@@ -245,11 +256,7 @@
 			</dd>
 		</div>
 	</dl>
-</section>
-
-<!-- §13 out of scope -->
-<section class="mx-auto max-w-6xl px-6 pb-20">
-	<div class="rounded-[32px] bg-bone-200 p-8 sm:p-12">
+	<div class="mt-12 rounded-[32px] bg-bone-200 p-8 sm:p-12">
 		<span class="eyebrow">What we did NOT solve</span>
 		<ul class="mt-6 flex flex-col gap-3 text-ink-2">
 			<li>Identity. The protocol is pseudonymous by design.</li>

@@ -7,7 +7,10 @@
 </svelte:head>
 
 <section class="pt-4 pb-12">
-	<span class="eyebrow">Lesson 4</span>
+	<span class="flex flex-col gap-1">
+		<span class="eyebrow">Lesson 4</span>
+		<span class="eyebrow">For the protocol-curious</span>
+	</span>
 	<h1 class="mt-3 font-display text-[40px] sm:text-[52px] text-ink leading-[1.05]">
 		How Voyager Pay works.
 	</h1>

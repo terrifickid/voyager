@@ -7,7 +7,10 @@
 </svelte:head>
 
 <section class="pt-4 pb-12">
-	<span class="eyebrow">Lesson 1</span>
+	<span class="flex flex-col gap-1">
+		<span class="eyebrow">Lesson 1</span>
+		<span class="eyebrow">For travelers</span>
+	</span>
 	<h1 class="mt-3 font-display text-[40px] sm:text-[52px] text-ink leading-[1.05]">
 		How Voyager plans your trip in your browser.
 	</h1>

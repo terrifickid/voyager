@@ -2,7 +2,6 @@
 	import Cta from '$lib/components/Cta.svelte';
 	import SectionHeader from '$lib/components/SectionHeader.svelte';
 	import HeroMockup from '$lib/components/HeroMockup.svelte';
-	import BrandRow from '$lib/components/BrandRow.svelte';
 	import FeatureCard from '$lib/components/FeatureCard.svelte';
 	import PersonaCard from '$lib/components/PersonaCard.svelte';
 	import QuoteCard from '$lib/components/QuoteCard.svelte';
@@ -25,7 +24,7 @@
 </div>
 
 <!-- 2. Hero -->
-<section class="mx-auto max-w-6xl px-6 pt-24 pb-28 lg:pt-32 lg:pb-36">
+<section class="mx-auto max-w-6xl px-6 pt-20 pb-20 lg:pt-28 lg:pb-28">
 	<div class="grid grid-cols-1 items-center gap-16 lg:grid-cols-[1.05fr_1fr]">
 		<div class="flex flex-col gap-8">
 			<span class="eyebrow">Local-first AI travel</span>
@@ -33,18 +32,12 @@
 				Plan trips<br />you'll actually<br />want to take.
 			</h1>
 			<p class="max-w-xl text-lg leading-relaxed text-ink-2">
-				Voyager is a trip planner that runs on your device. Tell it where you're going and how you travel. It builds a day-by-day plan from real places, your personality, and your budget.
-			</p>
-			<p class="max-w-xl text-lg leading-relaxed text-ink-2">
-				Save it. Share a link. Edit it as you go.
+				Plan a trip you can actually take, in your browser. Tell Voyager where you're going and how you travel. It builds a day-by-day plan from real places, your personality, and your budget.
 			</p>
 			<div class="flex flex-wrap items-center gap-3">
 				<Cta variant="primary" href="/plan">Plan a trip</Cta>
 				<Cta variant="secondary" href="#how">See how it works</Cta>
 			</div>
-			<p class="text-sm text-muted">
-				Runs on WebGPU in your browser. No account, no API key.
-			</p>
 		</div>
 		<div class="lg:pl-6">
 			<HeroMockup />
@@ -52,29 +45,39 @@
 	</div>
 </section>
 
-<!-- 3. Brand row -->
-<section class="mx-auto max-w-6xl px-6 pb-24">
-	<BrandRow />
-</section>
-
-<!-- 4. One sentence value -->
+<!-- 3. How it works -->
 <section id="how" class="mx-auto max-w-6xl px-6 pb-24">
 	<div class="rounded-[32px] bg-bone-100 p-10 sm:p-14">
-<SectionHeader
-		eyebrow="How it works"
-		title="One prompt. One honest itinerary."
-		lede="Type where, when, and who's coming. Voyager reads your travel personality. It builds a day-by-day plan in your browser, with real places, transit, and time-of-day anchors."
-	/>
-		<div class="mt-8">
+		<SectionHeader
+			eyebrow="How it works"
+			title="One prompt. One honest itinerary."
+			lede="Three steps. Plain English. Nothing leaves your browser."
+		/>
+		<ol class="mt-12 flex flex-col gap-6">
+			{#each [
+				{ n: 1, t: 'Describe how you travel', b: 'A sentence about pace, food, and what you skip. Voyager turns it into a structured preference set.' },
+				{ n: 2, t: 'Get a draft, grounded in real places', b: 'A small model in your tab drafts a day-by-day plan. A local places fixture ranks real candidates against each block.' },
+				{ n: 3, t: 'Save it, share a link, edit as you go', b: 'Trips live on your device. Share a read-only link with whoever is coming. Edit a day and the next link already shows it.' }
+			] as step (step.n)}
+				<li class="flex gap-5 rounded-[28px] bg-bone-200 p-6">
+					<span class="font-display text-3xl text-ink leading-none">{step.n}</span>
+					<div class="flex flex-col gap-2">
+						<h3 class="font-display text-xl text-ink leading-tight">{step.t}</h3>
+						<p class="text-[15px] leading-relaxed text-ink-2">{step.b}</p>
+					</div>
+				</li>
+			{/each}
+		</ol>
+		<div class="mt-10">
 			<Cta variant="secondary" href="/plan">Try it now</Cta>
 		</div>
 	</div>
 </section>
 
-<!-- 5. Tabs row (Travel / Stay / Share) -->
+<!-- 4. What you get (collapsed Travel/Stay/Share + Why Voyager) -->
 <section class="mx-auto max-w-6xl px-6 pb-24">
 	<SectionHeader
-		eyebrow="Built around how you plan"
+		eyebrow="What you get"
 		title="Travel. Stay. Share."
 		lede="Three things every trip needs. One tool handles all of them."
 	/>
@@ -103,74 +106,12 @@
 	</div>
 </section>
 
-<!-- 6. Voyager Pay band -->
-<section class="mx-auto max-w-6xl px-6 pb-24">
-	<div class="rounded-[32px] bg-bone-100 p-10 sm:p-14">
-		<div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
-			<div class="flex flex-col gap-5">
-				<span class="eyebrow">Voyager Pay</span>
-				<h2 class="font-display text-[40px] sm:text-[52px] lg:text-[64px] text-ink leading-[1.02]">
-					Money that moves like a Nostr note.
-				</h2>
-				<p class="max-w-md text-lg leading-relaxed text-ink-2">
-					Voyager Pay is an open payments protocol. It rides on Nostr (a public message network) and Lightning (a fast Bitcoin payment network). Voyager ships one of the competing Mostro nodes, tuned for the Caribbean. Try the ranking widget below.
-				</p>
-				<div class="flex flex-wrap items-center gap-3">
-					<Cta variant="primary" href="/pay">Open Voyager Pay</Cta>
-					<Cta variant="tertiary" href="/pay#ramp">Skip to the ramp</Cta>
-				</div>
-			</div>
-			<div>
-				<RampQuoteAggregator />
-			</div>
-		</div>
-	</div>
-</section>
-
-<!-- 7. Benefits grid -->
+<!-- 5. Who it's for -->
 <section class="mx-auto max-w-6xl px-6 pb-24">
 	<SectionHeader
-		eyebrow="Why Voyager"
-		title="Designed like a great trip."
-		lede="Every screen earns its keep. No clutter. No upsell. No infinite scroll."
-	/>
-	<div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
-		<FeatureCard
-			icon="chat"
-			tone="violet"
-			eyebrow="Conversational"
-			title="Talk like a person"
-			body="No checkboxes for vibes. Describe how you travel in a sentence. Voyager turns it into a real plan."
-		/>
-		<FeatureCard
-			icon="calendar"
-			tone="sky"
-			eyebrow="Day-by-day"
-			title="An itinerary you can follow"
-			body="Each day has a theme. Morning, afternoon, and evening slots match how a city actually moves."
-		/>
-		<FeatureCard
-			icon="map-pin"
-			tone="coral"
-			eyebrow="Real places"
-			title="Local data, not guesses"
-			body="Voyager pulls from a local places fixture. It ranks by fit, ratings, and proximity. No hallucinated addresses."
-		/>
-		<FeatureCard
-			icon="save"
-			tone="rose"
-			eyebrow="Save & share"
-			title="Keep your trip"
-			body="Save trips to your device. Edit as you go. Share a read-only link with whoever's coming."
-		/>
-	</div>
-</section>
-
-<!-- 8. Personas -->
-<section class="mx-auto max-w-6xl px-6 pb-24">
-	<SectionHeader
-		eyebrow="Built for"
+		eyebrow="Who it's for"
 		title="Whoever you travel with."
+		lede="Same engine, different shape. Pick the trip you're actually planning."
 	/>
 	<div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
 		<PersonaCard
@@ -178,7 +119,7 @@
 			tone="violet"
 			eyebrow="Weekend explorers"
 			title="Two days, no itinerary"
-			body="A fast, opinionated plan for short breaks. One anchor, one neighborhood, one reservation worth booking ahead."
+			body="You walk in with a city and a window. You walk out with one anchor, one neighborhood, and the one reservation worth booking ahead."
 			ctaLabel="Plan a weekend"
 			ctaHref="/plan"
 		/>
@@ -187,7 +128,7 @@
 			tone="sky"
 			eyebrow="Family trips"
 			title="Everyone's a different traveler"
-			body="Voyager blends kids' pacing, kid-friendly food stops, and one longer anchor for the adults each day."
+			body="Your day bends around kids' pacing and food stops, with one longer anchor for the adults. The plan respects both."
 			ctaLabel="Plan with kids"
 			ctaHref="/plan"
 		/>
@@ -196,14 +137,14 @@
 			tone="coral"
 			eyebrow="Group trips"
 			title="Six people, six preferences"
-			body="Voyager averages the group's vibe. Then it surfaces one anchor activity that holds the day together."
+			body="The plan averages the group's vibe, then surfaces the one anchor activity that holds the day together."
 			ctaLabel="Plan with friends"
 			ctaHref="/plan"
 		/>
 	</div>
 </section>
 
-<!-- 9. Testimonials -->
+<!-- 6. Testimonials -->
 <section class="mx-auto max-w-6xl px-6 pb-24">
 	<SectionHeader
 		eyebrow="From the road"
@@ -224,22 +165,44 @@
 	</div>
 </section>
 
-<!-- 9b. Documentation band -->
+<!-- 7. Voyager Pay band (demoted, clearly labelled aside) -->
 <section class="mx-auto max-w-6xl px-6 pb-24">
 	<div class="rounded-[32px] bg-bone-100 p-8 sm:p-12">
-<SectionHeader
-		eyebrow="Documentation"
-		title="Read the spec behind Voyager Pay."
-		lede="Short lessons on how Voyager plans trips in your browser, how the rubrics work, and how Voyager Pay's design satisfies the EROI rubric."
-	/>
-		<div class="mt-8 flex flex-wrap items-center gap-3">
-			<Cta variant="primary" href="/docs">Start with the overview</Cta>
-			<Cta variant="secondary" href="/docs/how-voyager-pay-works">Jump to Voyager Pay</Cta>
+		<div class="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
+			<div class="flex flex-col gap-4">
+				<span class="eyebrow">Voyager Pay — built in</span>
+				<h2 class="font-display text-[32px] sm:text-[40px] lg:text-[48px] text-ink leading-[1.05]">
+					A way to pay that does not need an account.
+				</h2>
+				<p class="max-w-md text-base leading-relaxed text-ink-2">
+					Voyager ships with a payment layer that does not hold your money. If you want the technical detail, it lives on its own page. The ranking widget below is a demo of how a wallet picks a node.
+				</p>
+				<div>
+					<Cta variant="tertiary" href="/pay">How Voyager Pay works</Cta>
+				</div>
+			</div>
+			<div>
+				<RampQuoteAggregator />
+			</div>
 		</div>
 	</div>
 </section>
 
-<!-- 10. Final CTA band -->
+<!-- 8. Documentation band (closer) -->
+<section class="mx-auto max-w-6xl px-6 pb-24">
+	<div class="rounded-[32px] bg-bone-100 p-8 sm:p-12">
+		<SectionHeader
+			eyebrow="Documentation"
+			title="Want the spec behind Voyager?"
+			lede="Short lessons on how the planner works, what a rubric is, and how Voyager Pay's design holds up. Read in order, or jump to the lesson you want."
+		/>
+		<div class="mt-8 flex flex-wrap items-center gap-3">
+			<Cta variant="primary" href="/docs">Read the docs</Cta>
+		</div>
+	</div>
+</section>
+
+<!-- 9. Final CTA band -->
 <section class="mx-auto max-w-6xl px-6 pb-32">
 	<div class="rounded-[32px] bg-bone-100 p-10 sm:p-16 text-center">
 		<h2 class="font-display text-[40px] sm:text-[56px] lg:text-[72px] text-ink max-w-3xl mx-auto leading-[1.02]">
@@ -250,7 +213,7 @@
 		</p>
 		<div class="mt-8 flex flex-wrap items-center justify-center gap-3">
 			<Cta variant="primary" href="/plan">Plan a trip</Cta>
-			<Cta variant="secondary" href="/preferences">Set preferences</Cta>
+			<Cta variant="secondary" href="/docs">Read the docs</Cta>
 		</div>
 	</div>
 </section>
