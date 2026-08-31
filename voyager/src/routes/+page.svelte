@@ -221,6 +221,21 @@
 	</div>
 </section>
 
+<!-- 9b. Documentation band -->
+<section class="mx-auto max-w-6xl px-6 pb-24">
+	<div class="rounded-[32px] bg-bone-100 p-8 sm:p-12">
+		<SectionHeader
+			eyebrow="Documentation"
+			title="Read the spec behind Voyager Pay."
+			lede="A short section on how Voyager plans trips in your browser, how the rubrics work, and how Voyager Pay's design satisfies the EROI rubric."
+		/>
+		<div class="mt-8 flex flex-wrap items-center gap-3">
+			<Cta variant="primary" href="/docs">Start with the overview</Cta>
+			<Cta variant="secondary" href="/docs/how-voyager-pay-works">Jump to Voyager Pay</Cta>
+		</div>
+	</div>
+</section>
+
 <!-- 10. Final CTA band -->
 <section class="mx-auto max-w-6xl px-6 pb-32">
 	<div class="rounded-[32px] bg-bone-100 p-10 sm:p-16 text-center">

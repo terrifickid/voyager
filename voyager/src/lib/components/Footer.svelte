@@ -22,6 +22,7 @@
 		{
 			title: 'Resources',
 			links: [
+				{ label: 'Documentation', href: '/docs' },
 				{ label: 'Help center', href: '/' },
 				{ label: 'Privacy', href: '/' },
 				{ label: 'Terms', href: '/' }

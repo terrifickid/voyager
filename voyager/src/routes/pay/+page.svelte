@@ -23,7 +23,7 @@
 			market makers.
 		</p>
 		<div class="flex flex-wrap items-center gap-3">
-			<Cta variant="secondary" href="#how">Read the spec</Cta>
+			<Cta variant="secondary" href="/docs">Documentation</Cta>
 			<Cta variant="primary" href="#ramp">See the ramp</Cta>
 		</div>
 	</div>
@@ -196,6 +196,9 @@
 		title="Why this is honest money."
 		lede="Three properties a custodial rail can’t give you."
 	/>
+	<div class="mt-6">
+		<Cta variant="tertiary" href="/docs/voyager-pay-eroi-audit">Read the full EROI audit</Cta>
+	</div>
 	<div class="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
 		<article class="flex flex-col gap-3 rounded-[28px] bg-bone-200 p-6">
 			<Icon name="bolt" tone="sky" size={28} />
