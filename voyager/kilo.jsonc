@@ -11,5 +11,6 @@
     "./kilocode/rules/rtk-rules.md",
     "./kilocode/rules/logging.md",
     "./kilocode/rules/usability.md",
+    "./kilocode/rules/clear-communications.md",
   ],
 }
