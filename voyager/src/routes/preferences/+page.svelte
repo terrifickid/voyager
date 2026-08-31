@@ -11,7 +11,7 @@
 	<SectionHeader
 		eyebrow="Your travel fingerprint"
 		title="Tell us how you travel."
-		lede="This shapes every itinerary Voyager builds for you. Edit any time."
+		lede="These answers shape every itinerary Voyager builds for you. Edit them any time."
 	/>
 	<div class="mt-12">
 		<TravelFormPrefs />

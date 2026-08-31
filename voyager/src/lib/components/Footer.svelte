@@ -6,7 +6,7 @@
 			title: 'Product',
 			links: [
 				{ label: 'Plan a trip', href: '/plan' },
-				{ label: 'Preferences', href: '/preferences' },
+				{ label: 'Set preferences', href: '/preferences' },
 				{ label: 'Voyager Pay', href: '/pay' },
 				{ label: 'How it works', href: '/' }
 			]
@@ -37,7 +37,7 @@
 			<div class="flex flex-col gap-5">
 				<a href="/" class="font-display text-2xl text-ink">Voyager</a>
 				<p class="max-w-xs text-[15px] leading-relaxed text-ink-2">
-					Local-first AI travel planning. Day-by-day itineraries built around how you actually travel.
+					Plan trips on your device. No account. No tracking. Your itinerary stays on your machine.
 				</p>
 				<div class="flex items-center gap-2">
 					<button
@@ -69,7 +69,7 @@
 
 		<div class="mt-16 flex flex-col gap-3 border-t border-bone-200 pt-6 text-sm text-muted md:flex-row md:items-center md:justify-between">
 			<p>© {new Date().getFullYear()} Voyager. Demo build.</p>
-			<p>Built locally · No API key · No data leaves your device</p>
+			<p>Runs on your device. No API key. No data leaves your machine.</p>
 		</div>
 	</div>
 </footer>

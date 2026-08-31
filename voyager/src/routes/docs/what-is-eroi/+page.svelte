@@ -12,9 +12,7 @@
 		What EROI is.
 	</h1>
 	<p class="mt-6 max-w-2xl text-lg leading-relaxed text-ink-2">
-		EROI stands for Energy Return On Investment. We don't use it for oil wells. We use it for
-		attackers: how much an extractor gets back for the effort they put in to take something from
-		your system.
+		EROI stands for Energy Return On Investment. Voyager does not use it for oil wells. Voyager uses it for attackers: how much an extractor gets back for the effort they put in to take something from the system.
 	</p>
 </section>
 

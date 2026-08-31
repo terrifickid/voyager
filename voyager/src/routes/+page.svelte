@@ -16,7 +16,7 @@
 <!-- 1. Top ribbon -->
 <div class="w-full" style="background: var(--lime); color: var(--lime-ink);">
 	<div class="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-3 gap-y-1 px-6 py-2.5 text-[13px] font-medium">
-		<span>Local-first AI travel planning — runs in your browser, no API key.</span>
+		<span>Plan trips in your browser. No API key. No account.</span>
 		<a href="/plan" class="inline-flex items-center gap-1 underline underline-offset-2 decoration-[1.5px] font-semibold">
 			See how
 			<span aria-hidden="true" class="text-[1.05em] leading-none">›</span>
@@ -33,7 +33,10 @@
 				Plan trips<br />you'll actually<br />want to take.
 			</h1>
 			<p class="max-w-xl text-lg leading-relaxed text-ink-2">
-				Voyager is a local-first AI trip planner. Tell it where you're going and how you travel — it builds a day-by-day itinerary using real places, your personality, and your budget. Save, share, edit.
+				Voyager is a trip planner that runs on your device. Tell it where you're going and how you travel. It builds a day-by-day plan from real places, your personality, and your budget.
+			</p>
+			<p class="max-w-xl text-lg leading-relaxed text-ink-2">
+				Save it. Share a link. Edit it as you go.
 			</p>
 			<div class="flex flex-wrap items-center gap-3">
 				<Cta variant="primary" href="/plan">Plan a trip</Cta>
@@ -57,11 +60,11 @@
 <!-- 4. One sentence value -->
 <section id="how" class="mx-auto max-w-6xl px-6 pb-24">
 	<div class="rounded-[32px] bg-bone-100 p-10 sm:p-14">
-		<SectionHeader
-			eyebrow="How it works"
-			title="One prompt. One honest itinerary."
-			lede="Type where, when, and who's coming. Voyager reads your travel personality and builds a real day-by-day plan — with places, transit, and time-of-day anchors — in your browser."
-		/>
+<SectionHeader
+		eyebrow="How it works"
+		title="One prompt. One honest itinerary."
+		lede="Type where, when, and who's coming. Voyager reads your travel personality. It builds a day-by-day plan in your browser, with real places, transit, and time-of-day anchors."
+	/>
 		<div class="mt-8">
 			<Cta variant="secondary" href="/plan">Try it now</Cta>
 		</div>
@@ -73,7 +76,7 @@
 	<SectionHeader
 		eyebrow="Built around how you plan"
 		title="Travel. Stay. Share."
-		lede="Three things every trip needs, handled in one place."
+		lede="Three things every trip needs. One tool handles all of them."
 	/>
 	<div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
 		<FeatureCard
@@ -81,21 +84,21 @@
 			tone="sky"
 			eyebrow="Travel"
 			title="Real day-by-day itineraries"
-			body="Hour-by-hour plans built from real places, local transit, and time-of-day anchors. No filler, no template copy."
+			body="Hour-by-hour plans built from real places and local transit. No filler copy. No templated days."
 		/>
 		<FeatureCard
 			icon="bed"
 			tone="coral"
 			eyebrow="Stay"
 			title="Neighborhoods, not pins"
-			body="Voyager picks where to base you, then walks outward. Sleep near what you'll actually do."
+			body="Voyager picks a base neighborhood, then walks outward. You sleep near what you'll do."
 		/>
 		<FeatureCard
 			icon="share"
 			tone="rose"
 			eyebrow="Share"
 			title="Send a link, get opinions"
-			body="Share the itinerary with your co-travelers as a clean read-only page. Edit on the fly."
+			body="Share the itinerary with your co-travelers as a clean read-only page. Edit as you go."
 		/>
 	</div>
 </section>
@@ -110,8 +113,7 @@
 					Money that moves like a Nostr note.
 				</h2>
 				<p class="max-w-md text-lg leading-relaxed text-ink-2">
-					An open payments protocol layered on Nostr and Lightning. Voyager ships one of the
-					competing Mostro nodes — tuned for the Caribbean. Try the ranking widget below.
+					Voyager Pay is an open payments protocol. It rides on Nostr (a public message network) and Lightning (a fast Bitcoin payment network). Voyager ships one of the competing Mostro nodes, tuned for the Caribbean. Try the ranking widget below.
 				</p>
 				<div class="flex flex-wrap items-center gap-3">
 					<Cta variant="primary" href="/pay">Open Voyager Pay</Cta>
@@ -130,7 +132,7 @@
 	<SectionHeader
 		eyebrow="Why Voyager"
 		title="Designed like a great trip."
-		lede="Every screen earns its keep. No clutter, no upsell, no infinite scroll."
+		lede="Every screen earns its keep. No clutter. No upsell. No infinite scroll."
 	/>
 	<div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
 		<FeatureCard
@@ -138,28 +140,28 @@
 			tone="violet"
 			eyebrow="Conversational"
 			title="Talk like a person"
-			body="No checkboxes for vibes. Describe how you travel in a sentence — Voyager translates it into a real plan."
+			body="No checkboxes for vibes. Describe how you travel in a sentence. Voyager turns it into a real plan."
 		/>
 		<FeatureCard
 			icon="calendar"
 			tone="sky"
 			eyebrow="Day-by-day"
 			title="An itinerary you can follow"
-			body="Each day is anchored by a theme, with morning / afternoon / evening slots that respect how a city actually moves."
+			body="Each day has a theme. Morning, afternoon, and evening slots match how a city actually moves."
 		/>
 		<FeatureCard
 			icon="map-pin"
 			tone="coral"
 			eyebrow="Real places"
 			title="Local data, not guesses"
-			body="Voyager pulls from a local places fixture and ranks by fit, ratings, and proximity — no LLM hallucination on addresses."
+			body="Voyager pulls from a local places fixture. It ranks by fit, ratings, and proximity. No hallucinated addresses."
 		/>
 		<FeatureCard
 			icon="save"
 			tone="rose"
 			eyebrow="Save & share"
 			title="Keep your trip"
-			body="Save trips to your device, edit on the fly, share a read-only link with whoever's coming."
+			body="Save trips to your device. Edit as you go. Share a read-only link with whoever's coming."
 		/>
 	</div>
 </section>
@@ -176,7 +178,7 @@
 			tone="violet"
 			eyebrow="Weekend explorers"
 			title="Two days, no itinerary"
-			body="A fast, opinionated plan for short breaks — anchor, neighborhood, one reservation worth booking ahead."
+			body="A fast, opinionated plan for short breaks. One anchor, one neighborhood, one reservation worth booking ahead."
 			ctaLabel="Plan a weekend"
 			ctaHref="/plan"
 		/>
@@ -194,7 +196,7 @@
 			tone="coral"
 			eyebrow="Group trips"
 			title="Six people, six preferences"
-			body="Average the group's vibe, then surface one anchor activity that holds the day together."
+			body="Voyager averages the group's vibe. Then it surfaces one anchor activity that holds the day together."
 			ctaLabel="Plan with friends"
 			ctaHref="/plan"
 		/>
@@ -206,6 +208,7 @@
 	<SectionHeader
 		eyebrow="From the road"
 		title="Trips people actually took."
+		lede="Two travelers. Two itineraries. Both shaped to fit."
 	/>
 	<div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
 		<QuoteCard
@@ -224,11 +227,11 @@
 <!-- 9b. Documentation band -->
 <section class="mx-auto max-w-6xl px-6 pb-24">
 	<div class="rounded-[32px] bg-bone-100 p-8 sm:p-12">
-		<SectionHeader
-			eyebrow="Documentation"
-			title="Read the spec behind Voyager Pay."
-			lede="A short section on how Voyager plans trips in your browser, how the rubrics work, and how Voyager Pay's design satisfies the EROI rubric."
-		/>
+<SectionHeader
+		eyebrow="Documentation"
+		title="Read the spec behind Voyager Pay."
+		lede="Short lessons on how Voyager plans trips in your browser, how the rubrics work, and how Voyager Pay's design satisfies the EROI rubric."
+	/>
 		<div class="mt-8 flex flex-wrap items-center gap-3">
 			<Cta variant="primary" href="/docs">Start with the overview</Cta>
 			<Cta variant="secondary" href="/docs/how-voyager-pay-works">Jump to Voyager Pay</Cta>
@@ -243,7 +246,7 @@
 			Stop planning the trip. Start taking it.
 		</h2>
 		<p class="mt-6 max-w-xl mx-auto text-lg text-ink-2">
-			Open Voyager, answer seven prompts, get a plan you can actually use — in your browser.
+			Open Voyager. Answer seven prompts. Get a plan you can use, in your browser.
 		</p>
 		<div class="mt-8 flex flex-wrap items-center justify-center gap-3">
 			<Cta variant="primary" href="/plan">Plan a trip</Cta>

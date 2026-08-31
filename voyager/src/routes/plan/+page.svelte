@@ -58,20 +58,20 @@
             {concept?.title ?? 'Your itinerary'}
           </h1>
         </div>
-        <Cta variant="secondary" onclick={edit}>Edit my trip</Cta>
+        <Cta variant="secondary" onclick={edit}>Edit my answers</Cta>
       </div>
-      <p class="text-sm text-muted">Demo mode — generated from local fixtures.</p>
+      <p class="text-sm text-muted">Demo build. Generated from local fixtures on your device.</p>
     </header>
 
     {#if loading}
       <p class="rounded-[28px] bg-bone-100 p-8 text-center text-sm text-muted">
-        Generating your itinerary…
+        Building your itinerary…
       </p>
     {:else}
       <div class="flex flex-col gap-6">
         {#if !concept && itinerary.length === 0 && candidates.length === 0}
           <p class="rounded-[28px] bg-bone-100 p-8 text-center text-sm text-muted">
-            Nothing yet.
+            Nothing yet. Answer the prompts and submit to see your plan.
           </p>
         {/if}
 
@@ -86,17 +86,17 @@
                 <dd class="text-ink-2">{concept.logistics.base}</dd>
               </div>
               <div class="flex flex-col gap-1">
-                <dt class="eyebrow">Transit</dt>
+                <dt class="eyebrow">Getting around</dt>
                 <dd class="text-ink-2">{concept.logistics.transit}</dd>
               </div>
               <div class="flex flex-col gap-1">
-                <dt class="eyebrow">Best time</dt>
+                <dt class="eyebrow">Best time to go</dt>
                 <dd class="text-ink-2">{concept.logistics.bestTime}</dd>
               </div>
             </dl>
             {#if concept.highlights?.length}
               <div>
-                <p class="eyebrow">Highlights</p>
+                <p class="eyebrow">What you'll remember</p>
                 <ul class="mt-3 flex flex-col gap-2 text-[15px] text-ink-2">
                   {#each concept.highlights as h (h)}
                     <li class="flex items-baseline gap-2">
@@ -160,7 +160,7 @@
         {#if candidates.length > 0}
           <article class="rounded-[28px] bg-bone-200 p-8 flex flex-col gap-5">
             <div class="flex items-baseline justify-between gap-3">
-              <h3 class="font-display text-[26px] text-ink leading-[1.05]">Place candidates</h3>
+              <h3 class="font-display text-[26px] text-ink leading-[1.05]">Other places you might like</h3>
               <span class="text-sm text-muted">From the local places fixture</span>
             </div>
             <ul class="grid grid-cols-1 gap-3 md:grid-cols-2">

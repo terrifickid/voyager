@@ -18,9 +18,7 @@
 			Voyager Pay. Money that moves like a Nostr note.
 		</h1>
 		<p class="max-w-2xl text-lg leading-relaxed text-ink-2">
-			An open protocol for value transfer on the open web. No custodian in the middle, no account to lose,
-			no platform to deplatform you. Just signed events, Lightning rails, and a federation of competing
-			market makers.
+			Voyager Pay is an open protocol for sending money on the open web. There is no custodian in the middle and no account to lose. No platform can deplatform you. Signed events move over Nostr (a public message network). Settlement runs on Lightning (a fast Bitcoin payment network). A federation of competing market makers — called Mostro nodes — bridges fiat and Bitcoin.
 		</p>
 		<div class="flex flex-wrap items-center gap-3">
 			<Cta variant="secondary" href="/docs">Documentation</Cta>
@@ -34,9 +32,7 @@
 	<div class="rounded-[32px] bg-bone-100 p-8 sm:p-12">
 		<span class="eyebrow">The status quo</span>
 		<p class="mt-4 max-w-3xl text-lg leading-relaxed text-ink-2">
-			Today, sending money online means trusting a custodian with your balance, your identity, and your
-			future access. Every layer in that stack — the wallet, the KYC vendor, the payment processor — is a
-			counterparty that can fail, freeze, or disappear. The protocol itself was never the bottleneck.
+			Sending money online today means trusting a custodian with your balance, your identity, and your future access. The wallet, the KYC vendor (the "know your customer" identity check), and the payment processor are all counterparties. Each one can fail, freeze, or disappear. The protocol itself was never the bottleneck.
 		</p>
 	</div>
 </section>
@@ -50,10 +46,10 @@
 	/>
 	<div class="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
 		{#each [
-			{ icon: 'lock', tone: 'sky', title: 'No custody', body: 'The protocol never holds funds. Settlement is atomic or it does not happen.' },
-			{ icon: 'chat', tone: 'violet', title: 'No identity required', body: 'Keys are pseudonymous. There is no KYC tier at the protocol layer.' },
-			{ icon: 'compass', tone: 'coral', title: 'Customer ↔ vendor symmetry', body: 'Both sides hold the same kind of key, speak the same events, carry the same risk.' },
-			{ icon: 'leaf', tone: 'rose', title: 'Protocol outlives us', body: 'Reference clients are demos. The wire format is the product.' },
+			{ icon: 'lock', tone: 'sky', title: 'No custody', body: 'The protocol never holds funds. Settlement either completes atomically (in one indivisible step) or it does not happen.' },
+			{ icon: 'chat', tone: 'violet', title: 'No identity required', body: 'Keys are pseudonymous. There is no KYC (identity check) tier at the protocol layer.' },
+			{ icon: 'compass', tone: 'coral', title: 'Customer ↔ vendor symmetry', body: 'Both sides hold the same kind of key, speak the same events, and carry the same risk.' },
+			{ icon: 'leaf', tone: 'rose', title: 'Protocol outlives us', body: 'Reference clients are demos. The wire format (the exact shape of the signed events) is the product.' },
 			{ icon: 'bolt', tone: 'sky', title: 'Payments are Lightning', body: 'Final settlement moves on Lightning. Everything else is plumbing.' }
 		] as inv (inv.title)}
 			<article class="flex flex-col gap-3 rounded-[28px] bg-bone-200 p-6">
@@ -70,28 +66,26 @@
 	<SectionHeader
 		eyebrow="Architecture"
 		title="A layered stack."
-		lede="Three layers, one perimeter. Each one can be reimplemented without breaking the protocol."
+		lede="Three layers and one perimeter. Each layer can be reimplemented without breaking the protocol."
 	/>
 	<div class="mt-12 flex flex-col gap-4">
 		<article class="rounded-[28px] bg-bone-100 p-8">
 			<span class="eyebrow">Top — Wallets</span>
 			<h3 class="mt-3 font-display text-2xl text-ink">User-facing clients</h3>
 			<p class="mt-3 text-ink-2">
-				Mobile and desktop wallets sign events, manage keys, and present the user's balance. Wallets are
-				interchangeable; no wallet is privileged by the protocol.
+				Mobile and desktop wallets sign events, manage keys, and show the user's balance. Wallets are interchangeable. No wallet is privileged by the protocol.
 			</p>
 			<ul class="mt-4 list-disc pl-5 text-ink-2">
-				<li>Manages a Nostr keypair (secp256k1).</li>
-				<li>Persists a Lightning wallet (LNURL, NWC, or self-custodial).</li>
-				<li>Never sees the user's fiat balance.</li>
+				<li>Manage a Nostr keypair (secp256k1, the elliptic-curve cryptography Nostr uses).</li>
+				<li>Persist a Lightning wallet (LNURL, NWC, or self-custodial — standard Lightning wallet formats).</li>
+				<li>Never see the user's fiat balance.</li>
 			</ul>
 		</article>
 		<article class="rounded-[28px] bg-bone-100 p-8">
 			<span class="eyebrow">Middle — Reference clients</span>
 			<h3 class="mt-3 font-display text-2xl text-ink">Conformance + UX</h3>
 			<p class="mt-3 text-ink-2">
-				Open-source reference implementations that prove the protocol works end-to-end. They are demos,
-				not gatekeepers — anyone can ship one.
+				Open-source reference implementations prove the protocol works end-to-end. They are demos, not gatekeepers. Anyone can ship one.
 			</p>
 			<ul class="mt-4 list-disc pl-5 text-ink-2">
 				<li>Validate event shapes against the spec.</li>
@@ -103,20 +97,18 @@
 			<span class="eyebrow">Bottom — Protocol</span>
 			<h3 class="mt-3 font-display text-2xl text-ink">The wire format</h3>
 			<p class="mt-3 text-ink-2">
-				Signed Nostr events of well-defined kinds. Anyone can read them; only counterparties can write
-				to their own orders. There is no central server, no privileged relay, no admin key.
+				Signed Nostr events of well-defined kinds. Anyone can read them. Only counterparties can write to their own orders. There is no central server, no privileged relay, no admin key.
 			</p>
 			<ul class="mt-4 list-disc pl-5 text-ink-2">
 				<li><code>kind:38383</code> — Mostro node profile (replaceable).</li>
 				<li><code>kind:4</code> — Encrypted order messages between counterparties.</li>
-				<li>Relays are dumb pipes; nodes can be republished across any of them.</li>
+				<li>Relays are dumb pipes. Nodes can be republished across any of them.</li>
 			</ul>
 		</article>
 		<article class="rounded-[28px] bg-bone-200 p-6 text-center">
 			<span class="eyebrow">Perimeter</span>
 			<p class="mt-2 text-ink-2">
-				<span class="font-display text-ink">Fiat ↔ sats</span> — only at the Mostro node's edge, where
-				off-chain rails meet Lightning.
+				<span class="font-display text-ink">Fiat ↔ sats</span> — only at the Mostro node's edge, where off-chain rails meet Lightning.
 			</p>
 		</article>
 	</div>
@@ -132,12 +124,12 @@
 	<ol class="mt-12 flex flex-col gap-6">
 		{#each [
 			{ n: 1, t: 'The customer opens their wallet', b: 'They type an amount and pick a rail. The wallet looks up Mostro node profiles on its relay set and shows a ranked list — the spec’s §7.4 rubric, executed client-side.' },
-			{ n: 2, t: 'They place a signed order', b: 'The wallet emits a Nostr event with the amount, the fiat, the desired method, and an expiry. It is encrypted to the chosen Mostro node’s pubkey so only that node can read it.' },
-			{ n: 3, t: 'The Mostro node holds sats', b: 'On acceptance the node locks the matching sats in a Lightning hold-invoice (HODL). The sats are now escrowed by the network, not by a person.' },
+			{ n: 2, t: 'They place a signed order', b: 'The wallet emits a Nostr event with the amount, the fiat, the desired method, and an expiry. It encrypts the event to the chosen Mostro node’s public key, so only that node can read it.' },
+			{ n: 3, t: 'The Mostro node holds sats', b: 'On acceptance, the node locks the matching sats in a Lightning hold-invoice (a HODL — a payment that does not settle until the node releases it). The sats are now escrowed by the network, not by a person.' },
 			{ n: 4, t: 'The customer pays fiat', b: 'Using the chosen method — bank transfer, Wise, mobile money, or in-person cash — the customer sends fiat to the vendor’s settlement account off-protocol.' },
 			{ n: 5, t: 'The vendor confirms receipt', b: 'The vendor signs a small attestation event back to the Mostro node: "the fiat landed". The node treats silence as a timeout, not as confirmation.' },
-			{ n: 6, t: 'The HODL settles', b: 'The node releases the Lightning hold-invoice to the vendor’s wallet. Sats move on the base layer; settlement is atomic with the network, not with the operator.' },
-			{ n: 7, t: 'Reputation updates', b: 'Both counterparties can leave signed reputation events keyed to the node’s pubkey. Future rankings weight them — no central scoring service is involved.' }
+			{ n: 6, t: 'The HODL settles', b: 'The node releases the Lightning hold-invoice to the vendor’s wallet. Sats move on the base layer. Settlement is atomic with the network, not with the operator.' },
+			{ n: 7, t: 'Reputation updates', b: 'Both counterparties can leave signed reputation events keyed to the node’s public key. Future rankings weight them. No central scoring service is involved.' }
 		] as step (step.n)}
 			<li class="flex gap-5 rounded-[28px] bg-bone-100 p-6">
 				<span class="font-display text-3xl text-ink leading-none">{step.n}</span>
@@ -156,16 +148,13 @@
 		<SectionHeader
 			eyebrow="The fiat ramp"
 			title="From bank to sats in one signed flow."
-			lede="A federation of independent Mostro nodes competes on rate, fee, and reputation. Voyager ships one — tuned for the Caribbean."
+			lede="A federation of independent Mostro nodes competes on rate, fee, and reputation. Voyager ships one, tuned for the Caribbean."
 		/>
 
 		<div class="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-[1fr_1.4fr]">
 			<div class="flex flex-col gap-6">
 				<p class="text-lg leading-relaxed text-ink-2">
-					Mostro is the network of competing market makers that bridge fiat and Bitcoin. Each node
-					publishes its own profile as a <code>kind:38383</code> event — region, supported fiats,
-					settlement methods, fees, and reputation. Wallets rank them per-order using a deterministic
-					rubric; no single operator is in the middle.
+					Mostro is the network of competing market makers that bridge fiat and Bitcoin. Each node publishes its profile as a <code>kind:38383</code> event. The profile lists region, supported fiats, settlement methods, fees, and reputation. Wallets rank nodes per-order using a deterministic rubric. No single operator sits in the middle.
 				</p>
 
 				<div class="rounded-[28px] bg-bone-200 p-6">
@@ -179,8 +168,7 @@
 				</div>
 
 				<p class="text-sm text-muted">
-					{Object.keys(nodes).length} demo nodes are configured below. Pick a rail and a method to
-					see the live ranking.
+					{Object.keys(nodes).length} demo nodes are configured below. Pick a rail and a method to see the live ranking.
 				</p>
 			</div>
 
@@ -204,24 +192,21 @@
 			<Icon name="bolt" tone="sky" size={28} />
 			<h3 class="font-display text-xl text-ink leading-tight">Fan-out</h3>
 			<p class="text-sm leading-relaxed text-ink-2">
-				Anyone can run a node, anyone can run a relay. No operator is a single point of failure for
-				the network.
+				Anyone can run a node. Anyone can run a relay. No operator is a single point of failure for the network.
 			</p>
 		</article>
 		<article class="flex flex-col gap-3 rounded-[28px] bg-bone-200 p-6">
 			<Icon name="chat" tone="violet" size={28} />
 			<h3 class="font-display text-xl text-ink leading-tight">Opacity</h3>
 			<p class="text-sm leading-relaxed text-ink-2">
-				Counterparties never have to share identity with the network. Trust lives in signed events,
-				not in KYC dossiers.
+				Counterparties never have to share identity with the network. Trust lives in signed events, not in KYC dossiers.
 			</p>
 		</article>
 		<article class="flex flex-col gap-3 rounded-[28px] bg-bone-200 p-6">
 			<Icon name="lock" tone="coral" size={28} />
 			<h3 class="font-display text-xl text-ink leading-tight">Binding</h3>
 			<p class="text-sm leading-relaxed text-ink-2">
-				HODL invoices make settlement atomic with the network. A counterparty can fail, but they can’t
-				take the sats and not deliver the fiat.
+				HODL invoices make settlement atomic with the network. A counterparty can fail. They cannot take the sats and not deliver the fiat.
 			</p>
 		</article>
 	</div>
@@ -232,35 +217,31 @@
 	<SectionHeader
 		eyebrow="Threat shake-out"
 		title="What can still go wrong."
-		lede="Honest enumeration of the residual risks — none of them are fatal."
+		lede="Honest list of the risks that remain. None of them are fatal."
 	/>
 	<dl class="mt-10 grid grid-cols-1 gap-x-10 gap-y-6 md:grid-cols-2">
 		<div class="flex flex-col gap-2 border-b border-bone-200 pb-6">
 			<dt class="font-display text-lg text-ink">Fiat rail reversal</dt>
 			<dd class="text-sm leading-relaxed text-ink-2">
-				A chargeback after the HODL settles. Mitigated by short HODL windows and reputation-weighted
-				limits per counterparty.
+				A chargeback after the HODL settles. Mitigated by short HODL windows and reputation-weighted limits per counterparty.
 			</dd>
 		</div>
 		<div class="flex flex-col gap-2 border-b border-bone-200 pb-6">
 			<dt class="font-display text-lg text-ink">Sybil reputation</dt>
 			<dd class="text-sm leading-relaxed text-ink-2">
-				Reputation events are cheap to forge. Mitigated by requiring reputation to be tied to a node
-				pubkey that has actually settled volume.
+				A Sybil attack (one party creating many fake identities) inflates reputation cheaply. Mitigated by tying reputation to a node public key that has actually settled volume.
 			</dd>
 		</div>
 		<div class="flex flex-col gap-2 border-b border-bone-200 pb-6">
 			<dt class="font-display text-lg text-ink">Relay capture</dt>
 			<dd class="text-sm leading-relaxed text-ink-2">
-				Malicious relays can censor. Mitigated by the protocol being relay-agnostic — events republish
-				across any of N independent operators.
+				Malicious relays can censor. Mitigated because the protocol is relay-agnostic — events republish across any of N independent operators.
 			</dd>
 		</div>
 		<div class="flex flex-col gap-2 border-b border-bone-200 pb-6">
 			<dt class="font-display text-lg text-ink">Operator rug</dt>
 			<dd class="text-sm leading-relaxed text-ink-2">
-				A Mostro node takes the sats and disappears. Mitigated by HODL invoices and short settlement
-				cycles — at worst the customer is exposed to the sats amount.
+				A Mostro node takes the sats and disappears. Mitigated by HODL invoices and short settlement cycles. At worst the customer is exposed to the sats amount.
 			</dd>
 		</div>
 	</dl>
