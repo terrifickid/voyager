@@ -2,6 +2,7 @@
   // @ts-ignore
   import { user } from '$lib/stores/user.svelte.js';
   import Cta from './Cta.svelte';
+  import DatePicker from './DatePicker.svelte';
 
   /** @type {{ onFinish?: () => void }} */
   let { onFinish = undefined } = $props();
@@ -135,6 +136,22 @@
   // ---- state -------------------------------------------------------------
   let stepIndex = $state(0);
   let draft = $state(initialTripDraft());
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const endCeiling = new Date(today.getFullYear(), 11, 31);
+
+  function addDays(d, n) {
+    const r = new Date(d);
+    r.setDate(r.getDate() + n);
+    return r;
+  }
+
+  const endMaxDate = $derived.by(() => {
+    if (!draft.startDate) return endCeiling;
+    const start = new Date(draft.startDate);
+    return addDays(start, 60) < endCeiling ? addDays(start, 60) : endCeiling;
+  });
 
   const currentStep = $derived(STEPS[stepIndex]);
   const progress = $derived(((stepIndex + 1) / STEPS.length) * 100);
@@ -296,24 +313,27 @@
 
     {:else if currentStep.id === 'dates'}
       <div class="flex flex-col gap-4">
-        <label class="flex flex-col gap-2">
-          <span class="text-sm font-medium text-ink">Start date</span>
-          <input
-            type="date"
-            bind:value={draft.startDate}
-            onkeydown={onInputKeydown}
-            class="w-full rounded-2xl bg-bone-50 p-4 text-ink focus:outline-none focus:ring-2 focus:ring-ink"
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <DatePicker
+            label="Start date"
+            value={draft.startDate}
+            minDate={today}
+            maxDate={endCeiling}
+            id="start-date"
+            onSelect={(iso) => {
+              draft.startDate = iso;
+              if (draft.endDate && draft.endDate < iso) draft.endDate = '';
+            }}
           />
-        </label>
-        <label class="flex flex-col gap-2">
-          <span class="text-sm font-medium text-ink">End date</span>
-          <input
-            type="date"
-            bind:value={draft.endDate}
-            onkeydown={onInputKeydown}
-            class="w-full rounded-2xl bg-bone-50 p-4 text-ink focus:outline-none focus:ring-2 focus:ring-ink"
+          <DatePicker
+            label="End date"
+            value={draft.endDate}
+            minDate={draft.startDate ? new Date(draft.startDate) : today}
+            maxDate={endMaxDate}
+            id="end-date"
+            onSelect={(iso) => { draft.endDate = iso; }}
           />
-        </label>
+        </div>
         {#if dateError}
           <p class="text-sm text-ink">{dateError}</p>
         {/if}
