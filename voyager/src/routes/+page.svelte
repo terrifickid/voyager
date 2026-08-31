@@ -5,7 +5,50 @@
 	import FeatureCard from '$lib/components/FeatureCard.svelte';
 	import PersonaCard from '$lib/components/PersonaCard.svelte';
 	import QuoteCard from '$lib/components/QuoteCard.svelte';
-	import RampQuoteAggregator from '$lib/components/RampQuoteAggregator.svelte';
+	import PayCheckoutCard from '$lib/components/PayCheckoutCard.svelte';
+
+	const REVIEWS = [
+		{
+			quote: "It built a Kyoto plan that respected my hatred of 10am queues. The first café was open at 7.",
+			attribution: "Lena K.",
+			role: "Designer, slow traveler"
+		},
+		{
+			quote: "I shared the link with my parents, edited the one museum they cared about, and we were off.",
+			attribution: "Marcus T.",
+			role: "Engineer, family trips"
+		},
+		{
+			quote: "Lisbon in three days, no spreadsheet. It picked the tile museum over another rooftop and I trusted it.",
+			attribution: "Priya R.",
+			role: "Backend engineer, long weekends"
+		},
+		{
+			quote: "I wanted empty streets in November. It gave me empty streets in November.",
+			attribution: "Tomás A.",
+			role: "Photographer, off-season"
+		},
+		{
+			quote: "Six of us, three food dealbreakers, one ferry. The plan didn't flinch.",
+			attribution: "Hana O.",
+			role: "Product manager, group trips"
+		},
+		{
+			quote: "I edited twice. That was the whole trip planning.",
+			attribution: "Devon S.",
+			role: "Solo, first time in Tokyo"
+		},
+		{
+			quote: "I needed cafe wifi and a quiet block by 6pm. Both made it onto the day.",
+			attribution: "Aïcha B.",
+			role: "Founder, workcations"
+		},
+		{
+			quote: "It cut the museum list down to one per kid. We did all of them.",
+			attribution: "Felix W.",
+			role: "Dad of two, short drives"
+		}
+	];
 </script>
 
 <svelte:head>
@@ -56,14 +99,14 @@
 	<div class="rounded-[32px] bg-bone-100 p-10 sm:p-14">
 		<SectionHeader
 			eyebrow="How it works"
-			title="Three steps. The booking comes last."
-			lede="Plan in your browser. Pay on an open market. The safest part is the part that touches your money."
+			title="Three steps. That's it."
+			lede="Tell us about your trip. We'll build the plan. Then book it safely with Voyager Pay."
 		/>
 		<ol class="mt-12 flex flex-col gap-6">
 			{#each [
-				{ n: 1, t: 'Answer seven prompts.', b: 'Destination, dates, who\'s coming, how you like to move, what you skip. Voyager turns it into a rubric your planner and your bank can both read.' },
-				{ n: 2, t: 'Get a draft from real places.', b: 'A model on your device drafts a day-by-day plan. A local places index ranks real candidates against each block, so nothing on the page is invented — only the order is.' },
-				{ n: 3, t: 'Vendors compete. You pay the winner.', b: 'Independent operators — hotels, hosts, tours — bid for each booking on price and quality. No one pays to be ranked higher, so the slot goes to whoever actually earned it. Voyager Pay settles the winner.' }
+				{ n: 1, t: 'Tell us about your trip.', b: 'Where you\'re going, when, and who\'s coming. A few quick questions and you\'re done.' },
+				{ n: 2, t: 'We build your itinerary.', b: 'Our AI puts together a day-by-day plan using real places. Tweak anything you want.' },
+				{ n: 3, t: 'Book it safely with Voyager Pay.', b: 'Pay through Voyager Pay and you\'re protected the whole way through. Good price, good experience, no surprises.' }
 			] as step (step.n)}
 				<li class="flex gap-5 rounded-[28px] bg-bone-200 p-6">
 					<span class="font-display text-3xl text-ink leading-none">{step.n}</span>
@@ -155,42 +198,46 @@
 	<SectionHeader
 		eyebrow="From the road"
 		title="Trips people actually took."
-		lede="Two travelers. Two itineraries. Both shaped to fit."
+		lede="Real trips from real travelers. Built to fit, not to flex."
 	/>
-	<div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
-		<QuoteCard
-			quote="It built a Kyoto plan that respected my hatred of 10am queues. The first café was open at 7."
-			attribution="Lena K."
-			role="Designer, slow traveler"
-		/>
-		<QuoteCard
-			quote="I shared the link with my parents, edited the one museum they cared about, and we were off."
-			attribution="Marcus T."
-			role="Engineer, family trips"
-		/>
+	<div class="mt-12 -mx-6 sm:-mx-10 overflow-hidden marquee-fade">
+		<div class="marquee">
+			<div class="marquee__track" aria-label="What travelers said">
+				<!-- set A -->
+				{#each REVIEWS as r}
+					<div class="marquee__item">
+						<QuoteCard quote={r.quote} attribution={r.attribution} role={r.role} />
+					</div>
+				{/each}
+				<!-- set B (must be identical to set A for seamless loop) -->
+				{#each REVIEWS as r}
+					<div class="marquee__item">
+						<QuoteCard quote={r.quote} attribution={r.attribution} role={r.role} />
+					</div>
+				{/each}
+			</div>
+		</div>
 	</div>
 </section>
 
-<!-- 7. Voyager Pay band (demoted, clearly labelled aside) -->
+<!-- 7. Voyager Pay band -->
 <section class="mx-auto max-w-6xl px-6 pb-24">
 	<div class="rounded-[32px] bg-bone-100 p-8 sm:p-12">
-		<div class="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
-			<div class="flex flex-col gap-4">
+		<div class="grid grid-cols-1 items-start gap-10 lg:grid-cols-2">
+			<div class="flex flex-col gap-5">
 				<span class="eyebrow">Voyager Pay — built in</span>
 				<h2 class="font-display text-[32px] sm:text-[40px] lg:text-[48px] text-ink leading-[1.05]">
-					Vendors compete. You win.
+					Pay the way you actually pay.
 				</h2>
 				<p class="max-w-md text-base leading-relaxed text-ink-2">
-					Voyager Pay runs the booking as an open market. Independent vendors compete for your trip on price and quality — no one pays to be ranked higher, so the ones who deserve the business are the ones who get it.
+					Pick a currency. See the best rate. Tap a vendor, hit Pay. No app to install.
 				</p>
-				<div class="flex flex-wrap items-center gap-3">
-					<Cta variant="tertiary" href="/pay/security">How Voyager Pay works</Cta>
-					<Cta variant="tertiary" href="/pay/pricing">Why the prices are low</Cta>
+				<div class="mt-2">
+					<Cta variant="primary" href="/pay">Open Voyager Pay</Cta>
 				</div>
 			</div>
-			<div>
-				<RampQuoteAggregator />
-			</div>
+
+			<PayCheckoutCard />
 		</div>
 	</div>
 </section>
@@ -224,3 +271,56 @@
 		</div>
 	</div>
 </section>
+
+<style>
+	.marquee {
+		display: flex;
+		width: max-content;
+	}
+	.marquee-fade {
+		mask-image: linear-gradient(
+			to right,
+			transparent 0,
+			#000 5rem,
+			#000 calc(100% - 5rem),
+			transparent 100%
+		);
+		-webkit-mask-image: linear-gradient(
+			to right,
+			transparent 0,
+			#000 5rem,
+			#000 calc(100% - 5rem),
+			transparent 100%
+		);
+	}
+	.marquee__track {
+		display: flex;
+		gap: 1.5rem; /* gap-6 */
+		padding-inline: 0.75rem; /* half of gap, so edges don't kiss the viewport */
+		animation: marquee-ltr 60s linear infinite;
+		will-change: transform;
+	}
+	.marquee__item {
+		flex: 0 0 auto;
+		width: 360px; /* readable card width on mobile */
+	}
+	@media (min-width: 768px) {
+		.marquee__item {
+			width: 420px;
+		}
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.marquee__track {
+			animation: none;
+			transform: none;
+		}
+	}
+	@keyframes marquee-ltr {
+		from {
+			transform: translateX(0);
+		}
+		to {
+			transform: translateX(-50%);
+		}
+	}
+</style>
