@@ -28,7 +28,7 @@
 </section>
 
 <!-- Three audiences -->
-<section class="mx-auto max-w-6xl px-6 pb-16">
+<section class="mx-auto max-w-6xl px-6 pb-20">
 	<div class="grid grid-cols-1 gap-4 md:grid-cols-3">
 		<article class="flex flex-col gap-3 rounded-[28px] bg-bone-200 p-6">
 			<Icon name="plane" tone="sky" size={28} />

@@ -8,19 +8,26 @@
 	<title>Run a node — Voyager Pay</title>
 </svelte:head>
 
-<section class="pt-4 pb-12">
-	<span class="eyebrow">Voyager Pay</span>
-	<h1 class="mt-3 font-display text-[40px] sm:text-[52px] lg:text-[64px] text-ink leading-[1.02]">
-		Run a node. Anyone can join the federation.
-	</h1>
-	<p class="mt-6 max-w-2xl text-lg leading-relaxed text-ink-2">
-		A Mostro node is an independent market maker. It never touches fiat, never holds a customer balance, and cannot move sats unilaterally. Running one is a for-profit line item with real capital requirements. This page is for operators, not users.
-	</p>
+<!-- Hero -->
+<section class="mx-auto max-w-6xl px-6 pt-20 pb-12 lg:pt-28 lg:pb-16">
+	<div class="flex flex-col gap-8">
+		<span class="eyebrow">Voyager Pay</span>
+		<h1 class="font-display text-[44px] sm:text-[56px] lg:text-[64px] text-ink max-w-4xl leading-[1.02]">
+			Run a node. Anyone can join the federation.
+		</h1>
+		<p class="max-w-2xl text-lg leading-relaxed text-ink-2">
+			A Mostro node is an independent market maker. It never touches fiat, never holds a customer balance, and cannot move sats unilaterally. Running one is a for-profit line item with real capital requirements. This page is for operators, not users.
+		</p>
+		<div class="flex flex-wrap items-center gap-3">
+			<Cta variant="primary" href="/pay">How Voyager Pay works</Cta>
+			<Cta variant="secondary" href="/pay/security">Security by design</Cta>
+		</div>
+	</div>
 </section>
 
 <!-- Non-custodial reminder -->
-<section class="pb-12">
-	<div class="rounded-[28px] bg-bone-100 p-8">
+<section class="mx-auto max-w-6xl px-6 pb-16">
+	<div class="rounded-[28px] bg-bone-100 p-6">
 		<span class="eyebrow">Operators are non-custodial market makers</span>
 		<p class="mt-4 text-[15px] leading-relaxed text-ink-2">
 			A Mostro node never holds your customer's funds in any meaningful sense. Settlement is atomic with the network, not with the operator. The node can release the HODL or refund it — it cannot redirect it to itself. Operators earn fees; they do not custody balances. If you are evaluating this as a custodial business, it is not that.
@@ -29,7 +36,7 @@
 </section>
 
 <!-- What a node does -->
-<section class="pb-16">
+<section class="mx-auto max-w-6xl px-6 pb-16">
 	<SectionHeader
 		eyebrow="What a node does"
 		title="A HODL-invoice arbiter that never touches fiat."
@@ -49,7 +56,7 @@
 </section>
 
 <!-- What you publish -->
-<section class="pb-16">
+<section class="mx-auto max-w-6xl px-6 pb-16">
 	<SectionHeader
 		eyebrow="What you publish"
 		title="A kind:38383 profile, a pubkey, and a contact."
@@ -68,7 +75,7 @@
 </section>
 
 <!-- What it costs to run -->
-<section class="pb-16">
+<section class="mx-auto max-w-6xl px-6 pb-16">
 	<SectionHeader
 		eyebrow="What it costs to run"
 		title="Capital, reputation seeding, modest infra."
@@ -100,7 +107,7 @@
 </section>
 
 <!-- What's in it for you -->
-<section class="pb-16">
+<section class="mx-auto max-w-6xl px-6 pb-16">
 	<SectionHeader
 		eyebrow="What's in it for you"
 		title="Fee revenue plus reputation accrual."
@@ -114,7 +121,7 @@
 </section>
 
 <!-- Voyager's bootstrap node -->
-<section class="pb-16">
+<section class="mx-auto max-w-6xl px-6 pb-16">
 	<SectionHeader
 		eyebrow="Voyager's bootstrap node"
 		title="voyager-caribbean — a worked example."
@@ -143,23 +150,8 @@
 	</div>
 </section>
 
-<!-- CTAs -->
-<section class="pb-16">
-	<div class="rounded-[32px] bg-bone-100 p-8 sm:p-12">
-		<span class="eyebrow">Read more</span>
-		<div class="mt-6 flex flex-col gap-3 text-ink-2">
-			<p>For the §7 federation spec and the node-operator section, see the Voyager protocol document.</p>
-			<p>For a protocol-curious walkthrough, the <a href="/docs/how-voyager-pay-works" class="underline underline-offset-4">How Voyager Pay works</a> lesson covers the federation in context.</p>
-		</div>
-		<div class="mt-8 flex flex-wrap items-center gap-3">
-			<Cta variant="primary" href="/docs/how-voyager-pay-works">How Voyager Pay works</Cta>
-			<Cta variant="secondary" href="/pay/security">Why operators are non-custodial</Cta>
-		</div>
-	</div>
-</section>
-
 <!-- Next-up CTA -->
-<section class="pb-32">
+<section class="mx-auto max-w-6xl px-6 pb-32">
 	<div class="rounded-[28px] bg-bone-100 p-8 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
 		<div>
 			<span class="eyebrow">Back to</span>

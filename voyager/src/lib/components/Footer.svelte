@@ -6,12 +6,17 @@
 			title: 'Product',
 			links: [
 				{ label: 'Plan a trip', href: '/plan' },
-				{ label: 'Set preferences', href: '/preferences' },
+				{ label: 'Voyager Pay', href: '/pay' },
+				{ label: 'How it works', href: '/' }
+			]
+		},
+		{
+			title: 'Voyager Pay',
+			links: [
 				{ label: 'Voyager Pay', href: '/pay' },
 				{ label: 'Security by design', href: '/pay/security' },
 				{ label: 'Fair pricing', href: '/pay/pricing' },
-				{ label: 'Run a node', href: '/pay/node' },
-				{ label: 'How it works', href: '/' }
+				{ label: 'Run a node', href: '/pay/node' }
 			]
 		},
 		{
@@ -36,7 +41,7 @@
 
 <footer class="bg-bone-100 pt-20 pb-10">
 	<div class="mx-auto max-w-6xl px-6">
-		<div class="grid grid-cols-1 gap-12 md:grid-cols-[1.4fr_repeat(3,1fr)]">
+		<div class="grid grid-cols-1 gap-12 md:grid-cols-[1.4fr_repeat(4,1fr)]">
 			<div class="flex flex-col gap-5">
 				<a href="/" class="font-display text-2xl text-ink">Voyager</a>
 				<p class="max-w-xs text-[15px] leading-relaxed text-ink-2">

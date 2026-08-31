@@ -11,7 +11,6 @@
 	const links = [
 		{ href: '/', label: 'Home', exact: true },
 		{ href: '/plan', label: 'Plan a trip', exact: true },
-		{ href: '/preferences', label: 'Set preferences', exact: true },
 		{ href: '/pay', label: 'Voyager Pay', exact: true },
 		{ href: '/docs', label: 'Docs', exact: true }
 	];
