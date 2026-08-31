@@ -7,6 +7,7 @@
     enrichDayPlan
   } from '$lib/agent/index.ts';
   import PlanTripWizard from '$lib/components/PlanTripWizard.svelte';
+  import Cta from '$lib/components/Cta.svelte';
 
   let submitted = $state(false);
   let loading = $state(false);
@@ -35,6 +36,8 @@
     if (!slot) return null;
     return slot;
   }
+
+  const slotLabels = { morning: 'Morning', afternoon: 'Afternoon', evening: 'Evening' };
 </script>
 
 <svelte:head>
@@ -42,62 +45,64 @@
 </svelte:head>
 
 {#if !submitted}
-  <PlanTripWizard {onFinish} />
+  <div class="mx-auto max-w-6xl px-6 pt-16 pb-24">
+    <PlanTripWizard {onFinish} />
+  </div>
 {:else}
-  <section class="flex flex-col gap-6">
-    <header class="flex flex-col gap-1">
-      <div class="flex items-baseline justify-between gap-3">
-        <h1 class="text-2xl font-semibold">Your itinerary</h1>
-        <button
-          type="button"
-          onclick={edit}
-          class="text-sm text-indigo-400 hover:text-indigo-300"
-        >
-          Edit my trip
-        </button>
+  <section class="mx-auto max-w-6xl px-6 pt-16 pb-24 flex flex-col gap-12">
+    <header class="flex flex-col gap-4">
+      <div class="flex flex-wrap items-end justify-between gap-6">
+        <div class="flex flex-col gap-3">
+          <span class="eyebrow">Your trip</span>
+          <h1 class="font-display text-[44px] sm:text-[60px] text-ink leading-[1.02] max-w-2xl">
+            {concept?.title ?? 'Your itinerary'}
+          </h1>
+        </div>
+        <Cta variant="secondary" onclick={edit}>Edit my trip</Cta>
       </div>
-      <p class="text-sm text-slate-400">
-        Demo mode — generated from local fixtures.
-      </p>
+      <p class="text-sm text-muted">Demo mode — generated from local fixtures.</p>
     </header>
 
     {#if loading}
-      <p class="rounded-lg border border-dashed border-slate-700 bg-slate-900/40 p-6 text-center text-sm text-slate-500">
+      <p class="rounded-[28px] bg-bone-100 p-8 text-center text-sm text-muted">
         Generating your itinerary…
       </p>
     {:else}
-      <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-6">
         {#if !concept && itinerary.length === 0 && candidates.length === 0}
-          <p class="rounded-lg border border-dashed border-slate-700 bg-slate-900/40 p-6 text-center text-sm text-slate-500">
+          <p class="rounded-[28px] bg-bone-100 p-8 text-center text-sm text-muted">
             Nothing yet.
           </p>
         {/if}
 
         {#if concept}
-          <article class="rounded-xl border border-slate-800 bg-slate-900/60 p-5">
-            <h2 class="text-lg font-semibold text-slate-100">{concept.title}</h2>
-            <p class="mt-1 text-xs uppercase tracking-wide text-slate-500">Trip concept</p>
-            <p class="mt-3 text-sm leading-relaxed text-slate-300">{concept.summary}</p>
-            <dl class="mt-4 grid grid-cols-1 gap-3 text-sm sm:grid-cols-3">
-              <div>
-                <dt class="text-xs uppercase text-slate-500">Base</dt>
-                <dd class="text-slate-200">{concept.logistics.base}</dd>
+          <article class="rounded-[28px] bg-bone-200 p-8 flex flex-col gap-5">
+            <span class="eyebrow">Trip concept</span>
+            <h2 class="font-display text-[32px] text-ink leading-[1.05]">{concept.title}</h2>
+            <p class="text-[15px] leading-relaxed text-ink-2">{concept.summary}</p>
+            <dl class="grid grid-cols-1 gap-5 text-sm sm:grid-cols-3">
+              <div class="flex flex-col gap-1">
+                <dt class="eyebrow">Base</dt>
+                <dd class="text-ink-2">{concept.logistics.base}</dd>
               </div>
-              <div>
-                <dt class="text-xs uppercase text-slate-500">Transit</dt>
-                <dd class="text-slate-200">{concept.logistics.transit}</dd>
+              <div class="flex flex-col gap-1">
+                <dt class="eyebrow">Transit</dt>
+                <dd class="text-ink-2">{concept.logistics.transit}</dd>
               </div>
-              <div>
-                <dt class="text-xs uppercase text-slate-500">Best time</dt>
-                <dd class="text-slate-200">{concept.logistics.bestTime}</dd>
+              <div class="flex flex-col gap-1">
+                <dt class="eyebrow">Best time</dt>
+                <dd class="text-ink-2">{concept.logistics.bestTime}</dd>
               </div>
             </dl>
             {#if concept.highlights?.length}
-              <div class="mt-4">
-                <p class="text-xs uppercase text-slate-500">Highlights</p>
-                <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-slate-300">
+              <div>
+                <p class="eyebrow">Highlights</p>
+                <ul class="mt-3 flex flex-col gap-2 text-[15px] text-ink-2">
                   {#each concept.highlights as h (h)}
-                    <li>{h}</li>
+                    <li class="flex items-baseline gap-2">
+                      <span aria-hidden="true" class="text-ink">›</span>
+                      <span>{h}</span>
+                    </li>
                   {/each}
                 </ul>
               </div>
@@ -106,41 +111,41 @@
         {/if}
 
         {#if itinerary.length > 0}
-          <div class="flex flex-col gap-4">
+          <div class="flex flex-col gap-6">
             {#each itinerary as day (day.dayNumber)}
-              <article class="rounded-xl border border-slate-800 bg-slate-900/60 p-5">
+              <article class="rounded-[28px] bg-bone-100 p-8 flex flex-col gap-5">
                 <header class="flex items-baseline justify-between gap-3">
-                  <h3 class="text-base font-semibold text-slate-100">
+                  <h3 class="font-display text-[26px] text-ink leading-[1.05]">
                     Day {day.dayNumber} — {day.theme}
                   </h3>
                 </header>
-                <div class="mt-4 grid grid-cols-1 gap-3 md:grid-cols-2">
+                <div class="grid grid-cols-1 gap-3 md:grid-cols-2">
                   {#each day.slots as slot (slot.label)}
                     {@const doCell = slotCell(slot.do)}
                     {@const eatCell = slotCell(slot.eat)}
                     {@const stayCell = slotCell(slot.stay)}
-                    <div class="rounded-lg border border-slate-800 bg-slate-950/60 p-4">
-                      <p class="text-xs uppercase tracking-wide text-slate-500">{slot.label}</p>
-                      <div class="mt-2 flex flex-col gap-2 text-sm">
+                    <div class="rounded-2xl bg-bone-200 p-5">
+                      <p class="eyebrow">{slotLabels[slot.label] ?? slot.label}</p>
+                      <div class="mt-3 flex flex-col gap-2 text-[15px]">
                         {#if stayCell}
-                          <div>
-                            <span class="text-slate-500">Stay · </span>
-                            <span class="text-slate-100">{stayCell.name}</span>
-                            <span class="text-slate-400"> — {stayCell.note}</span>
+                          <div class="flex flex-col gap-0.5">
+                            <span class="eyebrow">Stay</span>
+                            <span class="text-ink">{stayCell.name}</span>
+                            <span class="text-muted">{stayCell.note}</span>
                           </div>
                         {/if}
                         {#if eatCell}
-                          <div>
-                            <span class="text-slate-500">Eat · </span>
-                            <span class="text-slate-100">{eatCell.name}</span>
-                            <span class="text-slate-400"> — {eatCell.note}</span>
+                          <div class="flex flex-col gap-0.5">
+                            <span class="eyebrow">Eat</span>
+                            <span class="text-ink">{eatCell.name}</span>
+                            <span class="text-muted">{eatCell.note}</span>
                           </div>
                         {/if}
                         {#if doCell}
-                          <div>
-                            <span class="text-slate-500">Do · </span>
-                            <span class="text-slate-100">{doCell.name}</span>
-                            <span class="text-slate-400"> — {doCell.note}</span>
+                          <div class="flex flex-col gap-0.5">
+                            <span class="eyebrow">Do</span>
+                            <span class="text-ink">{doCell.name}</span>
+                            <span class="text-muted">{doCell.note}</span>
                           </div>
                         {/if}
                       </div>
@@ -153,22 +158,24 @@
         {/if}
 
         {#if candidates.length > 0}
-          <article class="rounded-xl border border-slate-800 bg-slate-900/60 p-5">
-            <h3 class="text-base font-semibold text-slate-100">Place candidates</h3>
-            <p class="mt-1 text-xs text-slate-500">From the local places fixture.</p>
-            <ul class="mt-4 grid grid-cols-1 gap-3 md:grid-cols-2">
+          <article class="rounded-[28px] bg-bone-200 p-8 flex flex-col gap-5">
+            <div class="flex items-baseline justify-between gap-3">
+              <h3 class="font-display text-[26px] text-ink leading-[1.05]">Place candidates</h3>
+              <span class="text-sm text-muted">From the local places fixture</span>
+            </div>
+            <ul class="grid grid-cols-1 gap-3 md:grid-cols-2">
               {#each candidates as place (place.id)}
-                <li class="rounded-lg border border-slate-800 bg-slate-950/60 p-4">
+                <li class="rounded-2xl bg-bone-100 p-5">
                   <div class="flex items-baseline justify-between gap-2">
-                    <p class="text-sm font-medium text-slate-100">{place.name}</p>
-                    <span class="text-xs text-slate-400">{'★'.repeat(Math.round(place.rating))}</span>
+                    <p class="text-[15px] font-semibold text-ink">{place.name}</p>
+                    <span class="text-sm text-muted">{'★'.repeat(Math.round(place.rating))}</span>
                   </div>
-                  <p class="text-xs text-slate-500">{place.kind} · {place.address}</p>
-                  <p class="mt-2 text-sm text-slate-300">{place.note}</p>
+                  <p class="mt-1 text-xs text-muted">{place.kind} · {place.address}</p>
+                  <p class="mt-3 text-[15px] text-ink-2">{place.note}</p>
                   {#if place.tags?.length}
-                    <div class="mt-2 flex flex-wrap gap-1">
+                    <div class="mt-3 flex flex-wrap gap-1">
                       {#each place.tags as t (t)}
-                        <span class="rounded-full border border-slate-700 px-2 py-0.5 text-[10px] text-slate-400">{t}</span>
+                        <span class="rounded-pill bg-bone-200 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-muted">{t}</span>
                       {/each}
                     </div>
                   {/if}

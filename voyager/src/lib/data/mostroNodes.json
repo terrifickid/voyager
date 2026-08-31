@@ -1,0 +1,47 @@
+[
+	{
+		"name": "voyager-caribbean",
+		"region": "Kingston, JM",
+		"supportedFiats": ["JMD", "USD", "EUR", "GBP"],
+		"supportedMethods": ["bank", "cash", "mobile"],
+		"feePct": 0.3,
+		"reputation": 95,
+		"hodlLiquiditySats": 4000000
+	},
+	{
+		"name": "kingston-mostro",
+		"region": "Kingston, JM",
+		"supportedFiats": ["JMD", "USD"],
+		"supportedMethods": ["cash", "mobile"],
+		"feePct": 0.5,
+		"reputation": 78,
+		"hodlLiquiditySats": 2500000
+	},
+	{
+		"name": "atlantis-mostro",
+		"region": "Miami, US",
+		"supportedFiats": ["USD", "EUR", "GBP"],
+		"supportedMethods": ["bank", "wise"],
+		"feePct": 0.6,
+		"reputation": 82,
+		"hodlLiquiditySats": 5000000
+	},
+	{
+		"name": "lisbon-mostro",
+		"region": "Lisbon, PT",
+		"supportedFiats": ["EUR", "USD", "GBP"],
+		"supportedMethods": ["wise", "bank"],
+		"feePct": 0.4,
+		"reputation": 88,
+		"hodlLiquiditySats": 3000000
+	},
+	{
+		"name": "singapore-mostro",
+		"region": "Singapore, SG",
+		"supportedFiats": ["USD", "EUR", "GBP"],
+		"supportedMethods": ["wise", "mobile"],
+		"feePct": 0.55,
+		"reputation": 75,
+		"hodlLiquiditySats": 6000000
+	}
+]

@@ -1,0 +1,24 @@
+:root {
+	--bone-50: #F1EFE9;
+	--bone-100: #E9E6DD;
+	--bone-200: #DED9CB;
+	--bone-300: #C9C3B1;
+	--bone-400: #B6B099;
+
+	--ink: #14140F;
+	--ink-2: #2A2A22;
+	--muted: #6E6E68;
+	--hair: rgba(26, 26, 20, 0.08);
+
+	--lime: #BEE93A;
+	--lime-ink: #14140F;
+
+	--pastel-violet: #C9B6FF;
+	--pastel-coral: #FFB39E;
+	--pastel-sky: #A9D7FF;
+	--pastel-rose: #F4B4CB;
+
+	--radius-card: 28px;
+	--radius-card-lg: 32px;
+	--radius-pill: 999px;
+}

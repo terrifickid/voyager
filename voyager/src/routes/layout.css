@@ -1,3 +1,50 @@
 @import 'tailwindcss';
+@import '$lib/styles/tokens.css';
 @plugin '@tailwindcss/forms';
-@plugin '@tailwindcss/typography';
+
+@theme {
+	--color-bone-50: #F1EFE9;
+	--color-bone-100: #E9E6DD;
+	--color-bone-200: #DED9CB;
+	--color-bone-300: #C9C3B1;
+	--color-bone-400: #B6B099;
+
+	--color-ink: #14140F;
+	--color-ink-2: #2A2A22;
+	--color-muted: #6E6E68;
+
+	--color-lime: #BEE93A;
+	--color-lime-ink: #14140F;
+
+	--color-pastel-violet: #C9B6FF;
+	--color-pastel-coral: #FFB39E;
+	--color-pastel-sky: #A9D7FF;
+	--color-pastel-rose: #F4B4CB;
+
+	--radius-pill: 999px;
+	--radius-card-lg: 28px;
+	--radius-card-xl: 32px;
+}
+
+html, body {
+	background: var(--bone-50);
+	color: var(--ink-2);
+	font-family: 'Inter', system-ui, sans-serif;
+	-webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+	font-family: 'Space Grotesk', system-ui, sans-serif;
+	letter-spacing: -0.02em;
+	line-height: 1;
+	font-weight: 600;
+}
+
+.eyebrow {
+	font-family: 'Inter', system-ui, sans-serif;
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var(--muted);
+}

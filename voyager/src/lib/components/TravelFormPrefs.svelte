@@ -380,24 +380,25 @@
   });
 </script>
 
-<main class="max-w-2xl mx-auto flex flex-col gap-8 text-slate-100">
-  <header class="flex flex-col gap-1">
-    <h1 class="text-2xl font-semibold">{config.title}</h1>
-    <p class="text-slate-400">{config.subtitle}</p>
+<main class="max-w-2xl mx-auto flex flex-col gap-8 text-ink-2">
+  <header class="flex flex-col gap-3">
+    <span class="eyebrow">Preferences</span>
+    <h1 class="font-display text-[40px] sm:text-[52px] text-ink leading-[1.02]">{config.title}</h1>
+    <p class="text-muted">{config.subtitle}</p>
   </header>
 
   <section class="flex flex-col gap-8">
     <section class="flex flex-col gap-3">
-      <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-300">
+      <h2 class="eyebrow">
         {archetypeField.label}
       </h2>
-      <p class="text-sm text-slate-400 -mt-2">{archetypeField.help}</p>
+      <p class="text-sm text-muted -mt-2">{archetypeField.help}</p>
       <div class="grid grid-cols-1 gap-2">
         {#each archetypeField.options as opt (opt.id)}
           <label
-            class="flex items-center gap-3 p-3 rounded-lg border cursor-pointer transition-colors
-                   border-slate-700 hover:border-slate-500
-                   {form.archetype === opt.id ? 'bg-blue-600/15 border-blue-500' : ''}"
+            class="flex items-center gap-3 p-4 rounded-2xl cursor-pointer transition-colors
+                   bg-bone-200 hover:bg-bone-300
+                   {form.archetype === opt.id ? 'bg-ink text-bone-50' : ''}"
           >
             <input
               type="radio"
@@ -408,8 +409,8 @@
             />
             <span class="text-2xl">{opt.icon}</span>
             <span class="flex flex-col">
-              <strong class="font-medium text-slate-100">{opt.label}</strong>
-              <small class="text-sm text-slate-400">{opt.description}</small>
+              <strong class="font-medium {form.archetype === opt.id ? 'text-bone-50' : 'text-ink'}">{opt.label}</strong>
+              <small class="text-sm {form.archetype === opt.id ? 'text-bone-200' : 'text-muted'}">{opt.description}</small>
             </span>
           </label>
         {/each}
@@ -418,15 +419,15 @@
 
     {#each tagsField.groups as group (group.id)}
       <section class="flex flex-col gap-3">
-        <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-300">
+        <h2 class="eyebrow">
           {group.label}
         </h2>
         <div class="flex flex-wrap gap-2">
           {#each group.options as opt (opt.id)}
             <label
-              class="px-3 py-1.5 rounded-full border text-sm cursor-pointer transition-colors
-                     border-slate-700 text-slate-200 hover:border-slate-500
-                     {form.tags.includes(opt.id) ? 'bg-blue-600 border-blue-600 text-white' : ''}"
+              class="px-4 py-2 rounded-pill text-sm cursor-pointer transition-colors
+                     bg-bone-200 text-ink hover:bg-bone-300
+                     {form.tags.includes(opt.id) ? 'bg-ink text-bone-50' : ''}"
             >
               <input
                 type="checkbox"
@@ -442,18 +443,17 @@
     {/each}
 
     <section class="flex flex-col gap-3">
-      <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-300">
+      <h2 class="eyebrow">
         {budgetField.label}
       </h2>
-      <p class="text-sm text-slate-400 -mt-2">{budgetField.help}</p>
+      <p class="text-sm text-muted -mt-2">{budgetField.help}</p>
       <div class="flex gap-2">
         {#each budgetLevels as level (level)}
           <button
             type="button"
             aria-pressed={form.budget === level}
-            class="flex-1 py-2 rounded-lg border text-lg tracking-widest transition-colors cursor-pointer
-                   border-slate-700 text-slate-100 hover:border-slate-500
-                   {form.budget === level ? 'bg-blue-600 border-blue-600 text-white' : 'bg-slate-800'}"
+            class="flex-1 py-3 rounded-2xl text-lg tracking-widest transition-colors cursor-pointer
+                   {form.budget === level ? 'bg-ink text-bone-50' : 'bg-bone-200 text-ink hover:bg-bone-300'}"
             onclick={() => {
               form.budget = level;
             }}
@@ -465,7 +465,7 @@
     </section>
 
     <section class="flex flex-col gap-3">
-      <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-300">
+      <h2 class="eyebrow">
         {noteField.label}
       </h2>
       <textarea
@@ -473,39 +473,38 @@
         placeholder={noteField.placeholder}
         maxlength={noteField.maxLength}
         rows="3"
-        class="w-full p-3 rounded-lg border border-slate-700 bg-slate-800 text-slate-100 placeholder:text-slate-500 resize-y"
+        class="w-full p-4 rounded-2xl bg-bone-50 text-ink placeholder:text-muted resize-y focus:outline-none focus:ring-2 focus:ring-ink"
       ></textarea>
     </section>
   </section>
 
-  <section class="flex flex-col gap-3 p-4 rounded-xl bg-slate-900 border border-slate-800">
-    <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-300">
+  <section class="flex flex-col gap-3 p-6 rounded-[28px] bg-bone-100">
+    <h2 class="eyebrow">
       Live personality
     </h2>
     {#if hasSignal}
-      <p class="text-slate-200">
-        Closest type: <strong class="font-semibold">{type.icon} {type.label}</strong>
+      <p class="text-ink-2">
+        Closest type: <strong class="font-semibold text-ink">{type.icon} {type.label}</strong>
       </p>
       <div class="flex flex-col gap-2">
         {#each config.scoring.traits as t (t.key)}
           <div class="flex items-center gap-3 text-sm">
-            <span class="w-40 shrink-0 text-slate-400">{t.display}</span>
-            <span class="relative flex-1 h-3 bg-slate-700 rounded-full overflow-hidden">
-              <span class="absolute left-1/2 top-0 bottom-0 w-px bg-slate-500"></span>
+            <span class="w-40 shrink-0 text-muted">{t.display}</span>
+            <span class="relative flex-1 h-3 bg-bone-200 rounded-full overflow-hidden">
+              <span class="absolute left-1/2 top-0 bottom-0 w-px" style="background: var(--bone-300);"></span>
               <span
-                class="absolute top-0 bottom-0 rounded-full
-                       {personality[t.key] < 0 ? 'bg-amber-500' : 'bg-emerald-500'}"
+                class="absolute top-0 bottom-0 rounded-full bg-ink"
                 style={fillStyle(personality[t.key])}
               ></span>
             </span>
-            <span class="w-12 text-right font-mono tabular-nums text-slate-300">
+            <span class="w-12 text-right font-mono tabular-nums text-ink-2">
               {personality[t.key].toFixed(2)}
             </span>
           </div>
         {/each}
       </div>
     {:else}
-      <p class="text-slate-400">
+      <p class="text-muted">
         Pick an archetype or a few tags — your type appears here in real time.
       </p>
     {/if}

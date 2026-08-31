@@ -1,6 +1,7 @@
 <script>
   // @ts-ignore
   import { user } from '$lib/stores/user.svelte.js';
+  import Cta from './Cta.svelte';
 
   /** @type {{ onFinish?: () => void }} */
   let { onFinish = undefined } = $props();
@@ -262,69 +263,72 @@
   }
 </script>
 
-<div class="mx-auto flex max-w-2xl flex-col gap-6 text-slate-100">
-  <header class="flex flex-col gap-2">
-    <h1 class="text-2xl font-semibold">Plan a trip</h1>
-    <p class="text-sm text-slate-400">Step {stepIndex + 1} of {STEPS.length} — {currentStep.title}</p>
-    <div class="h-1.5 w-full overflow-hidden rounded-full bg-slate-800">
+<div class="mx-auto flex max-w-2xl flex-col gap-8 text-ink-2">
+  <header class="flex flex-col gap-3">
+    <span class="eyebrow">Plan a trip</span>
+    <h1 class="font-display text-[40px] sm:text-[52px] text-ink leading-[1.02]">
+      Tell us where. We'll do the rest.
+    </h1>
+    <p class="text-sm text-muted">Step {stepIndex + 1} of {STEPS.length} — {currentStep.title}</p>
+    <div class="h-1.5 w-full overflow-hidden rounded-full bg-bone-200">
       <div
-        class="h-full rounded-full bg-indigo-600 transition-all"
+        class="h-full rounded-full bg-ink transition-all"
         style="width: {progress}%"
       ></div>
     </div>
   </header>
 
   <div
-    class="flex flex-col gap-4 rounded-xl border border-slate-800 bg-slate-900 p-5"
+    class="flex flex-col gap-4 rounded-[28px] bg-bone-100 p-7"
     aria-label={currentStep.title}
   >
     {#if currentStep.id === 'destination'}
       <label class="flex flex-col gap-2">
-        <span class="text-sm font-medium text-slate-200">Destination</span>
+        <span class="text-sm font-medium text-ink">Destination</span>
         <input
           type="text"
           bind:value={draft.destination}
           onkeydown={onInputKeydown}
           placeholder="e.g. Kyoto, Japan"
-          class="w-full rounded-lg border border-slate-700 bg-slate-800 p-3 text-slate-100 placeholder:text-slate-500 focus:border-indigo-500 focus:outline-none"
+          class="w-full rounded-2xl bg-bone-50 p-4 text-ink placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-ink"
         />
       </label>
 
     {:else if currentStep.id === 'dates'}
       <div class="flex flex-col gap-4">
         <label class="flex flex-col gap-2">
-          <span class="text-sm font-medium text-slate-200">Start date</span>
+          <span class="text-sm font-medium text-ink">Start date</span>
           <input
             type="date"
             bind:value={draft.startDate}
             onkeydown={onInputKeydown}
-            class="w-full rounded-lg border border-slate-700 bg-slate-800 p-3 text-slate-100 focus:border-indigo-500 focus:outline-none"
+            class="w-full rounded-2xl bg-bone-50 p-4 text-ink focus:outline-none focus:ring-2 focus:ring-ink"
           />
         </label>
         <label class="flex flex-col gap-2">
-          <span class="text-sm font-medium text-slate-200">End date</span>
+          <span class="text-sm font-medium text-ink">End date</span>
           <input
             type="date"
             bind:value={draft.endDate}
             onkeydown={onInputKeydown}
-            class="w-full rounded-lg border border-slate-700 bg-slate-800 p-3 text-slate-100 focus:border-indigo-500 focus:outline-none"
+            class="w-full rounded-2xl bg-bone-50 p-4 text-ink focus:outline-none focus:ring-2 focus:ring-ink"
           />
         </label>
         {#if dateError}
-          <p class="text-sm text-amber-500">{dateError}</p>
+          <p class="text-sm text-ink">{dateError}</p>
         {/if}
       </div>
 
     {:else if currentStep.id === 'travelers'}
       <div class="flex flex-col gap-5">
         <div class="flex items-center justify-between gap-3">
-          <span class="text-sm font-medium text-slate-200">Adults</span>
+          <span class="text-sm font-medium text-ink">Adults</span>
           <div class="flex items-center gap-2">
             <button
               type="button"
               aria-label="Decrease adults"
               onclick={() => setAdults(draft.travelers.adults - 1)}
-              class="h-9 w-9 rounded-lg border border-slate-700 bg-slate-800 text-lg text-slate-100 hover:border-slate-500"
+              class="h-10 w-10 rounded-full bg-bone-200 text-lg text-ink hover:bg-bone-300"
             >−</button>
             <input
               type="number"
@@ -333,25 +337,25 @@
               bind:value={draft.travelers.adults}
               onkeydown={onInputKeydown}
               oninput={(e) => setAdults(+e.currentTarget.value)}
-              class="w-16 rounded-lg border border-slate-700 bg-slate-800 p-2 text-center text-slate-100 focus:border-indigo-500 focus:outline-none"
+              class="w-16 rounded-2xl bg-bone-50 p-2 text-center text-ink focus:outline-none focus:ring-2 focus:ring-ink"
             />
             <button
               type="button"
               aria-label="Increase adults"
               onclick={() => setAdults(draft.travelers.adults + 1)}
-              class="h-9 w-9 rounded-lg border border-slate-700 bg-slate-800 text-lg text-slate-100 hover:border-slate-500"
+              class="h-10 w-10 rounded-full bg-bone-200 text-lg text-ink hover:bg-bone-300"
             >+</button>
           </div>
         </div>
 
         <div class="flex items-center justify-between gap-3">
-          <span class="text-sm font-medium text-slate-200">Kids</span>
+          <span class="text-sm font-medium text-ink">Kids</span>
           <div class="flex items-center gap-2">
             <button
               type="button"
               aria-label="Decrease kids"
               onclick={() => setKids(draft.travelers.kids - 1)}
-              class="h-9 w-9 rounded-lg border border-slate-700 bg-slate-800 text-lg text-slate-100 hover:border-slate-500"
+              class="h-10 w-10 rounded-full bg-bone-200 text-lg text-ink hover:bg-bone-300"
             >−</button>
             <input
               type="number"
@@ -360,26 +364,26 @@
               bind:value={draft.travelers.kids}
               onkeydown={onInputKeydown}
               oninput={(e) => setKids(+e.currentTarget.value)}
-              class="w-16 rounded-lg border border-slate-700 bg-slate-800 p-2 text-center text-slate-100 focus:border-indigo-500 focus:outline-none"
+              class="w-16 rounded-2xl bg-bone-50 p-2 text-center text-ink focus:outline-none focus:ring-2 focus:ring-ink"
             />
             <button
               type="button"
               aria-label="Increase kids"
               onclick={() => setKids(draft.travelers.kids + 1)}
-              class="h-9 w-9 rounded-lg border border-slate-700 bg-slate-800 text-lg text-slate-100 hover:border-slate-500"
+              class="h-10 w-10 rounded-full bg-bone-200 text-lg text-ink hover:bg-bone-300"
             >+</button>
           </div>
         </div>
 
         {#if draft.travelers.kids > 0}
-          <div class="flex flex-col gap-3 rounded-lg border border-slate-800 bg-slate-950 p-3">
-            <span class="text-xs font-semibold uppercase tracking-wide text-slate-400">
+          <div class="flex flex-col gap-3 rounded-2xl bg-bone-200 p-4">
+            <span class="eyebrow">
               Kids' ages
             </span>
             <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
               {#each draft.travelers.kidsAges as age, i (i)}
                 <label class="flex flex-col gap-1">
-                  <span class="text-xs text-slate-400">Kid {i + 1}</span>
+                  <span class="text-xs text-muted">Kid {i + 1}</span>
                   <input
                     type="number"
                     min="0"
@@ -387,7 +391,7 @@
                     value={age}
                     onkeydown={onInputKeydown}
                     oninput={(e) => setKidAge(i, +e.currentTarget.value)}
-                    class="w-full rounded-lg border border-slate-700 bg-slate-800 p-2 text-center text-slate-100 focus:border-indigo-500 focus:outline-none"
+                    class="w-full rounded-2xl bg-bone-50 p-2 text-center text-ink focus:outline-none focus:ring-2 focus:ring-ink"
                   />
                 </label>
               {/each}
@@ -397,13 +401,13 @@
       </div>
 
     {:else if currentStep.id === 'archetype'}
-      <p class="text-sm text-slate-400">Pick the closest fit.</p>
+      <p class="text-sm text-muted">Pick the closest fit.</p>
       <div class="grid grid-cols-1 gap-2">
         {#each CONFIG.archetypes as opt (opt.id)}
           <label
-            class="flex cursor-pointer items-center gap-3 rounded-lg border p-3 transition-colors
-                   border-slate-700 hover:border-slate-500
-                   {draft.archetype === opt.id ? 'border-blue-500 bg-blue-600/15' : ''}"
+            class="flex cursor-pointer items-center gap-3 rounded-2xl p-3 transition-colors
+                   bg-bone-200 hover:bg-bone-300
+                   {draft.archetype === opt.id ? 'bg-ink text-bone-50' : ''}"
           >
             <input
               type="radio"
@@ -414,27 +418,27 @@
             />
             <span class="text-2xl">{opt.icon}</span>
             <span class="flex flex-col">
-              <strong class="font-medium text-slate-100">{opt.label}</strong>
-              <small class="text-sm text-slate-400">{opt.description}</small>
+              <strong class="font-medium {draft.archetype === opt.id ? 'text-bone-50' : 'text-ink'}">{opt.label}</strong>
+              <small class="text-sm {draft.archetype === opt.id ? 'text-bone-200' : 'text-muted'}">{opt.description}</small>
             </span>
           </label>
         {/each}
       </div>
 
     {:else if currentStep.id === 'tags'}
-      <p class="text-sm text-slate-400">Optional — pick as many as you like.</p>
+      <p class="text-sm text-muted">Optional — pick as many as you like.</p>
       <div class="flex flex-col gap-5">
         {#each CONFIG.tagGroups as group (group.id)}
           <div class="flex flex-col gap-2">
-            <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-300">
+            <h2 class="eyebrow">
               {group.label}
             </h2>
             <div class="flex flex-wrap gap-2">
               {#each group.options as opt (opt.id)}
                 <label
-                  class="cursor-pointer rounded-full border px-3 py-1.5 text-sm transition-colors
-                         border-slate-700 text-slate-200 hover:border-slate-500
-                         {draft.tags.includes(opt.id) ? 'border-blue-600 bg-blue-600 text-white' : ''}"
+                  class="cursor-pointer rounded-pill px-4 py-2 text-sm transition-colors
+                         bg-bone-200 text-ink hover:bg-bone-300
+                         {draft.tags.includes(opt.id) ? 'bg-ink text-bone-50' : ''}"
                 >
                   <input
                     type="checkbox"
@@ -451,17 +455,17 @@
       </div>
 
     {:else if currentStep.id === 'budget'}
-      <p class="text-sm text-slate-400">Rough daily spend comfort.</p>
+      <p class="text-sm text-muted">Rough daily spend comfort.</p>
       <div class="flex gap-2">
         {#each [1, 2, 3, 4, 5] as level (level)}
           <button
             type="button"
             aria-pressed={draft.budget === level}
             onclick={() => { draft.budget = level; }}
-            class="flex-1 rounded-lg border py-2 text-lg tracking-widest transition-colors
+            class="flex-1 rounded-2xl py-3 text-lg tracking-widest transition-colors
                    {draft.budget === level
-                     ? 'border-blue-600 bg-blue-600 text-white'
-                     : 'border-slate-700 bg-slate-800 text-slate-100 hover:border-slate-500'}"
+                     ? 'bg-ink text-bone-50'
+                     : 'bg-bone-200 text-ink hover:bg-bone-300'}"
           >
             {"$".repeat(level)}
           </button>
@@ -470,15 +474,15 @@
 
     {:else if currentStep.id === 'note'}
       <label class="flex flex-col gap-2">
-        <span class="text-sm font-medium text-slate-200">Anything else?</span>
+        <span class="text-sm font-medium text-ink">Anything else?</span>
         <textarea
           bind:value={draft.note}
           maxlength={NOTE_MAX}
           rows="3"
           placeholder="e.g. I hate crowded tourist traps. I wake up early but hate rushing."
-          class="w-full resize-y rounded-lg border border-slate-700 bg-slate-800 p-3 text-slate-100 placeholder:text-slate-500 focus:border-indigo-500 focus:outline-none"
+          class="w-full resize-y rounded-2xl bg-bone-50 p-4 text-ink placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-ink"
         ></textarea>
-        <span class="text-right text-xs text-slate-400">{noteLen}/{NOTE_MAX}</span>
+        <span class="text-right text-xs text-muted">{noteLen}/{NOTE_MAX}</span>
       </label>
     {/if}
   </div>
@@ -488,17 +492,16 @@
       type="button"
       onclick={back}
       disabled={stepIndex === 0}
-      class="rounded-lg bg-slate-800 px-4 py-2 text-sm font-medium text-slate-100 transition-colors hover:bg-slate-700 disabled:cursor-not-allowed disabled:opacity-40"
+      class="inline-flex items-center gap-1.5 text-ink underline underline-offset-4 decoration-[1.5px] disabled:opacity-40 disabled:cursor-not-allowed"
     >
-      Back
+      <span aria-hidden="true">‹</span> Back
     </button>
-    <button
-      type="button"
+    <Cta
+      variant="primary"
       onclick={next}
       disabled={!canAdvance}
-      class="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-indigo-500 disabled:cursor-not-allowed disabled:opacity-40"
     >
       {stepIndex === STEPS.length - 1 ? 'Finish' : 'Next'}
-    </button>
+    </Cta>
   </footer>
 </div>
