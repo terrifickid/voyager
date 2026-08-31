@@ -15,6 +15,9 @@ class UserStore {
       savedAt: null,
     },
   });
+  tripConcept = $state(null);
+  itinerary = $state([]);
+  placeCandidates = $state([]);
 
   setPreferences(snapshot) { this.preferences = snapshot; }
   setTrip(trip) {

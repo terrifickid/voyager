@@ -1,6 +1,9 @@
 <script>
-  import { goto } from '$app/navigation';
+  // @ts-ignore
   import { user } from '$lib/stores/user.svelte.js';
+
+  /** @type {{ onFinish?: () => void }} */
+  let { onFinish = undefined } = $props();
 
   // ---- CONFIG (copied verbatim from TravelFormPrefs.svelte) --------------
   const CONFIG = {
@@ -255,7 +258,7 @@
       trip: user.preferences.trip,
     });
 
-    goto('/chat');
+    onFinish?.();
   }
 </script>
 

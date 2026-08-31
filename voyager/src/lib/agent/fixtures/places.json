@@ -1,0 +1,79 @@
+[
+  {
+    "id": "saryo-tsujiri",
+    "name": "Saryo Tsujiri",
+    "kind": "matcha café",
+    "address": "3-1 Gionmachi Kitagawa, Higashiyama",
+    "rating": 4.5,
+    "priceLevel": 2,
+    "tags": ["matcha", "tatami", "quiet"],
+    "hours": "10:00–18:00",
+    "note": "Counter and tatami seating; the hojicha soft serve is the move."
+  },
+  {
+    "id": "philosopher-path",
+    "name": "Philosopher's Path",
+    "kind": "walk",
+    "address": "Higashiyama, north end at Ginkaku-ji",
+    "rating": 4.6,
+    "priceLevel": 0,
+    "tags": ["walk", "early-morning", "canal"],
+    "hours": "open",
+    "note": "Best before 8am; cherry blossom is famous but late March is fine for a quiet loop."
+  },
+  {
+    "id": "mumokuteki",
+    "name": "Mumokuteki Café & Foods",
+    "kind": "vegetarian lunch",
+    "address": "4-175-1 Miyagaki-cho, Higashiyama",
+    "rating": 4.3,
+    "priceLevel": 2,
+    "tags": ["vegetarian", "set-menu", "casual"],
+    "hours": "11:30–21:00",
+    "note": "Big bowls, lots of small plates; order the seasonal set."
+  },
+  {
+    "id": "issen-yoshoku",
+    "name": "Issen Yoshoku",
+    "kind": "tonkatsu",
+    "address": "4-616-1 Komatsucho, Higashiyama",
+    "rating": 4.4,
+    "priceLevel": 1,
+    "tags": ["tonkatsu", "counter", "fast"],
+    "hours": "11:00–21:00",
+    "note": "One dish, one job. Cash preferred."
+  },
+  {
+    "id": "shirakawa-canal",
+    "name": "Shirakawa canal",
+    "kind": "evening stroll",
+    "address": "Gion, north of Shijo-dori",
+    "rating": 4.5,
+    "priceLevel": 0,
+    "tags": ["stroll", "lanterns", "evening"],
+    "hours": "open",
+    "note": "Soft light, no crowds. Better than the main Kamo river for a quiet walk."
+  },
+  {
+    "id": "pontocho-2f",
+    "name": "Pontochō second-floor bar",
+    "kind": "drinks",
+    "address": "Pontochō alley, Nakagyo",
+    "rating": 4.2,
+    "priceLevel": 3,
+    "tags": ["drinks", "alley", "evening"],
+    "hours": "17:00–23:00",
+    "note": "Skip ground-floor touts; upstairs places are calmer and better value."
+  },
+  {
+    "id": "honen-in",
+    "name": "Honen-in",
+    "kind": "temple",
+    "address": "30 Kusagawa-cho, Jodoji, Sakyo",
+    "rating": 4.7,
+    "priceLevel": 0,
+    "tags": ["temple", "quiet", "garden"],
+    "hours": "09:00–16:00",
+    "note": "Free, calm, often missed. Pair with the Philosopher's Path loop."
+  }
+]

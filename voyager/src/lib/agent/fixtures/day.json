@@ -1,0 +1,66 @@
+{
+  "dayNumber": 1,
+  "theme": "Settle in and learn Higashiyama",
+  "slots": [
+    {
+      "label": "morning",
+      "stay": null,
+      "eat": {
+        "name": "Saryo Tsujiri",
+        "kind": "matcha café",
+        "note": "Quiet tatami seating, hojicha and warabi mochi."
+      },
+      "do": {
+        "name": "Philosopher's Path walk",
+        "kind": "walk",
+        "note": "Start by 7am to beat the crowds; loop back via Honen-in."
+      }
+    },
+    {
+      "label": "afternoon",
+      "stay": {
+        "name": "Higashiyama district loop",
+        "kind": "neighborhood",
+        "note": "Wander Ninenzaka and Sannenzaka slowly; stop at small shrines."
+      },
+      "eat": {
+        "name": "Mumokuteki Café & Foods",
+        "kind": "vegetarian lunch",
+        "note": "Casual set menu near Kiyomizu-dera approach."
+      },
+      "do": {
+        "name": "Kiyomizu-dera approach",
+        "kind": "temple stroll",
+        "note": "Skip the main hall if queues are long; the lanes themselves are the attraction."
+      }
+    },
+    {
+      "label": "evening",
+      "stay": {
+        "name": "Hotel room reset",
+        "kind": "rest",
+        "note": "30 minutes off your feet before dinner."
+      },
+      "eat": {
+        "name": "Issen Yoshoku",
+        "kind": "tonkatsu",
+        "note": "Counter seats, single dish, fast and unfussy."
+      },
+      "do": {
+        "name": "Shirakawa canal walk",
+        "kind": "evening stroll",
+        "note": "Soft lantern light, very low key."
+      }
+    },
+    {
+      "label": "late",
+      "stay": null,
+      "eat": null,
+      "do": {
+        "name": "Pontocho alley nightcap",
+        "kind": "drinks",
+        "note": "One quiet drink; pick a second-floor spot away from the main drag."
+      }
+    }
+  ]
+}

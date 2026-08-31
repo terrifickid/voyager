@@ -13,10 +13,10 @@
 		</p>
 		<div class="mt-10 flex justify-center gap-4">
 			<a
-				href="/chat"
+				href="/plan"
 				class="rounded-md bg-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-400"
 			>
-				Open chat
+				Plan a trip
 			</a>
 			<a
 				href="https://github.com/mlc-ai/web-llm"

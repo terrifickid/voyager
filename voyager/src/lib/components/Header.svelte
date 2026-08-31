@@ -10,7 +10,6 @@
 	const links = [
 		{ href: '/', label: 'Home', exact: true },
 		{ href: '/plan', label: 'Plan a trip', exact: true },
-		{ href: '/chat', label: 'Chat', exact: false },
 		{ href: '/preferences', label: 'Preferences', exact: true }
 	];
 </script>

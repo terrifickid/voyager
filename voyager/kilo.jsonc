@@ -7,5 +7,9 @@
       "enabled": true,
     },
   },
-  "instructions": ["./kilocode/rules/rtk-rules.md", "./kilocode/rules/logging.md"],
+  "instructions": [
+    "./kilocode/rules/rtk-rules.md",
+    "./kilocode/rules/logging.md",
+    "./kilocode/rules/usability.md",
+  ],
 }
