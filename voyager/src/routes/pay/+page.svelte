@@ -15,15 +15,51 @@
 	<div class="flex flex-col gap-8">
 		<span class="eyebrow">Open payments protocol</span>
 		<h1 class="font-display text-[44px] sm:text-[56px] lg:text-[64px] text-ink max-w-4xl leading-[1.02]">
-			Voyager Pay is the payment layer inside Voyager. Here's how it works.
+			Secure by design. Fair competitive marketplace.
 		</h1>
 		<p class="max-w-2xl text-lg leading-relaxed text-ink-2">
 			Voyager Pay is an open protocol for sending money on the open web. There is no custodian in the middle and no account to lose. No platform can deplatform you. Signed events move over Nostr (a public message network). Settlement runs on Lightning (a fast Bitcoin payment network). A federation of competing market makers — called Mostro nodes — bridges fiat and Bitcoin.
 		</p>
 		<div class="flex flex-wrap items-center gap-3">
-			<Cta variant="primary" href="#how-it-flows">See how it flows</Cta>
-			<Cta variant="secondary" href="/docs">Read the docs</Cta>
+			<Cta variant="primary" href="/pay/security">Why it's secure</Cta>
+			<Cta variant="secondary" href="/pay/pricing">Why prices are fair</Cta>
 		</div>
+	</div>
+</section>
+
+<!-- Three audiences -->
+<section class="mx-auto max-w-6xl px-6 pb-16">
+	<div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+		<article class="flex flex-col gap-3 rounded-[28px] bg-bone-200 p-6">
+			<Icon name="plane" tone="sky" size={28} />
+			<h3 class="font-display text-xl text-ink leading-tight">For travelers</h3>
+			<p class="text-sm leading-relaxed text-ink-2">
+				Cross borders without losing your money to a frozen card or a deplatformed account. Read the security outcomes.
+			</p>
+			<div class="mt-2">
+				<Cta variant="tertiary" href="/pay/security">Security by design</Cta>
+			</div>
+		</article>
+		<article class="flex flex-col gap-3 rounded-[28px] bg-bone-200 p-6">
+			<Icon name="sparkle" tone="violet" size={28} />
+			<h3 class="font-display text-xl text-ink leading-tight">For price-sensitive buyers</h3>
+			<p class="text-sm leading-relaxed text-ink-2">
+				A federation of independent operators competes on rate, fee, and reputation. No rent extraction. See how the wallet picks.
+			</p>
+			<div class="mt-2">
+				<Cta variant="tertiary" href="/pay/pricing">Fair pricing</Cta>
+			</div>
+		</article>
+		<article class="flex flex-col gap-3 rounded-[28px] bg-bone-200 p-6">
+			<Icon name="globe" tone="coral" size={28} />
+			<h3 class="font-display text-xl text-ink leading-tight">For node operators</h3>
+			<p class="text-sm leading-relaxed text-ink-2">
+				Anyone can run a Mostro node. Earn fee revenue, accrue reputation, compete on a transparent rubric. See what it costs.
+			</p>
+			<div class="mt-2">
+				<Cta variant="tertiary" href="/pay/node">Run a node</Cta>
+			</div>
+		</article>
 	</div>
 </section>
 

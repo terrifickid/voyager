@@ -172,13 +172,14 @@
 			<div class="flex flex-col gap-4">
 				<span class="eyebrow">Voyager Pay — built in</span>
 				<h2 class="font-display text-[32px] sm:text-[40px] lg:text-[48px] text-ink leading-[1.05]">
-					A way to pay that does not need an account.
+					Secure by design. Fair competitive marketplace.
 				</h2>
 				<p class="max-w-md text-base leading-relaxed text-ink-2">
-					Voyager ships with a payment layer that does not hold your money. If you want the technical detail, it lives on its own page. The ranking widget below is a demo of how a wallet picks a node.
+					Voyager Pay is a payment layer with no custody and a federation of independent operators that compete on rate, fee, and reputation. The ranking widget below is a demo of how a wallet picks a node.
 				</p>
-				<div>
-					<Cta variant="tertiary" href="/pay">How Voyager Pay works</Cta>
+				<div class="flex flex-wrap items-center gap-3">
+					<Cta variant="tertiary" href="/pay/security">How Voyager Pay works</Cta>
+					<Cta variant="tertiary" href="/pay/pricing">Why the prices are low</Cta>
 				</div>
 			</div>
 			<div>

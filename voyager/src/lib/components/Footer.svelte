@@ -8,6 +8,9 @@
 				{ label: 'Plan a trip', href: '/plan' },
 				{ label: 'Set preferences', href: '/preferences' },
 				{ label: 'Voyager Pay', href: '/pay' },
+				{ label: 'Security by design', href: '/pay/security' },
+				{ label: 'Fair pricing', href: '/pay/pricing' },
+				{ label: 'Run a node', href: '/pay/node' },
 				{ label: 'How it works', href: '/' }
 			]
 		},

@@ -104,6 +104,14 @@
 					<h3 class="mt-2 font-display text-2xl text-ink">What can still go wrong</h3>
 					<p class="mt-2 text-ink-2">Four residual risks, and the structural mitigations Voyager Pay leans on.</p>
 				</a>
+				<a
+					href="/docs/how-price-discovery-works"
+					class="rounded-[28px] bg-bone-100 p-6 hover:bg-bone-200 transition-colors"
+				>
+					<span class="eyebrow text-muted">Inserted after Lesson 8</span>
+					<h3 class="mt-2 font-display text-2xl text-ink">How price discovery works on Voyager Pay</h3>
+					<p class="mt-2 text-ink-2">The §7.4 rubric, why the 0.6 / 0.2 / 0.2 weights bias toward honest operators, and why fees trend toward cost-plus-margin.</p>
+				</a>
 			</div>
 		</div>
 
