@@ -3,6 +3,10 @@
 	import nodes from '$lib/data/mostroNodes.json';
 	import Icon from './Icon.svelte';
 	import Cta from './Cta.svelte';
+	import { log, EVENT, serializeError, presence } from '$lib/logger.js';
+	import { untrack } from 'svelte';
+
+	const componentLog = log.child({ component: 'payments', function: 'PayCheckoutCard' });
 
 	const VENDORS = [
 		{ name: 'Calypso Inn', region: 'Negril, JM', amountSats: 35000 },
@@ -26,12 +30,46 @@
 	);
 
 	$effect(() => {
-		if (ranked.length === 0) {
-			provider = null;
-			return;
+		try {
+			if (ranked.length === 0) {
+				untrack(() => {
+					if (provider !== null) provider = null;
+				});
+				componentLog.warn(
+					{
+						type: EVENT.VALIDATION_ERROR,
+						step: 'paycard:reconcile-provider',
+						reason: 'no_providers'
+					},
+					'No providers for current selection'
+				);
+				return;
+			}
+			const currentName = untrack(() => provider?.node?.name);
+			const stillThere = ranked.find((r) => r.node.name === currentName);
+			const next = stillThere ?? ranked[0];
+			if (next.node.name !== currentName) {
+				componentLog.info(
+					{
+						type: EVENT.USER_ACTION,
+						step: 'paycard:auto-select-provider',
+						from: currentName ?? null,
+						to: next.node.name
+					},
+					'Auto-selected provider'
+				);
+				provider = next;
+			}
+		} catch (err) {
+			componentLog.error(
+				{
+					type: EVENT.RENDER_ERROR,
+					step: 'paycard:reconcile-provider',
+					err: serializeError(err, { function: 'PayCheckoutCard:reconcileProvider' })
+				},
+				`Provider reconcile failed: ${err.message}`
+			);
 		}
-		const stillThere = ranked.find((r) => r.node.name === provider?.node?.name);
-		provider = stillThere ?? ranked[0];
 	});
 
 	function fmtSats(n) {
@@ -42,16 +80,95 @@
 		return new Intl.NumberFormat('en-US').format(Math.round(rate));
 	}
 
+	function selectCurrency(f) {
+		componentLog.info(
+			{
+				type: EVENT.USER_ACTION,
+				step: 'paycard:select-currency',
+				from: currency,
+				to: f
+			},
+			'Currency changed'
+		);
+		currency = f;
+	}
+
+	function toggleVendorMenu() {
+		vendorMenuOpen = !vendorMenuOpen;
+		componentLog.info(
+			{
+				type: EVENT.USER_ACTION,
+				step: 'paycard:toggle-vendor-menu',
+				open: vendorMenuOpen
+			},
+			'Vendor menu toggled'
+		);
+	}
+
 	function selectVendor(v) {
+		componentLog.info(
+			{
+				type: EVENT.USER_ACTION,
+				step: 'paycard:select-vendor',
+				from: vendor.name,
+				to: v.name,
+				reason: 'menu_closed'
+			},
+			'Vendor selected'
+		);
 		vendor = v;
 		vendorMenuOpen = false;
 	}
 
+	function selectProvider(q) {
+		componentLog.info(
+			{
+				type: EVENT.USER_ACTION,
+				step: 'paycard:select-provider',
+				from: provider?.node?.name ?? null,
+				to: q.node.name
+			},
+			'Provider selected'
+		);
+		provider = q;
+	}
+
 	function pay() {
+		componentLog.info(
+			{
+				type: EVENT.JOB_START,
+				step: 'paycard:pay',
+				vendor: vendor.name,
+				provider: provider?.node?.name,
+				fiat: currency,
+				amountSats: vendor.amountSats
+			},
+			'Pay clicked'
+		);
 		isPaid = true;
+		componentLog.info(
+			{
+				type: EVENT.JOB_SUCCESS,
+				step: 'paycard:pay',
+				vendor: vendor.name,
+				provider: provider?.node?.name,
+				fiat: currency,
+				amountSats: vendor.amountSats,
+				hasReceipt: true
+			},
+			'Pay succeeded'
+		);
 	}
 
 	function startOver() {
+		componentLog.info(
+			{
+				type: EVENT.USER_ACTION,
+				step: 'paycard:start-over',
+				reason: 'start_over'
+			},
+			'Start over clicked'
+		);
 		isPaid = false;
 	}
 </script>
@@ -88,7 +205,7 @@
 				{#each fiats as f (f)}
 					<button
 						type="button"
-						onclick={() => (currency = f)}
+						onclick={() => selectCurrency(f)}
 						aria-pressed={currency === f}
 						class="rounded-pill px-4 py-2 text-[14px] font-semibold transition-colors {currency === f
 							? 'bg-ink text-bone-50'
@@ -104,11 +221,11 @@
 		<div class="flex flex-col gap-2" data-vendor-menu>
 			<span class="eyebrow">Paying</span>
 			<div class="relative">
-				<button
-					type="button"
-					onclick={() => (vendorMenuOpen = !vendorMenuOpen)}
-					aria-haspopup="listbox"
-					aria-expanded={vendorMenuOpen}
+			<button
+				type="button"
+				onclick={toggleVendorMenu}
+				aria-haspopup="listbox"
+				aria-expanded={vendorMenuOpen}
 					class="inline-flex items-center gap-2 rounded-pill bg-bone-200 px-4 py-2 text-sm font-semibold text-ink hover:bg-bone-300 transition-colors"
 				>
 					<span>{vendor.name}</span>
@@ -168,7 +285,7 @@
 						<li>
 							<button
 								type="button"
-								onclick={() => (provider = q)}
+								onclick={() => selectProvider(q)}
 								aria-pressed={selected}
 								class="flex w-full items-center justify-between gap-3 rounded-[20px] p-3 text-left transition-colors {selected
 									? 'bg-bone-200 ring-2 ring-[var(--pastel-violet)]'
