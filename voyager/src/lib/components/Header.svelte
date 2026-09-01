@@ -12,6 +12,7 @@
 		{ href: '/', label: 'Home', exact: true },
 		{ href: '/plan', label: 'Plan a trip', exact: true },
 		{ href: '/pay', label: 'Voyager Pay', exact: true },
+		{ href: '/vendors', label: 'For vendors', exact: true },
 		{ href: '/docs', label: 'Docs', exact: true }
 	];
 </script>

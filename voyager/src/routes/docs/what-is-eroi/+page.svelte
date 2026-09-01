@@ -12,26 +12,26 @@
 		What EROI is.
 	</h1>
 	<p class="mt-6 max-w-2xl text-lg leading-relaxed text-ink-2">
-		EROI stands for Energy Return On Investment. Voyager does not use it for oil wells. Voyager uses it for attackers: how much an extractor gets back for the effort they put in to take something from the system.
+		EROI stands for Energy Return On Investment. Voyager borrows it for one purpose: modelling how much an attacker gets back for the effort they spend to take something from a system. The next sections teach the principle.
 	</p>
 </section>
 
 <section class="pb-12">
 	<div class="flex flex-col gap-6 text-[17px] leading-relaxed text-ink-2">
-		<h2 class="font-display text-2xl text-ink mt-4">The formula</h2>
-		<div class="rounded-[28px] bg-bone-100 p-6">
-			<p class="font-display text-2xl text-ink">extractor_EROI = deliverable_surplus ÷ capture_cost</p>
-			<p class="mt-2 text-sm">
-				If an attacker's EROI is below 1, the attack is unprofitable on average and most
-				attackers move on. If it's above 1, the attack is a business — and the system will be
-				attacked for as long as that ratio holds.
-			</p>
-		</div>
-
-		<h2 class="font-display text-2xl text-ink mt-4">The four costs</h2>
+		<h2 class="font-display text-2xl text-ink mt-4">An attack is a business</h2>
 		<p>
-			Capture cost isn't one number. It's the sum of four sub-costs the attacker has to pay before
-			walking off with anything:
+			Attackers are economic actors. They spend money, time, and operational effort to extract value. They stop when the math stops working — when what they walk off with is less than what they spent to take it.
+		</p>
+		<p>
+			Push their cost up structurally and most of them leave. Patch the alarm and they just add the alarm to their budget; detection only changes the probability of getting caught, not whether the attack pays on average.
+		</p>
+		<p>
+			That is the whole rubric. Every other lesson in this section is the rubric applied somewhere — to Voyager Pay, to a capturable system, to the residual risks that remain anyway.
+		</p>
+
+		<h2 class="font-display text-2xl text-ink mt-4">The four costs an attacker pays</h2>
+		<p>
+			Capture cost isn't one number. It's the sum of four sub-costs the attacker has to pay before walking off with anything:
 		</p>
 		<ul class="list-disc pl-5 flex flex-col gap-2">
 			<li><span class="font-display text-ink">Find.</span> Discovering that the value exists, where it lives, and how to address it.</li>
@@ -40,30 +40,40 @@
 			<li><span class="font-display text-ink">Move.</span> Extracting value out of the system without it being reversed, confiscated, or traceable.</li>
 		</ul>
 		<p>
-			Defenders raise any one of these and the ratio drops. Defenders who only add alarms after
-			the fact often find the move cost is still low — the attacker already has the loot in hand
-			by the time the page goes out.
+			Defenders who only add alarms after the fact often find the move cost is still low — the attacker already has the loot in hand by the time the page goes out. To change the math, you have to push one of these costs up before the attack begins.
 		</p>
 
-		<h2 class="font-display text-2xl text-ink mt-4">The three structural knobs</h2>
+		<h2 class="font-display text-2xl text-ink mt-4">Three properties that make the costs structurally high</h2>
 		<p>
-			You don't patch EROI. You shape the system so each cost is structurally high. There are
-			three knobs that do real work, and they correspond to the three properties on the
-			<a href="/pay" class="underline underline-offset-4">Pay page</a>:
+			You don't patch EROI. You shape the system so each cost is structurally high. Three properties of how value sits in a system do real work, and you can apply them to anything you build — they are not Voyager features, they are a rubric:
 		</p>
-		<ul class="list-disc pl-5 flex flex-col gap-2">
-			<li><span class="font-display text-ink">Fan-out</span> raises the <em>find</em> and <em>hold</em> cost by dispersing value across many independent holders — no single target is worth breaching.</li>
-			<li><span class="font-display text-ink">Opacity</span> raises the <em>find</em> and <em>reach</em> cost by making it hard to know what's there, who has it, or where it sits.</li>
-			<li><span class="font-display text-ink">Binding</span> raises the <em>move</em> cost by tying the value to the holder — detached from its rightful context, it loses worth or cannot be moved at all.</li>
+		<ul class="list-disc pl-5 flex flex-col gap-3">
+			<li>
+				<span class="font-display text-ink">Dispersion.</span> Value is spread across many independent holders.
+				Find and hold cost rise because no single target is worth breaching — the attacker has to compromise N different things in N different jurisdictions to get the whole pie.
+			</li>
+			<li>
+				<span class="font-display text-ink">Information.</span> What exists, who has it, and where it sits is hidden.
+				Find and reach cost rise because the attacker has nothing to point at — order traffic is opaque, counterparties are pseudonymous, and there is no identity dossier to steal.
+			</li>
+			<li>
+				<span class="font-display text-ink">Coupling.</span> Value is tied to its rightful context.
+				Move cost rises because detached value loses worth or won't move at all — settled sats cannot be taken without delivering the fiat, and a revoked credential cannot spend.
+			</li>
 		</ul>
+
+		<h2 class="font-display text-2xl text-ink mt-4">Formalised</h2>
+		<div class="rounded-[28px] bg-bone-100 p-6">
+			<p class="font-display text-2xl text-ink">extractor_EROI = deliverable_surplus ÷ capture_cost</p>
+			<p class="mt-2 text-sm">
+				If an attacker's EROI is below 1, the attack is unprofitable on average and most attackers move on. If it's above 1, the attack is a business — and the system will be attacked for as long as that ratio holds.
+			</p>
+		</div>
 
 		<div class="rounded-[28px] bg-bone-100 p-6 mt-4">
 			<p class="eyebrow">Target profile</p>
 			<p class="mt-2">
-				Score each knob 1 (low) to 3 (high) per asset class. The target is ≥ 2 on every knob on
-				every asset class — a system at (3, 3, 3) has reached the rubric ceiling. Anything
-				below (2, 2, 2) means at least one cost is low enough that an EROI ≥ 1 budget exists for
-				some attacker. The next two lessons explain why that is, and then walk the audit.
+				Score each property 1 (low) to 3 (high) per asset class. The target is ≥ 2 on every property on every asset class — a system at (3, 3, 3) has reached the rubric ceiling. Anything below (2, 2, 2) means at least one cost is low enough that an EROI ≥ 1 budget exists for some attacker. The next two lessons explain why that is, and then walk the audit for Voyager Pay.
 			</p>
 		</div>
 	</div>

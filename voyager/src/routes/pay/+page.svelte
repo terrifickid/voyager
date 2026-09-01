@@ -68,11 +68,11 @@
 <nav class="mx-auto max-w-6xl px-6 pb-16" aria-label="On this page">
 	<ul class="flex flex-wrap gap-x-6 gap-y-2 text-[15px] font-medium">
 		<li><a href="#why" class="text-ink underline underline-offset-4 decoration-[1.5px]">Why this exists</a></li>
+		<li><a href="#security-rubric" class="text-ink underline underline-offset-4 decoration-[1.5px]">Security rubric</a></li>
 		<li><a href="#invariants" class="text-ink underline underline-offset-4 decoration-[1.5px]">Design invariants</a></li>
 		<li><a href="#how-it-flows" class="text-ink underline underline-offset-4 decoration-[1.5px]">How a payment flows</a></li>
 		<li><a href="#ramp" class="text-ink underline underline-offset-4 decoration-[1.5px]">The fiat ramp</a></li>
 		<li><a href="#extends" class="text-ink underline underline-offset-4 decoration-[1.5px]">Extends to anything</a></li>
-		<li><a href="#risks" class="text-ink underline underline-offset-4 decoration-[1.5px]">Risks &amp; limits</a></li>
 	</ul>
 </nav>
 
@@ -83,6 +83,54 @@
 		<p class="mt-4 max-w-3xl text-lg leading-relaxed text-ink-2">
 			Sending money online today means trusting a custodian with your balance, your identity, and your future access. The wallet, the KYC vendor (the "know your customer" identity check), and the payment processor are all counterparties. Each one can fail, freeze, or disappear. The protocol itself was never the bottleneck.
 		</p>
+	</div>
+</section>
+
+<!-- §1 + §11 merged EROI section -->
+<section id="security-rubric" class="mx-auto max-w-6xl px-6 pb-20 scroll-mt-20">
+	<SectionHeader
+		eyebrow="Security rubric"
+		title="Designed so attacking it is a bad business."
+		lede="Voyager Pay is shaped by a single rubric: make the attacker's cost structurally higher than the loot. No custodian, no central listing, no identity dossier — every design choice flows from that."
+	/>
+	<div class="mt-10 rounded-[28px] bg-bone-100 p-8">
+		<p class="text-lg leading-relaxed text-ink-2">
+			Attackers are economic actors. They spend to extract. Voyager Pay pushes their cost up structurally — value is dispersed across many independent operators, counterparties are pseudonymous, settlement is atomic with the network — so the math stops working for them and most move on.
+		</p>
+	</div>
+
+	<div class="mt-20">
+		<SectionHeader
+			eyebrow="EROI defense"
+			title="Three properties a custodial rail can't give you."
+			lede="We think this design is hard to attack. The rest of this page shows what makes that true."
+		/>
+		<div class="mt-6">
+			<Cta variant="tertiary" href="/docs/voyager-pay-eroi-audit">Read the full EROI audit</Cta>
+		</div>
+		<div class="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
+			<article class="flex flex-col gap-3 rounded-[28px] bg-bone-200 p-6">
+				<Icon name="bolt" tone="sky" size={28} />
+				<h3 class="font-display text-xl text-ink leading-tight">Dispersion</h3>
+				<p class="text-sm leading-relaxed text-ink-2">
+					Value is spread across many independent operators. No single node, relay, or vendor is worth breaching. The attacker has to compromise N different things in N different jurisdictions.
+				</p>
+			</article>
+			<article class="flex flex-col gap-3 rounded-[28px] bg-bone-200 p-6">
+				<Icon name="chat" tone="violet" size={28} />
+				<h3 class="font-display text-xl text-ink leading-tight">Information</h3>
+				<p class="text-sm leading-relaxed text-ink-2">
+					Order traffic is gift-wrapped. Relays see encrypted blobs, not counterparties. There is no KYC tier inside the protocol — trust lives in signed events, not identity dossiers.
+				</p>
+			</article>
+			<article class="flex flex-col gap-3 rounded-[28px] bg-bone-200 p-6">
+				<Icon name="lock" tone="coral" size={28} />
+				<h3 class="font-display text-xl text-ink leading-tight">Coupling</h3>
+				<p class="text-sm leading-relaxed text-ink-2">
+					Settlement is atomic. A counterparty can fail, but they cannot take the sats and not deliver the fiat. Stolen credentials are revocable. Move cost is high because the loot won't move.
+				</p>
+			</article>
+		</div>
 	</div>
 </section>
 
@@ -107,59 +155,6 @@
 				<p class="text-sm leading-relaxed text-ink-2">{inv.body}</p>
 			</article>
 		{/each}
-	</div>
-</section>
-
-<!-- §1 layered architecture -->
-<section class="mx-auto max-w-6xl px-6 pb-20">
-	<SectionHeader
-		eyebrow="Architecture"
-		title="A layered stack."
-		lede="Three layers and one perimeter. Each layer can be reimplemented without breaking the protocol."
-	/>
-	<div class="mt-12 flex flex-col gap-4">
-		<article class="rounded-[28px] bg-bone-100 p-8">
-			<span class="eyebrow">Top — Wallets</span>
-			<h3 class="mt-3 font-display text-2xl text-ink">User-facing clients</h3>
-			<p class="mt-3 text-ink-2">
-				Mobile and desktop wallets sign events, manage keys, and show the user's balance. Wallets are interchangeable. No wallet is privileged by the protocol.
-			</p>
-			<ul class="mt-4 list-disc pl-5 text-ink-2">
-				<li>Manage a Nostr keypair (secp256k1, the elliptic-curve cryptography Nostr uses).</li>
-				<li>Persist a Lightning wallet (LNURL, NWC, or self-custodial — standard Lightning wallet formats).</li>
-				<li>Never see the user's fiat balance.</li>
-			</ul>
-		</article>
-		<article class="rounded-[28px] bg-bone-100 p-8">
-			<span class="eyebrow">Middle — Reference clients</span>
-			<h3 class="mt-3 font-display text-2xl text-ink">Conformance + UX</h3>
-			<p class="mt-3 text-ink-2">
-				Open-source reference implementations prove the protocol works end-to-end. They are demos, not gatekeepers. Anyone can ship one.
-			</p>
-			<ul class="mt-4 list-disc pl-5 text-ink-2">
-				<li>Validate event shapes against the spec.</li>
-				<li>Render order books, reputation, and dispute views.</li>
-				<li>Hand off final settlement to Lightning.</li>
-			</ul>
-		</article>
-		<article class="rounded-[28px] bg-bone-100 p-8">
-			<span class="eyebrow">Bottom — Protocol</span>
-			<h3 class="mt-3 font-display text-2xl text-ink">The wire format</h3>
-			<p class="mt-3 text-ink-2">
-				Signed Nostr events of well-defined kinds. Anyone can read them. Only counterparties can write to their own orders. There is no central server, no privileged relay, no admin key.
-			</p>
-			<ul class="mt-4 list-disc pl-5 text-ink-2">
-				<li><code>kind:38383</code> — Mostro node profile (replaceable).</li>
-				<li><code>kind:4</code> — Encrypted order messages between counterparties.</li>
-				<li>Relays are dumb pipes. Nodes can be republished across any of them.</li>
-			</ul>
-		</article>
-		<article class="rounded-[28px] bg-bone-200 p-6 text-center">
-			<span class="eyebrow">Perimeter</span>
-			<p class="mt-2 text-ink-2">
-				<span class="font-display text-ink">Fiat ↔ sats</span> — only at the Mostro node's edge, where off-chain rails meet Lightning.
-			</p>
-		</article>
 	</div>
 </section>
 
@@ -226,41 +221,6 @@
 	</div>
 </section>
 
-<!-- §11 EROI defense -->
-<section class="mx-auto max-w-6xl px-6 pb-20">
-	<SectionHeader
-		eyebrow="EROI defense"
-		title="Three properties a custodial rail can't give you."
-		lede="We think this design is hard to attack. The next section lists the risks that remain anyway."
-	/>
-	<div class="mt-6">
-		<Cta variant="tertiary" href="/docs/voyager-pay-eroi-audit">Read the full EROI audit</Cta>
-	</div>
-	<div class="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
-		<article class="flex flex-col gap-3 rounded-[28px] bg-bone-200 p-6">
-			<Icon name="bolt" tone="sky" size={28} />
-			<h3 class="font-display text-xl text-ink leading-tight">Fan-out</h3>
-			<p class="text-sm leading-relaxed text-ink-2">
-				Anyone can run a node. Anyone can run a relay. No operator is a single point of failure for the network.
-			</p>
-		</article>
-		<article class="flex flex-col gap-3 rounded-[28px] bg-bone-200 p-6">
-			<Icon name="chat" tone="violet" size={28} />
-			<h3 class="font-display text-xl text-ink leading-tight">Opacity</h3>
-			<p class="text-sm leading-relaxed text-ink-2">
-				Counterparties never have to share identity with the network. Trust lives in signed events, not in KYC dossiers.
-			</p>
-		</article>
-		<article class="flex flex-col gap-3 rounded-[28px] bg-bone-200 p-6">
-			<Icon name="lock" tone="coral" size={28} />
-			<h3 class="font-display text-xl text-ink leading-tight">Binding</h3>
-			<p class="text-sm leading-relaxed text-ink-2">
-				HODL invoices make settlement atomic with the network. A counterparty can fail. They cannot take the sats and not deliver the fiat.
-			</p>
-		</article>
-	</div>
-</section>
-
 <!-- §12 threat shake-out + §13 out of scope (combined under #risks) -->
 <section id="extends" class="mx-auto max-w-6xl px-6 pb-20 scroll-mt-20">
 	<div class="rounded-[32px] bg-bone-100 p-8 sm:p-12">
@@ -305,50 +265,6 @@
 		<div class="mt-6">
 			<Cta variant="secondary" href="/docs/how-voyager-pay-extends">Read the extensibility spec</Cta>
 		</div>
-	</div>
-</section>
-
-<!-- §12 threat shake-out + §13 out of scope (combined under #risks) -->
-<section id="risks" class="mx-auto max-w-6xl px-6 pb-20 scroll-mt-20">
-	<SectionHeader
-		eyebrow="Risks & limits"
-		title="What can still go wrong."
-		lede="Honest list of the risks that remain. None of them are fatal — but each one shapes the design."
-	/>
-	<dl class="mt-10 grid grid-cols-1 gap-x-10 gap-y-6 md:grid-cols-2">
-		<div class="flex flex-col gap-2 border-b border-bone-200 pb-6">
-			<dt class="font-display text-lg text-ink">Fiat rail reversal</dt>
-			<dd class="text-sm leading-relaxed text-ink-2">
-				A chargeback after the HODL settles. Mitigated by short HODL windows and reputation-weighted limits per counterparty.
-			</dd>
-		</div>
-		<div class="flex flex-col gap-2 border-b border-bone-200 pb-6">
-			<dt class="font-display text-lg text-ink">Sybil reputation</dt>
-			<dd class="text-sm leading-relaxed text-ink-2">
-				A Sybil attack (one party creating many fake identities) inflates reputation cheaply. Mitigated by tying reputation to a node public key that has actually settled volume.
-			</dd>
-		</div>
-		<div class="flex flex-col gap-2 border-b border-bone-200 pb-6">
-			<dt class="font-display text-lg text-ink">Relay capture</dt>
-			<dd class="text-sm leading-relaxed text-ink-2">
-				Malicious relays can censor. Mitigated because the protocol is relay-agnostic — events republish across any of N independent operators.
-			</dd>
-		</div>
-		<div class="flex flex-col gap-2 border-b border-bone-200 pb-6">
-			<dt class="font-display text-lg text-ink">Operator rug</dt>
-			<dd class="text-sm leading-relaxed text-ink-2">
-				A Mostro node takes the sats and disappears. Mitigated by HODL invoices and short settlement cycles. At worst the customer is exposed to the sats amount.
-			</dd>
-		</div>
-	</dl>
-	<div class="mt-12 rounded-[32px] bg-bone-200 p-8 sm:p-12">
-		<span class="eyebrow">What we did NOT solve</span>
-		<ul class="mt-6 flex flex-col gap-3 text-ink-2">
-			<li>Identity. The protocol is pseudonymous by design.</li>
-			<li>Dispute resolution. The spec leaves it to reputation and small HODL windows, not arbitration.</li>
-			<li>Cross-border FX beyond what each Mostro node quotes.</li>
-			<li>Front-end UX. The Voyager Pay widget here is a demo of the ranking flow, not a shipped product.</li>
-		</ul>
 	</div>
 </section>
 

@@ -42,7 +42,7 @@
 
 		<h2 class="font-display text-2xl text-ink mt-4">The structural answer</h2>
 		<p>
-			Push the extractor's EROI below one by raising find, reach, hold, and move cost structurally. Do not pile on detection after the fact. That is the move the three knobs — Fan-out, Opacity, Binding — were named for. The next lesson walks that audit for Voyager Pay itself.
+			Push the extractor's EROI below one by raising find, reach, hold, and move cost structurally. Do not pile on detection after the fact. That is the move the three properties — Dispersion, Information, Coupling — were named for. The next lesson walks that audit for Voyager Pay itself.
 		</p>
 
 		<div class="rounded-[28px] bg-bone-100 p-6 mt-4">

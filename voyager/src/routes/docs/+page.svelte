@@ -78,7 +78,7 @@
 				>
 					<span class="eyebrow">Lesson 5</span>
 					<h3 class="mt-2 font-display text-2xl text-ink">What EROI is</h3>
-					<p class="mt-2 text-ink-2">Energy Return On Investment is a ratio used for oil wells. Voyager applies it to attackers instead. Three knobs and one formula.</p>
+					<p class="mt-2 text-ink-2">A security rubric: model the attacker as an economic actor and most of the design choices follow. One principle, three properties, one formula.</p>
 				</a>
 				<a
 					href="/docs/why-systems-get-captured"
@@ -95,14 +95,6 @@
 					<span class="eyebrow">Lesson 7</span>
 					<h3 class="mt-2 font-display text-2xl text-ink">How Voyager Pay satisfies the EROI rubric</h3>
 					<p class="mt-2 text-ink-2">Which design move raises which knob, and the score profile that comes out the other side.</p>
-				</a>
-				<a
-					href="/docs/what-can-still-go-wrong"
-					class="rounded-[28px] bg-bone-100 p-6 hover:bg-bone-200 transition-colors"
-				>
-					<span class="eyebrow">Lesson 8</span>
-					<h3 class="mt-2 font-display text-2xl text-ink">What can still go wrong</h3>
-					<p class="mt-2 text-ink-2">Four residual risks, and the structural mitigations Voyager Pay leans on.</p>
 				</a>
 				<a
 					href="/docs/how-price-discovery-works"

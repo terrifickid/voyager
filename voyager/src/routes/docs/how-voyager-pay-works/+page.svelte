@@ -73,7 +73,7 @@
 		<div>
 			<span class="eyebrow">Next up</span>
 			<h3 class="mt-2 font-display text-xl text-ink">What EROI is</h3>
-			<p class="mt-2 text-sm text-ink-2">Energy Return On Investment, applied to attackers instead of oil wells.</p>
+			<p class="mt-2 text-sm text-ink-2">A security rubric: model the attacker as an economic actor and most of the design choices follow.</p>
 		</div>
 		<Cta variant="primary" href="/docs/what-is-eroi">Continue</Cta>
 	</div>

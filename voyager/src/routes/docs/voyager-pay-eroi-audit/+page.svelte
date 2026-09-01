@@ -12,49 +12,140 @@
 		How Voyager Pay satisfies the EROI rubric.
 	</h1>
 	<p class="mt-6 max-w-2xl text-lg leading-relaxed text-ink-2">
-		Every design choice in Voyager Pay pulls on one of the three knobs. This lesson is the audit: which move raises which knob, and the score profile that comes out the other side.
+		Voyager Pay is hard to capture. Three properties do the work. Value is spread out across many independent holders. What exists, who has it, and where it sits is hidden. And value is tied to its rightful context, so detached value loses worth. This page walks each property and shows where Voyager Pay puts it to work.
 	</p>
+</section>
+
+<nav class="pb-10" aria-label="On this page">
+	<ul class="flex flex-wrap gap-x-6 gap-y-2 text-[15px] font-medium">
+		<li><a href="#formula" class="text-ink underline underline-offset-4 decoration-[1.5px]">The formula</a></li>
+		<li><a href="#dispersion" class="text-ink underline underline-offset-4 decoration-[1.5px]">Dispersion</a></li>
+		<li><a href="#information" class="text-ink underline underline-offset-4 decoration-[1.5px]">Information</a></li>
+		<li><a href="#coupling" class="text-ink underline underline-offset-4 decoration-[1.5px]">Coupling</a></li>
+		<li><a href="#where-it-lives" class="text-ink underline underline-offset-4 decoration-[1.5px]">Where each property lives</a></li>
+	</ul>
+</nav>
+
+<section id="formula" class="pb-12 scroll-mt-20">
+	<div class="flex flex-col gap-6 text-[17px] leading-relaxed text-ink-2">
+		<div class="rounded-[28px] bg-bone-100 p-6">
+			<p class="eyebrow">The formula</p>
+			<p class="mt-2 font-display text-2xl text-ink">extractor_EROI = deliverable_surplus ÷ capture_cost</p>
+			<p class="mt-2 text-sm">An attack is a budget problem for the attacker. If what they have to spend to take the value is more than the value itself, they move on. Push each cost up before the attack begins and most attackers leave. The four costs are taught in <a href="/docs/what-is-eroi" class="text-ink underline underline-offset-4 decoration-[1.5px]">Lesson 5</a>.</p>
+		</div>
+	</div>
+</section>
+
+<section id="dispersion" class="pb-12 scroll-mt-20">
+	<div class="flex flex-col gap-6 text-[17px] leading-relaxed text-ink-2">
+		<h2 class="font-display text-2xl text-ink mt-4">Dispersion.</h2>
+		<p>Value is split across many independent holders. No single target is worth breaching on its own.</p>
+		<h3 class="font-display text-xl text-ink mt-2">A concrete example.</h3>
+		<p>Cash in a vault versus cash across many small wallets in different places. The vault concentrates the value. One building to find, one safe to crack, one bag to carry out. Spread the same total across thousands of small balances belonging to different people in different places and the math changes. No single address publishes them all. Many separate compromises are needed. The attacker cannot be at all of them at once. Same total value. Much higher cost to take it.</p>
+		<h3 class="font-display text-xl text-ink mt-2">Where Voyager Pay puts it to work.</h3>
+		<ul class="list-disc pl-5 flex flex-col gap-2">
+			<li>Many independent operators, each running their own node in their own place.</li>
+			<li>Each seller keeps their own listings. There is no central index that aggregates them.</li>
+			<li>Each order's money sits in its own hold-invoice on its own node, addressed to a different key.</li>
+		</ul>
+		<p>The attacker's budget grows with every operator they would have to compromise.</p>
+	</div>
+</section>
+
+<section id="information" class="pb-12 scroll-mt-20">
+	<div class="flex flex-col gap-6 text-[17px] leading-relaxed text-ink-2">
+		<h2 class="font-display text-2xl text-ink mt-4">Information.</h2>
+		<p>What exists, who has it, and where it sits is hidden. There is no registry to point at.</p>
+		<h3 class="font-display text-xl text-ink mt-2">A concrete example.</h3>
+		<p>A street artist's income versus a billboard ad. The billboard publishes a rate card: eyeballs per day, price per thousand. A buyer can find it, price it, and book it from a desk. The street artist has none of that. There is no ticker for "Negril sketches sold to passers-by in March." One is findable from anywhere. The other requires a body in a place.</p>
+		<h3 class="font-display text-xl text-ink mt-2">Where Voyager Pay puts it to work.</h3>
+		<ul class="list-disc pl-5 flex flex-col gap-2">
+			<li>Order messages are encrypted end to end. The relays that pass them along see only ciphertext.</li>
+			<li>Keys are pseudonymous. There is no identity check at the protocol level.</li>
+			<li>The public ledger only shows one side of each trade. No public listing server aggregates both.</li>
+		</ul>
+		<p>The attacker has nothing to point at.</p>
+	</div>
+</section>
+
+<section id="coupling" class="pb-12 scroll-mt-20">
+	<div class="flex flex-col gap-6 text-[17px] leading-relaxed text-ink-2">
+		<h2 class="font-display text-2xl text-ink mt-4">Coupling.</h2>
+		<p>Value is tied to its rightful context. Detached value loses worth, or won't move at all.</p>
+		<h3 class="font-display text-xl text-ink mt-2">A concrete example.</h3>
+		<p>A $100 bill versus a refundable $100 deposit pegged to a buyer identity with revocation rights. The bill is portable: whoever holds it owns it. The deposit belongs to the buyer who posted it. The merchant can refund it to that buyer's account and nowhere else. The moment it detaches from its rightful context, it loses worth.</p>
+		<h3 class="font-display text-xl text-ink mt-2">Where Voyager Pay puts it to work.</h3>
+		<ul class="list-disc pl-5 flex flex-col gap-2">
+			<li>Settlement is atomic. Sats move only when the other side delivers.</li>
+			<li>Three keys sign before money moves. The buyer, the seller, and the operator must all agree.</li>
+			<li>If one connection is stolen, it can be revoked without losing the rest. The worst case is one in-flight order, not the buyer's whole balance.</li>
+		</ul>
+		<p>The loot is no longer loot.</p>
+	</div>
+</section>
+
+<section id="where-it-lives" class="pb-12 scroll-mt-20">
+	<div class="flex flex-col gap-6 text-[17px] leading-relaxed text-ink-2">
+		<h2 class="font-display text-2xl text-ink mt-4">Where each property lives.</h2>
+		<p>This is the same list, all in one place. Each row says what the property does inside Voyager Pay.</p>
+
+		<div class="overflow-x-auto rounded-[28px] bg-bone-100 p-6">
+			<p class="eyebrow">Property · What it does in Voyager Pay</p>
+			<table class="mt-3 w-full text-sm">
+				<thead>
+					<tr class="text-left text-ink">
+						<th class="py-2 pr-4 font-medium">Property</th>
+						<th class="py-2 font-medium">What it does in Voyager Pay</th>
+					</tr>
+				</thead>
+				<tbody class="text-ink-2">
+					<tr class="border-t border-bone-200">
+						<td class="py-2 pr-4 align-top font-display text-ink">Dispersion</td>
+						<td class="py-2 align-top">Many independent operators, each running their own node in their own place.</td>
+					</tr>
+					<tr class="border-t border-bone-200">
+						<td class="py-2 pr-4 align-top"></td>
+						<td class="py-2 align-top">Each seller keeps their own listings. There is no central index that aggregates them.</td>
+					</tr>
+					<tr class="border-t border-bone-200">
+						<td class="py-2 pr-4 align-top"></td>
+						<td class="py-2 align-top">Each order's money sits in its own hold-invoice on its own node, addressed to a different key.</td>
+					</tr>
+					<tr class="border-t border-bone-200">
+						<td class="py-2 pr-4 align-top font-display text-ink">Information</td>
+						<td class="py-2 align-top">Order messages are encrypted end to end. The relays that pass them along see only ciphertext.</td>
+					</tr>
+					<tr class="border-t border-bone-200">
+						<td class="py-2 pr-4 align-top"></td>
+						<td class="py-2 align-top">Keys are pseudonymous. There is no identity check at the protocol level.</td>
+					</tr>
+					<tr class="border-t border-bone-200">
+						<td class="py-2 pr-4 align-top"></td>
+						<td class="py-2 align-top">The public ledger only shows one side of each trade. No public listing server aggregates both.</td>
+					</tr>
+					<tr class="border-t border-bone-200">
+						<td class="py-2 pr-4 align-top font-display text-ink">Coupling</td>
+						<td class="py-2 align-top">Settlement is atomic. Sats move only when the other side delivers.</td>
+					</tr>
+					<tr class="border-t border-bone-200">
+						<td class="py-2 pr-4 align-top"></td>
+						<td class="py-2 align-top">Three keys sign before money moves. The buyer, the seller, and the operator must all agree.</td>
+					</tr>
+					<tr class="border-t border-bone-200">
+						<td class="py-2 pr-4 align-top"></td>
+						<td class="py-2 align-top">If one connection is stolen, it can be revoked without losing the rest. The worst case is one in-flight order, not the buyer's whole balance.</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<p>Each of these raises the attacker's cost before the attack begins.</p>
+	</div>
 </section>
 
 <section class="pb-12">
 	<div class="flex flex-col gap-6 text-[17px] leading-relaxed text-ink-2">
-		<h2 class="font-display text-2xl text-ink mt-4">Fan-out — 3 / 3</h2>
 		<p>
-			<strong class="text-ink">Find and hold cost are pushed up by dispersion.</strong> Anyone can run a node. Anyone can run a relay. The bootstrap spec ships with at least four independent relay operators. The Mostro network is a federation of competing market makers. No single operator is a single point of failure.
-		</p>
-		<p>
-			Wallets are interchangeable. Most users will use NWC-scoped connections — NWC is Nostr Wallet Connect, a way to give a wallet limited, revocable access to your node. Each connection is a small bounded instance, not a global credential. Vendor-side data storage means there is no central listing server holding everyone's order book.
-		</p>
-		<p>
-			The result: an attacker who wants to compromise "the system" has to compromise N independent things in N different jurisdictions, run by N different operators. That budget is structurally larger than the budget to compromise one custodian.
-		</p>
-
-		<h2 class="font-display text-2xl text-ink mt-4">Opacity — 3 / 3</h2>
-		<p>
-			<strong class="text-ink">Find and reach cost are pushed up by what isn't published.</strong> Order messages use NIP-17 gift-wrapped direct messages. NIP-17 is a Nostr standard that hides who is talking to whom. Relays see nothing identifying, only that encrypted blobs are moving. There is no KYC tier inside the protocol. Keys are pseudonymous. Reputation is keyed to a public key, not a person. The Lightning chain is opaque to fiat-side observers. The sats leg is a public ledger. The fiat leg is private by default.
-		</p>
-		<p>
-			The result: an attacker who wants to identify counterparties has to break NIP-17 first, not the relay. There is no single place where identity is asserted to begin with.
-		</p>
-
-		<h2 class="font-display text-2xl text-ink mt-4">Binding — 3 / 3</h2>
-		<p>
-			<strong class="text-ink">Move cost is pushed up by detachment cost.</strong> Every meaningful action needs a local key. No shared session token. No admin override. No "platform reset". HODL invoices make settlement atomic with the network. The Mostro node cannot take the sats without delivering the fiat. Releasing the HODL is what releases the sats. NWC scopes are budget-bounded and revocable. Losing one does not lose the wallet.
-		</p>
-		<p>
-			The result: stolen credentials are revocable. Captured sats cannot be moved without fiat-side delivery. The worst-case exposure of a compromised node is bounded to the HODL amount, not the customer balance.
-		</p>
-
-		<div class="rounded-[28px] bg-bone-100 p-6 mt-4">
-			<p class="eyebrow">Score profile</p>
-			<p class="mt-2 font-display text-2xl text-ink">Fan-out 3 · Opacity 3 · Binding 3</p>
-			<p class="mt-2">
-				That profile matches the rubric ceiling. Each score would have to drop before the system becomes structurally capturable. Fan-out below two means a small number of nodes holds a disproportionate share of liquidity. Opacity below two means an attacker can identify counterparties cheaply. Binding below two means a successful breach translates directly into movable loot. None of those are where Voyager Pay sits today.
-			</p>
-		</div>
-
-		<p>
-			Profile (3, 3, 3) does not mean "nothing can go wrong". It means the structural costs are high enough that most attackers move on. The next lesson is where this matters most: what is still risky anyway.
+			Hard to capture does not mean nothing can go wrong. The next lesson is where this matters most: what is still risky anyway.
 		</p>
 	</div>
 </section>
@@ -63,9 +154,9 @@
 	<div class="rounded-[28px] bg-bone-100 p-8 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
 		<div>
 			<span class="eyebrow">Next up</span>
-			<h3 class="mt-2 font-display text-xl text-ink">What can still go wrong</h3>
-			<p class="mt-2 text-sm text-ink-2">Honest enumeration of the four residual risks and the structural mitigations Voyager Pay leans on.</p>
+			<h3 class="mt-2 font-display text-xl text-ink">How Voyager Pay extends</h3>
+			<p class="mt-2 text-sm text-ink-2">Why the same wire format carries physical goods, stays, experiences, services, and digital downloads.</p>
 		</div>
-		<Cta variant="primary" href="/docs/what-can-still-go-wrong">Continue</Cta>
+		<Cta variant="primary" href="/docs/how-voyager-pay-extends">Continue</Cta>
 	</div>
 </section>
