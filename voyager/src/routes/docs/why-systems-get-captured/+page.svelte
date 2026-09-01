@@ -7,7 +7,7 @@
 </svelte:head>
 
 <section class="pt-4 pb-12">
-	<span class="eyebrow">Lesson 6</span>
+	<span class="eyebrow">Lesson 6 — For the protocol-curious</span>
 	<h1 class="mt-3 font-display text-[40px] sm:text-[52px] text-ink leading-[1.05]">
 		Why a capturable system invites capture.
 	</h1>
@@ -18,7 +18,7 @@
 
 <section class="pb-12">
 	<div class="flex flex-col gap-6 text-[17px] leading-relaxed text-ink-2">
-		<h2 class="font-display text-2xl text-ink mt-4">The natural-incentive argument</h2>
+		<h2 id="the-natural-incentive-argument">The natural-incentive argument</h2>
 		<p>
 			Attackers are not irrational. They spend on capture cost when they expect the deliverable surplus to exceed the cost. If a system concentrates enough value in one place, is visible enough to find, and is separable enough to walk off with, then for any given attacker budget there is a strategy whose EROI is at or above one. The size of that budget shrinks or grows with the attacker pool. As long as the formula allows it, attackers keep showing up.
 		</p>
@@ -26,7 +26,7 @@
 			Adding more alarms does not change the formula. It changes the probability of getting caught, which is a separate term in the attacker's accounting. As long as EROI stays above one, alarms just become a cost of doing business. This is the structural-versus-alarm distinction. It is why a list of patches can never replace a design rubric.
 		</p>
 
-		<h2 class="font-display text-2xl text-ink mt-4">Two analogies that make it concrete</h2>
+		<h2 id="two-analogies">Two analogies that make it concrete</h2>
 		<p>
 			<strong class="text-ink">Cash in a vault vs. cash across many small wallets.</strong> A vault concentrates value. Find cost is low, one building. Reach cost is medium, a safe crack. Move cost is low, a bag. An attacker with a van and a drill runs a positive EROI.
 		</p>
@@ -40,12 +40,12 @@
 			A relationship-bound contract (a vendor credit pegged to a buyer identity, a payment address bound to a Nostr public key with revocation rights) is not separable. The thing in your hand loses worth the moment it detaches from its rightful context. Move cost is high. The loot is no longer loot.
 		</p>
 
-		<h2 class="font-display text-2xl text-ink mt-4">The structural answer</h2>
+		<h2 id="the-structural-answer">The structural answer</h2>
 		<p>
-			Push the extractor's EROI below one by raising find, reach, hold, and move cost structurally. Do not pile on detection after the fact. That is the move the three properties — Dispersion, Information, Coupling — were named for. The next lesson walks that audit for Voyager Pay itself.
+			Push the extractor's EROI below one by raising find, reach, hold, and move cost structurally. Do not pile on detection after the fact. That is the move the three properties from the previous lesson were named for. The next lesson walks that audit for Voyager Pay itself.
 		</p>
 
-		<div class="rounded-[28px] bg-bone-100 p-6 mt-4">
+		<div class="rounded-[24px] bg-bone-100 p-6 mt-4">
 			<p class="eyebrow">In one sentence</p>
 			<p class="mt-2">
 				Concentrated, visible, separable value is a budget invitation. Design the system so
@@ -56,11 +56,11 @@
 </section>
 
 <section class="pb-32">
-	<div class="rounded-[28px] bg-bone-100 p-8 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+	<div class="rounded-[24px] bg-bone-100 p-6 sm:p-7 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
 		<div>
 			<span class="eyebrow">Next up</span>
 			<h3 class="mt-2 font-display text-xl text-ink">How Voyager Pay satisfies the EROI rubric</h3>
-			<p class="mt-2 text-sm text-ink-2">The audit table: which design move raises which knob, and the resulting score profile.</p>
+			<p class="mt-2 text-sm text-ink-2">The audit table: which design move raises which property, and the score profile.</p>
 		</div>
 		<Cta variant="primary" href="/docs/voyager-pay-eroi-audit">Continue</Cta>
 	</div>

@@ -7,8 +7,8 @@
 </svelte:head>
 
 <section class="pt-4 pb-12">
-	<span class="eyebrow">Documentation</span>
-	<h1 class="mt-3 font-display text-[40px] sm:text-[52px] text-ink leading-[1.05]">
+	<p class="eyebrow text-muted">Documentation › Overview</p>
+	<h1 class="mt-3 font-display text-[40px] sm:text-[52px] text-ink leading-[1.05]" id="overview">
 		Read the spec behind Voyager.
 	</h1>
 	<p class="mt-6 max-w-2xl text-lg leading-relaxed text-ink-2">
@@ -24,10 +24,10 @@
 		<!-- Path 1: For travelers -->
 		<div class="flex flex-col gap-4">
 			<p class="eyebrow">For travelers</p>
-			<h2 class="font-display text-2xl text-ink leading-tight">How Voyager plans your trip in your browser.</h2>
+			<h2 id="for-travelers">How Voyager plans your trip in your browser.</h2>
 			<a
 				href="/docs/how-voyager-plans"
-				class="rounded-[28px] bg-bone-100 p-6 hover:bg-bone-200 transition-colors"
+				class="rounded-[24px] bg-bone-100 p-6 hover:bg-bone-200 transition-colors"
 			>
 				<span class="eyebrow">Lesson 1</span>
 				<h3 class="mt-2 font-display text-2xl text-ink">How Voyager plans your trip in your browser</h3>
@@ -38,23 +38,23 @@
 		<!-- Path 2: For the curious (rubrics) -->
 		<div class="flex flex-col gap-4">
 			<p class="eyebrow">For the curious</p>
-			<h2 class="font-display text-2xl text-ink leading-tight">What a rubric is, and how it drives the model.</h2>
+			<h2 id="for-the-curious">What a rubric is, and how it drives the model.</h2>
 			<div class="flex flex-col gap-3">
 				<a
 					href="/docs/what-is-a-rubric"
-					class="rounded-[28px] bg-bone-100 p-6 hover:bg-bone-200 transition-colors"
+					class="rounded-[24px] bg-bone-100 p-6 hover:bg-bone-200 transition-colors"
 				>
 					<span class="eyebrow">Lesson 2</span>
 					<h3 class="mt-2 font-display text-2xl text-ink">What a rubric is</h3>
-					<p class="mt-2 text-ink-2">A rubric is a small document a model can read. It lists criteria, levels, and examples for each level.</p>
+					<p class="mt-2 text-ink-2">A small document a model can read. Criteria, levels, examples.</p>
 				</a>
 				<a
 					href="/docs/rubrics-evaluate-and-generate"
-					class="rounded-[28px] bg-bone-100 p-6 hover:bg-bone-200 transition-colors"
+					class="rounded-[24px] bg-bone-100 p-6 hover:bg-bone-200 transition-colors"
 				>
 					<span class="eyebrow">Lesson 3</span>
 					<h3 class="mt-2 font-display text-2xl text-ink">How rubrics evaluate and generate</h3>
-					<p class="mt-2 text-ink-2">The same rubric runs two ways. As a judge, it scores attempts. As a generation rule, it shapes what the model writes.</p>
+					<p class="mt-2 text-ink-2">The same rubric runs two ways: as a judge, and as a generation rule.</p>
 				</a>
 			</div>
 		</div>
@@ -62,55 +62,63 @@
 		<!-- Path 3: For the protocol-curious -->
 		<div class="flex flex-col gap-4">
 			<p class="eyebrow">For the protocol-curious</p>
-			<h2 class="font-display text-2xl text-ink leading-tight">How Voyager Pay works, and why the design holds.</h2>
+			<h2 id="for-the-protocol-curious">How Voyager Pay works, and why the design holds.</h2>
 			<div class="flex flex-col gap-3">
 				<a
 					href="/docs/how-voyager-pay-works"
-					class="rounded-[28px] bg-bone-100 p-6 hover:bg-bone-200 transition-colors"
+					class="rounded-[24px] bg-bone-100 p-6 hover:bg-bone-200 transition-colors"
 				>
 					<span class="eyebrow">Lesson 4</span>
 					<h3 class="mt-2 font-display text-2xl text-ink">How Voyager Pay works</h3>
-					<p class="mt-2 text-ink-2">Five design invariants, three layers, and a seven-step payment flow from request to settlement.</p>
+					<p class="mt-2 text-ink-2">Five invariants, three layers, seven steps from request to settlement.</p>
 				</a>
 				<a
 					href="/docs/what-is-eroi"
-					class="rounded-[28px] bg-bone-100 p-6 hover:bg-bone-200 transition-colors"
+					class="rounded-[24px] bg-bone-100 p-6 hover:bg-bone-200 transition-colors"
 				>
 					<span class="eyebrow">Lesson 5</span>
 					<h3 class="mt-2 font-display text-2xl text-ink">What EROI is</h3>
-					<p class="mt-2 text-ink-2">A security rubric: model the attacker as an economic actor and most of the design choices follow. One principle, three properties, one formula.</p>
+					<p class="mt-2 text-ink-2">Model the attacker as an economic actor and most design choices follow.</p>
 				</a>
 				<a
 					href="/docs/why-systems-get-captured"
-					class="rounded-[28px] bg-bone-100 p-6 hover:bg-bone-200 transition-colors"
+					class="rounded-[24px] bg-bone-100 p-6 hover:bg-bone-200 transition-colors"
 				>
 					<span class="eyebrow">Lesson 6</span>
 					<h3 class="mt-2 font-display text-2xl text-ink">Why a capturable system invites capture</h3>
-					<p class="mt-2 text-ink-2">Concentrated, visible, separable value is an open invitation. The structural answer is to make the crime not worth the squeeze.</p>
+					<p class="mt-2 text-ink-2">Concentrated, visible, separable value is an open invitation.</p>
 				</a>
 				<a
 					href="/docs/voyager-pay-eroi-audit"
-					class="rounded-[28px] bg-bone-100 p-6 hover:bg-bone-200 transition-colors"
+					class="rounded-[24px] bg-bone-100 p-6 hover:bg-bone-200 transition-colors"
 				>
 					<span class="eyebrow">Lesson 7</span>
 					<h3 class="mt-2 font-display text-2xl text-ink">How Voyager Pay satisfies the EROI rubric</h3>
-					<p class="mt-2 text-ink-2">Which design move raises which knob, and the score profile that comes out the other side.</p>
+					<p class="mt-2 text-ink-2">Which design move raises which property, and the score profile that comes out.</p>
+				</a>
+				<a
+					href="/docs/what-can-still-go-wrong"
+					class="rounded-[24px] bg-bone-100 p-6 hover:bg-bone-200 transition-colors"
+				>
+					<span class="eyebrow text-muted">Inserted after Lesson 7</span>
+					<h3 class="mt-2 font-display text-2xl text-ink">What can still go wrong</h3>
+					<p class="mt-2 text-ink-2">Fiat reversal, sybil reputation, relay capture, operator rug — the honest limits.</p>
 				</a>
 				<a
 					href="/docs/how-price-discovery-works"
-					class="rounded-[28px] bg-bone-100 p-6 hover:bg-bone-200 transition-colors"
+					class="rounded-[24px] bg-bone-100 p-6 hover:bg-bone-200 transition-colors"
 				>
 					<span class="eyebrow text-muted">Inserted after Lesson 8</span>
 					<h3 class="mt-2 font-display text-2xl text-ink">How price discovery works on Voyager Pay</h3>
-					<p class="mt-2 text-ink-2">The §7.4 rubric, why the 0.6 / 0.2 / 0.2 weights bias toward honest operators, and why fees trend toward cost-plus-margin.</p>
+					<p class="mt-2 text-ink-2">The §7.4 rubric and why fees trend toward cost-plus-margin.</p>
 				</a>
 				<a
 					href="/docs/how-voyager-pay-extends"
-					class="rounded-[28px] bg-bone-100 p-6 hover:bg-bone-200 transition-colors"
+					class="rounded-[24px] bg-bone-100 p-6 hover:bg-bone-200 transition-colors"
 				>
 					<span class="eyebrow">Lesson 9</span>
 					<h3 class="mt-2 font-display text-2xl text-ink">How Voyager Pay extends</h3>
-					<p class="mt-2 text-ink-2">A substrate, a tag prefix, and a convention document — any vendor kind can ship without amending the protocol.</p>
+					<p class="mt-2 text-ink-2">A substrate, a tag prefix, and a convention document — any vendor kind can ship.</p>
 				</a>
 			</div>
 		</div>
