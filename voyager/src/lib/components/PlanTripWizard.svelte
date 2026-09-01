@@ -1,11 +1,14 @@
 <script>
   // @ts-ignore
   import { user } from '$lib/stores/user.svelte.js';
+  import { log, EVENT, serializeError, presence } from '$lib/logger.js';
   import Cta from './Cta.svelte';
   import DatePicker from './DatePicker.svelte';
 
-  /** @type {{ onFinish?: () => void }} */
-  let { onFinish = undefined } = $props();
+  const componentLog = log.child({ component: 'plan', function: 'PlanTripWizard' });
+
+  /** @type {{ onFinish?: () => void, hidden?: boolean }} */
+  let { onFinish = undefined, hidden = false } = $props();
 
   // ---- CONFIG (copied verbatim from TravelFormPrefs.svelte) --------------
   const CONFIG = {
@@ -102,23 +105,44 @@
   ];
 
   // ---- initial draft (seed from store if present) ------------------------
+  function toLocalIso(d) {
+    const y = d.getFullYear();
+    const m = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    return `${y}-${m}-${day}`;
+  }
+
   function initialTripDraft() {
     const existing = user.preferences?.trip;
+    const now = new Date();
+    now.setHours(0, 0, 0, 0);
+    const defaultStart = toLocalIso(now);
+    const defaultEnd = toLocalIso(addDays(now, 7));
     const base = {
       destination: '',
-      startDate: '',
-      endDate: '',
+      startDate: defaultStart,
+      endDate: defaultEnd,
       travelers: { adults: 1, kids: 0, kidsAges: [] },
       archetype: null,
       tags: [],
       budget: 3,
       note: '',
     };
-    if (!existing) return base;
-    return {
+    if (!existing) {
+      componentLog.debug(
+        {
+          step: 'plan:initialTripDraft',
+          reason: 'no_existing_trip',
+          seedFrom: 'base'
+        },
+        'Initialized draft from base (no existing trip)'
+      );
+      return base;
+    }
+    const seeded = {
       destination: existing.destination ?? base.destination,
-      startDate: existing.startDate ?? base.startDate,
-      endDate: existing.endDate ?? base.endDate,
+      startDate: existing.startDate || base.startDate,
+      endDate: existing.endDate || base.endDate,
       travelers: {
         adults: existing.travelers?.adults ?? base.travelers.adults,
         kids: existing.travelers?.kids ?? base.travelers.kids,
@@ -131,10 +155,33 @@
       budget: existing.draft?.budget ?? user.preferences.form.budget ?? 3,
       note: existing.draft?.note ?? user.preferences.form.note ?? '',
     };
+    componentLog.debug(
+      {
+        step: 'plan:initialTripDraft',
+        reason: 'seeded_from_existing',
+        destination: seeded.destination,
+        hasStartDate: !!seeded.startDate,
+        hasEndDate: !!seeded.endDate,
+        travelers: seeded.travelers
+      },
+      'Initialized draft from existing trip'
+    );
+    return seeded;
   }
 
   // ---- state -------------------------------------------------------------
   let stepIndex = $state(0);
+  // Local base seed; never reads the user store at init.
+  const BASE_DRAFT = {
+    destination: '',
+    startDate: '',
+    endDate: '',
+    travelers: { adults: 1, kids: 0, kidsAges: [] },
+    archetype: null,
+    tags: [],
+    budget: 3,
+    note: '',
+  };
   let draft = $state(initialTripDraft());
 
   const today = new Date();
@@ -194,15 +241,49 @@
   // ---- step transitions --------------------------------------------------
   function next() {
     if (!canAdvance) return;
+    const fromStep = currentStep.id;
     if (stepIndex < STEPS.length - 1) {
       stepIndex += 1;
+      componentLog.info(
+        {
+          type: EVENT.USER_ACTION,
+          step: 'plan:next',
+          from: fromStep,
+          to: currentStep.id,
+          index: stepIndex
+        },
+        'Wizard step advanced'
+      );
     } else {
+      componentLog.info(
+        {
+          type: EVENT.USER_ACTION,
+          step: 'plan:next',
+          from: fromStep,
+          to: 'finish',
+          index: stepIndex
+        },
+        'Wizard finishing'
+      );
       finish();
     }
   }
 
   function back() {
-    if (stepIndex > 0) stepIndex -= 1;
+    if (stepIndex > 0) {
+      const fromStep = currentStep.id;
+      stepIndex -= 1;
+      componentLog.info(
+        {
+          type: EVENT.USER_ACTION,
+          step: 'plan:back',
+          from: fromStep,
+          to: currentStep.id,
+          index: stepIndex
+        },
+        'Wizard stepped back'
+      );
+    }
   }
 
   function onInputKeydown(e) {
@@ -215,28 +296,78 @@
   // ---- travelers helpers -------------------------------------------------
   function setAdults(n) {
     const adults = Math.max(1, Math.min(10, n || 1));
+    const prev = draft.travelers.adults;
     draft.travelers.adults = adults;
+    componentLog.info(
+      {
+        type: EVENT.USER_ACTION,
+        step: 'plan:setAdults',
+        from: prev,
+        to: adults
+      },
+      'Adults count changed'
+    );
   }
 
   function setKids(n) {
     const kids = Math.max(0, Math.min(10, n || 0));
     const cur = draft.travelers.kidsAges;
+    const prev = draft.travelers.kids;
     if (kids > cur.length) {
       for (let i = cur.length; i < kids; i++) cur.push(0);
     } else if (kids < cur.length) {
       cur.length = kids;
     }
     draft.travelers.kids = kids;
+    componentLog.info(
+      {
+        type: EVENT.USER_ACTION,
+        step: 'plan:setKids',
+        from: prev,
+        to: kids,
+        agesLen: cur.length
+      },
+      'Kids count changed'
+    );
   }
 
   function setKidAge(i, n) {
     const age = Math.max(0, Math.min(17, n || 0));
+    const prev = draft.travelers.kidsAges[i];
     draft.travelers.kidsAges[i] = age;
+    componentLog.info(
+      {
+        type: EVENT.USER_ACTION,
+        step: 'plan:setKidAge',
+        index: i,
+        from: prev,
+        to: age
+      },
+      'Kid age changed'
+    );
   }
 
   // ---- finish ------------------------------------------------------------
   function finish() {
     if (!canAdvance) return;
+    componentLog.info(
+      {
+        type: EVENT.JOB_START,
+        step: 'plan:finish',
+        destination: draft.destination.trim(),
+        startDate: draft.startDate,
+        endDate: draft.endDate,
+        travelers: {
+          adults: draft.travelers.adults,
+          kids: draft.travelers.kids
+        },
+        archetype: draft.archetype,
+        tagsCount: draft.tags.length,
+        budget: draft.budget
+      },
+      'Plan finish started'
+    );
+
     const snapshot = {
       destination: draft.destination.trim(),
       startDate: draft.startDate,
@@ -263,24 +394,46 @@
       savedAt: new Date().toISOString(),
     };
 
-    user.setTrip(snapshot);
-    user.setPreferences({
-      form: {
-        archetype: draft.archetype,
-        tags: [...draft.tags],
-        budget: draft.budget,
-        note: draft.note?.trim() || null,
-      },
-      personality: user.preferences.personality,
-      type: user.preferences.type,
-      trip: user.preferences.trip,
-    });
+    try {
+      user.setTrip(snapshot);
+      user.setPreferences({
+        form: {
+          archetype: draft.archetype,
+          tags: [...draft.tags],
+          budget: draft.budget,
+          note: draft.note?.trim() || null,
+        },
+        personality: user.preferences.personality,
+        type: user.preferences.type,
+        trip: user.preferences.trip,
+      });
 
-    onFinish?.();
+      componentLog.info(
+        {
+          type: EVENT.JOB_SUCCESS,
+          step: 'plan:finish',
+          destination: snapshot.destination,
+          savedAt: snapshot.savedAt
+        },
+        'Plan finish succeeded'
+      );
+
+      onFinish?.();
+    } catch (err) {
+      componentLog.error(
+        {
+          type: EVENT.JOB_FAILURE,
+          step: 'plan:finish',
+          err: serializeError(err, { function: 'PlanTripWizard:finish' })
+        },
+        `Plan finish failed: ${err.message}`
+      );
+      throw err;
+    }
   }
 </script>
 
-<div class="mx-auto flex max-w-2xl flex-col gap-8 text-ink-2">
+<div class="mx-auto flex max-w-2xl flex-col gap-8 text-ink-2" class:hidden>
   <header class="flex flex-col gap-3">
     <span class="eyebrow">Plan a trip</span>
     <h1 class="font-display text-[40px] sm:text-[52px] text-ink leading-[1.02]">
@@ -306,6 +459,16 @@
           type="text"
           bind:value={draft.destination}
           onkeydown={onInputKeydown}
+            oninput={() => {
+              componentLog.debug(
+                {
+                  step: 'plan:setDestination',
+                  reason: 'input_changed',
+                  length: presence(draft.destination)
+                },
+                'Destination input changed'
+              );
+            }}
           placeholder="e.g. Kyoto, Japan"
           class="w-full rounded-2xl bg-bone-50 p-4 text-ink placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-ink"
         />
@@ -320,9 +483,21 @@
             minDate={today}
             maxDate={endCeiling}
             id="start-date"
+            field="start"
             onSelect={(iso) => {
+              const prev = draft.startDate;
               draft.startDate = iso;
               if (draft.endDate && draft.endDate < iso) draft.endDate = '';
+              componentLog.info(
+                {
+                  type: EVENT.USER_ACTION,
+                  step: 'plan:setStartDate',
+                  field: 'start',
+                  from: prev,
+                  to: iso
+                },
+                'Start date changed'
+              );
             }}
           />
           <DatePicker
@@ -331,7 +506,21 @@
             minDate={draft.startDate ? new Date(draft.startDate) : today}
             maxDate={endMaxDate}
             id="end-date"
-            onSelect={(iso) => { draft.endDate = iso; }}
+            field="end"
+            onSelect={(iso) => {
+              const prev = draft.endDate;
+              draft.endDate = iso;
+              componentLog.info(
+                {
+                  type: EVENT.USER_ACTION,
+                  step: 'plan:setEndDate',
+                  field: 'end',
+                  from: prev,
+                  to: iso
+                },
+                'End date changed'
+              );
+            }}
           />
         </div>
         {#if dateError}
@@ -481,7 +670,19 @@
           <button
             type="button"
             aria-pressed={draft.budget === level}
-            onclick={() => { draft.budget = level; }}
+            onclick={() => {
+              const prev = draft.budget;
+              draft.budget = level;
+              componentLog.info(
+                {
+                  type: EVENT.USER_ACTION,
+                  step: 'plan:setBudget',
+                  from: prev,
+                  to: level
+                },
+                'Budget changed'
+              );
+            }}
             class="flex-1 rounded-2xl py-3 text-lg tracking-widest transition-colors
                    {draft.budget === level
                      ? 'bg-ink text-bone-50'

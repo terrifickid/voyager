@@ -16,6 +16,10 @@
   // =====================================================================
 
   import { user } from '$lib/stores/user.svelte.js';
+  import { log, EVENT, serializeError } from '$lib/logger.js';
+  import { untrack } from 'svelte';
+
+  const componentLog = log.child({ component: 'prefs', function: 'TravelFormPrefs' });
 
   const CONFIG = {
     version: 1,
@@ -374,9 +378,35 @@
   });
 
   // ---- emit on every change ---------------------------------------------
+  // Stable signature to avoid the $effect read→write loop:
+  // snapshot is a $derived that re-allocates on every form edit, and
+  // user.setPreferences writes a new preferences object which would
+  // re-trigger this effect (Svelte scheduler flushes every effect each
+  // tick, so an infinite loop tears down internal Task/Effect records
+  // mid-flush and surfaces as an opaque "startTime" / "reportAllChanges"
+  // crash). Compare by JSON content; only write + notify on real changes.
+  let lastSerialized = $state(null);
+
   $effect(() => {
-    user.setPreferences(snapshot);
-    onchange?.(snapshot);
+    try {
+      const s = snapshot;
+      const sig = JSON.stringify(s);
+      if (sig === lastSerialized) return;
+      lastSerialized = sig;
+      untrack(() => {
+        user.setPreferences(s);
+        onchange?.(s);
+      });
+    } catch (err) {
+      componentLog.error(
+        {
+          type: EVENT.RENDER_ERROR,
+          step: 'TravelFormPrefs:snapshot',
+          err: serializeError(err, { function: 'TravelFormPrefs:snapshotSync' })
+        },
+        `Snapshot sync failed: ${err.message}`
+      );
+    }
   });
 </script>
 

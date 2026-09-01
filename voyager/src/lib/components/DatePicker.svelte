@@ -1,10 +1,15 @@
 <script>
+  import { log, EVENT } from '$lib/logger.js';
+
+  const componentLog = log.child({ component: 'plan', function: 'DatePicker' });
+
   /** @type {{
    *   label: string,
    *   value: string,
    *   minDate?: Date,
    *   maxDate?: Date,
    *   id?: string,
+   *   field?: 'start' | 'end',
    *   onSelect: (iso: string) => void
    * }}
    * `minDate` / `maxDate` are accepted but ignored — demo mockup shows the current month only. */
@@ -14,6 +19,7 @@
     minDate = undefined,
     maxDate = undefined,
     id = undefined,
+    field = undefined,
     onSelect,
   } = $props();
 
@@ -69,7 +75,19 @@
   }
 
   function handleClick(d) {
-    onSelect(toIso(d));
+    const iso = toIso(d);
+    const prev = value;
+    componentLog.info(
+      {
+        type: EVENT.USER_ACTION,
+        step: 'datepicker:select',
+        field: field ?? null,
+        from: prev,
+        to: iso
+      },
+      'Date selected'
+    );
+    onSelect(iso);
   }
 </script>
 

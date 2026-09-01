@@ -8,6 +8,9 @@
   } from '$lib/agent/index.ts';
   import PlanTripWizard from '$lib/components/PlanTripWizard.svelte';
   import Cta from '$lib/components/Cta.svelte';
+  import { log, EVENT, serializeError } from '$lib/logger.js';
+
+  const componentLog = log.child({ component: 'plan', function: 'planPage' });
 
   let submitted = $state(false);
   let loading = $state(false);
@@ -16,12 +19,51 @@
   const itinerary = $derived(user.itinerary ?? []);
   const candidates = $derived(user.placeCandidates ?? []);
 
+  let planMounted = $state(false);
+  $effect(() => {
+    if (planMounted) return;
+    planMounted = true;
+    componentLog.debug(
+      {
+        step: 'plan:mount',
+        rank: itinerary.length,
+        hasConcept: !!user.tripConcept,
+        hasItinerary: !!user.itinerary,
+        candidatesCount: candidates.length
+      },
+      'Plan page mounted/derived'
+    );
+  });
+
   async function onFinish() {
+    componentLog.info(
+      { type: EVENT.JOB_START, step: 'plan:onfinish' },
+      'Plan finish flow started'
+    );
     loading = true;
     try {
       await generateConcept();
       await generateDayPlan();
       await enrichDayPlan(1);
+      componentLog.info(
+        {
+          type: EVENT.JOB_SUCCESS,
+          step: 'plan:onfinish',
+          hasConcept: !!user.tripConcept,
+          itineraryDays: (user.itinerary ?? []).length
+        },
+        'Plan finish flow succeeded'
+      );
+    } catch (err) {
+      componentLog.error(
+        {
+          type: EVENT.RENDER_ERROR,
+          step: 'plan:onfinish',
+          err: serializeError(err, { function: 'planPage:onfinish' })
+        },
+        `Plan finish flow failed: ${err.message}`
+      );
+      throw err;
     } finally {
       loading = false;
       submitted = true;
@@ -29,6 +71,10 @@
   }
 
   function edit() {
+    componentLog.info(
+      { type: EVENT.USER_ACTION, step: 'plan:edit' },
+      'Edit answers clicked'
+    );
     submitted = false;
   }
 
@@ -44,12 +90,11 @@
   <title>Plan a trip — Voyager</title>
 </svelte:head>
 
-{#if !submitted}
-  <div class="mx-auto max-w-6xl px-6 pt-16 pb-24">
-    <PlanTripWizard {onFinish} />
-  </div>
-{:else}
-  <section class="mx-auto max-w-6xl px-6 pt-16 pb-24 flex flex-col gap-12">
+<div class="mx-auto max-w-6xl px-6 pt-16 pb-24" class:hidden={submitted}>
+  <PlanTripWizard {onFinish} hidden={submitted} />
+</div>
+
+<section class="mx-auto max-w-6xl px-6 pt-16 pb-24 flex flex-col gap-12" class:hidden={!submitted}>
     <header class="flex flex-col gap-4">
       <div class="flex flex-wrap items-end justify-between gap-6">
         <div class="flex flex-col gap-3">
@@ -187,4 +232,3 @@
       </div>
     {/if}
   </section>
-{/if}
