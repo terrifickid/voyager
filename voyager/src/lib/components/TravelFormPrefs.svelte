@@ -18,6 +18,8 @@
   import { user } from '$lib/stores/user.svelte.js';
   import { log, EVENT, serializeError } from '$lib/logger.js';
   import { untrack } from 'svelte';
+  import PersonalityGraph from './PersonalityGraph.svelte';
+  import { computePersonality, nearestType } from '$lib/preferences/personality.js';
 
   const componentLog = log.child({ component: 'prefs', function: 'TravelFormPrefs' });
 
@@ -297,56 +299,6 @@
   // and `bind:value` continue to work and every nested edit propagates.
   const form = user.preferences.form;
 
-  // ---- helpers ----------------------------------------------------------
-  const clamp = (v, lo = -1, hi = 1) => Math.max(lo, Math.min(hi, v));
-
-  function computePersonality(f) {
-    const keys = config.scoring.traits.map((t) => t.key);
-    const archOpt = config.fields
-      .find((x) => x.id === "archetype")
-      ?.options.find((o) => o.id === f.archetype);
-    const allTags = config.fields
-      .find((x) => x.id === "tags")
-      .groups.flatMap((g) => g.options);
-    const selected = allTags.filter((o) => f.tags.includes(o.id));
-
-    const out = {};
-    for (const key of keys) {
-      const parts = [];
-      if (archOpt && archOpt.traits[key]) parts.push(archOpt.traits[key]);
-      for (const o of selected) if (o.traits[key]) parts.push(o.traits[key]);
-      out[key] = parts.length
-        ? clamp(parts.reduce((a, b) => a + b, 0) / parts.length)
-        : 0;
-    }
-    return out;
-  }
-
-  function nearestType(p) {
-    const opts = config.fields.find((x) => x.id === "archetype").options;
-    const keys = config.scoring.traits.map((t) => t.key);
-    let best = null;
-    let bestD = Infinity;
-    for (const opt of opts) {
-      let d = 0;
-      for (const k of keys) {
-        const dv = (p[k] || 0) - (opt.traits[k] || 0);
-        d += dv * dv;
-      }
-      if (d < bestD) {
-        bestD = d;
-        best = opt;
-      }
-    }
-    return best;
-  }
-
-  const fillStyle = (v) => {
-    const pct = Math.abs(v) * 50;
-    const left = v >= 0 ? 50 : 50 - pct;
-    return `left:${left}%;width:${pct}%;`;
-  };
-
   // ---- derived field references (reactive to config prop) ---------------
   const archetypeField = $derived(
     config.fields.find((f) => f.id === "archetype"),
@@ -362,9 +314,14 @@
   );
 
   // ---- the computed value: personality, live on every change ------------
-  const personality = $derived(computePersonality(form));
-  const type = $derived(nearestType(personality));
-  const hasSignal = $derived(form.archetype != null || form.tags.length > 0);
+  const personality = $derived(
+    computePersonality(form, {
+      archetypeOptions: archetypeField.options,
+      tagOptions: tagsField.groups.flatMap((g) => g.options),
+      scoringTraits: config.scoring.traits,
+    }),
+  );
+  const type = $derived(nearestType(personality, archetypeField.options, config.scoring.traits));
 
   const snapshot = $derived({
     form: {
@@ -508,35 +465,5 @@
     </section>
   </section>
 
-  <section class="flex flex-col gap-3 p-6 rounded-[28px] bg-bone-100">
-    <h2 class="eyebrow">
-      Live personality
-    </h2>
-    {#if hasSignal}
-      <p class="text-ink-2">
-        Closest type: <strong class="font-semibold text-ink">{type.icon} {type.label}</strong>
-      </p>
-      <div class="flex flex-col gap-2">
-        {#each config.scoring.traits as t (t.key)}
-          <div class="flex items-center gap-3 text-sm">
-            <span class="w-40 shrink-0 text-muted">{t.display}</span>
-            <span class="relative flex-1 h-3 bg-bone-200 rounded-full overflow-hidden">
-              <span class="absolute left-1/2 top-0 bottom-0 w-px" style="background: var(--bone-300);"></span>
-              <span
-                class="absolute top-0 bottom-0 rounded-full bg-ink"
-                style={fillStyle(personality[t.key])}
-              ></span>
-            </span>
-            <span class="w-12 text-right font-mono tabular-nums text-ink-2">
-              {personality[t.key].toFixed(2)}
-            </span>
-          </div>
-        {/each}
-      </div>
-    {:else}
-      <p class="text-muted">
-        Pick an archetype or a few tags — your type appears here in real time.
-      </p>
-    {/if}
-  </section>
+  <PersonalityGraph />
 </main>

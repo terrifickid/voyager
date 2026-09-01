@@ -2,6 +2,8 @@
   // @ts-ignore
   import { user } from '$lib/stores/user.svelte.js';
   import { log, EVENT, serializeError, presence } from '$lib/logger.js';
+  import { computePersonality, nearestType } from '$lib/preferences/personality.js';
+  import { archetypeOptions, scoringTraits } from '$lib/preferences/config.js';
   import Cta from './Cta.svelte';
   import DatePicker from './DatePicker.svelte';
 
@@ -396,6 +398,20 @@
 
     try {
       user.setTrip(snapshot);
+
+      const draftForm = {
+        archetype: draft.archetype,
+        tags: [...draft.tags],
+        budget: draft.budget,
+        note: draft.note?.trim() ?? '',
+      };
+      const draftPersonality = computePersonality(draftForm, {
+        archetypeOptions,
+        tagOptions: CONFIG.tagGroups.flatMap((g) => g.options),
+        scoringTraits,
+      });
+      const draftType = nearestType(draftPersonality, archetypeOptions, scoringTraits);
+
       user.setPreferences({
         form: {
           archetype: draft.archetype,
@@ -403,8 +419,8 @@
           budget: draft.budget,
           note: draft.note?.trim() || null,
         },
-        personality: user.preferences.personality,
-        type: user.preferences.type,
+        personality: draftPersonality,
+        type: draftType ? { id: draftType.id, label: draftType.label, icon: draftType.icon } : null,
         trip: user.preferences.trip,
       });
 

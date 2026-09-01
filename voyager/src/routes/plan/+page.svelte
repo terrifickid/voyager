@@ -8,6 +8,7 @@
   } from '$lib/agent/index.ts';
   import PlanTripWizard from '$lib/components/PlanTripWizard.svelte';
   import Cta from '$lib/components/Cta.svelte';
+  import PersonalityGraph from '$lib/components/PersonalityGraph.svelte';
   import { log, EVENT, serializeError } from '$lib/logger.js';
 
   const componentLog = log.child({ component: 'plan', function: 'planPage' });
@@ -107,6 +108,8 @@
       </div>
       <p class="text-sm text-muted">Demo build. Generated from local fixtures on your device.</p>
     </header>
+
+    <PersonalityGraph />
 
     {#if loading}
       <p class="rounded-[28px] bg-bone-100 p-8 text-center text-sm text-muted">
