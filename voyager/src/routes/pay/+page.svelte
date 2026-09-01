@@ -2,6 +2,7 @@
 	import Cta from '$lib/components/Cta.svelte';
 	import SectionHeader from '$lib/components/SectionHeader.svelte';
 	import Icon from '$lib/components/Icon.svelte';
+	import FeatureCard from '$lib/components/FeatureCard.svelte';
 	import RampQuoteAggregator from '$lib/components/RampQuoteAggregator.svelte';
 	import nodes from '$lib/data/mostroNodes.json';
 </script>
@@ -70,6 +71,7 @@
 		<li><a href="#invariants" class="text-ink underline underline-offset-4 decoration-[1.5px]">Design invariants</a></li>
 		<li><a href="#how-it-flows" class="text-ink underline underline-offset-4 decoration-[1.5px]">How a payment flows</a></li>
 		<li><a href="#ramp" class="text-ink underline underline-offset-4 decoration-[1.5px]">The fiat ramp</a></li>
+		<li><a href="#extends" class="text-ink underline underline-offset-4 decoration-[1.5px]">Extends to anything</a></li>
 		<li><a href="#risks" class="text-ink underline underline-offset-4 decoration-[1.5px]">Risks &amp; limits</a></li>
 	</ul>
 </nav>
@@ -256,6 +258,53 @@
 				HODL invoices make settlement atomic with the network. A counterparty can fail. They cannot take the sats and not deliver the fiat.
 			</p>
 		</article>
+	</div>
+</section>
+
+<!-- §12 threat shake-out + §13 out of scope (combined under #risks) -->
+<section id="extends" class="mx-auto max-w-6xl px-6 pb-20 scroll-mt-20">
+	<div class="rounded-[32px] bg-bone-100 p-8 sm:p-12">
+		<SectionHeader
+			eyebrow="Built for any marketplace"
+			title="Any vendor kind ships the same way."
+			lede="The protocol guarantees event structure and forwarding. Vendor semantics ride on a reserved tag prefix (a v tag), so new kinds never amend the wire format."
+		/>
+		<div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
+			<FeatureCard
+				icon="map-pin"
+				tone="sky"
+				eyebrow="voyager.listing.v1"
+				title="Physical goods"
+				body="Snapper, sandals, hardware. Ship weight, pickup, courier in the same event shape."
+			/>
+			<FeatureCard
+				icon="bed"
+				tone="coral"
+				eyebrow="voyager.accommodation.v1"
+				title="Stays"
+				body="Rooms, rentals, weeks. Add check_in, check_out, capacity without changing the protocol."
+			/>
+			<FeatureCard
+				icon="compass"
+				tone="rose"
+				eyebrow="voyager.tour.v1"
+				title="Experiences"
+				body="Tours, tastings, guides. Add group_size, meeting_point, duration_minutes in the same listing."
+			/>
+			<FeatureCard
+				icon="sparkle"
+				tone="violet"
+				eyebrow="voyager.consulting.v1"
+				title="Services & digital"
+				body="Hours, deliverables, digital downloads. The same wire format carries them."
+			/>
+		</div>
+		<p class="mt-10 max-w-2xl text-base leading-relaxed text-ink-2">
+			Looks travel-shaped — does it carry other goods? Yes. The same signed listing carries physical goods, stays, experiences, services, and digital downloads. The wire format does not change.
+		</p>
+		<div class="mt-6">
+			<Cta variant="secondary" href="/docs/how-voyager-pay-extends">Read the extensibility spec</Cta>
+		</div>
 	</div>
 </section>
 

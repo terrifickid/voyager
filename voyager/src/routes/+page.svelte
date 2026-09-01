@@ -242,7 +242,49 @@
 	</div>
 </section>
 
-<!-- 8. Documentation band (closer) -->
+<!-- 8. Built for any marketplace -->
+<section class="mx-auto max-w-6xl px-6 pb-24">
+	<SectionHeader
+		eyebrow="Built for any marketplace"
+		title="Voyager Pay sells anything."
+		lede="One protocol. Any vendor kind. Physical goods, stays, experiences, services, digital goods — and whatever comes next."
+	/>
+	<div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
+		<FeatureCard
+			icon="map-pin"
+			tone="sky"
+			eyebrow="voyager.listing.v1"
+			title="Physical goods"
+			body="Snapper, sandals, hardware. Ship weight, pickup, courier in the same event shape."
+		/>
+		<FeatureCard
+			icon="bed"
+			tone="coral"
+			eyebrow="voyager.accommodation.v1"
+			title="Stays"
+			body="Rooms, rentals, weeks. Add check_in, check_out, capacity without changing the protocol."
+		/>
+		<FeatureCard
+			icon="compass"
+			tone="rose"
+			eyebrow="voyager.tour.v1"
+			title="Experiences"
+			body="Tours, tastings, guides. Add group_size, meeting_point, duration_minutes in the same listing."
+		/>
+		<FeatureCard
+			icon="sparkle"
+			tone="violet"
+			eyebrow="voyager.consulting.v1"
+			title="Services & digital"
+			body="Hours, deliverables, digital downloads. The same wire format carries them."
+		/>
+	</div>
+	<div class="mt-10 flex justify-center">
+		<Cta variant="primary" href="/docs/how-voyager-pay-extends">See how a new vendor kind ships</Cta>
+	</div>
+</section>
+
+<!-- 9. Documentation band (closer) -->
 <section class="mx-auto max-w-6xl px-6 pb-24">
 	<div class="rounded-[32px] bg-bone-100 p-8 sm:p-12">
 		<SectionHeader

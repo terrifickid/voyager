@@ -112,6 +112,14 @@
 					<h3 class="mt-2 font-display text-2xl text-ink">How price discovery works on Voyager Pay</h3>
 					<p class="mt-2 text-ink-2">The §7.4 rubric, why the 0.6 / 0.2 / 0.2 weights bias toward honest operators, and why fees trend toward cost-plus-margin.</p>
 				</a>
+				<a
+					href="/docs/how-voyager-pay-extends"
+					class="rounded-[28px] bg-bone-100 p-6 hover:bg-bone-200 transition-colors"
+				>
+					<span class="eyebrow">Lesson 9</span>
+					<h3 class="mt-2 font-display text-2xl text-ink">How Voyager Pay extends</h3>
+					<p class="mt-2 text-ink-2">A substrate, a tag prefix, and a convention document — any vendor kind can ship without amending the protocol.</p>
+				</a>
 			</div>
 		</div>
 

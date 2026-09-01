@@ -13,7 +13,8 @@
 		{ slug: '/docs/what-is-eroi', title: 'What EROI is', eyebrow: 'Lesson 5', desc: 'Energy Return On Investment, applied to attackers instead of oil wells.' },
 		{ slug: '/docs/why-systems-get-captured', title: 'Why a capturable system invites capture', eyebrow: 'Lesson 6', desc: 'Concentrated, visible, separable value is an open invitation.' },
 		{ slug: '/docs/voyager-pay-eroi-audit', title: 'How Voyager Pay satisfies the EROI rubric', eyebrow: 'Lesson 7', desc: 'Fan-out, opacity, binding — the audit table and the score profile.' },
-		{ slug: '/docs/what-can-still-go-wrong', title: 'What can still go wrong', eyebrow: 'Lesson 8', desc: 'Honest enumeration of the residual risks and the structural mitigations.' }
+		{ slug: '/docs/what-can-still-go-wrong', title: 'What can still go wrong', eyebrow: 'Lesson 8', desc: 'Honest enumeration of the residual risks and the structural mitigations.' },
+		{ slug: '/docs/how-voyager-pay-extends', title: 'How Voyager Pay extends', eyebrow: 'Lesson 9', desc: 'A substrate, a tag prefix, and a convention document — why any vendor kind can ship without amending the protocol.' }
 	];
 
 	function isActive(slug) {

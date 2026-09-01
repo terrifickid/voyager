@@ -5,17 +5,11 @@
 	import { browser } from '$app/environment';
 	import { untrack } from 'svelte';
 	import { log, EVENT, serializeError, presence } from '$lib/logger.js';
-	import { installSchedulerHook, installErrorBoundary } from '$lib/schedulerHook.js';
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
 
 	let { children } = $props();
-
-	if (import.meta.env.DEV) {
-		installSchedulerHook();
-		installErrorBoundary();
-	}
 
 	let errorHandlersInstalled = false;
 	if (browser && !errorHandlersInstalled) {
