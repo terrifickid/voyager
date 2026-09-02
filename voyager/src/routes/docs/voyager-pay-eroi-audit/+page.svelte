@@ -20,7 +20,7 @@
 	<div class="rounded-[24px] bg-bone-100 p-6">
 		<p class="eyebrow">The formula</p>
 		<p class="mt-2 font-display text-2xl text-ink">extractor_EROI = deliverable_surplus ÷ capture_cost</p>
-		<p class="mt-2 text-sm">An attack is a budget problem for the attacker. If what they have to spend to take the value is more than the value itself, they move on. Push each cost up before the attack begins and most attackers leave. The four costs are taught in <a href="/docs/what-is-eroi" class="text-ink underline underline-offset-4 decoration-[1.5px]">Lesson 5</a>.</p>
+		<p class="mt-2 text-sm">Extraction is a budget problem. If what it costs to take the value is more than the value itself, extraction stops. Push each cost up before extraction begins and most of it doesn't. The four costs are taught in <a href="/docs/what-is-eroi" class="text-ink underline underline-offset-4 decoration-[1.5px]">Lesson 5</a>.</p>
 	</div>
 </section>
 
@@ -28,14 +28,14 @@
 	<h2 id="dispersion">Spread the value.</h2>
 	<p>Value is split across many independent holders. No single target is worth breaching on its own.</p>
 	<h3 id="dispersion-example">A concrete example.</h3>
-	<p>Cash in a vault versus cash across many small wallets in different places. The vault concentrates the value. One building to find, one safe to crack, one bag to carry out. Spread the same total across thousands of small balances belonging to different people in different places and the math changes. No single address publishes them all. Many separate compromises are needed. The attacker cannot be at all of them at once. Same total value. Much higher cost to take it.</p>
+	<p>Cash in a vault versus cash across many small wallets in different places. The vault concentrates the value. One building to find, one safe to crack, one bag to carry out. Spread the same total across thousands of small balances belonging to different people in different places and the design changes. No single address publishes them all. Many separate paths in are needed. The same total value cannot be reached from one place at one time. Same total value. Much higher cost to take it.</p>
 	<h3 id="dispersion-voyager">Where Voyager Pay puts it to work.</h3>
 	<ul class="list-disc pl-5 flex flex-col gap-2">
 		<li>Many independent operators, each running their own node in their own place.</li>
 		<li>Each seller keeps their own listings. There is no central index that aggregates them.</li>
 		<li>Each order's money sits in its own hold-invoice on its own node, addressed to a different key.</li>
 	</ul>
-	<p>The attacker's budget grows with every operator they would have to compromise.</p>
+	<p>The extraction budget grows with every operator that would have to be reached.</p>
 </section>
 
 <section class="pb-12">
@@ -49,7 +49,7 @@
 		<li>Keys are pseudonymous. There is no identity check at the protocol level.</li>
 		<li>The public ledger only shows one side of each trade. No public listing server aggregates both.</li>
 	</ul>
-	<p>The attacker has nothing to point at.</p>
+	<p>There is nothing to point at.</p>
 </section>
 
 <section class="pb-12">
@@ -61,9 +61,9 @@
 	<ul class="list-disc pl-5 flex flex-col gap-2">
 		<li>Settlement is atomic. Sats move only when the other side delivers.</li>
 		<li>Three keys sign before money moves. The buyer, the seller, and the operator must all agree.</li>
-		<li>If one connection is stolen, it can be revoked without losing the rest. The worst case is one in-flight order, not the buyer's whole balance.</li>
+		<li>If one connection is compromised, it can be revoked without losing the rest. The worst case is one in-flight order, not the buyer's whole balance.</li>
 	</ul>
-	<p>The loot is no longer loot.</p>
+	<p>Detached value is no longer valuable.</p>
 </section>
 
 <section class="pb-12">
@@ -119,12 +119,12 @@
 			</tbody>
 		</table>
 	</div>
-	<p>Each of these raises the attacker's cost before the attack begins.</p>
+	<p>Each of these raises the cost of extraction, paid in advance.</p>
 </section>
 
 <section class="pb-12">
 	<p>
-		Hard to capture does not mean nothing can go wrong. The next lesson is where this matters most: what is still risky anyway.
+		Hard to extract value from is the floor, not the ceiling. The next lesson shows how the protocol stays open without amending itself.
 	</p>
 </section>
 
@@ -132,9 +132,9 @@
 	<div class="rounded-[24px] bg-bone-100 p-6 sm:p-7 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
 		<div>
 			<span class="eyebrow">Next up</span>
-			<h3 class="mt-2 font-display text-xl text-ink">What can still go wrong</h3>
-			<p class="mt-2 text-sm text-ink-2">Fiat reversal, sybil reputation, relay capture, operator rug — the honest limits.</p>
+			<h3 class="mt-2 font-display text-xl text-ink">How Voyager Pay extends</h3>
+			<p class="mt-2 text-sm text-ink-2">A substrate, a tag prefix, and a convention document — any vendor kind can ship.</p>
 		</div>
-		<Cta variant="primary" href="/docs/what-can-still-go-wrong">Continue</Cta>
+		<Cta variant="primary" href="/docs/how-voyager-pay-extends">Continue</Cta>
 	</div>
 </section>

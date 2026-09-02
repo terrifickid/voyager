@@ -44,7 +44,7 @@
 			An operator cannot fake rate on the long run without losing money on every settled trade. They cannot fake fee — it is published and visible. They can fake reputation cheaply only if reputation were a string they could rewrite. It is not. Reputation is keyed to a public key that has actually settled volume, and settled trades leave signed events on a public relay.
 		</p>
 		<p>
-			The structural argument is this: an honest operator with real settled history outranks a fresh operator with a fat margin, even when the fresh operator's headline rate looks better. The wallet does the math. The customer sees the rank. Reputation accrues over time, so the operator who survives the early losses wins the long game.
+			The structural argument is this: an honest operator with real settled history outranks a fresh operator with a fat margin, even when the fresh operator's headline rate looks better. The wallet runs the ranking. The customer sees the result. Reputation accrues over time, so the operator who survives the early losses wins the long game.
 		</p>
 
 		<h2 id="no-persistent-undercut">Why a single node cannot persistently undercut</h2>
@@ -62,7 +62,7 @@
 			<ul class="mt-4 flex flex-col gap-2 list-disc pl-5">
 				<li>Convergence is predicted, not measured. The demo fixture has five nodes.</li>
 				<li>No FX oracle. Each Mostro node quotes its own rate.</li>
-				<li>Settlement is atomic with the network, not with the operator. Fiat-rail reversals remain a residual risk.</li>
+				<li>Settlement is atomic with the network, not with the operator. Fiat-rail reversals are an honest limit of the demo fixture.</li>
 			</ul>
 		</div>
 	</div>

@@ -8,42 +8,39 @@
 	<title>Security by design — Voyager Pay</title>
 </svelte:head>
 
-<!-- Hero -->
-<section class="mx-auto max-w-6xl px-6 pt-20 pb-12 lg:pt-28 lg:pb-16">
-	<div class="flex flex-col gap-8">
-		<span class="eyebrow">Voyager Pay</span>
-		<h1 class="font-display text-[44px] sm:text-[56px] lg:text-[64px] text-ink max-w-4xl leading-[1.02]">
-			Secure by design.
-		</h1>
-		<p class="max-w-2xl text-lg leading-relaxed text-ink-2">
-			Voyager Pay is built around two structural pillars: no custody, and a federated marketplace. Each pillar produces plain-English outcomes you can take to the bank — or across a border.
-		</p>
-		<div class="flex flex-wrap items-center gap-3">
-			<Cta variant="primary" href="/pay">How Voyager Pay works</Cta>
-			<Cta variant="secondary" href="/pay/pricing">Fair pricing</Cta>
-		</div>
-	</div>
-</section>
+<!-- §1 Foundation -->
+<section class="mx-auto max-w-6xl px-6 pt-20 pb-20 lg:pt-28">
+	<SectionHeader
+		eyebrow="Foundation"
+		title="Money on Bitcoin. Messages on Nostr. No one in the middle."
+		lede="Voyager Pay isn't a platform that runs on trust. It's three open networks stitched together — and the design does the policing."
+	/>
 
-<!-- Two-pillar headline -->
-<section class="mx-auto max-w-6xl px-6 pb-20">
-	<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+	<div class="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-3">
 		<article class="flex flex-col gap-3 rounded-[28px] bg-bone-200 p-6">
-			<Icon name="lock" tone="sky" size={28} />
-			<span class="eyebrow">Pillar 1</span>
-			<h2 class="font-display text-xl text-ink leading-tight">No custody</h2>
+			<span class="eyebrow">Bitcoin</span>
 			<p class="text-sm leading-relaxed text-ink-2">
-				The protocol never holds your funds. Settlement either completes atomically or it does not happen. There is no company in the middle that can be pressured, hacked, or seized.
+				A public ledger the whole world keeps identical. Changing history costs more than anything you'd take from it.
 			</p>
 		</article>
 		<article class="flex flex-col gap-3 rounded-[28px] bg-bone-200 p-6">
-			<Icon name="globe" tone="violet" size={28} />
-			<span class="eyebrow">Pillar 2</span>
-			<h2 class="font-display text-xl text-ink leading-tight">Federated marketplace</h2>
+			<span class="eyebrow">Lightning</span>
 			<p class="text-sm leading-relaxed text-ink-2">
-				A federation of independent Mostro nodes competes on rate, fee, and reputation. No single operator sits in the middle. Anyone can run a node. The network survives any one operator leaving.
+				Fast payments stacked on that ledger, sealed with one-way locks only the recipient can open.
 			</p>
 		</article>
+		<article class="flex flex-col gap-3 rounded-[28px] bg-bone-200 p-6">
+			<span class="eyebrow">Nostr</span>
+			<p class="text-sm leading-relaxed text-ink-2">
+				An open message network where your signature is the receipt. No relay owns your identity.
+			</p>
+		</article>
+	</div>
+
+	<div class="mt-8 rounded-[28px] bg-bone-100 p-6 sm:p-8">
+		<p class="text-sm leading-relaxed text-ink-2">
+			Three structural properties: <strong class="text-ink">Dispersion</strong> spread across many operators · <strong class="text-ink">Opacity</strong> because your order is sealed, not plain · <strong class="text-ink">Binding</strong> because the design doesn't let anyone rewrite history.
+		</p>
 	</div>
 </section>
 
@@ -57,28 +54,28 @@
 	<div class="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2">
 		<article class="flex flex-col gap-3 rounded-[28px] bg-bone-200 p-6">
 			<Icon name="lock" tone="coral" size={28} />
-			<h3 class="font-display text-xl text-ink leading-tight">Your money can't be seized.</h3>
+			<h3 class="font-display text-xl text-ink leading-tight">Your money stays yours.</h3>
 			<p class="text-sm leading-relaxed text-ink-2">
-				No custodian ever holds a balance in your name. Settlement is atomic with the network: a Lightning hold-invoice (a HODL) either releases the sats to the vendor, or refunds them to you. There is no escrow account in a company's books for a court to freeze.
+				No custodian ever holds a balance in your name. Settlement is atomic with the network: a Lightning hold-invoice (a HODL) either releases the sats to the vendor, or refunds them to you. There is no escrow account in a company's books — settlement is atomic with the network, not with an operator.
 			</p>
 		</article>
 		<article class="flex flex-col gap-3 rounded-[28px] bg-bone-200 p-6">
 			<Icon name="bolt" tone="sky" size={28} />
-			<h3 class="font-display text-xl text-ink leading-tight">No one can freeze you.</h3>
+			<h3 class="font-display text-xl text-ink leading-tight">You finish the trade.</h3>
 			<p class="text-sm leading-relaxed text-ink-2">
-				HODL atomicity means the moment you pay fiat off-protocol and the vendor attests to receipt, the network releases the sats. No operator sits on the funds during a "review" window. No platform can hold your money pending a decision.
+				HODL atomicity means the moment you pay fiat off-protocol and the vendor attests to receipt, the network releases the sats. No operator sits on the funds during a review. The settlement is atomic — the protocol either releases the funds or returns them.
 			</p>
 		</article>
 		<article class="flex flex-col gap-3 rounded-[28px] bg-bone-200 p-6">
 			<Icon name="chat" tone="violet" size={28} />
-			<h3 class="font-display text-xl text-ink leading-tight">No platform can deplatform you.</h3>
+			<h3 class="font-display text-xl text-ink leading-tight">You pick your own platform.</h3>
 			<p class="text-sm leading-relaxed text-ink-2">
-				Keys are pseudonymous. There is no KYC tier at the protocol layer. The federation means any single operator that refuses you can be routed around — your wallet queries the next node, then the next. The protocol is the product. No single company owns it.
+				Keys are pseudonymous. There is no KYC tier at the protocol layer. The federation means your wallet queries the next node, then the next, then the next. The protocol is the product. No single company owns it.
 			</p>
 		</article>
 		<article class="flex flex-col gap-3 rounded-[28px] bg-bone-200 p-6">
 			<Icon name="compass" tone="rose" size={28} />
-			<h3 class="font-display text-xl text-ink leading-tight">You can switch wallets in a minute.</h3>
+			<h3 class="font-display text-xl text-ink leading-tight">Your wallet, your choice.</h3>
 			<p class="text-sm leading-relaxed text-ink-2">
 				Wallets connect via NWC (Nostr Wallet Connect, a standard for talking to a remote wallet over Nostr). The URI is one-time-paste, budget-scoped, and revocable. No wallet is privileged by the protocol. You sign with your key, not with an account.
 			</p>
@@ -93,11 +90,11 @@
 		<ul class="mt-6 flex flex-col gap-3 text-ink-2">
 			<li>Today, Voyager Pay is a spec, a demo widget, and a Caribbean-tuned reference node. The outcomes above describe the structural properties of the protocol, not the state of a shipped product.</li>
 			<li>Dispute resolution is per-node and reputation-weighted. The spec does not impose arbitration.</li>
-			<li>Four residual risks remain. The full EROI audit lists them and the mitigations each one leans on.</li>
+			<li>Four honest limits remain. The full EROI audit lists them and the mitigations each one leans on.</li>
 		</ul>
 		<div class="mt-8 flex flex-wrap items-center gap-3">
 			<Cta variant="primary" href="/docs/voyager-pay-eroi-audit">Read the EROI audit</Cta>
-			<Cta variant="secondary" href="/pay#risks">See the risks</Cta>
+			<Cta variant="secondary" href="/pay#extends">See the open design</Cta>
 		</div>
 
 		<div class="mt-12 flex flex-col gap-6 rounded-[28px] bg-bone-100 p-8 sm:flex-row sm:items-center sm:justify-between">

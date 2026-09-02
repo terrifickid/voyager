@@ -7,8 +7,8 @@
 </svelte:head>
 
 <section class="pt-4 pb-12">
-	<p class="eyebrow text-muted">Documentation › Overview</p>
-	<h1 class="mt-3 font-display text-[40px] sm:text-[52px] text-ink leading-[1.05]" id="overview">
+	<p class="eyebrow">Overview</p>
+	<h1 class="mt-3 font-display text-ink" id="overview">
 		Read the spec behind Voyager.
 	</h1>
 	<p class="mt-6 max-w-2xl text-lg leading-relaxed text-ink-2">
@@ -78,7 +78,7 @@
 				>
 					<span class="eyebrow">Lesson 5</span>
 					<h3 class="mt-2 font-display text-2xl text-ink">What EROI is</h3>
-					<p class="mt-2 text-ink-2">Model the attacker as an economic actor and most design choices follow.</p>
+					<p class="mt-2 text-ink-2">Model extraction as an economic problem and most design choices follow.</p>
 				</a>
 				<a
 					href="/docs/why-systems-get-captured"
@@ -95,14 +95,6 @@
 					<span class="eyebrow">Lesson 7</span>
 					<h3 class="mt-2 font-display text-2xl text-ink">How Voyager Pay satisfies the EROI rubric</h3>
 					<p class="mt-2 text-ink-2">Which design move raises which property, and the score profile that comes out.</p>
-				</a>
-				<a
-					href="/docs/what-can-still-go-wrong"
-					class="rounded-[24px] bg-bone-100 p-6 hover:bg-bone-200 transition-colors"
-				>
-					<span class="eyebrow text-muted">Inserted after Lesson 7</span>
-					<h3 class="mt-2 font-display text-2xl text-ink">What can still go wrong</h3>
-					<p class="mt-2 text-ink-2">Fiat reversal, sybil reputation, relay capture, operator rug — the honest limits.</p>
 				</a>
 				<a
 					href="/docs/how-price-discovery-works"

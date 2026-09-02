@@ -16,7 +16,7 @@
 			Open protocol. Federated. Uncensorable.
 		</h1>
 		<p class="max-w-2xl text-lg leading-relaxed text-ink-2">
-			Sell anything that has a price — physical goods, stays, services, digital downloads, experiences. No platform sits between you and the buyer, and the marketplace is designed so attacking it is a bad business. The protocol has no politics. It has math.
+			Sell anything that has a price — physical goods, stays, services, digital downloads, experiences. No platform sits between you and the buyer, and the marketplace is designed to reward honest operators. The protocol makes the cost of taking value from the network higher than the value taken.
 		</p>
 		<div class="flex flex-wrap items-center gap-3">
 			<Cta variant="primary" href="/docs">Start selling</Cta>
@@ -121,7 +121,7 @@
 		<SectionHeader
 			eyebrow="Why the marketplace is fair"
 			title="Fair by construction."
-			lede="The design refuses the failure modes that make platforms capturable. Three properties hold at the protocol layer — not as policy, as math."
+			lede="The design refuses the failure modes that make platforms capturable. Three properties hold at the protocol layer — not as a policy choice, as a property of the design."
 		/>
 		<ol class="mt-10 flex flex-col gap-5">
 			<li class="flex gap-5 rounded-[28px] bg-bone-200 p-6">
@@ -136,7 +136,7 @@
 			<li class="flex gap-5 rounded-[28px] bg-bone-200 p-6">
 				<span class="font-display text-3xl text-ink leading-none">2</span>
 				<div class="flex flex-col gap-2">
-					<h3 class="font-display text-xl text-ink leading-tight">No one can deplatform you.</h3>
+					<h3 class="font-display text-xl text-ink leading-tight">Your listings live anywhere.</h3>
 					<p class="text-[15px] leading-relaxed text-ink-2">
 						Listings live on public relays. Take one relay down and four more still have them. The relay set is a federation, not a tenant.
 					</p>
@@ -145,16 +145,13 @@
 			<li class="flex gap-5 rounded-[28px] bg-bone-200 p-6">
 				<span class="font-display text-3xl text-ink leading-none">3</span>
 				<div class="flex flex-col gap-2">
-					<h3 class="font-display text-xl text-ink leading-tight">Attacking it is a bad business.</h3>
+					<h3 class="font-display text-xl text-ink leading-tight">Honest operators are rewarded.</h3>
 					<p class="text-[15px] leading-relaxed text-ink-2">
-						The same EROI rubric Voyager Pay was built against means a capturable marketplace isn't the marketplace you'll get. The attacker's cost runs structurally higher than the loot.
+						The same extraction-cost rubric Voyager Pay was built against applies here. The cost of taking value from the network runs structurally higher than the value taken.
 					</p>
 				</div>
 			</li>
 		</ol>
-		<p class="mt-10 max-w-2xl text-lg leading-relaxed text-ink-2">
-			The protocol has no politics. It has math.
-		</p>
 	</div>
 </section>
 
@@ -295,7 +292,7 @@
 				<div class="flex flex-col gap-2">
 					<h3 class="font-display text-xl text-ink leading-tight">Your keys.</h3>
 					<p class="text-[15px] leading-relaxed text-ink-2">
-						You sign your own events. No one can revoke your listings, freeze your stall, or delete your history. The key is the storefront.
+						You sign your own events. No one else can revoke your listings, pause your stall, or rewrite your history. The key is the storefront.
 					</p>
 				</div>
 			</li>
@@ -313,7 +310,7 @@
 				<div class="flex flex-col gap-2">
 					<h3 class="font-display text-xl text-ink leading-tight">Your customers.</h3>
 					<p class="text-[15px] leading-relaxed text-ink-2">
-						No intermediary owns the buyer relationship. Order traffic is gift-wrapped (encrypted end-to-end) — only the two keys see it. Move cost is high because the loot won't move.
+						No intermediary owns the buyer relationship. Order traffic is gift-wrapped (encrypted end-to-end) — only the two keys see it. Detached value loses worth — it can't be redirected without its rightful context.
 					</p>
 				</div>
 			</li>

@@ -25,7 +25,7 @@
 		<ul class="list-disc pl-5 flex flex-col gap-2">
 			<li><span class="font-display text-ink">No custody.</span> The protocol never holds funds. Settlement is atomic with the network or it does not happen.</li>
 			<li><span class="font-display text-ink">No identity required.</span> Keys are pseudonymous. There is no KYC tier at the protocol layer.</li>
-			<li><span class="font-display text-ink">Customer ↔ vendor symmetry.</span> Both sides hold the same kind of key, speak the same events, and carry the same risk.</li>
+			<li><span class="font-display text-ink">Customer ↔ vendor symmetry.</span> Both sides hold the same kind of key, speak the same events, and bear the same responsibility.</li>
 			<li><span class="font-display text-ink">Protocol outlives us.</span> Reference clients are demos. The wire format is the product.</li>
 			<li><span class="font-display text-ink">Payments are Lightning.</span> Final settlement moves on Lightning. Everything else is plumbing.</li>
 		</ul>
@@ -60,7 +60,7 @@
 		</div>
 
 		<p>
-			That is the wire-level picture. The next two lessons step back and ask a harder question. Given a protocol like this, what would an attacker need to spend to take money out of it, and how does the design answer that?
+			That is the wire-level picture. The next two lessons step back and ask a harder question. Given a protocol like this, what it would cost to extract value from it, and how does the design answer that?
 		</p>
 	</div>
 </section>
@@ -70,7 +70,7 @@
 		<div>
 			<span class="eyebrow">Next up</span>
 			<h3 class="mt-2 font-display text-xl text-ink">What EROI is</h3>
-			<p class="mt-2 text-sm text-ink-2">Model the attacker as an economic actor and most design choices follow.</p>
+			<p class="mt-2 text-sm text-ink-2">Model extraction as an economic problem and most design choices follow.</p>
 		</div>
 		<Cta variant="primary" href="/docs/what-is-eroi">Continue</Cta>
 	</div>

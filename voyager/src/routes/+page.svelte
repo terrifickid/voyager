@@ -82,11 +82,11 @@
 				Tell Voyager where you're going and how you travel. It builds a day-by-day plan from real places, your style, and your budget — right in your browser.
 			</p>
 			<p class="max-w-xl text-lg leading-relaxed text-ink-2">
-				Ready to book? <span class="font-semibold text-ink">Voyager Pay</span> handles the money. It keeps scammers out, and routes your booking to the vendors who actually deserve it.
+				Ready to book? <span class="font-semibold text-ink">Voyager Pay</span> handles the money. It routes your booking to the vendors who actually deserve it — no middleman taking a cut or freezing the funds.
 			</p>
 			<div class="flex flex-wrap items-center gap-3">
 				<Cta variant="primary" href="/plan">Plan a trip</Cta>
-				<Cta variant="secondary" href="/pay/security">How payments work</Cta>
+				<Cta variant="secondary" href="/pay">How payments work</Cta>
 			</div>
 		</div>
 		<div class="lg:pl-6">

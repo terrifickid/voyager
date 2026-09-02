@@ -35,7 +35,7 @@
 	/>
 	<div class="mt-10 flex flex-col gap-6 text-[17px] leading-relaxed text-ink-2">
 		<p>
-			A monolithic payment platform sits between you and the other side of the trade. It sees both sides of every order. It controls the order book. It sets the fee, the rate, and the settlement window. The customer is captive not because the platform is malicious — it might be perfectly polite — but because the structural position lets it extract rent without losing volume.
+			A monolithic payment platform sits between you and the other side of the trade. It sees both sides of every order. It controls the order book. It sets the fee, the rate, and the settlement window. The customer has nowhere else to go. The structural position lets the platform charge what the market will bear.
 		</p>
 		<p>
 			That is not a bug in any one company. It is the natural equilibrium of a market with one supplier. Move the supplier out of the way and rent extraction follows the position.

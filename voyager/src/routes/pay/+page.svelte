@@ -19,7 +19,7 @@
 			Secure by design. Fair competitive marketplace.
 		</h1>
 		<p class="max-w-2xl text-lg leading-relaxed text-ink-2">
-			Voyager Pay is an open protocol for sending money on the open web. There is no custodian in the middle and no account to lose. No platform can deplatform you. Signed events move over Nostr (a public message network). Settlement runs on Lightning (a fast Bitcoin payment network). A federation of competing market makers — called Mostro nodes — bridges fiat and Bitcoin.
+			Voyager Pay is an open protocol for sending money on the open web. There is no custodian in the middle and no account to lose. No platform in the middle. Signed events move over Nostr (a public message network). Settlement runs on Lightning (a fast Bitcoin payment network). A federation of competing market makers — called Mostro nodes — bridges fiat and Bitcoin.
 		</p>
 		<div class="flex flex-wrap items-center gap-3">
 			<Cta variant="primary" href="/pay/security">Why it's secure</Cta>
@@ -35,7 +35,7 @@
 			<Icon name="plane" tone="sky" size={28} />
 			<h3 class="font-display text-xl text-ink leading-tight">For travelers</h3>
 			<p class="text-sm leading-relaxed text-ink-2">
-				Cross borders without losing your money to a frozen card or a deplatformed account. Read the security outcomes.
+				Cross borders without handing your balance to a custodian. Read the security outcomes.
 			</p>
 			<div class="mt-2">
 				<Cta variant="tertiary" href="/pay/security">Security by design</Cta>
@@ -81,7 +81,7 @@
 	<div class="rounded-[32px] bg-bone-100 p-8 sm:p-12">
 		<span class="eyebrow">Why this exists</span>
 		<p class="mt-4 max-w-3xl text-lg leading-relaxed text-ink-2">
-			Sending money online today means trusting a custodian with your balance, your identity, and your future access. The wallet, the KYC vendor (the "know your customer" identity check), and the payment processor are all counterparties. Each one can fail, freeze, or disappear. The protocol itself was never the bottleneck.
+			Sending money online today means trusting a custodian with your balance, your identity, and your future access. The wallet, the KYC vendor (the "know your customer" identity check), and the payment processor are all counterparties. Each one can fail, pause, or exit. The protocol itself was never the bottleneck.
 		</p>
 	</div>
 </section>
@@ -90,12 +90,12 @@
 <section id="security-rubric" class="mx-auto max-w-6xl px-6 pb-20 scroll-mt-20">
 	<SectionHeader
 		eyebrow="Security rubric"
-		title="Designed so attacking it is a bad business."
-		lede="Voyager Pay is shaped by a single rubric: make the attacker's cost structurally higher than the loot. No custodian, no central listing, no identity dossier — every design choice flows from that."
+		title="Honest operators are rewarded."
+		lede="Voyager Pay is shaped by a single rubric: make the cost of extraction structurally higher than the gain. No custodian, no central listing, no identity dossier — every design choice flows from that."
 	/>
 	<div class="mt-10 rounded-[28px] bg-bone-100 p-8">
 		<p class="text-lg leading-relaxed text-ink-2">
-			Attackers are economic actors. They spend to extract. Voyager Pay pushes their cost up structurally — value is dispersed across many independent operators, counterparties are pseudonymous, settlement is atomic with the network — so the math stops working for them and most move on.
+			The cost of extraction is set by the design. Voyager Pay pushes it up structurally — value is dispersed across many independent operators, counterparties are pseudonymous, settlement is atomic with the network — so extraction stops paying.
 		</p>
 	</div>
 
@@ -103,7 +103,7 @@
 		<SectionHeader
 			eyebrow="EROI defense"
 			title="Three properties a custodial rail can't give you."
-			lede="We think this design is hard to attack. The rest of this page shows what makes that true."
+			lede="We think this design rewards the honest operator. The rest of this page shows what makes that true."
 		/>
 		<div class="mt-6">
 			<Cta variant="tertiary" href="/docs/voyager-pay-eroi-audit">Read the full EROI audit</Cta>
@@ -113,7 +113,7 @@
 				<Icon name="bolt" tone="sky" size={28} />
 				<h3 class="font-display text-xl text-ink leading-tight">Dispersion</h3>
 				<p class="text-sm leading-relaxed text-ink-2">
-					Value is spread across many independent operators. No single node, relay, or vendor is worth breaching. The attacker has to compromise N different things in N different jurisdictions.
+					Value is spread across many independent operators. No single node, relay, or vendor is worth targeting on its own. Reaching the whole network means reaching N operators in N jurisdictions.
 				</p>
 			</article>
 			<article class="flex flex-col gap-3 rounded-[28px] bg-bone-200 p-6">
@@ -127,7 +127,7 @@
 				<Icon name="lock" tone="coral" size={28} />
 				<h3 class="font-display text-xl text-ink leading-tight">Coupling</h3>
 				<p class="text-sm leading-relaxed text-ink-2">
-					Settlement is atomic. A counterparty can fail, but they cannot take the sats and not deliver the fiat. Stolen credentials are revocable. Move cost is high because the loot won't move.
+					Settlement is atomic. A counterparty can fail, but they cannot take the sats and not deliver the fiat. Credentials are revocable. Detached value loses worth — it won't move without its rightful context.
 				</p>
 			</article>
 		</div>
@@ -145,7 +145,7 @@
 		{#each [
 			{ icon: 'lock', tone: 'sky', title: 'No custody', body: 'The protocol never holds funds. Settlement either completes atomically (in one indivisible step) or it does not happen.' },
 			{ icon: 'chat', tone: 'violet', title: 'No identity required', body: 'Keys are pseudonymous. There is no KYC (identity check) tier at the protocol layer.' },
-			{ icon: 'compass', tone: 'coral', title: 'Customer ↔ vendor symmetry', body: 'Both sides hold the same kind of key, speak the same events, and carry the same risk.' },
+			{ icon: 'compass', tone: 'coral', title: 'Customer ↔ vendor symmetry', body: 'Both sides hold the same kind of key, speak the same events, and bear the same responsibility.' },
 			{ icon: 'leaf', tone: 'rose', title: 'Protocol outlives us', body: 'Reference clients are demos. The wire format (the exact shape of the signed events) is the product.' },
 			{ icon: 'bolt', tone: 'sky', title: 'Payments are Lightning', body: 'Final settlement moves on Lightning. Everything else is plumbing.' }
 		] as inv (inv.title)}
@@ -221,7 +221,7 @@
 	</div>
 </section>
 
-<!-- §12 threat shake-out + §13 out of scope (combined under #risks) -->
+<!-- §12 + §13 out of scope (combined under #extends) -->
 <section id="extends" class="mx-auto max-w-6xl px-6 pb-20 scroll-mt-20">
 	<div class="rounded-[32px] bg-bone-100 p-8 sm:p-12">
 		<SectionHeader

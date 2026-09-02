@@ -13,12 +13,18 @@
 		{ slug: '/docs/what-is-a-rubric', title: 'What a rubric is', eyebrow: 'Lesson 2', desc: 'Criteria, levels, descriptors — and why contrast is the engine.' },
 		{ slug: '/docs/rubrics-evaluate-and-generate', title: 'How rubrics evaluate and generate', eyebrow: 'Lesson 3', desc: 'The same rubric as a judge and as a generation rule.' },
 		{ slug: '/docs/how-voyager-pay-works', title: 'How Voyager Pay works', eyebrow: 'Lesson 4', desc: 'Five invariants, three layers, seven steps from request to settlement.' },
-		{ slug: '/docs/what-is-eroi', title: 'What EROI is', eyebrow: 'Lesson 5', desc: 'A security rubric: how much an attacker gets back for the effort they spend.' },
+		{ slug: '/docs/what-is-eroi', title: 'What EROI is', eyebrow: 'Lesson 5', desc: 'A security rubric: how much it costs to extract value from a system, set against how much the extracted value is worth.' },
 		{ slug: '/docs/why-systems-get-captured', title: 'Why a capturable system invites capture', eyebrow: 'Lesson 6', desc: 'Concentrated, visible, separable value is an open invitation.' },
 		{ slug: '/docs/voyager-pay-eroi-audit', title: 'How Voyager Pay satisfies the EROI rubric', eyebrow: 'Lesson 7', desc: 'Dispersion, information, coupling — the audit table and the score profile.' },
-		{ slug: '/docs/what-can-still-go-wrong', title: 'What can still go wrong', eyebrow: 'Inserted after Lesson 7', desc: 'Fiat reversal, sybil reputation, relay capture, operator rug — the honest limits.' },
 		{ slug: '/docs/how-price-discovery-works', title: 'How price discovery works on Voyager Pay', eyebrow: 'Inserted after Lesson 8', desc: 'The §7.4 rubric, why the 0.6 / 0.2 / 0.2 weights bias toward honest operators, and why fees trend toward cost-plus-margin.' },
 		{ slug: '/docs/how-voyager-pay-extends', title: 'How Voyager Pay extends', eyebrow: 'Lesson 9', desc: 'A substrate, a tag prefix, and a convention document — why any vendor kind can ship without amending the protocol.' }
+	];
+
+	const sections = [
+		{ label: 'Overview', items: [lessons[0]] },
+		{ label: 'The trip planner', items: [lessons[1]] },
+		{ label: 'Rubrics & generation', items: [lessons[2], lessons[3]] },
+		{ label: 'Voyager Pay & EROI', items: lessons.slice(4) }
 	];
 
 	function isActive(slug) {
@@ -33,20 +39,26 @@
 		class="grid grid-cols-1 gap-10 md:grid-cols-[220px_1fr] lg:grid-cols-[220px_minmax(0,1fr)_200px] lg:gap-x-10"
 	>
 		<aside class="md:sticky md:top-20 md:self-start md:max-h-[calc(100vh-5rem)] md:overflow-y-auto">
-			<p class="eyebrow mb-4">Documentation</p>
+			<p class="eyebrow mb-6">Documentation</p>
 			<nav>
-				<ul class="flex flex-row flex-wrap gap-x-5 gap-y-2 md:flex-col md:gap-y-1">
-					{#each lessons as lesson (lesson.slug)}
-						{@const active = isActive(lesson.slug)}
+				<ul class="flex flex-col gap-y-5">
+					{#each sections as section (section.label)}
 						<li>
-							<a
-								href={lesson.slug}
-								aria-current={active ? 'page' : undefined}
-								class="block text-[15px] leading-snug text-ink-2 hover:text-ink py-1 {active ? 'text-ink underline underline-offset-[6px] decoration-[1.5px]' : ''}"
-							>
-								<span class="block text-xs font-medium text-muted">{lesson.eyebrow}</span>
-								<span class="block">{lesson.title}</span>
-							</a>
+							<p class="eyebrow mb-2">{section.label}</p>
+							<ul class="flex flex-col gap-y-1">
+								{#each section.items as lesson (lesson.slug)}
+									{@const active = isActive(lesson.slug)}
+									<li>
+										<a
+											href={lesson.slug}
+											aria-current={active ? 'page' : undefined}
+											class="block text-[15px] leading-snug py-1.5 hover:underline underline-offset-[6px] decoration-[1.5px] {active ? 'font-semibold text-ink underline' : 'text-ink-2'}"
+										>
+											{lesson.title}
+										</a>
+									</li>
+								{/each}
+							</ul>
 						</li>
 					{/each}
 				</ul>
@@ -55,7 +67,7 @@
 				<Cta variant="tertiary" href="/docs">Back to overview</Cta>
 			</div>
 		</aside>
-		<article bind:this={contentEl} class="min-w-0 docs-prose">
+		<article bind:this={contentEl} class="min-w-0 docs-prose max-w-prose lg:py-2">
 			{@render children()}
 		</article>
 		<div class="hidden lg:block">
@@ -67,47 +79,45 @@
 </div>
 
 <style>
-	.docs-prose :global(h2) {
+	.docs-prose :global(h1) {
 		scroll-margin-top: 5rem;
-		font-family: var(--font-display, system-ui, sans-serif);
-		font-size: 1.5rem;
+		font-family: 'Space Grotesk', system-ui, sans-serif;
+		font-size: clamp(2rem, 4vw + 1rem, 2.75rem);
+		line-height: 1.1;
 		font-weight: 600;
 		letter-spacing: -0.02em;
 		color: var(--ink);
-		margin-top: 2.5rem;
+	}
+	.docs-prose :global(h2) {
+		scroll-margin-top: 5rem;
+		font-family: 'Space Grotesk', system-ui, sans-serif;
+		font-size: 1.5rem;
 		line-height: 1.25;
+		font-weight: 600;
+		letter-spacing: -0.01em;
+		color: var(--ink);
+		margin-top: 2.5rem;
 	}
 	.docs-prose :global(h2:first-of-type) {
 		margin-top: 1.5rem;
 	}
 	.docs-prose :global(h3) {
 		scroll-margin-top: 5rem;
-		font-family: var(--font-display, system-ui, sans-serif);
 		font-size: 1.125rem;
+		line-height: 1.3;
 		font-weight: 600;
-		letter-spacing: -0.01em;
+		letter-spacing: -0.005em;
 		color: var(--ink);
 		margin-top: 1.75rem;
-		line-height: 1.3;
 	}
 	.docs-prose :global(p) {
-		font-size: 0.9375rem;
+		font-size: 1rem;
 		line-height: 1.65;
 		color: var(--ink-2);
 		margin-top: 1rem;
 	}
 	.docs-prose :global(p:first-of-type) {
 		margin-top: 0;
-	}
-	.docs-prose :global(a) {
-		color: var(--ink);
-		font-weight: 600;
-		text-decoration: underline;
-		text-underline-offset: 3px;
-		text-decoration-color: color-mix(in oklab, var(--ink) 25%, transparent);
-	}
-	.docs-prose :global(a:hover) {
-		text-decoration-color: color-mix(in oklab, var(--ink) 50%, transparent);
 	}
 	.docs-prose :global(strong) {
 		color: var(--ink);
