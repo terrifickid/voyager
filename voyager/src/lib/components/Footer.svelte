@@ -33,7 +33,6 @@
 			links: [
 				{ label: 'Trip Planner', href: '/projects/trip-planner' },
 				{ label: 'Voyager Pay', href: '/projects/voyager-pay' },
-				{ label: 'For vendors', href: '/projects/voyager-pay/vendors' },
 				{ label: 'All projects', href: '/projects' }
 			]
 		},
@@ -41,8 +40,8 @@
 			title: 'BUILD/',
 			links: [
 				{ label: 'Start building', href: '/build' },
-				{ label: 'Builder economics', href: '/build#economics' },
-				{ label: 'Regulatory posture', href: '/build#regulatory' },
+				{ label: 'Economics', href: '/build#economics' },
+				{ label: 'Posture', href: '/build#regulatory' },
 				{ label: 'Join the alpha', href: '/build#join-alpha' }
 			]
 		},
@@ -50,9 +49,7 @@
 			title: 'LEARN/',
 			links: [
 				{ label: 'Use cases', href: '/use-cases' },
-				{ label: 'Documentation', href: '/docs' },
-				{ label: 'What EROI is', href: '/docs/what-is-eroi' },
-				{ label: 'Why systems get captured', href: '/docs/why-systems-get-captured' }
+				{ label: 'Documentation', href: '/docs' }
 			]
 		},
 		{
@@ -61,16 +58,8 @@
 				{ label: 'Mostro nodes', href: '/network' },
 				{ label: 'Run a node', href: '/projects/voyager-pay/node' },
 				{ label: 'Relays', href: '/network#relays' },
-				{ label: 'Indexer', href: '/network#indexer' }
-			]
-		},
-		{
-			title: 'ABOUT/',
-			links: [
-				{ label: 'Principles', href: '/principles' },
-				{ label: 'Docs', href: '/docs' },
-				{ label: 'Contact', href: '/principles' },
-				{ label: 'Terms & privacy', href: '/principles' }
+				{ label: 'Indexer', href: '/network#indexer' },
+				{ label: 'Principles', href: '/principles' }
 			]
 		}
 	];
@@ -78,7 +67,7 @@
 
 <footer class="site-footer" data-register={register}>
 	<div class="mx-auto max-w-6xl px-6">
-		<div class="grid grid-cols-2 gap-12 sm:grid-cols-3 lg:grid-cols-[1.4fr_repeat(6,1fr)]">
+		<div class="grid grid-cols-2 gap-12 sm:grid-cols-3 lg:grid-cols-[1.4fr_repeat(5,1fr)]">
 			<div class="flex flex-col gap-5">
 				<a href="/" class="site-footer__wordmark font-display text-2xl">Voyager</a>
 				<p class="site-footer__lede max-w-xs text-[15px] leading-relaxed">
