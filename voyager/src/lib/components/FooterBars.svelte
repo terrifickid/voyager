@@ -1,8 +1,10 @@
 <script>
-	// Signal-bars strip (sui C5 adapted): vertical bars night-900 → night-800 →
-	// transparent. Pure CSS, no images, no motion — prefers-reduced-motion safe.
+	/**
+	 * @type {{ bars?: string[] }} */
+	let { bars = ['var(--night-900)', 'var(--night-800)', 'transparent'] } = $props();
+
 	const HEIGHTS = [64, 88, 112, 96, 80, 104, 72, 92, 116, 84, 68, 100, 76, 108, 88, 60];
-	const TONES = ['var(--night-900)', 'var(--night-800)', 'transparent'];
+	const TONES = bars;
 </script>
 
 <div class="footer-bars" aria-hidden="true">

@@ -112,7 +112,7 @@ html, body {
 	--register-text: var(--bone-50);
 	--register-muted: rgba(241, 239, 233, 0.65);
 	--register-eyebrow: var(--carnival-cyan);
-	--register-accent: var(--carnival-cyan);
+	--register-accent: var(--carnival-gold);
 	--register-accent-ink: var(--ink);
 	--register-card: rgba(241, 239, 233, 0.06);
 	--register-on-dark-soft: rgba(241, 239, 233, 0.7);

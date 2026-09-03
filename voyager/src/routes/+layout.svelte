@@ -11,6 +11,26 @@
 
 	let { children } = $props();
 
+	/**
+	 * @typedef {'civic-ocean' | 'editorial' | 'rasta' | 'carnival-poster' | 'heritage-sepia'} Register
+	 */
+
+	/**
+	 * @param {string} pathname
+	 * @returns {Register}
+	 */
+	function registerFor(pathname) {
+		if (pathname === '/projects' || pathname.startsWith('/projects/trip-planner')) {
+			return 'carnival-poster';
+		}
+		if (pathname === '/principles') return 'rasta';
+		if (pathname === '/build') return 'heritage-sepia';
+		if (pathname === '/' || pathname.startsWith('/docs')) return 'editorial';
+		return 'civic-ocean';
+	}
+
+	const chromeRegister = $derived(registerFor(page.url.pathname));
+
 	let errorHandlersInstalled = false;
 	if (browser && !errorHandlersInstalled) {
 		errorHandlersInstalled = true;
@@ -82,12 +102,12 @@
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 <div class="flex min-h-screen flex-col bg-bone-50 text-ink-2">
-	<Header />
+	<Header register={chromeRegister} />
 	<main class="flex-1">
 		{#if page.url.pathname !== '/'}
 			<Breadcrumbs />
 		{/if}
 		{@render children()}
 	</main>
-	<Footer />
+	<Footer register={chromeRegister} />
 </div>
