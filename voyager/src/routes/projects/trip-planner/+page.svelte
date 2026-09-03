@@ -56,7 +56,7 @@
 	<title>Trip Planner — Voyager · Caribbean-first showcase</title>
 </svelte:head>
 
-<RegisterSection register="editorial">
+<RegisterSection register="neo">
 
 <!-- Hero -->
 <section class="mx-auto max-w-6xl px-6 pt-16 pb-20 lg:pt-24 lg:pb-28">
@@ -225,7 +225,7 @@
 
 <section class="mx-auto max-w-6xl px-6 pb-32">
 	<RoadMarchRibbon
-		register="editorial"
+		register="neo"
 		eyebrow="Road march · trip planner milestones"
 		winners={[
 			{ year: '2024', name: 'concierge alpha', note: 'first itinerary build, in-browser' },

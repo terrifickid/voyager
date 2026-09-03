@@ -1,7 +1,7 @@
 <script>
 	/**
 	 * @typedef {'primary' | 'secondary' | 'tertiary'} Variant
-	 * @typedef {'perk' | 'rasta' | 'carnival-poster' | 'carnival-poster-white' | 'ocean' | 'windies' | 'gold-cream' | 'caribana' | 'heritage-sepia' | 'editorial' | 'civic-ocean' | 'festival-poster'} Register
+	 * @typedef {'perk' | 'rasta' | 'carnival-poster' | 'carnival-poster-white' | 'ocean' | 'windies' | 'gold-cream' | 'caribana' | 'heritage-sepia' | 'editorial' | 'civic-ocean' | 'festival-poster' | 'monochrome-caribbean' | 'trinidad' | 'orange-sun' | 'tiffany' | 'maroon-nights'} Register
 	 */
 	/** @type {{ variant?: Variant, register?: Register, href?: string, type?: 'button' | 'submit', onclick?: (e: MouseEvent) => void, disabled?: boolean, class?: string, children?: import('svelte').Snippet }} */
 	let {

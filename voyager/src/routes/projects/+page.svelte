@@ -15,7 +15,7 @@
 	<title>Projects — Voyager · Caribbean-first showcases</title>
 </svelte:head>
 
-<RegisterSection register="editorial">
+<RegisterSection register="neo">
 
 <section class="mx-auto max-w-6xl px-6 pt-16 pb-12 lg:pt-24">
 	<div class="flex flex-col gap-8">
@@ -103,7 +103,7 @@
 
 <section class="mx-auto max-w-6xl px-6 pt-16 pb-32 border-t border-teal-bright">
 	<RoadMarchRibbon
-		register="editorial"
+		register="neo"
 		eyebrow="Road march · Voyager showcase lineage"
 		winners={ROAD_MARCH}
 	/>

@@ -1,6 +1,6 @@
 <script>
 	/**
-	 * @typedef {'perk' | 'rasta' | 'carnival-poster' | 'carnival-poster-white' | 'ocean' | 'windies' | 'gold-cream' | 'caribana' | 'heritage-sepia' | 'editorial' | 'civic-ocean' | 'festival-poster'} Register
+	 * @typedef {'perk' | 'rasta' | 'carnival-poster' | 'carnival-poster-white' | 'ocean' | 'windies' | 'gold-cream' | 'caribana' | 'heritage-sepia' | 'editorial' | 'civic-ocean' | 'festival-poster' | 'monochrome-caribbean' | 'trinidad' | 'orange-sun' | 'tiffany' | 'maroon-nights'} Register
 	 * @typedef {{ label: string, body?: string, href?: string }} RibbonItem
 	 */
 	/** @type {{ register?: Register, items: RibbonItem[] }} */
@@ -18,7 +18,13 @@
 		'heritage-sepia': ['var(--heritage-sepia)', 'var(--heritage-rust)', 'var(--heritage-amber)'],
 		editorial: ['var(--ink)', 'var(--ink-2)', 'var(--bone-300)'],
 		'civic-ocean': ['var(--civic-ocean-gold)', 'var(--civic-ocean-white)', 'var(--civic-ocean-gold-deep)'],
-		'festival-poster': ['var(--festival-cyan)', 'var(--festival-yellow)', 'var(--festival-orange)']
+		'festival-poster': ['var(--festival-cyan)', 'var(--festival-yellow)', 'var(--festival-orange)'],
+		'monochrome-caribbean': ['var(--mc-text)', 'var(--mc-ink-soft)', 'var(--mc-ground-soft)'],
+		trinidad: ['var(--trinidad-red)', 'var(--trinidad-gold)', 'var(--trinidad-green)'],
+		'orange-sun': ['var(--orange-sun)', 'var(--orange-blue)', 'var(--orange-sun-deep)'],
+		neo: ['var(--neo-base)', 'var(--neo-blue)', 'var(--neo-base-deep)'],
+		tiffany: ['var(--tiffany-blue)', 'var(--tiffany-gold)', 'var(--tiffany-blue-deep)'],
+		'maroon-nights': ['var(--mn-gold)', 'var(--mn-cream)', 'var(--mn-gold-warm)']
 	};
 	const cols = $derived(palettes[register] ?? palettes['perk']);
 	const cycle = (i) => cols[i % cols.length];

@@ -222,15 +222,124 @@ html, body {
 [data-register='editorial'] {
 	--register-ground: var(--editorial-ground);
 	--register-text: var(--editorial-ink);
-	--register-muted: var(--muted);
-	--register-eyebrow: var(--editorial-ink);
+	--register-muted: var(--editorial-muted-warm);
+	--register-eyebrow: var(--editorial-sepia-soft);
 	--register-accent: var(--editorial-ink);
 	--register-accent-ink: var(--bone-50);
-	--register-highlight: var(--editorial-ink);
-	--register-card: var(--bone-100);
-	--register-on-dark-soft: var(--muted);
-	--register-hair: rgba(20, 20, 15, 0.10);
-	--register-hair-strong: rgba(20, 20, 15, 0.18);
+	--register-accent-hover: var(--editorial-sepia);
+	--register-secondary: var(--editorial-ground-warm);
+	--register-secondary-ink: var(--editorial-ink);
+	--register-highlight: var(--editorial-sepia);
+	--register-card: var(--editorial-ground-soft);
+	--register-on-dark-soft: var(--editorial-muted-warm);
+	--register-hair: rgba(20, 20, 15, 0.08);
+	--register-hair-strong: rgba(20, 20, 15, 0.14);
+}
+
+[data-register='monochrome-caribbean'] {
+	--register-ground: var(--mc-ground);
+	--register-text: var(--mc-text);
+	--register-muted: var(--mc-muted);
+	--register-eyebrow: var(--mc-text);
+	--register-accent: var(--mc-text);
+	--register-accent-ink: var(--mc-ink);
+	--register-accent-hover: var(--mc-highlight);
+	--register-secondary: var(--mc-ground-warm);
+	--register-secondary-ink: var(--mc-text);
+	--register-highlight: var(--mc-highlight);
+	--register-card: var(--mc-ground-soft);
+	--register-card-teal: var(--mc-ground-deep);
+	--register-on-dark-soft: var(--mc-muted);
+	--register-hair: rgba(242, 242, 240, 0.12);
+	--register-hair-strong: rgba(242, 242, 240, 0.22);
+}
+
+[data-register='trinidad'] {
+	--register-ground: var(--trinidad-red);
+	--register-text: var(--trinidad-cream);
+	--register-muted: rgba(244, 232, 213, 0.72);
+	--register-eyebrow: var(--trinidad-gold);
+	--register-accent: var(--trinidad-black);
+	--register-accent-ink: var(--trinidad-white);
+	--register-accent-hover: var(--trinidad-green);
+	--register-secondary: var(--trinidad-gold);
+	--register-secondary-ink: var(--trinidad-black);
+	--register-highlight: var(--trinidad-white);
+	--register-card: rgba(10, 10, 10, 0.18);
+	--register-card-teal: var(--trinidad-red-deep);
+	--register-on-dark-soft: rgba(244, 232, 213, 0.78);
+	--register-hair: rgba(244, 232, 213, 0.18);
+	--register-hair-strong: rgba(244, 232, 213, 0.32);
+}
+
+[data-register='orange-sun'] {
+	--register-ground: var(--orange-sun);
+	--register-text: var(--orange-cream);
+	--register-muted: rgba(244, 232, 213, 0.72);
+	--register-eyebrow: var(--orange-yellow);
+	--register-accent: var(--orange-blue);
+	--register-accent-ink: var(--orange-white);
+	--register-accent-hover: var(--orange-blue-bright);
+	--register-secondary: var(--orange-sun-deep);
+	--register-secondary-ink: var(--orange-cream);
+	--register-highlight: var(--orange-white);
+	--register-card: rgba(0, 123, 255, 0.18);
+	--register-card-teal: var(--orange-cobalt);
+	--register-on-dark-soft: rgba(244, 232, 213, 0.78);
+	--register-hair: rgba(244, 232, 213, 0.2);
+	--register-hair-strong: rgba(244, 232, 213, 0.34);
+}
+
+[data-register='neo'] {
+	--register-ground: var(--neo-base);
+	--register-text: var(--neo-cream);
+	--register-muted: rgba(244, 232, 213, 0.72);
+	--register-eyebrow: var(--neo-yellow);
+	--register-accent: var(--neo-blue);
+	--register-accent-ink: var(--neo-white);
+	--register-accent-hover: var(--neo-blue-bright);
+	--register-secondary: var(--neo-base-deep);
+	--register-secondary-ink: var(--neo-cream);
+	--register-highlight: var(--neo-white);
+	--register-card: rgba(0, 123, 255, 0.18);
+	--register-card-teal: var(--neo-cobalt);
+	--register-on-dark-soft: rgba(244, 232, 213, 0.78);
+	--register-hair: rgba(244, 232, 213, 0.2);
+	--register-hair-strong: rgba(244, 232, 213, 0.34);
+}
+
+[data-register='tiffany'] {
+	--register-ground: var(--tiffany-cream);
+	--register-text: var(--tiffany-ink);
+	--register-muted: rgba(0, 43, 92, 0.62);
+	--register-eyebrow: var(--tiffany-blue-deep);
+	--register-accent: var(--tiffany-blue);
+	--register-accent-ink: var(--mn-white);
+	--register-accent-hover: var(--tiffany-blue-deep);
+	--register-secondary: var(--tiffany-gold);
+	--register-secondary-ink: var(--ink);
+	--register-highlight: var(--tiffany-blue);
+	--register-card: rgba(10, 186, 181, 0.10);
+	--register-on-dark-soft: rgba(0, 43, 92, 0.7);
+	--register-hair: rgba(0, 43, 92, 0.10);
+	--register-hair-strong: rgba(0, 43, 92, 0.18);
+}
+
+[data-register='maroon-nights'] {
+	--register-ground: var(--mn-black);
+	--register-text: var(--mn-cream);
+	--register-muted: rgba(244, 232, 213, 0.62);
+	--register-eyebrow: var(--mn-gold);
+	--register-accent: var(--mn-gold);
+	--register-accent-ink: var(--mn-black);
+	--register-accent-hover: var(--mn-gold-warm);
+	--register-secondary: var(--mn-cream);
+	--register-secondary-ink: var(--mn-black);
+	--register-highlight: var(--mn-white);
+	--register-card: rgba(244, 232, 213, 0.05);
+	--register-on-dark-soft: rgba(244, 232, 213, 0.7);
+	--register-hair: var(--on-dark-hair);
+	--register-hair-strong: var(--on-dark-hair-2);
 }
 
 [data-register='civic-ocean'] {

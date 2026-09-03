@@ -12,7 +12,7 @@
 	let { children } = $props();
 
 	/**
-	 * @typedef {'perk' | 'rasta' | 'carnival-poster' | 'carnival-poster-white' | 'ocean' | 'windies' | 'gold-cream' | 'caribana' | 'heritage-sepia' | 'editorial' | 'civic-ocean' | 'festival-poster'} Register
+	 * @typedef {'perk' | 'rasta' | 'carnival-poster' | 'carnival-poster-white' | 'ocean' | 'windies' | 'gold-cream' | 'caribana' | 'heritage-sepia' | 'editorial' | 'civic-ocean' | 'festival-poster' | 'monochrome-caribbean' | 'trinidad' | 'orange-sun' | 'tiffany' | 'maroon-nights'} Register
 	 */
 
 	/**
@@ -21,10 +21,12 @@
 	 */
 	function registerFor(pathname) {
 		if (pathname.startsWith('/stack')) return 'caribana';
-		if (pathname.startsWith('/projects')) return 'editorial';
+		if (pathname.startsWith('/projects')) return 'neo';
 		if (pathname.startsWith('/use-cases')) return 'rasta';
 		if (pathname.startsWith('/network')) return 'ocean';
-		if (pathname === '/build' || pathname.startsWith('/build')) return 'heritage-sepia';
+		if (pathname.startsWith('/build')) return 'heritage-sepia';
+		if (pathname.startsWith('/docs')) return 'heritage-sepia';
+		if (pathname === '/principles') return 'rasta';
 		return 'carnival-poster';
 	}
 

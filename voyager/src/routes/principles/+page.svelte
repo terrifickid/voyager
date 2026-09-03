@@ -24,7 +24,7 @@
 	<title>Principles — Voyager · Caribbean-first</title>
 </svelte:head>
 
-<RegisterSection register="carnival-poster">
+<RegisterSection register="rasta">
 
 <section class="mx-auto max-w-6xl px-6 pt-16 pb-12 lg:pt-24">
 	<div class="flex flex-col gap-8">
@@ -175,12 +175,12 @@
 </section>
 
 <section class="mx-auto max-w-6xl px-6 pb-16">
-	<CarnivalRibbon register="carnival-poster" items={PRINCIPLES} />
+	<CarnivalRibbon register="rasta" items={PRINCIPLES} />
 </section>
 
 <section class="mx-auto max-w-6xl px-6 pb-32">
 	<HeritageLineage
-		register="carnival-poster"
+		register="rasta"
 		eyebrow="Platform lineage — same shape as the music"
 		stages={LINEAGE}
 		caption="Sep 2 advisory call → five primitives → open rails. A lineage from prior art, not nostalgia."

@@ -1,107 +1,190 @@
 :root {
-	--bone-50: #F1EFE9;
-	--bone-100: #E9E6DD;
-	--bone-200: #DED9CB;
-	--bone-300: #C9C3B1;
-	--bone-400: #B6B099;
+  --bone-50: #f1efe9;
+  --bone-100: #e9e6dd;
+  --bone-200: #ded9cb;
+  --bone-300: #c9c3b1;
+  --bone-400: #b6b099;
 
-	--ink: #14140F;
-	--ink-2: #2A2A22;
-	--muted: #6E6E68;
-	--hair: rgba(26, 26, 20, 0.08);
+  --ink: #14140f;
+  --ink-2: #2a2a22;
+  --muted: #6e6e68;
+  --hair: rgba(26, 26, 20, 0.08);
 
-	--lime: #BEE93A;
-	--lime-ink: #14140F;
+  --lime: #bee93a;
+  --lime-ink: #14140f;
 
-	--night-900: #10233B;
-	--night-800: #18304F;
-	--night-100: #D7E2EE;
-	--on-dark: var(--bone-50);
+  --night-900: #10233b;
+  --night-800: #18304f;
+  --night-100: #d7e2ee;
+  --on-dark: var(--bone-50);
 
-	--pastel-violet: #C9B6FF;
-	--pastel-coral: #FFB39E;
-	--pastel-sky: #A9D7FF;
-	--pastel-rose: #F4B4CB;
+  --pastel-violet: #c9b6ff;
+  --pastel-coral: #ffb39e;
+  --pastel-sky: #a9d7ff;
+  --pastel-rose: #f4b4cb;
 
-	--rasta-red: #E11A22;
-	--rasta-gold: #F8C300;
-	--rasta-green: #1B7E3D;
-	--rasta-ground: #0F1F0F;
+  --rasta-red: #e11a22;
+  --rasta-gold: #f8c300;
+  --rasta-green: #1b7e3d;
+  --rasta-ground: #0f1f0f;
 
-	--carnival-cyan: #00E2FF;
-	--carnival-gold: #FFC700;
-	--carnival-magenta: #FF1B6B;
-	--carnival-ground: #0A0A0A;
+  --carnival-cyan: #00e2ff;
+  --carnival-gold: #ffc700;
+  --carnival-magenta: #ff1b6b;
+  --carnival-ground: #0a0a0a;
 
-	/* Ocean-teal secondary accent (rubric C1) */
-	--teal-deep: #0E2A3A;
-	--teal: #155268;
-	--teal-bright: #1A8FA6;
-	--teal-ink: #F1EFE9;
+  /* Ocean-teal secondary accent (rubric C1) */
+  --teal-deep: #0e2a3a;
+  --teal: #155268;
+  --teal-bright: #1a8fa6;
+  --teal-ink: #f1efe9;
 
-	/* Carnival accent ladder — tonal companions */
-	--carnival-gold-strong: #FFD24A;
-	--carnival-cyan-strong: #5BF1FF;
-	--carnival-magenta-dim: #B0144A;
+  /* Carnival accent ladder — tonal companions */
+  --carnival-gold-strong: #ffd24a;
+  --carnival-cyan-strong: #5bf1ff;
+  --carnival-magenta-dim: #b0144a;
 
-	/* On-dark hairlines for black-ground registers */
-	--on-dark-hair: rgba(241, 239, 233, 0.10);
-	--on-dark-hair-2: rgba(241, 239, 233, 0.18);
+  /* On-dark hairlines for black-ground registers */
+  --on-dark-hair: rgba(241, 239, 233, 0.1);
+  --on-dark-hair-2: rgba(241, 239, 233, 0.18);
 
-	--heritage-sepia: #C99A5C;
-	--heritage-rust: #A0432A;
-	--heritage-amber: #E0A23A;
-	--heritage-ground: #1A1208;
+  --heritage-sepia: #c99a5c;
+  --heritage-rust: #a0432a;
+  --heritage-amber: #e0a23a;
+  --heritage-ground: #1a1208;
 
-	--carnival-white-ground: #FAFAF7;
-	--carnival-white-card: #F1F0E9;
+  --carnival-white-ground: #fafaf7;
+  --carnival-white-card: #f1f0e9;
 
-	--ocean-ground: #0A2438;
-	--ocean-gold: #F8C300;
-	--ocean-gold-deep: #D89737;
-	--ocean-gold-bright: #FFD24A;
+  --ocean-ground: #0a2438;
+  --ocean-gold: #f8c300;
+  --ocean-gold-deep: #d89737;
+  --ocean-gold-bright: #ffd24a;
 
-	--windies-maroon: #660028;
-	--windies-ground: #2A000E;
-	--windies-gold: #FBED00;
-	--windies-gold-soft: #FFF79A;
+  --windies-maroon: #660028;
+  --windies-ground: #2a000e;
+  --windies-gold: #fbed00;
+  --windies-gold-soft: #fff79a;
 
-	--goldcream-ground: #FAFAE1;
-	--goldcream-card: #F4F2D0;
-	--goldcream-gold: #EFB300;
-	--goldcream-gold-ink: #7A5C00;
+  --goldcream-ground: #fafae1;
+  --goldcream-card: #f4f2d0;
+  --goldcream-gold: #efb300;
+  --goldcream-gold-ink: #7a5c00;
 
-	--caribana-magenta: #ED177A;
-	--caribana-magenta-bright: #FF4A9E;
-	--caribana-violet: #9E5AFF;
-	--caribana-ground: #160A20;
+  --caribana-magenta: #ed177a;
+  --caribana-magenta-bright: #ff4a9e;
+  --caribana-violet: #9e5aff;
+  --caribana-ground: #160a20;
 
-	/* Editorial discipline register (cdesign.json v2 — EDR) — Bob Marley / Rihanna / Fenty */
-	--editorial-ground: #F1EFE9;
-	--editorial-ink: #14140F;
+  /* Editorial discipline register (cdesign.json v2 — EDR) — Bob Marley / Rihanna / Fenty */
+  --editorial-ground: #f1efe9;
+  --editorial-ground-soft: #e9e6dd;
+  --editorial-ground-warm: #ded9cb;
+  --editorial-ink: #14140f;
+  --editorial-ink-soft: #2a2a22;
+  --editorial-muted-warm: #6e6e58;
+  --editorial-sepia: #c99a5c;
+  --editorial-sepia-soft: #b58745;
 
-	/* Civic-ocean register (cdesign.json v2 — COR) — Visit Barbados */
-	--civic-ocean-ground: #002B5C;
-	--civic-ocean-gold: #F8C300;
-	--civic-ocean-gold-deep: #D89737;
-	--civic-ocean-white: #FFFFFF;
+  /* Monochrome-Caribbean register — grayscale monochrome (B&W discipline)
+	   (cdesign.json v2 C2 — disciplined palette within a register family;
+	   C3 black-ground high-contrast type) */
+  --mc-ground: #c8c8c4;
+  --mc-ground-soft: #b0b0ac;
+  --mc-ground-warm: #d8d8d4;
+  --mc-ground-deep: #6e6e6a;
+  --mc-ink: #14140f;
+  --mc-ink-soft: #2a2a22;
+  --mc-text: #14140f;
+  --mc-muted: rgba(20, 20, 15, 0.62);
+  --mc-accent: #14140f;
+  --mc-accent-hover: #3a3a33;
+  --mc-highlight: #14140f;
 
-	/* Festival-poster register (cdesign.json v2 — CDR dark variant) — Machel Montano */
-	--festival-black: #0A0A0A;
-	--festival-cyan: #00E2FF;
-	--festival-yellow: #FFFC00;
-	--festival-orange: #FF6900;
+  /* Trinidad register — Carnival / soca / mas-camp aesthetic
+	   (cdesign.json v2 cultural-distinct register family; CDR evidence:
+	   ncctt, machel, Brass Bacchanal 2026, wiadca, largeup;
+	   flag palette red/white/black + calypso gold + carnival green) */
+  --trinidad-black: #0a0a0a;
+  --trinidad-red: #ce1126;
+  --trinidad-red-deep: #8b0a1a;
+  --trinidad-gold: #f8c300;
+  --trinidad-green: #1b7e3d;
+  --trinidad-cream: #f4e8d5;
+  --trinidad-white: #ffffff;
 
-	--register-ground: var(--bone-50);
-	--register-text: var(--ink);
-	--register-muted: var(--muted);
-	--register-eyebrow: var(--muted);
-	--register-accent: var(--lime);
-	--register-accent-ink: var(--lime-ink);
-	--register-card: var(--bone-100);
-	--register-on-dark-soft: rgba(241, 239, 233, 0.7);
+  /* Orange-sun register — bright Caribbean orange + royal blue
+	   (cdesign1.md v0.1 C2 "Sunshine + carnival accent discipline":
+	   "single warm accent (#f8c300/#efb300/#fffc00/#ff6900) on CTAs;
+	   <15% hero coverage";
+	   C1 ocean-teal anchor as cool complement) */
+  --orange-sun: #ff6900;
+  --orange-sun-deep: #cc4f00;
+  --orange-sun-glow: #ff8433;
+  --orange-yellow: #fffc00;
+  --orange-cream: #f4e8d5;
+  --orange-white: #ffffff;
+  --orange-blue: #007bff;
+  --orange-blue-deep: #0056b3;
+  --orange-blue-bright: #3395ff;
+  --orange-cobalt: #0047ab;
 
-	--radius-card: 28px;
-	--radius-card-lg: 32px;
-	--radius-pill: 999px;
+  /* Neo register — bright orange + #007BFF blue (forked from orange-sun) */
+  --neo-base: rgb(255 79 0 / 94%);
+  --neo-base-deep: #c0144a;
+  --neo-base-glow: #ff4a8e;
+  --neo-yellow: #fffc00;
+  --neo-cream: #f4e8d5;
+  --neo-white: #ffffff;
+  --neo-blue: #007bff;
+  --neo-blue-deep: #0056b3;
+  --neo-blue-bright: #3395ff;
+  --neo-cobalt: #0047ab;
+
+  /* Tiffany register — Tiffany blue / bluish-green civic register
+	   (cdesign1.md v0.1 C1 "Ocean-teal trust anchor":
+	   "brand/trust surfaces sit in deep Caribbean sea teal/navy;
+	   never corporate blue or pure-white-only";
+	   advisory call directive "Tiffany blue/bluish-green/teal") */
+  --tiffany-blue: #0abab5;
+  --tiffany-blue-deep: #067f7c;
+  --tiffany-blue-pale: #b7e7e5;
+  --tiffany-cream: #e6f7f7;
+  --tiffany-ink: #002b5c;
+  --tiffany-gold: #f8c300;
+
+  /* Maroon-nights register — pure black + gold (Bob Maroon late-night)
+	   (cdesign1.md v0.1 C3 "Black-ground, high-contrast discipline":
+	   "near-black type on warm surfaces (or reverse) at WCAG AA;
+	   Bob Maroon → black #000000 dominant (110×) + red/gold/green") */
+  --mn-black: #000000;
+  --mn-gold: #f8c300;
+  --mn-gold-warm: #d89737;
+  --mn-cream: #f4e8d5;
+  --mn-white: #ffffff;
+
+  /* Civic-ocean register (cdesign.json v2 — COR) — Visit Barbados */
+  --civic-ocean-ground: #002b5c;
+  --civic-ocean-gold: #f8c300;
+  --civic-ocean-gold-deep: #d89737;
+  --civic-ocean-white: #ffffff;
+
+  /* Festival-poster register (cdesign.json v2 — CDR dark variant) — Machel Montano */
+  --festival-black: #0a0a0a;
+  --festival-cyan: #00e2ff;
+  --festival-yellow: #fffc00;
+  --festival-orange: #ff6900;
+
+  --register-ground: var(--bone-50);
+  --register-text: var(--ink);
+  --register-muted: var(--muted);
+  --register-eyebrow: var(--muted);
+  --register-accent: var(--lime);
+  --register-accent-ink: var(--lime-ink);
+  --register-card: var(--bone-100);
+  --register-on-dark-soft: rgba(241, 239, 233, 0.7);
+
+  --radius-card: 28px;
+  --radius-card-lg: 32px;
+  --radius-pill: 999px;
 }

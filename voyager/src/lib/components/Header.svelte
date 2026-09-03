@@ -3,7 +3,7 @@
 	import Cta from './Cta.svelte';
 
 	/**
-	 * @typedef {'perk' | 'rasta' | 'carnival-poster' | 'carnival-poster-white' | 'ocean' | 'windies' | 'gold-cream' | 'caribana' | 'heritage-sepia' | 'editorial' | 'civic-ocean' | 'festival-poster'} Register
+	 * @typedef {'perk' | 'rasta' | 'carnival-poster' | 'carnival-poster-white' | 'ocean' | 'windies' | 'gold-cream' | 'caribana' | 'heritage-sepia' | 'editorial' | 'civic-ocean' | 'festival-poster' | 'monochrome-caribbean' | 'trinidad' | 'orange-sun' | 'tiffany' | 'maroon-nights'} Register
 	 */
 	/** @type {{ register?: Register }} */
 	let { register = 'perk' } = $props();
@@ -105,6 +105,36 @@
 	[data-register='editorial'].site-header {
 		--site-header-bg: rgba(241, 239, 233, 0.9);
 		--site-header-text: var(--ink);
+	}
+
+	[data-register='monochrome-caribbean'].site-header {
+		--site-header-bg: rgba(200, 200, 196, 0.92);
+		--site-header-text: var(--mc-text);
+	}
+
+	[data-register='trinidad'].site-header {
+		--site-header-bg: rgba(206, 17, 38, 0.94);
+		--site-header-text: var(--trinidad-cream);
+	}
+
+	[data-register='orange-sun'].site-header {
+		--site-header-bg: rgba(255, 105, 0, 0.94);
+		--site-header-text: var(--orange-cream);
+	}
+
+	[data-register='neo'].site-header {
+		--site-header-bg: rgba(255, 27, 107, 0.94);
+		--site-header-text: var(--neo-cream);
+	}
+
+	[data-register='tiffany'].site-header {
+		--site-header-bg: rgba(230, 247, 247, 0.92);
+		--site-header-text: var(--tiffany-ink);
+	}
+
+	[data-register='maroon-nights'].site-header {
+		--site-header-bg: rgba(0, 0, 0, 0.94);
+		--site-header-text: var(--mn-cream);
 	}
 
 	[data-register='civic-ocean'].site-header {

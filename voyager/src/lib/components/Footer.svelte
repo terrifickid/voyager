@@ -1,6 +1,6 @@
 <script>
 	/**
-	 * @typedef {'perk' | 'rasta' | 'carnival-poster' | 'carnival-poster-white' | 'ocean' | 'windies' | 'gold-cream' | 'caribana' | 'heritage-sepia' | 'editorial' | 'civic-ocean' | 'festival-poster'} Register
+	 * @typedef {'perk' | 'rasta' | 'carnival-poster' | 'carnival-poster-white' | 'ocean' | 'windies' | 'gold-cream' | 'caribana' | 'heritage-sepia' | 'editorial' | 'civic-ocean' | 'festival-poster' | 'monochrome-caribbean' | 'trinidad' | 'orange-sun' | 'tiffany' | 'maroon-nights'} Register
 	 */
 	/** @type {{ register?: Register }} */
 	let { register = 'perk' } = $props();
@@ -20,7 +20,13 @@
 		'heritage-sepia': ['var(--heritage-sepia)', 'var(--heritage-rust)', 'var(--heritage-amber)'],
 		editorial: ['var(--ink)', 'var(--ink-2)', 'var(--muted)'],
 		'civic-ocean': ['var(--civic-ocean-gold)', 'var(--civic-ocean-white)', 'var(--civic-ocean-gold-deep)'],
-		'festival-poster': ['var(--festival-cyan)', 'var(--festival-yellow)', 'var(--festival-orange)']
+		'festival-poster': ['var(--festival-cyan)', 'var(--festival-yellow)', 'var(--festival-orange)'],
+		'monochrome-caribbean': ['var(--mc-text)', 'var(--mc-ink-soft)', 'var(--mc-ground-soft)'],
+		'trinidad': ['var(--trinidad-red)', 'var(--trinidad-gold)', 'var(--trinidad-green)'],
+		'orange-sun': ['var(--orange-sun)', 'var(--orange-blue)', 'var(--orange-sun-deep)'],
+		neo: ['var(--neo-base)', 'var(--neo-blue)', 'var(--neo-base-deep)'],
+		tiffany: ['var(--tiffany-blue)', 'var(--tiffany-gold)', 'var(--tiffany-blue-deep)'],
+		'maroon-nights': ['var(--mn-gold)', 'var(--mn-cream)', 'var(--mn-gold-warm)']
 	};
 	const bars = $derived(palettes[register] ?? palettes['perk']);
 
@@ -257,6 +263,84 @@
 		--site-footer-rule: var(--bone-200);
 		--site-footer-rule-text: var(--muted);
 		--site-footer-eyebrow: var(--muted);
+	}
+
+	[data-register='monochrome-caribbean'].site-footer {
+		--site-footer-bg: var(--mc-ground-warm);
+		--site-footer-text: var(--mc-text);
+		--site-footer-lede: var(--mc-muted);
+		--site-footer-link: var(--mc-muted);
+		--site-footer-link-hover: var(--mc-text);
+		--site-footer-bullet: var(--mc-text);
+		--site-footer-lang-bg: var(--mc-ground-soft);
+		--site-footer-rule: var(--mc-ground-soft);
+		--site-footer-rule-text: var(--mc-muted);
+		--site-footer-eyebrow: var(--mc-text);
+	}
+
+	[data-register='trinidad'].site-footer {
+		--site-footer-bg: var(--trinidad-red-deep);
+		--site-footer-text: var(--trinidad-cream);
+		--site-footer-lede: rgba(244, 232, 213, 0.85);
+		--site-footer-link: rgba(244, 232, 213, 0.85);
+		--site-footer-link-hover: var(--trinidad-gold);
+		--site-footer-bullet: var(--trinidad-gold);
+		--site-footer-lang-bg: rgba(10, 10, 10, 0.18);
+		--site-footer-rule: rgba(10, 10, 10, 0.22);
+		--site-footer-rule-text: rgba(244, 232, 213, 0.65);
+		--site-footer-eyebrow: var(--trinidad-gold);
+	}
+
+	[data-register='orange-sun'].site-footer {
+		--site-footer-bg: var(--orange-sun-deep);
+		--site-footer-text: var(--orange-cream);
+		--site-footer-lede: rgba(244, 232, 213, 0.88);
+		--site-footer-link: rgba(244, 232, 213, 0.88);
+		--site-footer-link-hover: var(--orange-yellow);
+		--site-footer-bullet: var(--orange-yellow);
+		--site-footer-lang-bg: rgba(0, 123, 255, 0.22);
+		--site-footer-rule: rgba(0, 123, 255, 0.28);
+		--site-footer-rule-text: rgba(244, 232, 213, 0.7);
+		--site-footer-eyebrow: var(--orange-yellow);
+	}
+
+	[data-register='neo'].site-footer {
+		--site-footer-bg: var(--neo-base-deep);
+		--site-footer-text: var(--neo-cream);
+		--site-footer-lede: rgba(244, 232, 213, 0.88);
+		--site-footer-link: rgba(244, 232, 213, 0.88);
+		--site-footer-link-hover: var(--neo-yellow);
+		--site-footer-bullet: var(--neo-yellow);
+		--site-footer-lang-bg: rgba(0, 123, 255, 0.22);
+		--site-footer-rule: rgba(0, 123, 255, 0.28);
+		--site-footer-rule-text: rgba(244, 232, 213, 0.7);
+		--site-footer-eyebrow: var(--neo-yellow);
+	}
+
+	[data-register='tiffany'].site-footer {
+		--site-footer-bg: var(--tiffany-blue-pale);
+		--site-footer-text: var(--tiffany-ink);
+		--site-footer-lede: rgba(0, 43, 92, 0.75);
+		--site-footer-link: rgba(0, 43, 92, 0.75);
+		--site-footer-link-hover: var(--tiffany-blue-deep);
+		--site-footer-bullet: var(--tiffany-blue);
+		--site-footer-lang-bg: rgba(10, 186, 181, 0.12);
+		--site-footer-rule: rgba(0, 43, 92, 0.18);
+		--site-footer-rule-text: rgba(0, 43, 92, 0.6);
+		--site-footer-eyebrow: var(--tiffany-blue-deep);
+	}
+
+	[data-register='maroon-nights'].site-footer {
+		--site-footer-bg: var(--mn-black);
+		--site-footer-text: var(--mn-cream);
+		--site-footer-lede: rgba(244, 232, 213, 0.82);
+		--site-footer-link: rgba(244, 232, 213, 0.82);
+		--site-footer-link-hover: var(--mn-gold);
+		--site-footer-bullet: var(--mn-gold);
+		--site-footer-lang-bg: rgba(244, 232, 213, 0.08);
+		--site-footer-rule: rgba(244, 232, 213, 0.18);
+		--site-footer-rule-text: rgba(244, 232, 213, 0.6);
+		--site-footer-eyebrow: var(--mn-gold);
 	}
 
 	[data-register='civic-ocean'].site-footer {

@@ -8,7 +8,7 @@
 	<title>Preferences — Voyager · Trip Planner · Caribbean-first</title>
 </svelte:head>
 
-<RegisterSection register="editorial">
+<RegisterSection register="neo">
 <section class="mx-auto max-w-6xl px-6 pt-16 pb-24">
 	<SectionHeader
 		eyebrow="Your travel fingerprint"
