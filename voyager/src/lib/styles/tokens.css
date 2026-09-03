@@ -33,6 +33,21 @@
 	--carnival-magenta: #FF1B6B;
 	--carnival-ground: #0A0A0A;
 
+	/* Ocean-teal secondary accent (rubric C1) */
+	--teal-deep: #0E2A3A;
+	--teal: #155268;
+	--teal-bright: #1A8FA6;
+	--teal-ink: #F1EFE9;
+
+	/* Carnival accent ladder — tonal companions */
+	--carnival-gold-strong: #FFD24A;
+	--carnival-cyan-strong: #5BF1FF;
+	--carnival-magenta-dim: #B0144A;
+
+	/* On-dark hairlines for black-ground registers */
+	--on-dark-hair: rgba(241, 239, 233, 0.10);
+	--on-dark-hair-2: rgba(241, 239, 233, 0.18);
+
 	--heritage-sepia: #C99A5C;
 	--heritage-rust: #A0432A;
 	--heritage-amber: #E0A23A;

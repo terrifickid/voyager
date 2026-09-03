@@ -61,7 +61,7 @@
 		gap: 16px;
 		align-items: baseline;
 		padding: 14px 0;
-		border-top: 1px solid var(--register-on-dark-soft);
+		border-top: 1px solid var(--register-hair, var(--register-on-dark-soft));
 	}
 	.road-march__row:first-child {
 		border-top: 0;
@@ -89,6 +89,6 @@
 		font-family: 'Space Grotesk', system-ui, sans-serif;
 		font-weight: 600;
 		font-size: 14px;
-		color: var(--register-eyebrow);
+		color: var(--register-secondary, var(--register-eyebrow));
 	}
 </style>

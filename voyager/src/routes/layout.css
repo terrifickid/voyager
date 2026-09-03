@@ -36,6 +36,18 @@
 	--color-carnival-magenta: #FF1B6B;
 	--color-carnival-ground: #0A0A0A;
 
+	--color-teal-deep: #0E2A3A;
+	--color-teal: #155268;
+	--color-teal-bright: #1A8FA6;
+	--color-teal-ink: #F1EFE9;
+
+	--color-carnival-gold-strong: #FFD24A;
+	--color-carnival-cyan-strong: #5BF1FF;
+	--color-carnival-magenta-dim: #B0144A;
+
+	--color-on-dark-hair: rgba(241, 239, 233, 0.10);
+	--color-on-dark-hair-2: rgba(241, 239, 233, 0.18);
+
 	--color-heritage-sepia: #C99A5C;
 	--color-heritage-rust: #A0432A;
 	--color-heritage-amber: #E0A23A;
@@ -114,8 +126,15 @@ html, body {
 	--register-eyebrow: var(--carnival-cyan);
 	--register-accent: var(--carnival-gold);
 	--register-accent-ink: var(--ink);
+	--register-accent-hover: var(--carnival-gold-strong);
+	--register-secondary: var(--teal);
+	--register-secondary-ink: var(--teal-ink);
+	--register-highlight: var(--carnival-magenta);
 	--register-card: rgba(241, 239, 233, 0.06);
+	--register-card-teal: var(--teal-deep);
 	--register-on-dark-soft: rgba(241, 239, 233, 0.7);
+	--register-hair: var(--on-dark-hair);
+	--register-hair-strong: var(--on-dark-hair-2);
 }
 
 [data-register='heritage-sepia'] {

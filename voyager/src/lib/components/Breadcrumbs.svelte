@@ -1,6 +1,10 @@
 <script>
 	import { page } from '$app/state';
 
+	/**
+	 * @typedef {'civic-ocean' | 'editorial' | 'rasta' | 'carnival-poster' | 'heritage-sepia'} Register
+	 */
+
 	const ROOT = { label: 'Voyager', href: '/' };
 
 	const SHORT_LABELS = {
@@ -16,6 +20,9 @@
 		preferences: 'Preferences',
 		docs: 'Docs'
 	};
+
+	/** @type {{ register?: Register }} */
+	let { register = 'civic-ocean' } = $props();
 
 	function humanize(seg) {
 		return seg
@@ -43,19 +50,40 @@
 	const crumbs = $derived(buildCrumbs(page.url.pathname));
 </script>
 
-<nav aria-label="Breadcrumb" class="mx-auto max-w-6xl px-6 pt-4">
-	<ol class="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-[13px] text-muted">
-		{#each crumbs as crumb, i (crumb.href)}
-			{#if i > 0}
-				<li aria-hidden="true" class="text-[1.05em] leading-none text-bone-400">›</li>
-			{/if}
-			<li>
-				{#if crumb.isLast}
-					<span aria-current="page" class="text-ink">{crumb.label}</span>
-				{:else}
-					<a href={crumb.href} class="hover:text-ink transition-colors">{crumb.label}</a>
+<div data-register={register} class="breadcrumb-bar">
+	<nav aria-label="Breadcrumb" class="mx-auto max-w-6xl px-6 pt-4">
+		<ol class="breadcrumb-list flex flex-wrap items-center gap-x-1.5 gap-y-1 text-[13px]">
+			{#each crumbs as crumb, i (crumb.href)}
+				{#if i > 0}
+					<li aria-hidden="true" class="breadcrumb-sep text-[1.05em] leading-none">›</li>
 				{/if}
-			</li>
-		{/each}
-	</ol>
-</nav>
+				<li>
+					{#if crumb.isLast}
+						<span aria-current="page" class="breadcrumb-current">{crumb.label}</span>
+					{:else}
+						<a href={crumb.href} class="breadcrumb-link transition-colors">{crumb.label}</a>
+					{/if}
+				</li>
+			{/each}
+		</ol>
+	</nav>
+</div>
+
+<style>
+	.breadcrumb-bar {
+		background-color: var(--register-ground);
+		color: var(--register-muted);
+	}
+	.breadcrumb-sep {
+		color: var(--register-muted);
+	}
+	.breadcrumb-current {
+		color: var(--register-text);
+	}
+	.breadcrumb-link {
+		color: var(--register-muted);
+	}
+	.breadcrumb-link:hover {
+		color: var(--register-text);
+	}
+</style>

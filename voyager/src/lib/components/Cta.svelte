@@ -59,6 +59,10 @@
 		color: var(--register-accent-ink);
 	}
 	.cta-primary:hover {
-		filter: brightness(0.92);
+		/* Registers without a hover token keep the old dimmed-accent behavior */
+		background-color: var(
+			--register-accent-hover,
+			color-mix(in srgb, var(--register-accent) 92%, black)
+		);
 	}
 </style>

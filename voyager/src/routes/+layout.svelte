@@ -105,7 +105,7 @@
 	<Header register={chromeRegister} />
 	<main class="flex-1">
 		{#if page.url.pathname !== '/'}
-			<Breadcrumbs />
+			<Breadcrumbs register={chromeRegister} />
 		{/if}
 		{@render children()}
 	</main>
