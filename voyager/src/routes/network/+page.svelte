@@ -1,6 +1,7 @@
 <script>
 	import Cta from '$lib/components/Cta.svelte';
 	import SectionHeader from '$lib/components/SectionHeader.svelte';
+	import SplitPanel from '$lib/components/SplitPanel.svelte';
 	import nodes from '$lib/data/mostroNodes.json';
 
 	const REFERENCE_NODE = 'voyager-caribbean';
@@ -92,6 +93,22 @@
 			Anyone can run a relay. Operators who serve Caribbean listings and ramp quotes earn reputation from the apps that connect.
 		</p>
 	</div>
+</section>
+
+<section class="mx-auto max-w-6xl px-6 pb-24">
+	<SplitPanel
+		theme="right-dark"
+		left={{
+			eyebrow: '// independence',
+			title: 'The federation is the resilience.',
+			body: 'Mostro nodes publish their own profiles. Wallets rank them per-order. If one node goes down, the next best quote wins — no central counterparty to fail.'
+		}}
+		right={{
+			stat: { value: 'N+', label: 'INDEPENDENT NODES' },
+			body: 'More operators means better rate discovery, more redundancy, and more rails. Voyager operates one reference node; community operators compete on fee, region, and reputation.',
+			cta: { label: 'Run a node', href: '/projects/voyager-pay/node' }
+		}}
+	/>
 </section>
 
 <section id="indexer" class="mx-auto max-w-6xl px-6 pb-32 scroll-mt-20">

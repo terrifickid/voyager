@@ -1,6 +1,7 @@
 <script>
 	import Cta from '$lib/components/Cta.svelte';
 	import SectionHeader from '$lib/components/SectionHeader.svelte';
+	import SplitPanel from '$lib/components/SplitPanel.svelte';
 	import primitives from '$lib/data/primitives.json';
 	import PrimitiveCard from '$lib/components/PrimitiveCard.svelte';
 </script>
@@ -34,6 +35,22 @@
 			/>
 		{/each}
 	</div>
+</section>
+
+<section class="mx-auto max-w-6xl px-6 pb-24">
+	<SplitPanel
+		theme="left-dark"
+		left={{
+			stat: { value: '5 + 1', label: 'PRIMITIVES · 1 SDK' },
+			title: 'Five primitives. One SDK.',
+			body: 'Each primitive solves one job. The SDK wires them together — identity, payment, ramp, messaging, discovery behind one Stripe-shaped surface.'
+		}}
+		right={{
+			eyebrow: '// why these five',
+			title: 'What we left out, and why.',
+			body: 'We did not pick a chat protocol, a streaming layer, or a CDN. Builders ship those on top. The five primitives are the smallest set that covers identity, money, fiat on/off, private messaging, and findability.'
+		}}
+	/>
 </section>
 
 <section class="mx-auto max-w-6xl px-6 pb-32">

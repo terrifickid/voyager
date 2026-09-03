@@ -1,6 +1,7 @@
 <script>
 	import Cta from '$lib/components/Cta.svelte';
 	import SectionHeader from '$lib/components/SectionHeader.svelte';
+	import SplitPanel from '$lib/components/SplitPanel.svelte';
 </script>
 
 <svelte:head>
@@ -86,6 +87,23 @@
 		<Cta variant="tertiary" href="/docs/what-is-eroi">What EROI is</Cta>
 		<Cta variant="tertiary" href="/docs/why-systems-get-captured">Why systems get captured</Cta>
 	</div>
+</section>
+
+<!-- How the network gets stronger -->
+<section class="mx-auto max-w-6xl px-6 pb-24">
+	<SplitPanel
+		theme="right-dark"
+		left={{
+			eyebrow: '// the platform\'s promise',
+			title: 'The protocol survives without us.',
+			body: 'If Voyager-the-business is acquired or shut down tomorrow, the rails keep working. Reference clients are demos; the wire format is the product. Builders\' apps do not depend on us staying alive.'
+		}}
+		right={{
+			stat: { value: '0', label: 'CUSTODIANS' },
+			title: 'No platform in the middle.',
+			body: 'The protocol never holds funds. Users bring their own wallets. Operators run their own nodes. We run an optional indexer and one reference Mostro node. That is the whole list.'
+		}}
+	/>
 </section>
 
 <!-- How the network gets stronger -->

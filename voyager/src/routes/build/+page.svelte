@@ -1,6 +1,7 @@
 <script>
 	import Cta from '$lib/components/Cta.svelte';
 	import SectionHeader from '$lib/components/SectionHeader.svelte';
+	import SplitPanel from '$lib/components/SplitPanel.svelte';
 </script>
 
 <svelte:head>
@@ -53,6 +54,24 @@
 			</ul>
 		</div>
 	</div>
+</section>
+
+<!-- Economics -->
+<section class="mx-auto max-w-6xl px-6 pb-24">
+	<SplitPanel
+		theme="left-dark"
+		left={{
+			eyebrow: '// the SDK',
+			title: 'Stripe-shaped surface.',
+			body: 'A handful of well-named calls. The SDK hides the keys, the wire format, and the relay fan-out. MIT or Apache. No telemetry. No required attribution.'
+		}}
+		right={{
+			eyebrow: '// what\'s inside',
+			title: 'Five primitives, ten calls.',
+			body: 'identity.create, pay.invoice, pay.quote, listing.create, dm.send, dm.read — that is most of what builders need. The rest is configuration, not new API.',
+			cta: { label: 'Read the docs', href: '/docs' }
+		}}
+	/>
 </section>
 
 <!-- Economics -->

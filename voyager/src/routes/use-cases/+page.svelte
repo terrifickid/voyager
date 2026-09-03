@@ -1,6 +1,7 @@
 <script>
 	import Cta from '$lib/components/Cta.svelte';
 	import SectionHeader from '$lib/components/SectionHeader.svelte';
+	import SplitPanel from '$lib/components/SplitPanel.svelte';
 	import UseCaseCard from '$lib/components/UseCaseCard.svelte';
 	import useCases from '$lib/data/useCases.json';
 </script>
@@ -27,6 +28,22 @@
 			<UseCaseCard id={uc.slug} code={uc.code} title={uc.title} body={uc.short} href="/use-cases/{uc.slug}" />
 		{/each}
 	</div>
+</section>
+
+<section class="mx-auto max-w-6xl px-6 pb-24">
+	<SplitPanel
+		theme="left-dark"
+		left={{
+			stat: { value: '8', label: 'USE CASES' },
+			title: 'Eight jobs, not eight products.',
+			body: 'Each use case is something a builder would ship, not something Voyager runs. The platform makes them possible; the apps are yours.'
+		}}
+		right={{
+			eyebrow: '// methodology',
+			title: 'From the Sep 2 advisory call.',
+			body: 'These are the jobs Caribbean builders named in the Sep 2 2026 call with Shontelle Layne. Each one is a target for some app a builder ships on Voyager — the list is what the platform should make easy, not what Voyager builds.'
+		}}
+	/>
 </section>
 
 <section class="mx-auto max-w-6xl px-6 pb-32">
