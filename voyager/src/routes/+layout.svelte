@@ -25,7 +25,8 @@
 		}
 		if (pathname === '/principles') return 'rasta';
 		if (pathname === '/build') return 'heritage-sepia';
-		if (pathname === '/' || pathname.startsWith('/docs')) return 'editorial';
+		if (pathname === '/') return 'carnival-poster';
+		if (pathname.startsWith('/docs')) return 'editorial';
 		return 'civic-ocean';
 	}
 

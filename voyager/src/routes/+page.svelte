@@ -33,10 +33,10 @@
 	<title>Voyager — Caribbean-first toolkit for the region's apps</title>
 </svelte:head>
 
-<RegisterSection register="editorial">
+<RegisterSection register="carnival-poster">
 
 <!-- 1. Ribbon -->
-<div class="w-full" style="background: var(--lime); color: var(--lime-ink);">
+<div class="w-full" style="background: var(--carnival-magenta); color: var(--bone-50);">
 	<div class="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-3 gap-y-1 px-6 py-2.5 text-[13px] font-medium">
 		<span>
 			<span class="font-semibold">Voyager</span> — an open toolkit for building Caribbean-first apps. Now in alpha.
@@ -52,10 +52,10 @@
 <section class="mx-auto max-w-6xl px-6 pt-20 pb-20 lg:pt-28 lg:pb-28">
 	<div class="flex flex-col gap-8">
 		<span class="eyebrow">Open toolkit · Caribbean first</span>
-		<h1 class="font-display text-[56px] sm:text-[80px] lg:text-[112px] text-ink leading-[0.95] max-w-5xl">
+		<h1 class="font-display text-[56px] sm:text-[80px] lg:text-[112px] leading-[0.95] max-w-5xl" style="color: var(--register-text);">
 			An open toolkit for building Caribbean-first apps.
 		</h1>
-		<p class="max-w-2xl text-lg leading-relaxed text-ink-2">
+		<p class="max-w-2xl text-lg leading-relaxed" style="color: var(--register-on-dark-soft);">
 			Five primitives, one SDK, no platform in the middle. Voyager gives any developer in the region — or in the diaspora — the rails to ship apps that don't route through US/EU payment processors.
 		</p>
 		<div class="flex flex-wrap items-center gap-3">
@@ -74,7 +74,7 @@
 	/>
 	<div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-5">
 		{#each PRIMITIVES as p (p.id)}
-			<PrimitiveCard id={p.id} code={p.code} title={p.title} body={p.body} icon={p.icon} href={p.href} />
+			<PrimitiveCard id={p.id} code={p.code} title={p.title} body={p.body} icon={p.icon} href={p.href} register="carnival-poster" />
 		{/each}
 	</div>
 </section>
@@ -89,34 +89,36 @@
 	<div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
 		<a
 			href="/projects/trip-planner"
-			class="group flex flex-col gap-5 rounded-[32px] bg-bone-100 p-8 transition-colors hover:bg-bone-200"
+			class="group flex flex-col gap-5 rounded-[32px] p-8 transition-colors"
+			style="background-color: var(--register-card-teal); color: var(--register-text);"
 		>
 			<div class="flex items-center justify-between">
 				<span class="eyebrow">voyager-concierge</span>
-				<span class="font-mono text-[12px] text-muted">live</span>
+				<span class="font-mono text-[12px]" style="color: var(--register-muted);">live</span>
 			</div>
-			<h3 class="font-display text-[36px] leading-[1.05] text-ink">Trip Planner</h3>
-			<p class="text-[15px] leading-relaxed text-ink-2">
+			<h3 class="font-display text-[36px] leading-[1.05]" style="color: var(--register-text);">Trip Planner</h3>
+			<p class="text-[15px] leading-relaxed" style="color: var(--register-on-dark-soft);">
 				Day-by-day itineraries built in the browser from real places, your style, and your budget. Pays through Voyager Pay.
 			</p>
-			<span class="mt-auto inline-flex items-center gap-1 text-[14px] font-semibold text-ink">
+			<span class="mt-auto inline-flex items-center gap-1 text-[14px] font-semibold" style="color: var(--carnival-cyan);">
 				Open Trip Planner
 				<span aria-hidden="true" class="text-[1.05em] leading-none transition-transform group-hover:translate-x-0.5">›</span>
 			</span>
 		</a>
 		<a
 			href="/projects/voyager-pay"
-			class="group flex flex-col gap-5 rounded-[32px] bg-bone-100 p-8 transition-colors hover:bg-bone-200"
+			class="group flex flex-col gap-5 rounded-[32px] p-8 transition-colors"
+			style="background-color: var(--register-card-teal); color: var(--register-text);"
 		>
 			<div class="flex items-center justify-between">
 				<span class="eyebrow">voyager-pay</span>
-				<span class="font-mono text-[12px] text-muted">live</span>
+				<span class="font-mono text-[12px]" style="color: var(--register-muted);">live</span>
 			</div>
-			<h3 class="font-display text-[36px] leading-[1.05] text-ink">Voyager Pay</h3>
-			<p class="text-[15px] leading-relaxed text-ink-2">
+			<h3 class="font-display text-[36px] leading-[1.05]" style="color: var(--register-text);">Voyager Pay</h3>
+			<p class="text-[15px] leading-relaxed" style="color: var(--register-on-dark-soft);">
 				An open payments protocol. No custody. Settlement on Lightning. A federation of competing Mostro nodes bridges fiat.
 			</p>
-			<span class="mt-auto inline-flex items-center gap-1 text-[14px] font-semibold text-ink">
+			<span class="mt-auto inline-flex items-center gap-1 text-[14px] font-semibold" style="color: var(--carnival-cyan);">
 				Open Voyager Pay
 				<span aria-hidden="true" class="text-[1.05em] leading-none transition-transform group-hover:translate-x-0.5">›</span>
 			</span>
@@ -126,14 +128,14 @@
 
 <!-- 5. Voyager Pay — built in (kept verbatim) -->
 <section class="mx-auto max-w-6xl px-6 pb-24">
-	<div class="rounded-[32px] bg-bone-100 p-8 sm:p-12">
+	<div class="rounded-[32px] p-8 sm:p-12" style="background-color: var(--register-card);">
 		<div class="grid grid-cols-1 items-start gap-10 lg:grid-cols-2">
 			<div class="flex flex-col gap-5">
 				<span class="eyebrow">Voyager Pay — built in</span>
-				<h2 class="font-display text-[32px] sm:text-[40px] lg:text-[48px] text-ink leading-[1.05]">
+				<h2 class="font-display text-[32px] sm:text-[40px] lg:text-[48px] leading-[1.05]" style="color: var(--register-text);">
 					Pay the way you actually pay.
 				</h2>
-				<p class="max-w-md text-base leading-relaxed text-ink-2">
+				<p class="max-w-md text-base leading-relaxed" style="color: var(--register-on-dark-soft);">
 					Pick a currency. See the best rate. Tap a vendor, hit Pay. No app to install.
 				</p>
 				<div class="mt-2">
@@ -154,7 +156,7 @@
 	/>
 	<div class="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
 		{#each USE_CASES as uc (uc.id)}
-			<UseCaseCard id={uc.id} code={uc.code} title={uc.title} body={uc.body} href={uc.href} />
+			<UseCaseCard id={uc.id} code={uc.code} title={uc.title} body={uc.body} href={uc.href} register="carnival-poster" />
 		{/each}
 	</div>
 	<div class="mt-10">
@@ -163,11 +165,11 @@
 </section>
 
 <!-- 7. Network stats band on night-900 -->
-<section class="bg-night-900">
+<section style="background-color: var(--carnival-ground);">
 	<div class="mx-auto max-w-6xl px-6 py-20">
 		<div class="flex flex-col gap-10">
-			<span class="text-[11px] font-semibold tracking-[0.14em] uppercase text-bone-50/70">// the network</span>
-			<h2 class="font-display text-[40px] sm:text-[56px] lg:text-[72px] text-bone-50 max-w-3xl leading-[1.02]">
+			<span class="text-[11px] font-semibold tracking-[0.14em] uppercase" style="color: var(--carnival-cyan);">// the network</span>
+			<h2 class="font-display text-[40px] sm:text-[56px] lg:text-[72px] max-w-3xl leading-[1.02]" style="color: var(--bone-50);">
 				The network gets stronger as more builders ship.
 			</h2>
 			<Divider tone="bone" />
@@ -189,36 +191,36 @@
 	<div class="grid grid-cols-1 gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center">
 		<div class="flex flex-col gap-5">
 			<span class="eyebrow">// the SDK</span>
-			<h2 class="font-display text-[40px] sm:text-[52px] lg:text-[64px] text-ink max-w-xl leading-[1.02]">
+			<h2 class="font-display text-[40px] sm:text-[52px] lg:text-[64px] max-w-xl leading-[1.02]" style="color: var(--register-text);">
 				Stripe-shaped surface, Nostr underneath.
 			</h2>
-			<p class="max-w-md text-lg leading-relaxed text-ink-2">
+			<p class="max-w-md text-lg leading-relaxed" style="color: var(--register-on-dark-soft);">
 				A handful of well-named calls. The SDK hides the keys, the wire format, and the relay fan-out.
 			</p>
 			<div class="mt-2">
 				<Cta variant="primary" href="/build">Read the SDK docs</Cta>
 			</div>
 		</div>
-		<figure class="rounded-[24px] bg-bone-200 overflow-hidden">
-			<div class="flex items-center gap-2 px-5 py-3 bg-bone-300">
-				<span class="h-2.5 w-2.5 rounded-full" style="background: var(--pastel-coral);"></span>
-				<span class="h-2.5 w-2.5 rounded-full" style="background: var(--pastel-sky);"></span>
-				<span class="h-2.5 w-2.5 rounded-full" style="background: var(--pastel-rose);"></span>
-				<span class="ml-2 font-mono text-[12px] text-ink-2">your-app.ts</span>
+		<figure class="rounded-[24px] overflow-hidden" style="background-color: var(--register-card); border: 1px solid var(--register-hair);">
+			<div class="flex items-center gap-2 px-5 py-3" style="background-color: rgba(241, 239, 233, 0.04);">
+				<span class="h-2.5 w-2.5 rounded-full" style="background: var(--carnival-magenta);"></span>
+				<span class="h-2.5 w-2.5 rounded-full" style="background: var(--carnival-gold);"></span>
+				<span class="h-2.5 w-2.5 rounded-full" style="background: var(--carnival-cyan);"></span>
+				<span class="ml-2 font-mono text-[12px]" style="color: var(--register-on-dark-soft);">your-app.ts</span>
 			</div>
-			<pre class="m-0 px-6 py-5 font-mono text-[13px] leading-[1.6] text-ink bg-bone-50 overflow-x-auto"><span class="text-muted">// identity, payments, listings, DMs</span>
-<span class="text-ink-2">const</span> me = <span class="text-ink-2">await</span> voyager.identity.create();
-<span class="text-ink-2">const</span> invoice = <span class="text-ink-2">await</span> voyager.pay.invoice(bolt11);
-<span class="text-ink-2">const</span> quotes  = <span class="text-ink-2">await</span> voyager.pay.quote(<span style="color:var(--lime-ink)">"JMD"</span>, <span style="color:var(--lime-ink)">5000</span>);
-<span class="text-ink-2">await</span> voyager.listing.create(&#123; kind: <span style="color:var(--lime-ink)">30402</span>, title, region &#125;);
-<span class="text-ink-2">await</span> voyager.dm.send(toNpub, &#123; orderId, terms &#125;);</pre>
+			<pre class="m-0 px-6 py-5 font-mono text-[13px] leading-[1.6] overflow-x-auto" style="color: var(--register-text); background-color: var(--carnival-ground);"><span style="color: var(--register-muted);">// identity, payments, listings, DMs</span>
+<span style="color: var(--carnival-cyan);">const</span> me = <span style="color: var(--carnival-cyan);">await</span> voyager.identity.create();
+<span style="color: var(--carnival-cyan);">const</span> invoice = <span style="color: var(--carnival-cyan);">await</span> voyager.pay.invoice(bolt11);
+<span style="color: var(--carnival-cyan);">const</span> quotes  = <span style="color: var(--carnival-cyan);">await</span> voyager.pay.quote(<span style="color: var(--carnival-gold);">"JMD"</span>, <span style="color: var(--carnival-gold);">5000</span>);
+<span style="color: var(--carnival-cyan);">await</span> voyager.listing.create(&#123; kind: <span style="color: var(--carnival-gold);">30402</span>, title, region &#125;);
+<span style="color: var(--carnival-cyan);">await</span> voyager.dm.send(toNpub, &#123; orderId, terms &#125;);</pre>
 		</figure>
 	</div>
 </section>
 
 <!-- 9. Docs band + final CTA -->
 <section class="mx-auto max-w-6xl px-6 pb-24">
-	<div class="rounded-[32px] bg-bone-100 p-8 sm:p-12">
+	<div class="rounded-[32px] p-8 sm:p-12" style="background-color: var(--register-card);">
 		<SectionHeader
 			eyebrow="Documentation"
 			title="Want the spec behind Voyager?"
@@ -231,11 +233,11 @@
 </section>
 
 <section class="mx-auto max-w-6xl px-6 pb-32">
-	<div class="rounded-[32px] bg-bone-100 p-10 sm:p-16 text-center">
-		<h2 class="font-display text-[40px] sm:text-[56px] lg:text-[72px] text-ink max-w-3xl mx-auto leading-[1.02]">
+	<div class="rounded-[32px] p-10 sm:p-16 text-center" style="background-color: var(--register-card-teal);">
+		<h2 class="font-display text-[40px] sm:text-[56px] lg:text-[72px] max-w-3xl mx-auto leading-[1.02]" style="color: var(--register-text);">
 			Build on rails the region actually owns.
 		</h2>
-		<p class="mt-6 max-w-xl mx-auto text-lg text-ink-2">
+		<p class="mt-6 max-w-xl mx-auto text-lg" style="color: var(--register-on-dark-soft);">
 			Five primitives. One SDK. No platform in the middle. Ship the first app that doesn't need a US bank.
 		</p>
 		<div class="mt-8 flex flex-wrap items-center justify-center gap-3">
