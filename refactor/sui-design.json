@@ -1,0 +1,293 @@
+{
+  "rubric_id": "sui_web_design_v1",
+  "version": "v1",
+  "class": "visual-design.layer1-blockchain-infrastructure",
+  "intended_use": "both",
+  "build_provenance": {
+    "target": "sui.io (Mysten Labs Layer-1 Move blockchain)",
+    "evidence": "30 full-page screenshots, captured 2026-09-02 19:43 UTC, covering: home, basecamp, intro-to-sui, hashi, nautilus, payments, institutions-capital-markets, defi, ai, privacy, networkinfo, validators, security, token-schedule, deflation, buybacks, move, agentpayments, developers, project-ideas, launch-on-sui, founder-starter-pack, faq, programs-funding, community, blog, ecosystem, get-started, tag/events, request-for-proposals.",
+    "method": "COLLECT (30 PNGs) → ANALYZE (sequential vision_analyze per page, foreground) → CONTRAST (intra-site: hero-pattern variants A-F, content-card vs FAQ-card vs step-card, footer signature consistency across 30 pages) → DRAFT (criteria derived from RECURRING motifs with 100% page-coverage) → CALIBRATE (descriptors tested against each of the 30 pages, criteria that fit <80% of pages demoted to tips).",
+    "register": "Single register: Dark-mode-first L1 infrastructure brand. NO register taxonomy needed for this build — every page in the evidence set is the same register. (Voyager's register-taxonomy step only triggers with heterogeneous positive evidence.)",
+    "evidence_file": "/home/tk/rubric/sui_scan/user_shots/sui.io-20260902-1943/"
+  },
+  "criteria": [
+    {
+      "id": "C1",
+      "name": "Cold-only palette with Sui-electric-blue as the single accent",
+      "what_it_checks": "Site uses an exclusively cold palette (deep navy/near-black backgrounds, Sui-electric-blue as the single accent, white type, no warm accent colors anywhere).",
+      "observable": "Background = dark navy/black hex range (#0A0E1A to #161E33 family). Accent = single Sui-electric-blue (#4DA2FF / #6FB1FF) used for buttons, links, section labels, brand logo glyph. NO orange/yellow/red/warm-pink anywhere. NO warm gradient — when gradients exist they go cyan→blue→navy.",
+      "weight": 0.14,
+      "levels": [
+        {"score": 4, "label": "On-class", "descriptor": "Palette is exclusively navy/black + Sui-blue + white. Sui-blue is the ONLY saturated accent. All gradients run cyan→blue→navy (never through warm hues)."},
+        {"score": 3, "label": "Near", "descriptor": "Dominantly cold palette with Sui-blue accent, but one section introduces a desaturated warm tone (muted beige, dark gold) or a non-blue brand color appears in a partner logo card."},
+        {"score": 2, "label": "Partial", "descriptor": "Multiple accent colors present (purple, teal, magenta) OR a warm accent appears in CTAs/buttons. Site still reads dark-mode-first but the strict Sui-blue monochromy is broken."},
+        {"score": 1, "label": "Off-class", "descriptor": "Light-mode-first, multi-accent SaaS palette, OR uses a different primary blue (royal blue, cobalt, sky), OR warm accents dominate. Generic web3 marketing palette."}
+      ],
+      "generation_rule": "Lock the palette: background #0A0E1A–#161E33 family, accent #4DA2FF, text white-on-dark, secondary text mid-grey (#9CA3AF–#B0B5C0). Reject any warm hue. Partner logos get neutral card containers, not warm tinted backgrounds.",
+      "pitfalls": [
+        "Adding an orange or red accent for 'energy' or 'urgency'",
+        "Using sky blue (#87CEEB) instead of Sui-electric-blue — sky blue reads as too soft",
+        "Light-mode background — Sui is dark-mode-first by design",
+        "Using purple/magenta gradients as decoration"
+      ],
+      "evidence": [
+        "001_sui.io.png (home, navy + Sui-blue only)",
+        "009_sui.io-ai.png (starburst all in cool tones)",
+        "014_sui.io-token-schedule.png (charts all in Sui-blue, no warm tones)",
+        "015_sui.io-deflation.png (3-col card grid, all-blue bullets)"
+      ]
+    },
+    {
+      "id": "C2",
+      "name": "Dark-mode-first with high-contrast white-on-navy display type",
+      "what_it_checks": "Site is dark-mode by default, not 'light mode with a dark theme option'. Display type is white-on-navy at high contrast, sentence case, never title case.",
+      "observable": "Hero headlines are white text on near-black/navy background. Body text is white or mid-grey on dark. Headlines are sentence case (first word capitalized only). NO title-case headlines. NO 'Welcome to X!' exclamations. NO light-mode default with dark toggle.",
+      "weight": 0.13,
+      "levels": [
+        {"score": 4, "label": "On-class", "descriptor": "All primary surfaces dark. Headlines white-on-navy at >7:1 contrast. All headlines sentence case. No light-mode surface anywhere except possibly a code block or a partner-feature card."},
+        {"score": 3, "label": "Near", "descriptor": "Dark-mode-first, but a section has white/light background (often partner feature cards or 'Dive deeper' blog teasers). Headlines remain sentence case."},
+        {"score": 2, "label": "Partial", "descriptor": "Mixed-mode site — light and dark sections alternate without clear hierarchy. OR headlines drift to title case on some pages."},
+        {"score": 1, "label": "Off-class", "descriptor": "Light-mode default with dark toggle. Title-case headlines. 'Welcome to...' / 'Discover the...' exclamations. SaaS marketing register."}
+      ],
+      "generation_rule": "Default to dark navy backgrounds everywhere. White headlines, sentence case, no exclamations, no title case. If a card needs contrast, lift to medium-dark blue (#1A2238) — don't drop to white. Light sections (when used) are exceptions for partner cards or blog teasers, not the default.",
+      "pitfalls": [
+        "Title-case headlines ('The Fast and Flexible Payments Solution')",
+        "Exclamation marks in hero copy",
+        "Light-mode background for the hero 'to feel friendly'",
+        "'Welcome to' opener — passive, Sui uses declarative openers"
+      ],
+      "evidence": [
+        "001_sui.io.png (white-on-navy sentence-case headline)",
+        "020_sui.io-project-ideas.png (mid-blue hero, sentence case)",
+        "021_sui.io-launch-on-sui.png (white-on-navy, sentence case)",
+        "023_sui.io-faq.png (consistent dark surfaces)"
+      ]
+    },
+    {
+      "id": "C3",
+      "name": "Inline-brand-substitution headline signature",
+      "what_it_checks": "Headlines REPLACE a key noun inline with the brand-square logo glyph (the small blue ▢), making the brand itself part of the headline composition.",
+      "observable": "In a hero or section headline, a word that would normally be text is instead rendered as a small blue Sui-square logo box positioned inline. Examples seen: 'Build the next generation of software with the Sui [▢] Stack', 'Apps for every use [▢] case'. The blue ▢ is the SAME blue as the accent and the brand wordmark.",
+      "weight": 0.12,
+      "levels": [
+        {"score": 4, "label": "On-class", "descriptor": "At least one headline uses inline-brand-substitution: a brand-square glyph (▢) replaces a noun inline, in the same blue as the accent, sized to match the surrounding text cap-height."},
+        {"score": 3, "label": "Near", "descriptor": "Brand glyph appears in headlines but as a decoration/suffix rather than inline word replacement (e.g. 'Sui Stack ▢')."},
+        {"score": 2, "label": "Partial", "descriptor": "Brand glyph appears in nav or footer only, not in headlines."},
+        {"score": 1, "label": "Off-class", "descriptor": "No brand-glyph substitution anywhere. Wordmark is a static logo in the top-left, period."}
+      ],
+      "generation_rule": "When writing hero or section headlines, identify a key noun and replace it inline with the brand-square glyph (a small blue filled square or a small box containing the brand mark). The glyph should be sized to match the cap-height of the surrounding text and colored the same blue as the accent. Use this on at least one major headline per page.",
+      "pitfalls": [
+        "Using the brand glyph as a trailing decoration (read it as a comma, not as a substitution)",
+        "Using a different color from the accent for the glyph",
+        "Sizing the glyph larger than the cap-height (looks like an icon drop-in)",
+        "Substituting it for a function word ('the', 'a') — must be a meaningful noun"
+      ],
+      "evidence": [
+        "019_sui.io-developers.png ('Build the next generation of software with the Sui [▢] Stack')",
+        "019_sui.io-developers.png ('Apps for every use [▢] case')",
+        "018_sui.io-agentpayments.png (header uses [▢] after sub-nav items)"
+      ]
+    },
+    {
+      "id": "C4",
+      "name": "All-caps-with-trailing-slash footer signature",
+      "what_it_checks": "Footer column headers use ALL-CAPS labels WITH a trailing slash character — 'STACK/', 'SOLUTIONS/', 'BUILD/', 'LEARN/', 'NETWORK/', 'ABOUT/'. The slash is part of the visual signature, not a typo.",
+      "observable": "Each footer column header is rendered in ALL-CAPS characters and ends with a forward slash. Footer columns are typically 5-6 wide. Each link item is preceded by a small ▭ (square dash) glyph.",
+      "weight": 0.11,
+      "levels": [
+        {"score": 4, "label": "On-class", "descriptor": "Footer column headers are ALL-CAPS WITH trailing slash, 5-6 columns wide, each link item prefixed with a small square-dash glyph (▭). Consistent across all pages."},
+        {"score": 3, "label": "Near", "descriptor": "Trailing slash or square-dash glyph appears but inconsistently — some columns have it, some don't."},
+        {"score": 2, "label": "Partial", "descriptor": "Footer columns are ALL-CAPS but without the trailing slash, or the trailing slash appears but no square-dash glyph."},
+        {"score": 1, "label": "Off-class", "descriptor": "Generic SaaS footer. Title-case column headers. No signature glyphs. Multi-row 'Resources / Company / Legal' structure."}
+      ],
+      "generation_rule": "Footer columns: 5-6 wide. Each header is ALL-CAPS WITH a trailing forward slash. Each link item below is prefixed with a small ▭ (square-dash) glyph in muted grey. The trailing slash and square-dash glyphs are visual signatures, not typography accidents — keep them.",
+      "pitfalls": [
+        "Dropping the trailing slash ('STACK' instead of 'STACK/')",
+        "Dropping the ▭ glyph prefix on links",
+        "Using only 3-4 columns (too few — signature requires the density)",
+        "Wrapping column headers in decorative borders that obscure the slash"
+      ],
+      "evidence": [
+        "001_sui.io.png (footer columns STACK/ SOLUTIONS/ BUILD/ LEARN/ NETWORK/ ABOUT/)",
+        "023_sui.io-faq.png (same footer, confirmed cross-page)",
+        "025_sui.io-community.png (footer + square-dash glyphs on every link)",
+        "029_sui.io-tag-events.png (footer + square-dash glyphs)"
+      ]
+    },
+    {
+      "id": "C5",
+      "name": "Blue-gradient fade footer strip (cyan→blue→black pixelated/halftone)",
+      "what_it_checks": "Site footer ends with a distinctive blue-gradient fade strip — vertical bars of cyan/blue rising from the bottom of the page, fading into the dark background. This appears on essentially every Sui page and is the most recognizable footer signature.",
+      "observable": "At the very bottom of every page, below the copyright line, there is a graphic: vertical bars of cyan and blue, with a halftone or pixelated quality, rising from the bottom edge and fading up into the dark navy. The strip occupies ~80-150px of vertical space. It is NOT a CSS gradient — it has visible bar structure, suggesting it is an SVG or PNG asset.",
+      "weight": 0.11,
+      "levels": [
+        {"score": 4, "label": "On-class", "descriptor": "Every page on the site ends with the blue-gradient fade strip — vertical bars rising from bottom, cyan-to-blue-to-navy, halftone/pixelated texture, ~80-150px tall."},
+        {"score": 3, "label": "Near", "descriptor": "Strip appears on most pages but is missing or replaced on a few (often landing/event pages)."},
+        {"score": 2, "label": "Partial", "descriptor": "Strip appears once (maybe just the homepage) but is not a site-wide footer signature."},
+        {"score": 1, "label": "Off-class", "descriptor": "No footer strip. Standard solid-color footer bottom. Generic SaaS."}
+      ],
+      "generation_rule": "Build a reusable footer-strip asset: vertical bars (cyan #00C8FF to blue #4DA2FF to navy #0A0E1A), halftone or pixelated texture, ~80-150px tall, rendered as SVG/PNG. Place it at the very bottom of EVERY page template, below the copyright line. Do not skip it on landing pages.",
+      "pitfalls": [
+        "Replacing it with a smooth CSS gradient — it must have bar structure",
+        "Using warm colors in the gradient (orange/pink) — it must stay cold",
+        "Skipping it on event/landing pages 'because they're special'",
+        "Making it taller than 200px — overpowers the rest of the footer"
+      ],
+      "evidence": [
+        "001_sui.io.png (homepage footer strip)",
+        "015_sui.io-deflation.png (mid-page footer strip)",
+        "021_sui.io-launch-on-sui.png (pixelated bars rising into footer)",
+        "023_sui.io-faq.png (footer strip confirmed)",
+        "025_sui.io-community.png (footer strip confirmed)"
+      ]
+    },
+    {
+      "id": "C6",
+      "name": "Dotted/dashed divider lines as the structural separator",
+      "what_it_checks": "Site uses thin dotted or dashed horizontal lines as the primary section/content separator — between FAQ items, between cards in a grid, between footer columns, between page sections. Solid lines are rare; dotted lines are the default.",
+      "observable": "Throughout every page, content is separated by thin (~1px tall) dotted or dashed horizontal lines in muted dark grey or blue. The lines span full-width or card-width. They appear between FAQ items, around cards, between footer columns, around content blocks. They are NOT solid borders — they have visible dots/dashes.",
+      "weight": 0.10,
+      "levels": [
+        {"score": 4, "label": "On-class", "descriptor": "Dotted/dashed dividers are used as the PRIMARY structural separator — between FAQ rows, around cards in grids, between footer columns, between page sections. Site-wide, not page-specific."},
+        {"score": 3, "label": "Near", "descriptor": "Dotted/dashed dividers used in some places (FAQ, cards) but solid borders or no separator used elsewhere."},
+        {"score": 2, "label": "Partial", "descriptor": "A few dotted dividers appear, but solid 1px borders dominate."},
+        {"score": 1, "label": "Off-class", "descriptor": "All solid 1px borders. No dotted/dashed lines. Conventional SaaS card layouts."}
+      ],
+      "generation_rule": "When separating content (FAQ items, card rows, footer columns, page sections), use a 1px-tall dotted or dashed line in muted dark grey (#2A3242 to #4A5266 range). Avoid solid 1px borders except for inputs. The dotted line is the structural separator — it should appear so often it becomes a visual signature.",
+      "pitfalls": [
+        "Using solid borders on cards when a dotted divider would do",
+        "Using thick (>1px) dotted lines — they read as decorative",
+        "Coloring the dots blue (should be muted dark grey)",
+        "Mixing solid and dotted inconsistently on the same page"
+      ],
+      "evidence": [
+        "023_sui.io-faq.png (dotted dividers between every FAQ item)",
+        "015_sui.io-deflation.png (dotted dividers between title and body on every card)",
+        "014_sui.io-token-schedule.png (dotted dividers throughout)",
+        "025_sui.io-community.png (dotted dividers in channel-link grid)"
+      ]
+    },
+    {
+      "id": "C7",
+      "name": "Geometric abstract imagery only — NO stock photography, NO people, NO faces",
+      "what_it_checks": "Site imagery is exclusively abstract geometric/architectural: isometric cubes, wireframe buildings, blue water-droplets, sunbursts, signal-bars, gradient fields. NO stock photography, NO real-world photos, NO people, NO faces.",
+      "observable": "Every illustration, hero graphic, and decorative element is abstract geometry: lines, shapes, grids, gradients, the blue Sui water-drop logo. NO photographs of people. NO stock landscape photography. NO product photography. NO team headshots.",
+      "weight": 0.10,
+      "levels": [
+        {"score": 4, "label": "On-class", "descriptor": "100% abstract geometric imagery. No stock photography anywhere. People/faces absent from the entire site (except possibly partner logos with company names)."},
+        {"score": 3, "label": "Near", "descriptor": "Geometric abstract imagery dominates, but one section uses a stock or partner-supplied photo (often in a 'Community' or 'Events' context)."},
+        {"score": 2, "label": "Partial", "descriptor": "Mix of abstract graphics and stock photography. Site reads as 'tech brand' but the photography leaks in."},
+        {"score": 1, "label": "Off-class", "descriptor": "Stock photography dominates. Team photos. Lifestyle photography. Generic SaaS marketing register."}
+      ],
+      "generation_rule": "All hero/illustration imagery is abstract geometric: isometric cubes, wireframes, blue gradients, sunbursts, signal-bars, water-drops. Build a small library of 6-10 SVG/3D assets. NEVER use stock photography. For 'community' or 'events' sections, partner logos + abstract iconography stand in for faces.",
+      "pitfalls": [
+        "Stock photography 'to humanize the brand'",
+        "Team headshots on an About page",
+        "Lifestyle photography of people using phones in a hero",
+        "Photo-realistic 3D renders of buildings/objects (still abstract but reads as stock)"
+      ],
+      "evidence": [
+        "001_sui.io.png (sunburst abstract, no people)",
+        "003_sui.io-intro-to-sui.png (architectural wireframe)",
+        "006_sui.io-payments.png (isometric blue credit-card illustration)",
+        "009_sui.io-ai.png (sunburst pattern, no people)"
+      ]
+    },
+    {
+      "id": "C8",
+      "name": "Two-clause declarative headlines with em-dash rhythm",
+      "what_it_checks": "Headlines follow a two-clause declarative pattern with em-dash or period separators. Voice is factual/technical, never promotional. NEVER 'Welcome to...' or 'Discover...' or exclamation marks.",
+      "observable": "Hero and section headlines are two clauses joined by em-dash or period: 'Deflationary by design. A fixed supply means growth always translates into deflation.' / 'Build the next generation of software with the Sui Stack.' Sentences are complete. Sentence case throughout. No exclamation marks. No 'Welcome to' openers. No 'Discover the future of'.",
+      "weight": 0.10,
+      "levels": [
+        {"score": 4, "label": "On-class", "descriptor": "All headlines are two-clause declarative, sentence case, em-dash or period separators, technical-credible. No 'Welcome to', no exclamation marks, no Title Case."},
+        {"score": 3, "label": "Near", "descriptor": "Most headlines follow the pattern but one section drifts to title case or 'Welcome to X' framing."},
+        {"score": 2, "label": "Partial", "descriptor": "Headlines are declarative but single-clause or generic ('Our platform', 'Get started'). Missing the two-clause rhythm."},
+        {"score": 1, "label": "Off-class", "descriptor": "Title-case promotional headlines. 'Welcome to the future of X!' 'Discover the most powerful Y ever built!' Conventional SaaS marketing voice."}
+      ],
+      "generation_rule": "When writing any headline (hero or section), write TWO clauses joined by an em-dash or period. First clause is a noun-phrase statement, second clause is a consequence or technical detail. Use sentence case. NEVER use exclamation marks. NEVER use 'Welcome to' / 'Discover' / 'Introducing'. The voice is 'we built this, here is what it does' — not 'come discover the future'.",
+      "pitfalls": [
+        "Exclamation marks in hero copy ('Build the future!')",
+        "Title case headlines ('The Fast and Flexible Payments Solution')",
+        "Single-clause headlines ('Our Platform' / 'Get Started')",
+        "'Welcome to' / 'Discover' / 'Introducing' — passive/open-ended verbs",
+        "Marketing superlatives ('industry-leading', 'revolutionary', 'world-class')"
+      ],
+      "evidence": [
+        "015_sui.io-deflation.png ('Deflationary by design. A fixed supply means growth always translates into deflation.')",
+        "019_sui.io-developers.png ('Build the next generation of software with the Sui Stack.')",
+        "014_sui.io-token-schedule.png (declarative two-clause headlines)",
+        "021_sui.io-launch-on-sui.png (declarative hero, no exclamations)"
+      ]
+    },
+    {
+      "id": "C9",
+      "name": "Solid-blue rectangular primary CTA, sentence-case label, modest radius",
+      "what_it_checks": "Primary CTA buttons are solid Sui-electric-blue rectangles with white text, ~4-6px corner radius, sentence-case labels ('Get started' not 'GET STARTED' or 'Start Now!'). Secondary CTAs are outlined buttons, same dimensions, transparent fill, white border.",
+      "observable": "Primary CTA: solid blue rect, ~140px wide, ~44px tall, ~4-6px corner radius, white text, sentence case. Secondary CTA: same dimensions, transparent fill, white border, white text. Buttons appear in a centered cluster under hero (primary + secondary side by side) or as inline action elements.",
+      "weight": 0.09,
+      "levels": [
+        {"score": 4, "label": "On-class", "descriptor": "Primary CTA = solid blue rect, white text, sentence case, ~4-6px radius. Secondary CTA = outlined same dimensions. Buttons appear in a centered cluster (primary + secondary) under hero."},
+        {"score": 3, "label": "Near", "descriptor": "CTAs follow the pattern but with rounded-full radius (pill button), ALL-CAPS labels, or a different accent color for one CTA."},
+        {"score": 2, "label": "Partial", "descriptor": "CTAs are present but inconsistent — different styles on different pages, or no primary/secondary distinction."},
+        {"score": 1, "label": "Off-class", "descriptor": "Pill buttons, gradient buttons, shadow buttons, ALL-CAPS, exclamation marks. Generic SaaS marketing button register."}
+      ],
+      "generation_rule": "Primary CTA: solid Sui-blue (#4DA2FF) rectangle, 140px × 44px, 4-6px corner radius, white text, sentence case. Secondary CTA: same dimensions, transparent fill, 1px white border, white text, sentence case. Place them centered under hero, primary on the left, secondary on the right. NEVER use pill buttons, gradient buttons, drop shadows, or ALL-CAPS.",
+      "pitfalls": [
+        "Pill buttons (border-radius: 999px) — reads as too soft for infrastructure brand",
+        "ALL-CAPS labels ('GET STARTED')",
+        "Exclamation marks in button text ('Start now!')",
+        "Drop shadows on buttons — should be flat",
+        "Gradient fills — should be solid blue"
+      ],
+      "evidence": [
+        "001_sui.io.png (solid blue 'Get started' top-right + secondary 'Talk to us')",
+        "012_sui.io-validators.png ('Explore validators' solid blue + 'How it works' outlined)",
+        "022_sui.io-founder-starter-pack.png (solid blue 'Apply for credits' button)"
+      ]
+    }
+  ],
+  "Theme_Tips_summary": [
+    {
+      "theme": "Palette discipline",
+      "tips": [
+        "Lock the palette at design-token level: navy backgrounds (#0A0E1A–#161E33), Sui-electric-blue accent (#4DA2FF), white text. Never introduce a warm accent.",
+        "All gradients run cyan→blue→navy — never through warm hues.",
+        "Partner logos go in neutral card containers, not warm-tinted backgrounds."
+      ]
+    },
+    {
+      "theme": "Brand-mark composition",
+      "tips": [
+        "Use inline-brand-substitution in headlines (replace a noun with the ▢ glyph) on at least one major headline per page.",
+        "Use ALL-CAPS-with-trailing-slash for footer column headers ('STACK/', 'SOLUTIONS/').",
+        "Use the ▭ (square-dash) glyph as a prefix on every footer link item."
+      ]
+    },
+    {
+      "theme": "Footer signature",
+      "tips": [
+        "Build the blue-gradient-fade footer strip as a reusable asset and place it at the bottom of EVERY page.",
+        "Footer is 5-6 columns wide — not the conventional 3-4 SaaS structure.",
+        "Footer structure must be consistent across all pages (don't vary it for landing pages)."
+      ]
+    },
+    {
+      "theme": "Typography rhythm",
+      "tips": [
+        "Headlines are two-clause declarative with em-dash or period separators.",
+        "Sentence case throughout — no Title Case, no exclamation marks.",
+        "Section labels: tiny ALL-CAPS mono-style in muted grey or blue ('// section_name' or 'REUSABLE PATTERNS').",
+        "Stat numbers: 60-80px giant blue or white numerals with tiny ALL-CAPS labels below."
+      ]
+    },
+    {
+      "theme": "Structural separators & imagery",
+      "tips": [
+        "Dotted/dashed horizontal lines as the primary separator (FAQ, cards, sections) — avoid solid 1px borders.",
+        "All imagery is abstract geometric (isometric, wireframes, gradients, water-drops) — NEVER stock photography, NEVER people/faces.",
+        "Vertical blue signal-bars motif is a reusable hero pattern — keep the asset in your library."
+      ]
+    }
+  ]
+}

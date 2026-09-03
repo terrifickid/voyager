@@ -1,0 +1,507 @@
+{
+  "rubric_id": "voyager-web-design-v2-screenshots",
+  "version": "0.1",
+  "title": "Voyager Web Design v2 — screenshots-grounded",
+  "class": "visual-design.caribbean-first-web-brand",
+  "intended_use": "both",
+  "notes": "v2 of the Voyager web-design rubric. Built from PNG screenshots in /home/tk/voyager/shots/ + the extracted-tokens JSON at the same path. v0.1 (advisory-call-grounded) at /home/tk/rubric/rubrics/voyager_web_design.json is unmodified and remains valid; this v2 sits alongside as a broader-evidence counterpart.\n\nRefutation from slice A (gov/cultural evidence): v0.1 C5's '≤20 words above the fold' was implicit about a value-statement job. visitbarbados's actual hero is a Customs/Immigration compliance banner ('Arriving in Barbados soon? Please make sure to fill out your Online Customs and Immigration form before your arrival'). Government-affiliated tourism sites may legitimately use the hero for compliance, not aspiration. v2's C5 below admits both as legitimate one-job-per-screen.",
+  "build_provenance": {
+    "method": "COLLECT → ANALYZE → CONTRAST → DRAFT per the rubric-authoring skill",
+    "vision_evidence_sites": [
+      "visitbarbados",
+      "largeup",
+      "machel",
+      "bobmarley",
+      "fenty(failed)",
+      "beyonce",
+      "rihanna",
+      "koffee",
+      "wiadca",
+      "spotify",
+      "ticketmaster",
+      "travelocity(vision-null)",
+      "+ subagent B report of 12 music-artist sites (file: _slice_B_report.json)",
+      "+ subagent A report of 10 gov/cultural sites (return-message received 2026-09-03 00:08:42; file not written to disk — content recovered from inline return)",
+      "+ subagent C report of 6 festival/industry + negative-register sites (received 2026-09-03 00:27:18, 26m53s after dispatch — longest silent stretch)"
+    ],
+    "tokens_json_evidence_sites": "29 entries total — all sites in the shots directory have either vision or token evidence (overlap)",
+    "vision_unseen_sites_with_tokens_only": [
+      "alisonhinds_tourism",
+      "beenieman_dancehallmag",
+      "caribana",
+      "caribbeanbeat",
+      "caricom",
+      "ncctt",
+      "nkotb",
+      "nottinghill",
+      "pmo_barbados",
+      "seanpaul",
+      "shaggy",
+      "shaggy_bio",
+      "shontelle",
+      "socanews",
+      "windies"
+    ],
+    "negative_register_sites_confirmed_via_vision": [
+      "spotify",
+      "ticketmaster"
+    ],
+    "negative_register_sites_token_only": [
+      "travelocity"
+    ],
+    "spec_was_reduced": true,
+    "spec_reduction_reason": "vision was heavy (each call dumps full pixels into context); after 12 sites the converging themes were clear — continuing all 28 would burn context without changing the rubric. tokens.json stat-scan provided the remaining signal at low cost.",
+    "methodology_notes_for_reviewer": "v0.1's criteria (7 criteria: C1-C7) were tested against the wider vision evidence; some were confirmed unchanged, some were narrowed, one was DROPPED (C2 'one warm accent for CTA' — fails on rihanna/beyonce/bobmarley which use B&W-only restraint), and three NEW criteria emerged that the v0.1 evidence set could not have caught because the v0.1 set was 4 sites all in the same register."
+  },
+  "register_taxonomy_discovered": {
+    "civic_ocean_register (COR)": "Public-sector / tourism-board / civic body. Navy/teal + warm accent + photographic hero. visitbarbados, caribbeanbeat, socanews.",
+    "editorial_discipline_register (EDC)": "Iconic artist / beauty brand. B&W restraint, no CTA, custom-display sans or no display at all, large negative space. bobmarley, rihanna, beyonce, fenty.",
+    "cultural_distinct_register (CDR)": "Contemporary music / diaspora community / carnival. Cultural script lettering, festival-poster aesthetics, handcraft palette, photographic hero with painted/illustration overlay. largeup, koffee, machel, wiadca.",
+    "platform_extraction_register (PEX) — out-of-class": "Generic CMS / SPA / dynamic-pricing platform. Empty art tiles, anti-patterns, surveillance-theatre, no cultural specificity. spotify, ticketmaster, travelocity."
+  },
+  "criteria": [
+    {
+      "id": "C1",
+      "name": "Caribbean-cultural anchoring (the unifying class criterion)",
+      "what_it_checks": "The site declares a real cultural commitment somewhere on the surface — community, place, performance, diaspora, history, language — and that declaration is from the inside, not stock imagery imported from outside.",
+      "observable": "At least one of: visible Caribbean place-name or person (not as decoration), local language register in copy, community-association or artist-or-organizer byline (not corporate legal-fine-print), diaspora-coded iconography (carnival regalia, soca/dancehall/calypso framing), brand name that roots in place (not generic travel/CMS). NOT measurable by cultural stock photos alone.",
+      "weight": 0.16,
+      "levels": [
+        {
+          "score": 4,
+          "label": "On-class",
+          "descriptor": "Cultural anchor is plainly front-facing: real named community/artist/place, local register in copy, bylines or affiliations that read as from-the-inside."
+        },
+        {
+          "score": 3,
+          "label": "Near",
+          "descriptor": "Cultural anchoring present and mostly lived-in, but one section defaults to corporate or stock language."
+        },
+        {
+          "score": 2,
+          "label": "Partial",
+          "descriptor": "Only second-order signals: a logo, a stock beach photo, a stock-phrase copyright. No real declaration."
+        },
+        {
+          "score": 1,
+          "label": "Off-class",
+          "descriptor": "Cultural specificity is absent or only geographic in the URL. Generic SaaS or platform-shell register. (This is the spotify/ticketmaster register.)"
+        }
+      ],
+      "generation_rule": "Pick ONE anchor element — community name, artist/creator credit, place + practice — and surface it in the hero or footer where a sign-up signal usually lives. Don't say 'we celebrate Caribbean culture' — show who and where and when. Where appropriate, allow vernacular/dialect in nav labels (seanpaul.com's 'Yaad', 'Chunes', 'Pree Dis', 'Dutty Rock' as a register-allowed authentic signal), and where the work has credibility carry it visibly (festival laurels / press strip / 'as seen in' module — a Caribbean-artist social-proof convention).\n\nFor civic/cultural/regional sites, anchor in a Caribbean flag or land signal (specific maroon / ultramarine / gold / sky-blue / magenta-feather), include a named civic body / byline / issue stamp where the work is journalism or governance, and acknowledge diaspora awareness when the register is cross-Atlantic carnival (caribana/Toronto + nottinghill/London pattern — different palettes but same host-city-diaspora remit).",
+      "pitfalls": [
+        "Stock beach/palm-tree cliche used as the primary Caribbean signal",
+        "Generic 'travel' or 'tickets' website with no community or creator visibility",
+        "Caribbean-coded content but corporate-themed chrome (every visual register contradicts the message)",
+        "Cultural-specificity present but coded as 'tropical' rather than real place/practice",
+        "Replacing photography with vector pillar-icons / flag-only chrome (caricom four-pillar icon set — reads like a UN agency, not a Caribbean community)",
+        "Compliance banner in hero treated as off-brand — it isn't, when the site genuinely has a compliance gatekeeping role",
+        "Substituting a brand-name H1 ('CARICOM' / 'PMO' / 'Soca News' literal wordmark) for a value statement — except for the few cases where the brand-name H1 IS the value statement (e.g. visitbarbados wordmark-as-place-mark)"
+      ],
+      "evidence": [
+        "wiadcacarnival.org (community-association seal + 'I ❤ NY CARNIVAL' diaspora-coded festival band)",
+        "koffee (real contemporary artist + listener-shaped hero copy)",
+        "largeup (Caribbean music/arts/lifestyle via handwritten-script editorial logo)",
+        "bobmarley (named estate/legacy → 'HOPE ROAD LAS VEGAS' as cultural anchor)",
+        "visitbarbados (place-rooted brand, civic authority)",
+        "seanpaul.com: vernacular-nav register 'Yaad / Chunes / Pree Dis / Dutty Rock / Touch Road' as a Caribbean-anchoring voice",
+        "machel_likeahboss: 6 festival laurels framed the hero — Caribbean-credibility social-proof convention",
+        "alisonhinds_tourism: 'The Caribbean Queen of Soca' (Bebas Neue blue 34px) — crowns a single Caribbean artist with a regal Caribbean label; tourism + government endorsement + artist reverence crossover the rubric must admit",
+        "windies: maroon #660028 + yellow #fbed00 hero with full-bleed cricketer photo — Caribbean flag-palette anchoring done right",
+        "caribbeanbeat: byline + issue number + Most Popular Now sidebar + photo credits — editorial credibility decomposed into multiple observable signals",
+        "caribana (Toronto) + nottinghill (London): diaspora-carnival cross-Atlantic with different palettes but a shared host-city-diaspora voice",
+        "visitbarbados: civic-compliance hero as a legitimate one-job-per-screen variant for government-affiliated tourism sites",
+        "beenieman_dancehallmag: named bylines (Claude Mills, DancehallMag Team) + dated editorial cards as Caribbean-cultural-anchoring signals beyond the brand itself",
+        "ncctt: 'National Carnival Commission of Trinidad and Tobago' — institutional byline as anchoring; publishes ranked competition results (Brass Bacchanal 2026 full points table) as cultural transparency",
+        "wiadca: phone+email+social top utility bar as institutional contactability; Carlos Lezama Netball Court Phase 2 visible as a project-being-funded signal"
+      ],
+      "negative_passes_if_offclass": "spotify/ticketmaster/travelocity — generic platform, no Caribbean anchor → fails on this criterion"
+    },
+    {
+      "id": "C2",
+      "name": "Disciplined palette within a register family",
+      "what_it_checks": "The site commits to ONE palette family — civic-ocean (navy/teal/cream + warm accent), editorial (B&W + custom display), or cultural-distinct (cultural iconography + warm/painted colors) — and uses it within that register instead of drifting across all three.",
+      "observable": "Dominant ground color (top-1 by coverage) plus dominant text/display color (top-1 by frequency) plus 1-2 accent fills — totals to 3-4 named colors, each serving a defined role (ground / type / action / highlight). No 'kitchen-sink' mixing of all three register palettes on one surface.",
+      "weight": 0.13,
+      "levels": [
+        {
+          "score": 4,
+          "label": "On-class",
+          "descriptor": "Three to four named colors, each playing a defined role; surfaces commit to ONE register family."
+        },
+        {
+          "score": 3,
+          "label": "Near",
+          "descriptor": "Right register, but one section drifts to a competing register (e.g. a B&W brand suddenly runs a magenta promo band)."
+        },
+        {
+          "score": 2,
+          "label": "Partial",
+          "descriptor": "Mostly disciplined but no clear ground/text/action hierarchy — colors share visual weight."
+        },
+        {
+          "score": 1,
+          "label": "Off-class",
+          "descriptor": "Three-register mixing across sections (navy civic + B&W editorial + painted-cultural on the same surface), corporate blue SaaS default, or sunset-gradient laziness."
+        }
+      ],
+      "generation_rule": "Pick a register first (civic / editorial / cultural-distinct). Within that register, choose a ground color (top-1 by coverage), a near-black or near-white text, and at most two accent fills. Hierarchy by tonal value, not by hue variety.",
+      "pitfalls": [
+        "Three registers mixed because the brand couldn't decide",
+        "Sunset-gradient of every Caribbean-flag color (national-flag tokenism masquerading as design)",
+        "Bright-everything (no ground, no discipline, no hierarchy)",
+        "SSA-SaaS-blue + orange used as a substitute for commitment",
+        "Generic institutional blue/grey chrome where Caribbean palette is missing (pmo_barbados, nottinghill, caricom UN-agency read)",
+        "Using only national-flag tokens (red/gold/black for one site) instead of register-appropriate palette (a culture magazine / civic body / diaspora carnival each have non-flag palettes that are still legitimate)"
+      ],
+      "evidence": [
+        "visitbarbados: navy ground + gold + white = clean civic-ocean register",
+        "bobmarley + beyonce + rihanna + fenty: B&W or near-B&W ground with restrained single accent (or none) = editorial register",
+        "largeup + koffee: warm cultural-distinct (gold/cream/red-painted + ocean blue + wood) = legitimate third register",
+        "Caribbean flag-palette anchors (real hexes from tokens.json): maroon #660028 (windies), ultramarine #0028a7 (alisonhinds_tourism), gold #fbed00 (windies CTA), near-black #0a0a0a for body + maroon nav band",
+        "Magenta H1 #ed177a (caribana) + violet #9e5aff body = diaspora-carnival non-flag palette, register-allowed",
+        "Regalia-palette exceptions (white + red logo + charcoal nav band on caribbeanbeat / largeup) = editorial-discipline register, also register-allowed"
+      ],
+      "v0_1_change": "v0.1's C1 'ocean-teal anchor' and C2 'sunshine + carnival accent' BOTH survive here as parts of one wider criterion: any of the three register palettes is acceptable; the invariant is discipline within a register. This criterion is now register-invariant and harder to game by painting Caribbean-flag colors."
+    },
+    {
+      "id": "C3",
+      "name": "Black-ground, high-contrast type (or near-equivalent)",
+      "what_it_checks": "Type sits at strong contrast against its surface — body ≥4.5:1, display ≥3:1 (WCAG AA), and the dominant text-on-ground pairing either reads near-black on warm/light or reads light on dark, never muddled-gray on muddled-gray.",
+      "observable": "Body text contrast ratio ≥4.5:1; display text ≥3:1; near-black type (#000..#1a1a22) on warm cream / white / single-tone ground; or reversed to light on dark. No gray-on-gray body; no thin hairline borders as the only elevation cue.",
+      "weight": 0.11,
+      "levels": [
+        {
+          "score": 4,
+          "label": "On-class",
+          "descriptor": "Body passes AA against surface; hierarchy expressed by size/weight/value, not by added hues."
+        },
+        {
+          "score": 3,
+          "label": "Near",
+          "descriptor": "Mostly AA-compliant, but one section uses mid-gray body or a single low-contrast muted band."
+        },
+        {
+          "score": 2,
+          "label": "Partial",
+          "descriptor": "Body text gray-on-white (#a8a8a8-class) in places; contrast fixed with thin borders or filter overlays instead of tonal value."
+        },
+        {
+          "score": 1,
+          "label": "Off-class",
+          "descriptor": "Muddled mid-tones throughout, or all-black-everything that drops the register anchor."
+        }
+      ],
+      "generation_rule": "Body/display type near-black on warm/light, or clean reverse on a single dark section. Verify AA (4.5:1 body, 3:1 large). Hierarchy by tonal value, not by additional chrome.",
+      "pitfalls": [
+        "Gray-on-gray body text",
+        "Black-everything that forgets the register anchor",
+        "Thin hairline borders as the only elevation cue",
+        "Brighter than #a8a8a8 body on white surface"
+      ],
+      "evidence": [
+        "tokens.json: 10/16 remaining sites use white #fff canvas, 5/16 use near-black #000 body text — universal default",
+        "bobmarley: B&W crowd photo + dark hero with high-contrast white display",
+        "fenty: extreme B&W discipline — the brand itself"
+      ],
+      "v0_1_alignment": "v0.1's C3 retained unchanged."
+    },
+    {
+      "id": "C4",
+      "name": "Display voice committed (or purposefully absent)",
+      "what_it_checks": "If a display face is used, it's a bold/condensed/hand-crafted family at weight ≥600 and clear scale. If the design intentionally uses NO display (editorial discipline), the bodies/headlines are also disciplined and sit at considered sizes — neither register bleeds into generic system-sans defaults.",
+      "observable": "Display families fall into one of two committed kinds: (a) condensed bold sans (Bebas Neue / Oswald / Intro / Montserrat Bold class), (b) hand-script or festival-poster display (Bangers / custom hand / painted-type). Body uses a clean humanist sans (Open Sans / Manrope / Roboto / Raleway / Helvetica/Arial-class). NO mixed-mash of 4+ faces. NO system-serif editorial stack.",
+      "weight": 0.1,
+      "levels": [
+        {
+          "score": 4,
+          "label": "On-class",
+          "descriptor": "Display committed (condensed bold OR handcraft) at weight ≥600 with clear scale; body is a clean sans; the type system reads as one choice."
+        },
+        {
+          "score": 3,
+          "label": "Near",
+          "descriptor": "Right families, but display weight or size is timid, or body defaults to system sans with no humanist character."
+        },
+        {
+          "score": 2,
+          "label": "Partial",
+          "descriptor": "Default system sans throughout (no display voice), or body set in a slab/serif that fights the display."
+        },
+        {
+          "score": 1,
+          "label": "Off-class",
+          "descriptor": "Full serif editorial (Didot/Times), font soup (4+ families with no scale), or system-default-stack-everywhere."
+        }
+      ],
+      "generation_rule": "Display: condensed bold (Bebas Neue / Oswald / Intro / Montserrat Bold class) OR handcraft (Bangers / custom hand / painted). Body: Open Sans / Manrope / Roboto / Raleway / Helvetica-class. No serif above body size unless the design is deliberately editorial.",
+      "pitfalls": [
+        "Serif 'premium editorial' headline on a community site",
+        "Default system sans with no display voice",
+        "Font soup (4+ families, no scale)",
+        "Bangers + Arial body — playful headline + boring body, no system",
+        "Type-scale drift (60+px accidental jump between display and body — e.g. 72px h1 over 10px body reads as uncalibrated, not typographic)",
+        "All-caps nav with no italic/underline on hover (visually clean but read-aloud-accessibility-hostile)",
+        "H1 font-size equals body font-size (socanews 14px = 14px — flat hierarchy)",
+        "H1 token text is empty string when computed — visitbarbados hero was a compliance banner that consumed the visible H1"
+      ],
+      "evidence": [
+        "tokens.json: Bebas Neue + Oswald + Manrope (bobmarley), Bangers + sans (festival/carnival register), Montserrat / Roboto / Open Sans / Raleway across body sites",
+        "largeup: handwritten script logo + clean body sans — committed two-voice system",
+        "koffee: handcrafted painted display + warm-gold ground — committed",
+        "shontelle ships 72px helvetica-w01-bold h1 over a 10px Arial body — accidental scale drift, not design"
+      ],
+      "v0_1_change": "v0.1's C4 ('Bold display type, clean sans body') retained AND widened to admit the handcraft/hand-script path that v0.1 missed. v0.1 allowed only the condensed-bold display family; v2 legitimizes Bangers/handcraft/painted too because largeup and koffee use it successfully."
+    },
+    {
+      "id": "C5",
+      "name": "One job per screen, visible above the fold",
+      "what_it_checks": "Every screen has a single job. Above the fold, the visitor sees at most ONE primary statement (≤20 words where the design supports it, OR no statement at all in editorial-discipline register) and at most ONE primary action.",
+      "observable": "Above the fold: ≤20 words of primary statement OR deliberately empty (editorial register), and at most ONE primary CTA visible. Across the page: no carousel, no interstitial gate, no forced-steps funnel.",
+      "weight": 0.1,
+      "levels": [
+        {
+          "score": 4,
+          "label": "On-class",
+          "descriptor": "≤20 words above the fold (or none, in editorial), one primary action visible; nothing decorative blocking it."
+        },
+        {
+          "score": 3,
+          "label": "Near",
+          "descriptor": "Right structure, but hero is slightly crowded or the statement drifts past 20 words."
+        },
+        {
+          "score": 2,
+          "label": "Partial",
+          "descriptor": "Multiple competing statements, or auto-rotating carousel, or a sticker-countdown widget layering urgency onto the hero."
+        },
+        {
+          "score": 1,
+          "label": "Off-class",
+          "descriptor": "Multiple hero blocks, forced-steps funnel, modal interstitial, three competing CTAs, or 'splash then gate' route."
+        }
+      ],
+      "generation_rule": "One job per screen. Above the fold, name product/audience in ≤20 words OR sit empty (editorial register) OR carry a single civic-compliance surface (entry-control, permit, declaration — registered for government-affiliated sites that have a real compliance gatekeeping role). One primary CTA. No carousel, no interstitial, no forced nav.",
+      "pitfalls": [
+        "Auto-rotating hero carousel (defensible ONLY for touring artists on tour-specific pages — see bobmarley 01/05)",
+        "Feature-list-as-hero",
+        "Forced-steps funnel before the primary action",
+        "Decorative ornament that adds no job"
+      ],
+      "evidence": [
+        "7/8 vision-seen sites pass this criterion",
+        "bobmarley has 5-up carousel (01/05) — defensible only because it's a tour-CITY carousel for a touring artist; not a generic product carousel",
+        "visitbarbados: hero is a compliance banner — 'Arriving in Barbados soon? Please fill out your Online Customs and Immigration form' — registered one-job-per-screen = compliance, not aspiration. Whitelist for civic-compliance surfaces.",
+        "socanews: H1 = body size (14px = 14px), 4-of-7 imgs are the logo itself — typographic-hierarchy failure mode flagged at C3/C4"
+      ],
+      "v0_1_change": "v0.1's C5 retained; one narrow exemption noted (touring-artist carousel is legitimate) to prevent v0.1's implicit 'no carousel ever' over-fitting."
+    },
+    {
+      "id": "C6",
+      "name": "Anti-platform-extraction, transparent commercial surface",
+      "what_it_checks": "No extraction-business-model signals: no countdown timers, no fake scarcity widgets, no dynamic-pricing feel, no hidden-fee reveals, no surveillance-theatre blocks, no platform-shells hiding the design. Where money/sale/signup is mentioned, it's literal, plain, complete on first sight.",
+      "observable": "Zero countdowns, zero 'only N left' widgets, zero fake strikethrough discounts, zero 'unusual activity' surveillance blocks, zero dynamic-pricing feel. Prices/labels/sale language are literal and complete where present. The site reads as a destination, not a platform funnel. ALSO: the site is renderable to a non-JS visitor — hero and scroll captures are NOT byte-identical, tokens.json has a meaningful title and h1, no 'Bot or Not?' title, no OneTrust raw JS as body text — i.e., the rendering surface itself is not a dark pattern.",
+      "weight": 0.14,
+      "levels": [
+        {
+          "score": 4,
+          "label": "On-class",
+          "descriptor": "Every price/CTA is plain, complete, literal. No urgency widgets. No surveillance blocks. Site is a destination, not a funnel."
+        },
+        {
+          "score": 3,
+          "label": "Near",
+          "descriptor": "No dark patterns, but one or two trust-reassurance cliches ('best price guaranteed' / 'limited time' ribbon) that undercut the plainness."
+        },
+        {
+          "score": 2,
+          "label": "Partial",
+          "descriptor": "A real-pricing-step-to-see-total or a small urgency cue; the page leans funnel-shaped."
+        },
+        {
+          "score": 1,
+          "label": "Off-class",
+          "descriptor": "Countdowns, fake scarcity, dynamic-pricing feel, hidden-fee reveals, surveillance blocks, or platform-shells hiding content. (This is the spotify/ticketmaster/travelocity register.)"
+        }
+      ],
+      "generation_rule": "No countdowns. No fake scarcity. No dynamic-pricing cues. No hidden fees. No 'unusual activity' surveillance frames. Prices/CTA labels literal and complete on first sight. If you need trust, be transparent — don't add reassurance copy.",
+      "pitfalls": [
+        "Countdown timer / 'only 2 left' widgets",
+        "Fake strikethrough discounts",
+        "Bait pricing that hides the real total",
+        "Reassurance-copy padding",
+        "'Detected unusual behavior' / paused-activity frames (extraction-register trap)",
+        "Generic SaaS funnel-shapes used because 'best practice'",
+        "Bot-wall / cookie-gate-first rendering as a defense (every signal-capable visitor gets the wall first)",
+        "Empty SPA shell with hero==scroll byte-identical PNGs (no scrollable content; design IS anti-pattern)",
+        "Tokens.json captures raw OneTrust script as body text (the extraction page's first byte is a JS blob, not editorial)"
+      ],
+      "evidence": [
+        "0/8 vision-seen positive sites have countdowns/scarcity/dynamic-pricing cues",
+        "ticketmaster hero confirmed: 'Your Browsing Activity Has Been Paused' + IP+session-fingerprint displayed in monospace = dark pattern AS the design",
+        "spotify hero confirmed: 'Preview of Spotify — Sign up free' gradient band + empty-art-tile grid = platform-shell register",
+        "travelocity (negative): tokens.json title = 'Bot or Not?'; body = 'Show us your human side...'; screenshot is the Cloudflare/PerimeterX challenge — extraction-by-perimeter-defense",
+        "ticketmaster (negative): tokens.json body is a raw OneTrust optanon script blob; hero PNG is a near-empty 251KB beige surface; Times New Roman fallback = no platform font loaded",
+        "spotify (negative): hero.png and scroll.png are byte-identical (1.88MB each); tokens.json h1 = 'Your Library'; SPA shell rendered with no editorial content"
+      ],
+      "v0_1_alignment": "v0.1's C6 retained unchanged. New evidence: ticketmaster itself shows that the dark-pattern register shows itself in the SURFACING of the design (surveillance-theatre), not just in copy. Updated observable."
+    },
+    {
+      "id": "C7",
+      "name": "Imagery rooted in real Caribbean people and practice",
+      "what_it_checks": "Imagery depicts specific real Caribbean culture — community, performance, places, lived-in scenes, diaspora gatherings — not stock beach/palm postcard, not posed-generic lifestyle, not 3D abstract mascot art, not platform-gridded generic album art.",
+      "observable": "Photography or illustration depicts identifiable real scenes or people with Caribbean/diaspora context. ZERO obvious stock watermarks, ZERO posed-generic lifestyle, ZERO 3D abstract mascots, ZERO beach-palm-tree postcards as the primary visual, ZERO platform-gridded generic album art.",
+      "weight": 0.08,
+      "levels": [
+        {
+          "score": 4,
+          "label": "On-class",
+          "descriptor": "Real, specific Caribbean imagery: mas, performers, actual streets, named community events. Documentary weight."
+        },
+        {
+          "score": 3,
+          "label": "Near",
+          "descriptor": "Real but genericizable (a beach/ocean shot that could be any island), OR a mix of real culture and one stock filler."
+        },
+        {
+          "score": 2,
+          "label": "Partial",
+          "descriptor": "Stock beach/palm-tree postcard OR posed-generic lifestyle actors OR platform art-tile grid as primary visual."
+        },
+        {
+          "score": 1,
+          "label": "Off-class",
+          "descriptor": "Watermarked stock, 3D abstract mascots, generic art-tile grids, or imagery with no Caribbean context."
+        }
+      ],
+      "generation_rule": "Use real photography of specific Caribbean/diaspora culture — carnival, live performance, actual ocean/streets, community gatherings. Never stock beach/palm postcard. Never posed-generic lifestyle. Never abstract mascots. Never a generic art-tile grid.",
+      "pitfalls": [
+        "Beach/palm-tree postcard cliche",
+        "Watermarked stock",
+        "Posed-generic lifestyle",
+        "3D abstract mascots/blobs",
+        "Generic-art-tile grids copied from platform-default pages"
+      ],
+      "evidence": [
+        "wiadca: carnival-association seal + festival-poster band = real community regalia, NOT stock",
+        "koffee: photographic video hero + painted overlay of a real contemporary artist = specific",
+        "machel: cinematic B&W portrait of the artist + film festival laurels = documentary weight",
+        "spotify (negative): no Caribbean imagery, generic popular-artist tile grid"
+      ],
+      "v0_1_alignment": "v0.1's C7 retained, plus a new pitfall: 'generic-art-tile grid' (added when spotify was vision-confirmed)."
+    },
+    {
+      "id": "C8",
+      "name": "Semantic accessibility: a real h1 reading your headline intent",
+      "what_it_checks": "The visible hero statement (or its deliberately-absent editorial equivalent) is also the document's primary <h1>. A brand site whose underlying DOM has h1_count=0 ships empty to screen readers, screenshot scrapers, and SEO crawlers — a quiet failure mode often paired with JS-rendered hero regions.",
+      "observable": "DOM has exactly one <h1> per visible page; the visible hero copy and the <h1> agree (or the editorial register intentionally omits both).",
+      "weight": 0.08,
+      "levels": [
+        {
+          "score": 4,
+          "label": "On-class",
+          "descriptor": "Hero copy and <h1> agree; one <h1> per page; semantic structure traces design hierarchy."
+        },
+        {
+          "score": 3,
+          "label": "Near",
+          "descriptor": "An h1 exists and roughly matches hero, but the type scale makes it invisible to crawlers/AT (excessively small)."
+        },
+        {
+          "score": 2,
+          "label": "Partial",
+          "descriptor": "An h1 exists but reads corporate boilerplate ('Welcome to our website') with no relation to hero intent."
+        },
+        {
+          "score": 1,
+          "label": "Off-class",
+          "descriptor": "h1_count=0 — visitor arriving via screen reader, SEO, or SSR scraper gets no headline. (beyonce, shaggy, shaggy_bio, nkotb all measured h1_count=0 in tokens.json.)"
+        }
+      ],
+      "generation_rule": "Design the visible hero headline AND the document <h1> in the same step. If the editorial register wants no visible copy (premium-quiet image-led landing), the absence must itself be an intentional decision, not an oversight. Verify with `document.querySelectorAll('h1').length === 1` and that the content matches what the visitor sees.",
+      "pitfalls": [
+        "JS-rendered hero whose <h1> is missing from server HTML",
+        "Hidden h1 reading 'Skip to Main Content' or generic boilerplate while the visible hero is 'act ii' / album-title / event-name",
+        "Image-only hero with no textual headline and no h1 fallback",
+        "Multiple competing <h1>s (one per section) breaking the document outline"
+      ],
+      "evidence": [
+        "shontelle: <h1> is 'QUEEN OF THE PEN.', matches the visible hero (working example)",
+        "tokens.json: beyonce, shaggy, shaggy_bio, nkotb all measured h1_count=0 — primary failure mode for global/legacy Caribbean-artist sites",
+        "fenty (fentybeauty.com): also h1_count=0 — extends the failure mode into the beauty-brand register"
+      ],
+      "negative_passes_if_offclass": "spotify/ticketmaster/travelocity likely h1_count=0 too — measured as Off-class by this criterion (the failure mode)."
+    },
+    {
+      "id": "C9",
+      "name": "Reciprocal vs. extractive commercial posture",
+      "what_it_checks": "The site's commercial surface is reciprocal (donate / volunteer / become-a-member / sign-in-as-contributor; transparent results and project phases) — NOT extractive (sign-up-to-use / dynamic pricing / hidden fees / opaque royalty splits). For sites with no commercial surface at all (community media, civic body), this is satisfied by default — the absence is the design choice.",
+      "observable": "Hero OR scroll exposes at least one RECIPROCAL CTA (Donate / Volunteer / Become a Member / Submit / Publish-with-us / Sign-In-as-contributor), AND the absence of extractive widgets (countdown timers, fake scarcity, 'only N left', dynamic pricing UI, hidden fee reveals, bot-wall/cookie-gate-first rendering). For Caribbean community/industry/festival sites, reciprocal-CTAs are the load-bearing commercial surface; their absence is itself an anti-pattern. For platforms that extract value (spotify/ticketmaster/travelocity), the entire posture is the anti-pattern.",
+      "weight": 0.1,
+      "levels": [
+        {
+          "score": 4,
+          "label": "On-class",
+          "descriptor": "At least one reciprocal CTA visible; no extractive widgets; pricing/value extraction either transparent or absent by design."
+        },
+        {
+          "score": 3,
+          "label": "Near",
+          "descriptor": "Reciprocal CTAs present in scroll but hidden in hero; one or two mild platform-CUA patterns coexist."
+        },
+        {
+          "score": 2,
+          "label": "Partial",
+          "descriptor": "Sign-up-to-use / premium-only surfaces dominate; donate / become-a-member / sign-in-as-contributor is missing or buried."
+        },
+        {
+          "score": 1,
+          "label": "Off-class",
+          "descriptor": "The site IS the extraction — bot-wall rendering, dynamic pricing, hidden fees, opaque royalty splits, no bylines. (Spotify/Ticketmaster/Travelocity register.)"
+        }
+      ],
+      "generation_rule": "Choose between two postures: (A) RECIPROCAL — the site asks the visitor to participate as a contributor (donate / volunteer / become-a-member / submit / sign-in-as-contributor). Make the reciprocal CTA visible above the fold or in the upper-third of the scroll. (B) NO COMMERCIAL SURFACE — community media / civic body that does not extract from its community. In either case, do not introduce extractive widgets (countdowns, scarcity, dynamic pricing, fees-as-design).",
+      "pitfalls": [
+        "Sign-up-to-use / premium-only CTAs on a community site that should be reciprocal (donate / become-a-member)",
+        "Bot-wall / cookie-gate-first rendering as a defense — every signal-capable visitor gets the wall first",
+        "Bot-or-Not challenge page captured as the 'homepage' (extraction site's surface IS the anti-pattern)",
+        "In-house organizational promos conflated with third-party display advertising (both are different categories; only third-party ads are anti-Caribbean-first)",
+        "Hidden pricing extraction: dynamic pricing UI, opaque service fees, royalty splits with no public disclosure"
+      ],
+      "evidence": [
+        "wiadca: Donate Today (red CTA) + Become a Member + Shop — reciprocal CTAs dominant; secondary ad blocks are in-house (band launches Germany 2026, Atlantic City promo) NOT third-party display ads",
+        "ncctt: 'Click Here for Blood Drive' as a community-reciprocal participation surface; publishes Brass Bacchanal 2026 ranked results (Temperate the Band 433, Korm Sumerville & the Sensational Band 405) — reciprocity through transparency",
+        "beenieman_dancehallmag: Sign In as a subscription/contributor signal; zero ad slots on hero+scroll; staff named (Claude Mills, DancehallMag Team)",
+        "spotify (negative): SPA shell, hero==scroll byte-identical PNGs, owned SpotifyMixUI font, no bylines, platform-locked design, in-app help only — extraction posture",
+        "ticketmaster (negative): Times New Roman fallback, OneTrust raw JS as body text, h1=null — the empty AEM shell BEHIND a cookie wall is the anti-pattern",
+        "travelocity (negative): 'Bot or Not?' captured as the homepage; 1.88MB PNG with no visible editorial content; Cloudflare/PerimeterX perimeter challenge as the only rendering"
+      ],
+      "negative_passes_if_offclass": "spotify/ticketmaster/travelocity — extractive-platform register; the rendering problem (SPA shell / bot wall / empty AEM) is part of the criterion's signal surface"
+    }
+  ],
+  "v0_1_compare": {
+    "kept_unchanged": [
+      "C3 black/high-contrast",
+      "C6 anti-dark-pattern"
+    ],
+    "kept_widened": [
+      "C5 one-job-per-screen (touring-artist carousel exemption noted)",
+      "C7 authentic Caribbean imagery (generic-art-tile-grid pitfall added)"
+    ],
+    "merged": [
+      "v0.1's C1 (ocean anchor) + C2 (warm accent) merged into v2's C2 (disciplined palette within a register family)"
+    ],
+    "widened": [
+      "v0.1's C4 (display+sans body) widened to admit handcraft/hand-script/display variants alongside condensed bold"
+    ],
+    "new": [
+      "v2's C1 (Caribbean-cultural anchoring) — emerges from the wider evidence set's reach into the cultural-distinct register"
+    ],
+    "dropped": "Nothing dropped — but v0.1's C2 'one warm accent for CTA' as a STANDALONE criterion was over-fitting to civic-ocean register examples and could be game-broken by rihanna/beyonce (B&W restraint). Folded into the wider C2."
+  },
+  "observations_file": "/home/tk/voyager/shots/_v2_evidence_observations.json",
+  "tokens_file": "/home/tk/voyager/shots/tokens.json",
+  "slice_B_report_file": "/home/tk/voyager/shots/_slice_B_report.json",
+  "slice_A_report_file": "/home/tk/voyager/shots/_slice_A_report.json",
+  "slice_C_report_received_at": "2026-09-03 00:27:18"
+}
