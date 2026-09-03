@@ -6,6 +6,7 @@
 	const slots = day.slots.slice(0, 2);
 	const featuredPlace = places[1];
 	const slotLabels = { morning: 'Morning', afternoon: 'Afternoon', evening: 'Evening' };
+	const regionLabel = 'Barbados';
 </script>
 
 <div class="relative w-full max-w-[440px] mx-auto" style="transform: rotate(-3deg);">
@@ -54,7 +55,7 @@
 								<span class="text-[10px] font-semibold uppercase tracking-[0.12em] text-muted">
 									{slotLabels[slot.label] ?? slot.label}
 								</span>
-								<span class="text-[10px] text-muted">Kyoto</span>
+								<span class="text-[10px] text-muted">{regionLabel}</span>
 							</div>
 							<div class="mt-1.5 flex flex-col gap-1.5">
 								{#if slot.eat}

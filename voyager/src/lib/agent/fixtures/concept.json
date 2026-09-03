@@ -1,16 +1,16 @@
 {
-  "title": "Slow Kyoto, side streets and quiet teahouses",
-  "summary": "A relaxed five-day loop through Kyoto built around early mornings, small neighborhood walks, and one unhurried tea ceremony. Skips the biggest tourist bottlenecks in favor of side-street cafés, local bathhouses, and a couple of half-day train escapes.",
+  "title": "Slow Barbados, side streets and quiet rum shops",
+  "summary": "A relaxed five-day loop through Barbados built around early mornings, small neighborhood walks, and one unhurried fish fry. Skips the cruise-port bottlenecks in favor of east-coast beaches, a couple of half-day bus rides, and the rum shops the regulars actually drink at.",
   "vibe": ["slow", "local", "unhurried", "neighborhood-led"],
   "pace": "One anchor activity per day, lots of unstructured wandering.",
   "logistics": {
-    "base": "Higashiyama (near Gion-Shijo station)",
-    "transit": "Two legs by local train, otherwise on foot",
-    "bestTime": "Early mornings and just after sunset for popular sites"
+    "base": "Holetown (near the St. James side)",
+    "transit": "Two legs by local bus, otherwise on foot",
+    "bestTime": "Early mornings and just after sunset for popular beaches"
   },
   "highlights": [
-    "A 7am walk through a near-empty Philosopher's Path",
-    "An afternoon at a family-run tofu kappo the model picked from a side street",
-    "A half-day in Arashiyama before the tour buses arrive"
+    "A 7am walk on the empty Crane Beach before the taxis arrive",
+    "An afternoon at a family-run fish fry the model picked from a side street",
+    "A half-day in Bathsheba before the surf tour buses arrive"
   ]
 }

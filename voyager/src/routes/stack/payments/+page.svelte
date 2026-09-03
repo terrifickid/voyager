@@ -2,15 +2,17 @@
 	import Cta from '$lib/components/Cta.svelte';
 	import SectionHeader from '$lib/components/SectionHeader.svelte';
 	import Icon from '$lib/components/Icon.svelte';
+	import RegisterSection from '$lib/components/RegisterSection.svelte';
 	import primitives from '$lib/data/primitives.json';
 
 	const p = primitives.find((x) => x.slug === 'payments');
 </script>
 
 <svelte:head>
-	<title>{p.title} — Voyager Stack</title>
+	<title>{p.title} — Voyager Stack · Caribbean-first</title>
 </svelte:head>
 
+<RegisterSection register="civic-ocean">
 <section class="mx-auto max-w-6xl px-6 pt-16 pb-12 lg:pt-24">
 	<div class="flex flex-col gap-8">
 		<span class="eyebrow">{p.code} · lightning rail</span>
@@ -60,3 +62,4 @@
 		</div>
 	</div>
 </section>
+</RegisterSection>

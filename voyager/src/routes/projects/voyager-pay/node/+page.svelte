@@ -1,14 +1,16 @@
 <script>
 	import Cta from '$lib/components/Cta.svelte';
+	import RegisterSection from '$lib/components/RegisterSection.svelte';
 	import SectionHeader from '$lib/components/SectionHeader.svelte';
 	import nodes from '$lib/data/mostroNodes.json';
 </script>
 
 <svelte:head>
-	<title>Run a node — Voyager Pay</title>
+	<title>Run a node — Voyager Pay · Caribbean-first</title>
 </svelte:head>
 
 <!-- Hero -->
+<RegisterSection register="civic-ocean">
 <section class="mx-auto max-w-6xl px-6 pt-20 pb-12 lg:pt-28 lg:pb-16">
 	<div class="flex flex-col gap-8">
 		<span class="eyebrow">Voyager Pay</span>
@@ -161,3 +163,4 @@
 		<Cta variant="primary" href="/projects/voyager-pay">Voyager Pay</Cta>
 	</div>
 </section>
+</RegisterSection>

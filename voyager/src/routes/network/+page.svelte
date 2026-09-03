@@ -2,9 +2,18 @@
 	import Cta from '$lib/components/Cta.svelte';
 	import SectionHeader from '$lib/components/SectionHeader.svelte';
 	import SplitPanel from '$lib/components/SplitPanel.svelte';
+	import RegisterSection from '$lib/components/RegisterSection.svelte';
+	import SoundSystemStrip from '$lib/components/SoundSystemStrip.svelte';
+	import HeritageLineage from '$lib/components/HeritageLineage.svelte';
 	import nodes from '$lib/data/mostroNodes.json';
 
 	const REFERENCE_NODE = 'voyager-caribbean';
+	const SOUND_SYSTEMS = nodes.map((n) => ({ name: n.name, region: n.region, feePct: n.feePct }));
+	const LINEAGE = [
+		{ label: 'Sep 2 2026', note: 'Advisory call · Shontelle Layne' },
+		{ label: 'Oct 2026', note: 'Five primitives — alpha' },
+		{ label: 'Now', note: 'Caribbean-first · open rails' }
+	];
 
 	function fmtSats(n) {
 		return new Intl.NumberFormat('en-US').format(n);
@@ -18,9 +27,10 @@
 </script>
 
 <svelte:head>
-	<title>Network — Voyager</title>
+	<title>Network — Voyager · Caribbean-first federation</title>
 </svelte:head>
 
+<RegisterSection register="civic-ocean">
 <section class="mx-auto max-w-6xl px-6 pt-16 pb-12 lg:pt-24">
 	<div class="flex flex-col gap-8">
 		<span class="eyebrow">// the network</span>
@@ -138,3 +148,11 @@
 		<Cta variant="secondary" href="/build#economics">Builder economics</Cta>
 	</div>
 </section>
+
+<section class="mx-auto max-w-6xl px-6 pb-20">
+	<SoundSystemStrip eyebrow="Sound systems · Mostro federation" systems={SOUND_SYSTEMS} />
+	<div class="mt-10">
+		<HeritageLineage register="civic-ocean" eyebrow="Platform lineage" stages={LINEAGE} caption="Advisory call → primitives → open rails — the same lineage shape, adapted to software." />
+	</div>
+</section>
+</RegisterSection>

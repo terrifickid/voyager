@@ -9,6 +9,7 @@
   import PlanTripWizard from '$lib/components/PlanTripWizard.svelte';
   import Cta from '$lib/components/Cta.svelte';
   import PersonalityGraph from '$lib/components/PersonalityGraph.svelte';
+  import RegisterSection from '$lib/components/RegisterSection.svelte';
   import { log, EVENT, serializeError } from '$lib/logger.js';
 
   const componentLog = log.child({ component: 'plan', function: 'planPage' });
@@ -88,9 +89,10 @@
 </script>
 
 <svelte:head>
-  <title>Plan a trip — Voyager</title>
+  <title>Plan a trip — Voyager · Caribbean-first</title>
 </svelte:head>
 
+<RegisterSection register="carnival-poster">
 <div class="mx-auto max-w-6xl px-6 pt-16 pb-24" class:hidden={submitted}>
   <PlanTripWizard {onFinish} hidden={submitted} />
 </div>
@@ -235,3 +237,4 @@
       </div>
     {/if}
   </section>
+</RegisterSection>

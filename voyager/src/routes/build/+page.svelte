@@ -2,11 +2,22 @@
 	import Cta from '$lib/components/Cta.svelte';
 	import SectionHeader from '$lib/components/SectionHeader.svelte';
 	import SplitPanel from '$lib/components/SplitPanel.svelte';
+	import RegisterSection from '$lib/components/RegisterSection.svelte';
+	import HeritageLineage from '$lib/components/HeritageLineage.svelte';
+
+	const LINEAGE = [
+		{ label: 'mento', note: 'pre-reggae · 1950s' },
+		{ label: 'ska', note: '1960s' },
+		{ label: 'rocksteady', note: 'mid 1960s' },
+		{ label: 'reggae', note: 'late 1960s→' }
+	];
 </script>
 
 <svelte:head>
-	<title>Start building — Voyager</title>
+	<title>Start building — Voyager · Caribbean-first rails</title>
 </svelte:head>
+
+<RegisterSection register="heritage-sepia">
 
 <section class="mx-auto max-w-6xl px-6 pt-16 pb-12 lg:pt-24">
 	<div class="flex flex-col gap-8">
@@ -142,3 +153,12 @@
 		</div>
 	</div>
 </section>
+
+<section class="mx-auto max-w-6xl px-6 pb-32">
+	<HeritageLineage
+		eyebrow="We ship what we build — a Caribbean sequence"
+		stages={LINEAGE}
+		caption="mento → ska → rocksteady → reggae. Each one built on the last, not against it. Voyager builds on the same sequence."
+	/>
+</section>
+</RegisterSection>

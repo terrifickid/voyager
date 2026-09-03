@@ -1,37 +1,37 @@
 {
   "dayNumber": 1,
-  "theme": "Settle in and learn Higashiyama",
+  "theme": "Settle in and learn Holetown",
   "slots": [
     {
       "label": "morning",
       "stay": null,
       "eat": {
-        "name": "Saryo Tsujiri",
-        "kind": "matcha café",
-        "note": "Quiet tatami seating, hojicha and warabi mochi."
+        "name": "Lemon Arbour",
+        "kind": "café",
+        "note": "Quiet garden seating, fresh sorrel and bakes for breakfast."
       },
       "do": {
-        "name": "Philosopher's Path walk",
+        "name": "Holetown beach walk",
         "kind": "walk",
-        "note": "Start by 7am to beat the crowds; loop back via Honen-in."
+        "note": "Start by 7am to beat the beach crowd; loop back via the boardwalk."
       }
     },
     {
       "label": "afternoon",
       "stay": {
-        "name": "Higashiyama district loop",
+        "name": "Holetown district loop",
         "kind": "neighborhood",
-        "note": "Wander Ninenzaka and Sannenzaka slowly; stop at small shrines."
+        "note": "Walk the side streets slowly; stop at small rum shops."
       },
       "eat": {
-        "name": "Mumokuteki Café & Foods",
-        "kind": "vegetarian lunch",
-        "note": "Casual set menu near Kiyomizu-dera approach."
+        "name": "Cuzz's Fish Stand",
+        "kind": "fish fry",
+        "note": "Casual lunch right on the beach — order the flying fish cutter."
       },
       "do": {
-        "name": "Kiyomizu-dera approach",
-        "kind": "temple stroll",
-        "note": "Skip the main hall if queues are long; the lanes themselves are the attraction."
+        "name": "St. James rum shops",
+        "kind": "neighborhood",
+        "note": "Hop the yellow buses between three rum shops on the same strip."
       }
     },
     {
@@ -42,12 +42,12 @@
         "note": "30 minutes off your feet before dinner."
       },
       "eat": {
-        "name": "Issen Yoshoku",
-        "kind": "tonkatsu",
-        "note": "Counter seats, single dish, fast and unfussy."
+        "name": "The Tides",
+        "kind": "dinner",
+        "note": "Plates worth booking ahead; ask for the catch of the day."
       },
       "do": {
-        "name": "Shirakawa canal walk",
+        "name": "Second Street nightcap",
         "kind": "evening stroll",
         "note": "Soft lantern light, very low key."
       }
@@ -57,9 +57,9 @@
       "stay": null,
       "eat": null,
       "do": {
-        "name": "Pontocho alley nightcap",
+        "name": "Lonestar rum shop",
         "kind": "drinks",
-        "note": "One quiet drink; pick a second-floor spot away from the main drag."
+        "note": "One quiet drink; pick a side-street table away from the highway."
       }
     }
   ]

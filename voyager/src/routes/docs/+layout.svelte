@@ -2,6 +2,7 @@
 	import { page } from '$app/state';
 	import Cta from '$lib/components/Cta.svelte';
 	import TableOfContents from '$lib/components/TableOfContents.svelte';
+	import RegisterSection from '$lib/components/RegisterSection.svelte';
 
 	let { children } = $props();
 
@@ -35,6 +36,7 @@
 </script>
 
 <div class="mx-auto max-w-7xl px-4 sm:px-6 pt-10 pb-12 md:pt-14">
+	<RegisterSection register="editorial">
 	<div
 		class="grid grid-cols-1 gap-10 md:grid-cols-[220px_1fr] lg:grid-cols-[220px_minmax(0,1fr)_200px] lg:gap-x-10"
 	>
@@ -76,6 +78,7 @@
 			</div>
 		</div>
 	</div>
+	</RegisterSection>
 </div>
 
 <style>

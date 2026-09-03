@@ -6,6 +6,8 @@
 	import PayCheckoutCard from '$lib/components/PayCheckoutCard.svelte';
 	import StatBlock from '$lib/components/StatBlock.svelte';
 	import Divider from '$lib/components/Divider.svelte';
+	import RegisterSection from '$lib/components/RegisterSection.svelte';
+	import CarnivalRibbon from '$lib/components/CarnivalRibbon.svelte';
 
 	const PRIMITIVES = [
 		{ id: 'p1', code: 'P1 · IDENTITY', title: 'Self-sovereign login', body: 'A Nostr keypair replaces email, password, and platform account. No custodian. Recovery is a 12-word seed.', icon: 'lock', href: '/stack/identity' },
@@ -28,8 +30,10 @@
 </script>
 
 <svelte:head>
-	<title>Voyager — An open toolkit for Caribbean-first apps</title>
+	<title>Voyager — Caribbean-first toolkit for the region's apps</title>
 </svelte:head>
+
+<RegisterSection register="editorial">
 
 <!-- 1. Ribbon -->
 <div class="w-full" style="background: var(--lime); color: var(--lime-ink);">
@@ -235,8 +239,23 @@
 			Five primitives. One SDK. No platform in the middle. Ship the first app that doesn't need a US bank.
 		</p>
 		<div class="mt-8 flex flex-wrap items-center justify-center gap-3">
-			<Cta variant="primary" href="/build">Start building</Cta>
-			<Cta variant="secondary" href="/principles">Read the principles</Cta>
-		</div>
+<Cta variant="primary" href="/build">Start building</Cta>
+		<Cta variant="secondary" href="/principles">Read the principles</Cta>
 	</div>
 </section>
+
+<section class="mx-auto max-w-6xl px-6 pb-24">
+	<CarnivalRibbon
+		register="carnival-poster"
+		eyebrow="Forward — a Caribbean cadence"
+		items={[
+			{ label: 'Five primitives' },
+			{ label: 'One SDK' },
+			{ label: 'Caribbean rails first' },
+			{ label: 'No platform in the middle' },
+			{ label: 'Builders ship the apps' },
+			{ label: 'Open rails, no custody' }
+		]}
+	/>
+</section>
+</RegisterSection>

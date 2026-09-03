@@ -1,14 +1,16 @@
 <script>
 	import Cta from '$lib/components/Cta.svelte';
+	import RegisterSection from '$lib/components/RegisterSection.svelte';
 	import SectionHeader from '$lib/components/SectionHeader.svelte';
 	import Icon from '$lib/components/Icon.svelte';
 </script>
 
 <svelte:head>
-	<title>Security by design — Voyager Pay</title>
+	<title>Security by design — Voyager Pay · Caribbean-first</title>
 </svelte:head>
 
 <!-- §1 Foundation -->
+<RegisterSection register="civic-ocean">
 <section class="mx-auto max-w-6xl px-6 pt-20 pb-20 lg:pt-28">
 	<SectionHeader
 		eyebrow="Foundation"
@@ -107,3 +109,4 @@
 		</div>
 	</div>
 </section>
+</RegisterSection>

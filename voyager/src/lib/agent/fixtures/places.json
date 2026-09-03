@@ -1,79 +1,79 @@
 [
   {
-    "id": "saryo-tsujiri",
-    "name": "Saryo Tsujiri",
-    "kind": "matcha café",
-    "address": "3-1 Gionmachi Kitagawa, Higashiyama",
+    "id": "lemon-arbour",
+    "name": "Lemon Arbour",
+    "kind": "café",
+    "address": "1st Street, Holetown, St. James",
     "rating": 4.5,
     "priceLevel": 2,
-    "tags": ["matcha", "tatami", "quiet"],
-    "hours": "10:00–18:00",
-    "note": "Counter and tatami seating; the hojicha soft serve is the move."
+    "tags": ["café", "garden", "quiet"],
+    "hours": "07:00–17:00",
+    "note": "Garden seating; the sorrel juice and bakes are the move."
   },
   {
-    "id": "philosopher-path",
-    "name": "Philosopher's Path",
+    "id": "holetown-beach",
+    "name": "Holetown Beach",
     "kind": "walk",
-    "address": "Higashiyama, north end at Ginkaku-ji",
+    "address": "Holetown, north end near the boardwalk",
     "rating": 4.6,
     "priceLevel": 0,
-    "tags": ["walk", "early-morning", "canal"],
+    "tags": ["beach", "early-morning", "calm"],
     "hours": "open",
-    "note": "Best before 8am; cherry blossom is famous but late March is fine for a quiet loop."
+    "note": "Best before 8am; the west coast is famously gentle, late February is fine for a quiet loop."
   },
   {
-    "id": "mumokuteki",
-    "name": "Mumokuteki Café & Foods",
-    "kind": "vegetarian lunch",
-    "address": "4-175-1 Miyagaki-cho, Higashiyama",
+    "id": "cuzz-fish-stand",
+    "name": "Cuzz's Fish Stand",
+    "kind": "fish fry",
+    "address": "Brandons Beach, St. Michael",
     "rating": 4.3,
     "priceLevel": 2,
-    "tags": ["vegetarian", "set-menu", "casual"],
-    "hours": "11:30–21:00",
-    "note": "Big bowls, lots of small plates; order the seasonal set."
-  },
-  {
-    "id": "issen-yoshoku",
-    "name": "Issen Yoshoku",
-    "kind": "tonkatsu",
-    "address": "4-616-1 Komatsucho, Higashiyama",
-    "rating": 4.4,
-    "priceLevel": 1,
-    "tags": ["tonkatsu", "counter", "fast"],
+    "tags": ["fish-fry", "beach", "casual"],
     "hours": "11:00–21:00",
-    "note": "One dish, one job. Cash preferred."
+    "note": "Big plates, lots of sides; order the flying fish cutter."
   },
   {
-    "id": "shirakawa-canal",
-    "name": "Shirakawa canal",
+    "id": "the-tides",
+    "name": "The Tides",
+    "kind": "dinner",
+    "address": "Holetown, St. James",
+    "rating": 4.4,
+    "priceLevel": 3,
+    "tags": ["dinner", "oceanfront", "fresh"],
+    "hours": "18:00–22:00",
+    "note": "Plates worth booking ahead; ask for the catch of the day."
+  },
+  {
+    "id": "second-street",
+    "name": "Second Street nightcap",
     "kind": "evening stroll",
-    "address": "Gion, north of Shijo-dori",
+    "address": "Holetown, near the main road",
     "rating": 4.5,
     "priceLevel": 0,
     "tags": ["stroll", "lanterns", "evening"],
     "hours": "open",
-    "note": "Soft light, no crowds. Better than the main Kamo river for a quiet walk."
+    "note": "Soft light, no crowds. Better than the main drag for a quiet walk."
   },
   {
-    "id": "pontocho-2f",
-    "name": "Pontochō second-floor bar",
+    "id": "lonestar-rum-shop",
+    "name": "Lonestar rum shop",
     "kind": "drinks",
-    "address": "Pontochō alley, Nakagyo",
+    "address": "Side street, Holetown, St. James",
     "rating": 4.2,
-    "priceLevel": 3,
-    "tags": ["drinks", "alley", "evening"],
+    "priceLevel": 2,
+    "tags": ["drinks", "rum-shop", "evening"],
     "hours": "17:00–23:00",
-    "note": "Skip ground-floor touts; upstairs places are calmer and better value."
+    "note": "Skip the highway touts; the side-street rooms are calmer and better value."
   },
   {
-    "id": "honen-in",
-    "name": "Honen-in",
-    "kind": "temple",
-    "address": "30 Kusagawa-cho, Jodoji, Sakyo",
+    "id": "bathsheba",
+    "name": "Bathsheba",
+    "kind": "beach",
+    "address": "East Coast, St. Joseph",
     "rating": 4.7,
     "priceLevel": 0,
-    "tags": ["temple", "quiet", "garden"],
-    "hours": "09:00–16:00",
-    "note": "Free, calm, often missed. Pair with the Philosopher's Path loop."
+    "tags": ["beach", "surf", "quiet"],
+    "hours": "open",
+    "note": "Free, calm, often missed. Pair with the Soup Bowl surf loop."
   }
 ]

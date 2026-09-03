@@ -1,15 +1,17 @@
 <script>
 	import Cta from '$lib/components/Cta.svelte';
 	import SectionHeader from '$lib/components/SectionHeader.svelte';
+	import RegisterSection from '$lib/components/RegisterSection.svelte';
 	import useCases from '$lib/data/useCases.json';
 
 	const uc = useCases.find((x) => x.slug === 'uc1');
 </script>
 
 <svelte:head>
-	<title>{uc.code} · {uc.title} — Voyager</title>
+	<title>{uc.code} · {uc.title} — Voyager · Caribbean-first</title>
 </svelte:head>
 
+<RegisterSection register="civic-ocean">
 <section class="mx-auto max-w-6xl px-6 pt-16 pb-12 lg:pt-24">
 	<div class="flex flex-col gap-8">
 		<span class="eyebrow">{uc.code} · use case</span>
@@ -57,3 +59,4 @@
 		</div>
 	</div>
 </section>
+</RegisterSection>

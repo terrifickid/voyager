@@ -1,11 +1,21 @@
 <script>
 	import Cta from '$lib/components/Cta.svelte';
 	import SectionHeader from '$lib/components/SectionHeader.svelte';
+	import RegisterSection from '$lib/components/RegisterSection.svelte';
+	import RoadMarchRibbon from '$lib/components/RoadMarchRibbon.svelte';
+
+	const ROAD_MARCH = [
+		{ year: '2024', name: 'voyager-concierge alpha', note: 'first trip-planner build' },
+		{ year: '2025', name: 'voyager-pay · spec v0.1', note: 'protocol-shaped, Nostr underneath' },
+		{ year: '2026', name: 'Mostro federation', note: 'JMD, TTD, BBD · XCD rails live' }
+	];
 </script>
 
 <svelte:head>
-	<title>Projects — Voyager</title>
+	<title>Projects — Voyager · Caribbean-first showcases</title>
 </svelte:head>
+
+<RegisterSection register="carnival-poster">
 
 <section class="mx-auto max-w-6xl px-6 pt-16 pb-12 lg:pt-24">
 	<div class="flex flex-col gap-8">
@@ -86,8 +96,16 @@
 			lede="If the showcase apps don't fit your use case, build on Voyager anyway. The SDK doesn't favor anyone."
 		/>
 		<div class="mt-8 flex flex-wrap items-center gap-3">
-			<Cta variant="primary" href="/build">Start building</Cta>
-			<Cta variant="secondary" href="/use-cases">See use cases</Cta>
-		</div>
+<Cta variant="primary" href="/build">Start building</Cta>
+		<Cta variant="secondary" href="/use-cases">See use cases</Cta>
 	</div>
 </section>
+
+<section class="mx-auto max-w-6xl px-6 pb-32">
+	<RoadMarchRibbon
+		register="carnival-poster"
+		eyebrow="Road march · Voyager showcase lineage"
+		winners={ROAD_MARCH}
+	/>
+</section>
+</RegisterSection>

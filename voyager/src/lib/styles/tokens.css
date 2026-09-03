@@ -23,6 +23,33 @@
 	--pastel-sky: #A9D7FF;
 	--pastel-rose: #F4B4CB;
 
+	--rasta-red: #E11A22;
+	--rasta-gold: #F8C300;
+	--rasta-green: #1B7E3D;
+	--rasta-ground: #0F1F0F;
+
+	--carnival-cyan: #00E2FF;
+	--carnival-gold: #FFC700;
+	--carnival-magenta: #FF1B6B;
+	--carnival-ground: #0A0A0A;
+
+	--heritage-sepia: #C99A5C;
+	--heritage-rust: #A0432A;
+	--heritage-amber: #E0A23A;
+	--heritage-ground: #1A1208;
+
+	--editorial-ground: var(--bone-50);
+	--editorial-ink: var(--ink);
+
+	--register-ground: var(--bone-50);
+	--register-text: var(--ink);
+	--register-muted: var(--muted);
+	--register-eyebrow: var(--muted);
+	--register-accent: var(--lime);
+	--register-accent-ink: var(--lime-ink);
+	--register-card: var(--bone-100);
+	--register-on-dark-soft: rgba(241, 239, 233, 0.7);
+
 	--radius-card: 28px;
 	--radius-card-lg: 32px;
 	--radius-pill: 999px;

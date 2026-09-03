@@ -1,15 +1,24 @@
 <script>
 	import Cta from '$lib/components/Cta.svelte';
 	import SectionHeader from '$lib/components/SectionHeader.svelte';
+	import RegisterSection from '$lib/components/RegisterSection.svelte';
+	import MasCampByline from '$lib/components/MasCampByline.svelte';
 	import useCases from '$lib/data/useCases.json';
 
 	const uc = useCases.find((x) => x.slug === 'uc8');
+	const MAS_CAMPS = [
+		{ label: 'Carnival Yard', note: 'fete · UC8' },
+		{ label: 'Bacchanal', note: 'road march · UC8' },
+		{ label: 'Diaspora Hub', note: 'remit · UC8' },
+		{ label: 'Sports Stand', note: 'tickets · UC8' }
+	];
 </script>
 
 <svelte:head>
-	<title>{uc.code} · {uc.title} — Voyager</title>
+	<title>{uc.code} · {uc.title} — Voyager · Caribbean-first</title>
 </svelte:head>
 
+<RegisterSection register="civic-ocean">
 <section class="mx-auto max-w-6xl px-6 pt-16 pb-12 lg:pt-24">
 	<div class="flex flex-col gap-8">
 		<span class="eyebrow">{uc.code} · use case</span>
@@ -44,6 +53,10 @@
 	</div>
 </section>
 
+<section class="mx-auto max-w-6xl px-6 pb-12">
+	<MasCampByline register="civic-ocean" eyebrow="Mas camps & kaiso tents" camps={MAS_CAMPS} />
+</section>
+
 <section class="mx-auto max-w-6xl px-6 pb-32">
 	<div class="rounded-[32px] bg-bone-100 p-8 sm:p-12">
 		<SectionHeader
@@ -57,3 +70,4 @@
 		</div>
 	</div>
 </section>
+</RegisterSection>

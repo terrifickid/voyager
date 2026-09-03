@@ -2,11 +2,30 @@
 	import Cta from '$lib/components/Cta.svelte';
 	import SectionHeader from '$lib/components/SectionHeader.svelte';
 	import SplitPanel from '$lib/components/SplitPanel.svelte';
+	import RegisterSection from '$lib/components/RegisterSection.svelte';
+	import CarnivalRibbon from '$lib/components/CarnivalRibbon.svelte';
+	import HeritageLineage from '$lib/components/HeritageLineage.svelte';
+
+	const PRINCIPLES = [
+		{ label: 'No custody', href: '#' },
+		{ label: 'No identity dossier', href: '#' },
+		{ label: 'Builders ship the apps', href: '#' },
+		{ label: 'The protocol is the product', href: '#' },
+		{ label: 'Capture-resistant by design', href: '#' },
+		{ label: 'Caribbean rails first', href: '#' }
+	];
+	const LINEAGE = [
+		{ label: 'Sep 2 2026', note: 'Advisory call · Shontelle Layne' },
+		{ label: 'Oct 2026', note: 'Five primitives — alpha' },
+		{ label: 'Now', note: 'Open rails · Caribbean-first' }
+	];
 </script>
 
 <svelte:head>
-	<title>Principles — Voyager</title>
+	<title>Principles — Voyager · Caribbean-first</title>
 </svelte:head>
+
+<RegisterSection register="rasta">
 
 <section class="mx-auto max-w-6xl px-6 pt-16 pb-12 lg:pt-24">
 	<div class="flex flex-col gap-8">
@@ -155,3 +174,17 @@
 		<Cta variant="primary" href="/build">Start building</Cta>
 	</div>
 </section>
+
+<section class="mx-auto max-w-6xl px-6 pb-16">
+	<CarnivalRibbon register="rasta" items={PRINCIPLES} />
+</section>
+
+<section class="mx-auto max-w-6xl px-6 pb-32">
+	<HeritageLineage
+		register="rasta"
+		eyebrow="Platform lineage — same shape as the music"
+		stages={LINEAGE}
+		caption="Sep 2 advisory call → five primitives → open rails. A lineage from prior art, not nostalgia."
+	/>
+</section>
+</RegisterSection>

@@ -1,14 +1,16 @@
 <script>
 	import Cta from '$lib/components/Cta.svelte';
+	import RegisterSection from '$lib/components/RegisterSection.svelte';
 	import SectionHeader from '$lib/components/SectionHeader.svelte';
 	import Icon from '$lib/components/Icon.svelte';
 </script>
 
 <svelte:head>
-	<title>For vendors — Voyager</title>
+	<title>For vendors — Voyager · Caribbean-first marketplace</title>
 </svelte:head>
 
 <!-- Hero -->
+<RegisterSection register="civic-ocean">
 <section class="mx-auto max-w-6xl px-6 pt-20 pb-12 lg:pt-28 lg:pb-16">
 	<div class="flex flex-col gap-8">
 		<span class="eyebrow">For merchants</span>
@@ -405,3 +407,4 @@
 		}
 	}
 </style>
+</RegisterSection>

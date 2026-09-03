@@ -5,6 +5,8 @@
 	import FeatureCard from '$lib/components/FeatureCard.svelte';
 	import PersonaCard from '$lib/components/PersonaCard.svelte';
 	import QuoteCard from '$lib/components/QuoteCard.svelte';
+	import RegisterSection from '$lib/components/RegisterSection.svelte';
+	import RoadMarchRibbon from '$lib/components/RoadMarchRibbon.svelte';
 
 	const REVIEWS = [
 		{
@@ -51,8 +53,10 @@
 </script>
 
 <svelte:head>
-	<title>Trip Planner — Voyager</title>
+	<title>Trip Planner — Voyager · Caribbean-first showcase</title>
 </svelte:head>
+
+<RegisterSection register="carnival-poster">
 
 <!-- Hero -->
 <section class="mx-auto max-w-6xl px-6 pt-16 pb-20 lg:pt-24 lg:pb-28">
@@ -218,6 +222,19 @@
 		</div>
 	</div>
 </section>
+
+<section class="mx-auto max-w-6xl px-6 pb-32">
+	<RoadMarchRibbon
+		register="carnival-poster"
+		eyebrow="Road march · trip planner milestones"
+		winners={[
+			{ year: '2024', name: 'concierge alpha', note: 'first itinerary build, in-browser' },
+			{ year: '2025', name: 'Caribbean place-graph', note: 'Jamaica → Barbados seeded' },
+			{ year: '2026', name: 'Voyager Pay wired', note: 'plan → pay in one flow' }
+		]}
+	/>
+</section>
+</RegisterSection>
 
 <style>
 	.marquee {

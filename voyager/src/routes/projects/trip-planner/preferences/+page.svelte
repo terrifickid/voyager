@@ -1,12 +1,14 @@
 <script>
 	import TravelFormPrefs from '$lib/components/TravelFormPrefs.svelte';
 	import SectionHeader from '$lib/components/SectionHeader.svelte';
+	import RegisterSection from '$lib/components/RegisterSection.svelte';
 </script>
 
 <svelte:head>
-	<title>Preferences — Voyager</title>
+	<title>Preferences — Voyager · Trip Planner · Caribbean-first</title>
 </svelte:head>
 
+<RegisterSection register="carnival-poster">
 <section class="mx-auto max-w-6xl px-6 pt-16 pb-24">
 	<SectionHeader
 		eyebrow="Your travel fingerprint"
@@ -17,3 +19,4 @@
 		<TravelFormPrefs />
 	</div>
 </section>
+</RegisterSection>

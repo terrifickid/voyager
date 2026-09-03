@@ -26,6 +26,21 @@
 	--color-pastel-sky: #A9D7FF;
 	--color-pastel-rose: #F4B4CB;
 
+	--color-rasta-red: #E11A22;
+	--color-rasta-gold: #F8C300;
+	--color-rasta-green: #1B7E3D;
+	--color-rasta-ground: #0F1F0F;
+
+	--color-carnival-cyan: #00E2FF;
+	--color-carnival-gold: #FFC700;
+	--color-carnival-magenta: #FF1B6B;
+	--color-carnival-ground: #0A0A0A;
+
+	--color-heritage-sepia: #C99A5C;
+	--color-heritage-rust: #A0432A;
+	--color-heritage-amber: #E0A23A;
+	--color-heritage-ground: #1A1208;
+
 	--radius-pill: 999px;
 	--radius-card-lg: 28px;
 	--radius-card-xl: 32px;
@@ -51,5 +66,76 @@ html, body {
 	font-weight: 600;
 	letter-spacing: 0.14em;
 	text-transform: uppercase;
-	color: var(--muted);
+	color: var(--register-eyebrow);
+}
+
+.register-section {
+	background-color: var(--register-ground);
+	color: var(--register-text);
+}
+
+[data-register='civic-ocean'] {
+	--register-ground: var(--bone-50);
+	--register-text: var(--ink);
+	--register-muted: var(--muted);
+	--register-eyebrow: var(--muted);
+	--register-accent: var(--lime);
+	--register-accent-ink: var(--lime-ink);
+	--register-card: var(--bone-100);
+	--register-on-dark-soft: rgba(241, 239, 233, 0.7);
+}
+
+[data-register='editorial'] {
+	--register-ground: var(--bone-50);
+	--register-text: var(--ink);
+	--register-muted: var(--muted);
+	--register-eyebrow: var(--ink);
+	--register-accent: var(--ink);
+	--register-accent-ink: var(--bone-50);
+	--register-card: var(--bone-100);
+	--register-on-dark-soft: rgba(20, 20, 15, 0.7);
+}
+
+[data-register='rasta'] {
+	--register-ground: var(--rasta-ground);
+	--register-text: var(--bone-50);
+	--register-muted: rgba(241, 239, 233, 0.6);
+	--register-eyebrow: var(--rasta-gold);
+	--register-accent: var(--rasta-gold);
+	--register-accent-ink: var(--ink);
+	--register-card: rgba(241, 239, 233, 0.06);
+	--register-on-dark-soft: rgba(241, 239, 233, 0.65);
+}
+
+[data-register='carnival-poster'] {
+	--register-ground: var(--carnival-ground);
+	--register-text: var(--bone-50);
+	--register-muted: rgba(241, 239, 233, 0.65);
+	--register-eyebrow: var(--carnival-cyan);
+	--register-accent: var(--carnival-cyan);
+	--register-accent-ink: var(--ink);
+	--register-card: rgba(241, 239, 233, 0.06);
+	--register-on-dark-soft: rgba(241, 239, 233, 0.7);
+}
+
+[data-register='heritage-sepia'] {
+	--register-ground: var(--heritage-ground);
+	--register-text: var(--bone-50);
+	--register-muted: rgba(241, 239, 233, 0.62);
+	--register-eyebrow: var(--heritage-amber);
+	--register-accent: var(--heritage-sepia);
+	--register-accent-ink: var(--ink);
+	--register-card: rgba(241, 239, 233, 0.05);
+	--register-on-dark-soft: rgba(241, 239, 233, 0.65);
+}
+
+[data-register] .register-section__card {
+	background-color: var(--register-card);
+	color: var(--register-text);
+}
+
+[data-register='rasta'] [data-register-soft],
+[data-register='carnival-poster'] [data-register-soft],
+[data-register='heritage-sepia'] [data-register-soft] {
+	color: var(--register-on-dark-soft);
 }

@@ -3,13 +3,24 @@
 	import SectionHeader from '$lib/components/SectionHeader.svelte';
 	import SplitPanel from '$lib/components/SplitPanel.svelte';
 	import UseCaseCard from '$lib/components/UseCaseCard.svelte';
+	import RegisterSection from '$lib/components/RegisterSection.svelte';
+	import MasCampByline from '$lib/components/MasCampByline.svelte';
 	import useCases from '$lib/data/useCases.json';
+
+	const MAS_CAMPS = [
+		{ label: 'Bacchanal', note: 'mas · road march' },
+		{ label: 'Kaiso House', note: 'tent · storytelling' },
+		{ label: 'Lime Yard', note: 'fete · meet-up' },
+		{ label: 'Playing Mas', note: 'procession' },
+		{ label: 'Soca Stage', note: 'stage · performance' }
+	];
 </script>
 
 <svelte:head>
-	<title>Use cases — Voyager</title>
+	<title>Use cases — Voyager · Caribbean-first toolkit</title>
 </svelte:head>
 
+<RegisterSection register="civic-ocean">
 <section class="mx-auto max-w-6xl px-6 pt-16 pb-12 lg:pt-24">
 	<div class="flex flex-col gap-8">
 		<span class="eyebrow">// use cases</span>
@@ -27,6 +38,9 @@
 		{#each useCases as uc (uc.slug)}
 			<UseCaseCard id={uc.slug} code={uc.code} title={uc.title} body={uc.short} href="/use-cases/{uc.slug}" />
 		{/each}
+	</div>
+	<div class="mt-12">
+		<MasCampByline register="civic-ocean" eyebrow="UC7 + UC8 · mas camp register" camps={MAS_CAMPS} />
 	</div>
 </section>
 
@@ -59,3 +73,4 @@
 		</div>
 	</div>
 </section>
+</RegisterSection>

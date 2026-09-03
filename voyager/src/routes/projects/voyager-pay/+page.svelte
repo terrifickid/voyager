@@ -4,12 +4,18 @@
 	import Icon from '$lib/components/Icon.svelte';
 	import FeatureCard from '$lib/components/FeatureCard.svelte';
 	import RampQuoteAggregator from '$lib/components/RampQuoteAggregator.svelte';
+	import RegisterSection from '$lib/components/RegisterSection.svelte';
+	import SoundSystemStrip from '$lib/components/SoundSystemStrip.svelte';
 	import nodes from '$lib/data/mostroNodes.json';
+
+	const SOUND_SYSTEMS = nodes.map((n) => ({ name: n.name, region: n.region, feePct: n.feePct }));
 </script>
 
 <svelte:head>
 	<title>Voyager Pay — Open payments for Caribbean-first apps</title>
 </svelte:head>
+
+<RegisterSection register="civic-ocean">
 
 <!-- §0 hero -->
 <section class="mx-auto max-w-6xl px-6 pt-20 pb-12 lg:pt-28 lg:pb-16">
@@ -396,6 +402,11 @@
 		</div>
 	</div>
 </section>
+
+<section class="mx-auto max-w-6xl px-6 pb-32">
+	<SoundSystemStrip eyebrow="Federation — sound systems & Mostro nodes" systems={SOUND_SYSTEMS} />
+</section>
+</RegisterSection>
 
 <style>
 	.home-mcp-figure {
