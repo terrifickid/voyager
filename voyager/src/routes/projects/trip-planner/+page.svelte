@@ -166,7 +166,7 @@
 			tone="sky"
 			eyebrow="Family trips"
 			title="Everyone's a different traveler"
-			body="Your day bends around kids' pacing and food stops, with one longer anchor for the adults. The plan respects both."
+			body="Your day bends around kids' | pacing and food stops, with one longer anchor for the adults. The plan respects both."
 			ctaLabel="Plan with kids"
 			ctaHref="/projects/trip-planner/plan"
 		/>

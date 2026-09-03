@@ -5,10 +5,10 @@
 	import RegisterSection from '$lib/components/RegisterSection.svelte';
 
 	/**
-	 * @typedef {'civic-ocean' | 'editorial' | 'rasta' | 'carnival-poster' | 'heritage-sepia'} Register
+	 * @typedef {'perk' | 'rasta' | 'carnival-poster' | 'carnival-poster-white' | 'ocean' | 'windies' | 'gold-cream' | 'caribana' | 'heritage-sepia'} Register
 	 */
 	/** @type {{ register?: Register, children?: import('svelte').Snippet }} */
-	let { register = 'rasta', children } = $props();
+	let { register = 'heritage-sepia', children } = $props();
 
 	let contentEl = $state(null);
 

@@ -3,10 +3,10 @@
 	import Cta from './Cta.svelte';
 
 	/**
-	 * @typedef {'civic-ocean' | 'editorial' | 'rasta' | 'carnival-poster' | 'heritage-sepia'} Register
+	 * @typedef {'perk' | 'rasta' | 'carnival-poster' | 'carnival-poster-white' | 'ocean' | 'windies' | 'gold-cream' | 'caribana' | 'heritage-sepia'} Register
 	 */
 	/** @type {{ register?: Register }} */
-	let { register = 'civic-ocean' } = $props();
+	let { register = 'perk' } = $props();
 
 	function isActive(path, exact = false) {
 		const current = page.url.pathname;
@@ -19,7 +19,7 @@
 		{ href: '/projects', label: 'Projects' },
 		{ href: '/use-cases', label: 'Use cases' },
 		{ href: '/network', label: 'Network' },
-		{ href: '/docs', label: 'Docs' }
+		{ href: '/build', label: 'Build' }
 	];
 </script>
 
@@ -57,13 +57,8 @@
 		backdrop-filter: blur(8px);
 	}
 
-	[data-register='civic-ocean'].site-header {
+	[data-register='perk'].site-header {
 		--site-header-bg: rgba(233, 230, 221, 0.9);
-		--site-header-text: var(--ink);
-	}
-
-	[data-register='editorial'].site-header {
-		--site-header-bg: var(--bone-50);
 		--site-header-text: var(--ink);
 	}
 
@@ -79,6 +74,31 @@
 
 	[data-register='heritage-sepia'].site-header {
 		--site-header-bg: var(--heritage-ground);
+		--site-header-text: var(--bone-50);
+	}
+
+	[data-register='carnival-poster-white'].site-header {
+		--site-header-bg: var(--carnival-white-ground);
+		--site-header-text: var(--ink);
+	}
+
+	[data-register='ocean'].site-header {
+		--site-header-bg: var(--ocean-ground);
+		--site-header-text: var(--bone-50);
+	}
+
+	[data-register='windies'].site-header {
+		--site-header-bg: var(--windies-ground);
+		--site-header-text: var(--bone-50);
+	}
+
+	[data-register='gold-cream'].site-header {
+		--site-header-bg: var(--goldcream-ground);
+		--site-header-text: var(--ink);
+	}
+
+	[data-register='caribana'].site-header {
+		--site-header-bg: var(--caribana-ground);
 		--site-header-text: var(--bone-50);
 	}
 

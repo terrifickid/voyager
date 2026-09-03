@@ -62,7 +62,7 @@
 	/>
 	<div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
 		{#each [
-			{ t: 'No travel booking engine', b: 'We ship a demo (Trip Planner). Real itineraries are builders\' job.' },
+			{ t: 'No travel booking engine', b: 'We ship a demo (Trip Planner). Real itineraries are builders\' | job.' },
 			{ t: 'No music DSP', b: 'No streaming. Showcase stage is admin and reputation, not a Spotify competitor.' },
 			{ t: 'No regulated wallet', b: 'Fiat flows go through Mostro nodes. Voyager is never the regulated entity.' },
 			{ t: 'No central marketplace', b: 'Discovery is relay fan-out. We run an optional indexer.' },
@@ -113,7 +113,7 @@
 		<div class="p-8 sm:p-12 flex flex-col gap-5 bg-[var(--register-ground)]">
 			<span class="eyebrow">// the platform's promise</span>
 			<h2 class="font-display text-[36px] sm:text-[44px] leading-[1.05] max-w-md text-[var(--register-text)]">The protocol survives without us.</h2>
-			<p class="text-[15px] leading-relaxed text-[var(--register-muted)] max-w-md">If Voyager-the-business is acquired or shut down tomorrow, the rails keep working. Reference clients are demos; the wire format is the product. Builders' apps do not depend on us staying alive.</p>
+			<p class="text-[15px] leading-relaxed text-[var(--register-muted)] max-w-md">If Voyager-the-business is acquired or shut down tomorrow, the rails keep working. Reference clients are demos; the wire format is the product. Builders' | apps do not depend on us staying alive.</p>
 		</div>
 		<div class="p-8 sm:p-12 flex flex-col gap-5" style="background-color: var(--register-accent); color: var(--register-accent-ink);">
 			<span class="font-display text-[64px] sm:text-[88px] lg:text-[104px] leading-[0.95]" style="color: var(--register-accent-ink)">0</span>

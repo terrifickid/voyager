@@ -15,7 +15,7 @@
 	<title>Voyager Pay — Open payments for Caribbean-first apps</title>
 </svelte:head>
 
-<RegisterSection register="civic-ocean">
+<RegisterSection register="perk">
 
 <!-- §0 hero -->
 <section class="mx-auto max-w-6xl px-6 pt-20 pb-12 lg:pt-28 lg:pb-16">
@@ -28,7 +28,7 @@
 			Voyager Pay is an open protocol for sending money on the open web. There is no custodian in the middle and no account to lose. No platform in the middle. Signed events move over Nostr (a public message network). Settlement runs on Lightning (a fast Bitcoin payment network). A federation of competing market makers — called Mostro nodes — bridges fiat and Bitcoin.
 		</p>
 		<div class="flex flex-wrap items-center gap-3">
-			<Cta variant="primary" href="/projects/voyager-pay/security">Why it's secure</Cta>
+			<Cta variant="primary" href="/network/security">Why it's secure</Cta>
 			<Cta variant="secondary" href="/projects/voyager-pay/pricing">Why prices are fair</Cta>
 		</div>
 	</div>
@@ -44,7 +44,7 @@
 				Cross borders without handing your balance to a custodian. Read the security outcomes.
 			</p>
 			<div class="mt-2">
-				<Cta variant="tertiary" href="/projects/voyager-pay/security">Security by design</Cta>
+				<Cta variant="tertiary" href="/network/security">Security by design</Cta>
 			</div>
 		</article>
 		<article class="flex flex-col gap-3 rounded-[28px] bg-bone-200 p-6">
@@ -64,7 +64,7 @@
 				Anyone can run a Mostro node. Earn fee revenue, accrue reputation, compete on a transparent rubric. See what it costs.
 			</p>
 			<div class="mt-2">
-				<Cta variant="tertiary" href="/projects/voyager-pay/node">Run a node</Cta>
+				<Cta variant="tertiary" href="/network/node">Run a node</Cta>
 			</div>
 		</article>
 	</div>

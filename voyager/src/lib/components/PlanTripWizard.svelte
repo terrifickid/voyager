@@ -603,7 +603,7 @@
         {#if draft.travelers.kids > 0}
           <div class="flex flex-col gap-3 rounded-2xl bg-bone-200 p-4">
             <span class="eyebrow">
-              Kids' ages
+              Kids' | ages
             </span>
             <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
               {#each draft.travelers.kidsAges as age, i (i)}

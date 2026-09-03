@@ -1,12 +1,12 @@
 <script>
 	/**
 	 * @typedef {'primary' | 'secondary' | 'tertiary'} Variant
-	 * @typedef {'civic-ocean' | 'editorial' | 'rasta' | 'carnival-poster' | 'heritage-sepia'} Register
+	 * @typedef {'perk' | 'rasta' | 'carnival-poster' | 'carnival-poster-white' | 'ocean' | 'windies' | 'gold-cream' | 'caribana' | 'heritage-sepia'} Register
 	 */
 	/** @type {{ variant?: Variant, register?: Register, href?: string, type?: 'button' | 'submit', onclick?: (e: MouseEvent) => void, disabled?: boolean, class?: string, children?: import('svelte').Snippet }} */
 	let {
 		variant = 'primary',
-		register = 'civic-ocean',
+		register = 'perk',
 		href = undefined,
 		type = 'button',
 		onclick = undefined,
@@ -21,9 +21,8 @@
 	const primaryCls =
 		'cta-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2';
 	const secondaryCls =
-		'bg-transparent text-ink border-[1.5px] border-ink hover:bg-ink hover:text-bone-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 focus-visible:ring-offset-bone-50';
-	const tertiaryCls =
-		'inline-flex items-center gap-1.5 text-ink underline underline-offset-4 decoration-[1.5px] hover:text-ink-2';
+		'cta-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2';
+	const tertiaryCls = 'cta-tertiary';
 
 	const variantCls = $derived(
 		variant === 'primary'
@@ -64,5 +63,28 @@
 			--register-accent-hover,
 			color-mix(in srgb, var(--register-accent) 92%, black)
 		);
+	}
+
+	.cta-secondary {
+		background-color: transparent;
+		color: var(--register-text);
+		border: 1.5px solid var(--register-text);
+	}
+	.cta-secondary:hover {
+		background-color: var(--register-text);
+		color: var(--register-ground);
+	}
+
+	.cta-tertiary {
+		display: inline-flex;
+		align-items: center;
+		gap: 6px;
+		color: var(--register-text);
+		text-decoration: underline;
+		text-underline-offset: 4px;
+		text-decoration-thickness: 1.5px;
+	}
+	.cta-tertiary:hover {
+		color: var(--register-muted);
 	}
 </style>

@@ -1,9 +1,9 @@
 <script>
 	/**
-	 * @typedef {'civic-ocean' | 'editorial' | 'rasta' | 'carnival-poster' | 'heritage-sepia'} Register
+	 * @typedef {'perk' | 'rasta' | 'carnival-poster' | 'carnival-poster-white' | 'ocean' | 'windies' | 'gold-cream' | 'caribana' | 'heritage-sepia'} Register
 	 */
 	/** @type {{ id: string, code: string, title: string, body: string, href: string, register?: Register }} */
-	let { id, code, title, body, href, register = 'editorial' } = $props();
+	let { id, code, title, body, href, register = 'perk' } = $props();
 </script>
 
 <a

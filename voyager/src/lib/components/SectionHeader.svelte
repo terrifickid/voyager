@@ -1,9 +1,9 @@
 <script>
 	/**
-	 * @typedef {'civic-ocean' | 'editorial' | 'rasta' | 'carnival-poster' | 'heritage-sepia'} Register
+	 * @typedef {'perk' | 'rasta' | 'carnival-poster' | 'carnival-poster-white' | 'ocean' | 'windies' | 'gold-cream' | 'caribana' | 'heritage-sepia'} Register
 	 */
 	/** @type {{ register?: Register, eyebrow?: string, title: string, lede?: string, align?: 'left' | 'center' }} */
-	let { register = 'civic-ocean', eyebrow = '', title, lede = '', align = 'left' } = $props();
+	let { register = 'perk', eyebrow = '', title, lede = '', align = 'left' } = $props();
 </script>
 
 <header
@@ -27,8 +27,7 @@
 	.section-header__lede {
 		color: var(--register-on-dark-soft);
 	}
-	[data-register='civic-ocean'] .section-header__lede,
-	[data-register='editorial'] .section-header__lede {
+	[data-register='perk'] .section-header__lede {
 		color: var(--ink-2);
 	}
 </style>

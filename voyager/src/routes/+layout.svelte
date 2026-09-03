@@ -12,7 +12,7 @@
 	let { children } = $props();
 
 	/**
-	 * @typedef {'civic-ocean' | 'editorial' | 'rasta' | 'carnival-poster' | 'heritage-sepia'} Register
+	 * @typedef {'perk' | 'rasta' | 'carnival-poster' | 'carnival-poster-white' | 'ocean' | 'windies' | 'gold-cream' | 'caribana' | 'heritage-sepia'} Register
 	 */
 
 	/**
@@ -29,9 +29,11 @@
 			return 'carnival-poster';
 		}
 		if (pathname === '/principles') return 'rasta';
+		if (pathname.startsWith('/network')) return 'rasta';
+		if (pathname.startsWith('/stack')) return 'carnival-poster';
 		if (pathname === '/build') return 'heritage-sepia';
-		if (pathname.startsWith('/docs')) return 'rasta';
-		return 'civic-ocean';
+		if (pathname.startsWith('/docs')) return 'heritage-sepia';
+		return 'perk';
 	}
 
 	const chromeRegister = $derived(registerFor(page.url.pathname));

@@ -2,7 +2,7 @@
 	import { page } from '$app/state';
 
 	/**
-	 * @typedef {'civic-ocean' | 'editorial' | 'rasta' | 'carnival-poster' | 'heritage-sepia'} Register
+	 * @typedef {'perk' | 'rasta' | 'carnival-poster' | 'carnival-poster-white' | 'ocean' | 'windies' | 'gold-cream' | 'caribana' | 'heritage-sepia'} Register
 	 */
 
 	const ROOT = { label: 'Voyager', href: '/' };
@@ -22,13 +22,13 @@
 	};
 
 	/** @type {{ register?: Register }} */
-	let { register = 'civic-ocean' } = $props();
+	let { register = 'perk' } = $props();
 
 	function humanize(seg) {
 		return seg
 			.split('-')
 			.map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-			.join(' ');
+			.join(' | ');
 	}
 
 	function labelFor(seg) {

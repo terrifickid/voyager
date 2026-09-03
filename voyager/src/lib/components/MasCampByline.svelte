@@ -1,10 +1,10 @@
 <script>
 	/**
-	 * @typedef {'civic-ocean' | 'editorial' | 'rasta' | 'carnival-poster' | 'heritage-sepia'} Register
+	 * @typedef {'perk' | 'rasta' | 'carnival-poster' | 'carnival-poster-white' | 'ocean' | 'windies' | 'gold-cream' | 'caribana' | 'heritage-sepia'} Register
 	 * @typedef {{ label: string, href?: string, note?: string }} Camp
 	 */
 	/** @type {{ register?: Register, eyebrow?: string, camps: Camp[] }} */
-	let { register = 'civic-ocean', eyebrow = 'Mas Camps & Kaiso Tents', camps } = $props();
+	let { register = 'perk', eyebrow = 'Mas Camps & Kaiso Tents', camps } = $props();
 </script>
 
 <section data-register={register} aria-label={ eyebrow} class="mas-camp">

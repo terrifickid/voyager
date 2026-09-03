@@ -18,7 +18,7 @@
 
 <section
 	class="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-[28px] overflow-hidden split-panel"
-	data-register="civic-ocean"
+	data-register="perk"
 >
 	<div
 		class="{darkFirst

@@ -53,8 +53,28 @@
 	--heritage-amber: #E0A23A;
 	--heritage-ground: #1A1208;
 
-	--editorial-ground: var(--bone-50);
-	--editorial-ink: var(--ink);
+	--carnival-white-ground: #FAFAF7;
+	--carnival-white-card: #F1F0E9;
+
+	--ocean-ground: #0A2438;
+	--ocean-gold: #F8C300;
+	--ocean-gold-deep: #D89737;
+	--ocean-gold-bright: #FFD24A;
+
+	--windies-maroon: #660028;
+	--windies-ground: #2A000E;
+	--windies-gold: #FBED00;
+	--windies-gold-soft: #FFF79A;
+
+	--goldcream-ground: #FAFAE1;
+	--goldcream-card: #F4F2D0;
+	--goldcream-gold: #EFB300;
+	--goldcream-gold-ink: #7A5C00;
+
+	--caribana-magenta: #ED177A;
+	--caribana-magenta-bright: #FF4A9E;
+	--caribana-violet: #9E5AFF;
+	--caribana-ground: #160A20;
 
 	--register-ground: var(--bone-50);
 	--register-text: var(--ink);

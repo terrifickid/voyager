@@ -1,19 +1,23 @@
 <script>
 	/**
-	 * @typedef {'civic-ocean' | 'editorial' | 'rasta' | 'carnival-poster' | 'heritage-sepia'} Register
+	 * @typedef {'perk' | 'rasta' | 'carnival-poster' | 'carnival-poster-white' | 'ocean' | 'windies' | 'gold-cream' | 'caribana' | 'heritage-sepia'} Register
 	 * @typedef {{ label: string, href?: string }} RibbonItem
 	 */
 	/** @type {{ register?: Register, items: RibbonItem[] }} */
 	let { register = 'carnival-poster', items } = $props();
 
 	const palettes = {
-		'civic-ocean': ['var(--lime)', 'var(--night-900)', 'var(--night-800)'],
-		editorial: ['var(--ink)', 'var(--bone-300)', 'var(--bone-200)'],
+		'perk': ['var(--lime)', 'var(--night-900)', 'var(--night-800)'],
 		rasta: ['var(--rasta-red)', 'var(--rasta-gold)', 'var(--rasta-green)'],
 		'carnival-poster': ['var(--carnival-cyan)', 'var(--carnival-magenta)', 'var(--carnival-gold)'],
+		'carnival-poster-white': ['var(--carnival-magenta)', 'var(--carnival-cyan)', 'var(--carnival-gold)'],
+		ocean: ['var(--ocean-gold)', 'var(--night-800)', 'var(--teal-bright)'],
+		windies: ['var(--windies-maroon)', 'var(--windies-gold)', 'var(--bone-50)'],
+		'gold-cream': ['var(--goldcream-gold)', 'var(--ink)', 'var(--goldcream-card)'],
+		caribana: ['var(--caribana-magenta)', 'var(--caribana-violet)', 'var(--bone-50)'],
 		'heritage-sepia': ['var(--heritage-sepia)', 'var(--heritage-rust)', 'var(--heritage-amber)']
 	};
-	const cols = $derived(palettes[register] ?? palettes['civic-ocean']);
+	const cols = $derived(palettes[register] ?? palettes['perk']);
 	const cycle = (i) => cols[i % cols.length];
 </script>
 

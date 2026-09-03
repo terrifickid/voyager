@@ -1,6 +1,6 @@
 <script>
 	/**
-	 * @typedef {'civic-ocean' | 'editorial' | 'rasta' | 'carnival-poster' | 'heritage-sepia'} Register
+	 * @typedef {'perk' | 'rasta' | 'carnival-poster' | 'carnival-poster-white' | 'ocean' | 'windies' | 'gold-cream' | 'caribana' | 'heritage-sepia'} Register
 	 */
 	/** @type {{ register: Register, tag?: 'div' | 'section', class?: string, children?: import('svelte').Snippet }} */
 	let { register, tag = 'div', class: extra = '', children } = $props();

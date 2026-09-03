@@ -1,10 +1,10 @@
 <script>
 	/**
-	 * @typedef {'civic-ocean' | 'editorial' | 'rasta' | 'carnival-poster' | 'heritage-sepia'} Register
+	 * @typedef {'perk' | 'rasta' | 'carnival-poster' | 'carnival-poster-white' | 'ocean' | 'windies' | 'gold-cream' | 'caribana' | 'heritage-sepia'} Register
 	 * @typedef {{ name: string, region: string, feePct?: number }} SoundSystem
 	 */
 	/** @type {{ register?: Register, eyebrow?: string, systems: SoundSystem[] }} */
-	let { register = 'civic-ocean', eyebrow = 'Sound systems · Mostro nodes', systems } = $props();
+	let { register = 'perk', eyebrow = 'Sound systems · Mostro nodes', systems } = $props();
 </script>
 
 <section data-register={register} aria-label={ eyebrow} class="sound-strip">

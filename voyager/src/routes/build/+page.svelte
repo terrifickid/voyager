@@ -105,7 +105,7 @@
 		<article class="flex flex-col gap-3 rounded-[28px] bg-[var(--register-card)] p-7">
 			<span class="eyebrow">We don't charge for</span>
 			<ul class="flex flex-col gap-3 text-[15px] text-[var(--register-muted)]">
-				<li>Lightning routing fees. That's the routing nodes' business.</li>
+				<li>Lightning routing fees. That's the routing nodes' | business.</li>
 				<li>A cut of every app's commerce. We are not a platform tax.</li>
 				<li>User data. We have no user data; users own their keys.</li>
 				<li>Proprietary lock-in via identity. Nostr keys are interoperable with hundreds of apps.</li>

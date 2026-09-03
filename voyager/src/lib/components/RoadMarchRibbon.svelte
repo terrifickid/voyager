@@ -1,6 +1,6 @@
 <script>
 	/**
-	 * @typedef {'civic-ocean' | 'editorial' | 'rasta' | 'carnival-poster' | 'heritage-sepia'} Register
+	 * @typedef {'perk' | 'rasta' | 'carnival-poster' | 'carnival-poster-white' | 'ocean' | 'windies' | 'gold-cream' | 'caribana' | 'heritage-sepia'} Register
 	 * @typedef {{ year: string, name: string, note?: string }} Winner
 	 */
 	/** @type {{ register?: Register, eyebrow?: string, winners: Winner[] }} */

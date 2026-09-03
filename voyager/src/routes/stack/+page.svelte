@@ -11,14 +11,14 @@
 	<title>Stack — Voyager · Caribbean-first toolkit</title>
 </svelte:head>
 
-<RegisterSection register="civic-ocean">
+<RegisterSection register="carnival-poster">
 <section class="mx-auto max-w-6xl px-6 pt-16 pb-12 lg:pt-24">
 	<div class="flex flex-col gap-8">
 		<span class="eyebrow">// the stack</span>
-		<h1 class="font-display text-[48px] sm:text-[64px] lg:text-[80px] text-ink leading-[0.95] max-w-4xl">
+		<h1 class="font-display text-[48px] sm:text-[64px] lg:text-[80px] text-[var(--register-text)] leading-[0.95] max-w-4xl">
 			Five primitives, one SDK.
 		</h1>
-		<p class="max-w-2xl text-lg leading-relaxed text-ink-2">
+		<p class="max-w-2xl text-lg leading-relaxed text-[var(--register-muted)]">
 			Each primitive solves one job. Together they cover identity, payment, fiat on/off, private messaging, and findability. Open the one that fits your build.
 		</p>
 	</div>
@@ -28,8 +28,9 @@
 	<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-5">
 		{#each primitives as p (p.slug)}
 			<PrimitiveCard
+				register="carnival-poster"
 				id={p.code.toLowerCase()}
-				code="{p.code} · {p.title.split(' ')[0].toUpperCase()}"
+				code="{p.code} · {p.title.split(' | ')[0].toUpperCase()}"
 				title={p.title}
 				body={p.lede}
 				icon={p.icon}
@@ -56,7 +57,7 @@
 </section>
 
 <section class="mx-auto max-w-6xl px-6 pb-32">
-	<div class="rounded-[32px] bg-bone-100 p-8 sm:p-12">
+	<div class="rounded-[32px] bg-[var(--register-card)] p-8 sm:p-12">
 		<SectionHeader
 			eyebrow="Start here"
 			title="Pick the primitive that matches your job."

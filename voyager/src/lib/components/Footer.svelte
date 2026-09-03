@@ -1,21 +1,25 @@
 <script>
 	/**
-	 * @typedef {'civic-ocean' | 'editorial' | 'rasta' | 'carnival-poster' | 'heritage-sepia'} Register
+	 * @typedef {'perk' | 'rasta' | 'carnival-poster' | 'carnival-poster-white' | 'ocean' | 'windies' | 'gold-cream' | 'caribana' | 'heritage-sepia'} Register
 	 */
 	/** @type {{ register?: Register }} */
-	let { register = 'civic-ocean' } = $props();
+	let { register = 'perk' } = $props();
 
 	import Icon from './Icon.svelte';
 	import FooterBars from './FooterBars.svelte';
 
 	const palettes = {
-		'civic-ocean': ['var(--night-900)', 'var(--night-800)', 'transparent'],
-		editorial: ['var(--ink)', 'var(--bone-300)', 'var(--bone-200)'],
+		'perk': ['var(--night-900)', 'var(--night-800)', 'transparent'],
 		rasta: ['var(--rasta-red)', 'var(--rasta-gold)', 'var(--rasta-green)'],
 		'carnival-poster': ['var(--carnival-cyan)', 'var(--carnival-magenta)', 'var(--carnival-gold)'],
+		'carnival-poster-white': ['var(--carnival-magenta)', 'var(--carnival-cyan)', 'var(--carnival-gold)'],
+		ocean: ['var(--ocean-gold)', 'var(--night-800)', 'var(--teal-bright)'],
+		windies: ['var(--windies-maroon)', 'var(--windies-gold)', 'var(--bone-50)'],
+		'gold-cream': ['var(--goldcream-gold)', 'var(--ink)', 'var(--goldcream-card)'],
+		caribana: ['var(--caribana-magenta)', 'var(--caribana-violet)', 'var(--bone-50)'],
 		'heritage-sepia': ['var(--heritage-sepia)', 'var(--heritage-rust)', 'var(--heritage-amber)']
 	};
-	const bars = $derived(palettes[register] ?? palettes['civic-ocean']);
+	const bars = $derived(palettes[register] ?? palettes['perk']);
 
 	const columns = [
 		{
@@ -56,7 +60,8 @@
 			title: 'NETWORK/',
 			links: [
 				{ label: 'Mostro nodes', href: '/network' },
-				{ label: 'Run a node', href: '/projects/voyager-pay/node' },
+				{ label: 'Run a node', href: '/network/node' },
+				{ label: 'Security model', href: '/network/security' },
 				{ label: 'Relays', href: '/network#relays' },
 				{ label: 'Indexer', href: '/network#indexer' },
 				{ label: 'Principles', href: '/principles' }
@@ -121,7 +126,7 @@
 		padding-bottom: 2.5rem;
 	}
 
-	[data-register='civic-ocean'].site-footer {
+	[data-register='perk'].site-footer {
 		--site-footer-bg: var(--bone-100);
 		--site-footer-text: var(--ink);
 		--site-footer-lede: var(--ink-2);
@@ -132,19 +137,6 @@
 		--site-footer-rule: var(--bone-200);
 		--site-footer-rule-text: var(--muted);
 		--site-footer-eyebrow: var(--muted);
-	}
-
-	[data-register='editorial'].site-footer {
-		--site-footer-bg: var(--bone-50);
-		--site-footer-text: var(--ink);
-		--site-footer-lede: var(--ink-2);
-		--site-footer-link: var(--ink-2);
-		--site-footer-link-hover: var(--ink);
-		--site-footer-bullet: var(--ink);
-		--site-footer-lang-bg: var(--bone-200);
-		--site-footer-rule: var(--bone-200);
-		--site-footer-rule-text: var(--muted);
-		--site-footer-eyebrow: var(--ink);
 	}
 
 	[data-register='rasta'].site-footer {
@@ -184,6 +176,71 @@
 		--site-footer-rule: rgba(241, 239, 233, 0.18);
 		--site-footer-rule-text: rgba(241, 239, 233, 0.6);
 		--site-footer-eyebrow: var(--heritage-amber);
+	}
+
+	[data-register='carnival-poster-white'].site-footer {
+		--site-footer-bg: var(--carnival-white-card);
+		--site-footer-text: var(--ink);
+		--site-footer-lede: var(--ink-2);
+		--site-footer-link: var(--ink-2);
+		--site-footer-link-hover: var(--carnival-magenta);
+		--site-footer-bullet: var(--carnival-cyan);
+		--site-footer-lang-bg: rgba(20, 20, 15, 0.06);
+		--site-footer-rule: rgba(20, 20, 15, 0.10);
+		--site-footer-rule-text: var(--muted);
+		--site-footer-eyebrow: var(--carnival-magenta);
+	}
+
+	[data-register='ocean'].site-footer {
+		--site-footer-bg: var(--ocean-ground);
+		--site-footer-text: var(--bone-50);
+		--site-footer-lede: rgba(241, 239, 233, 0.82);
+		--site-footer-link: rgba(241, 239, 233, 0.82);
+		--site-footer-link-hover: var(--ocean-gold);
+		--site-footer-bullet: var(--ocean-gold);
+		--site-footer-lang-bg: rgba(241, 239, 233, 0.08);
+		--site-footer-rule: rgba(241, 239, 233, 0.2);
+		--site-footer-rule-text: rgba(241, 239, 233, 0.6);
+		--site-footer-eyebrow: var(--ocean-gold);
+	}
+
+	[data-register='windies'].site-footer {
+		--site-footer-bg: var(--windies-ground);
+		--site-footer-text: var(--bone-50);
+		--site-footer-lede: rgba(241, 239, 233, 0.78);
+		--site-footer-link: rgba(241, 239, 233, 0.78);
+		--site-footer-link-hover: var(--windies-gold);
+		--site-footer-bullet: var(--windies-gold);
+		--site-footer-lang-bg: rgba(241, 239, 233, 0.08);
+		--site-footer-rule: rgba(241, 239, 233, 0.18);
+		--site-footer-rule-text: rgba(241, 239, 233, 0.6);
+		--site-footer-eyebrow: var(--windies-gold);
+	}
+
+	[data-register='gold-cream'].site-footer {
+		--site-footer-bg: var(--goldcream-card);
+		--site-footer-text: var(--ink);
+		--site-footer-lede: var(--ink-2);
+		--site-footer-link: var(--ink-2);
+		--site-footer-link-hover: var(--goldcream-gold-ink);
+		--site-footer-bullet: var(--goldcream-gold);
+		--site-footer-lang-bg: rgba(58, 50, 10, 0.06);
+		--site-footer-rule: rgba(58, 50, 10, 0.12);
+		--site-footer-rule-text: #6E6E58;
+		--site-footer-eyebrow: var(--goldcream-gold-ink);
+	}
+
+	[data-register='caribana'].site-footer {
+		--site-footer-bg: var(--caribana-ground);
+		--site-footer-text: var(--bone-50);
+		--site-footer-lede: rgba(241, 239, 233, 0.82);
+		--site-footer-link: rgba(241, 239, 233, 0.82);
+		--site-footer-link-hover: var(--caribana-magenta);
+		--site-footer-bullet: var(--caribana-magenta);
+		--site-footer-lang-bg: rgba(241, 239, 233, 0.08);
+		--site-footer-rule: rgba(241, 239, 233, 0.18);
+		--site-footer-rule-text: rgba(241, 239, 233, 0.6);
+		--site-footer-eyebrow: var(--caribana-violet);
 	}
 
 	.site-footer__wordmark {
