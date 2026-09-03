@@ -18,7 +18,6 @@
 
 <section
 	class="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-[28px] overflow-hidden split-panel"
-	data-register="perk"
 >
 	<div
 		class="{darkFirst
@@ -101,7 +100,7 @@
 		background-color: var(--bone-100);
 	}
 	.split-panel__dark {
-		background-color: var(--night-900);
+		background-color: var(--teal-deep);
 		color: var(--bone-50);
 	}
 	.split-panel__light {

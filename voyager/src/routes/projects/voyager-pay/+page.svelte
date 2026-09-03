@@ -15,7 +15,7 @@
 	<title>Voyager Pay — Open payments for Caribbean-first apps</title>
 </svelte:head>
 
-<RegisterSection register="perk">
+<RegisterSection register="carnival-poster">
 
 <!-- §0 hero -->
 <section class="mx-auto max-w-6xl px-6 pt-20 pb-12 lg:pt-28 lg:pb-16">

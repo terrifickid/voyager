@@ -5,7 +5,7 @@
 	import RegisterSection from '$lib/components/RegisterSection.svelte';
 
 	/**
-	 * @typedef {'perk' | 'rasta' | 'carnival-poster' | 'carnival-poster-white' | 'ocean' | 'windies' | 'gold-cream' | 'caribana' | 'heritage-sepia'} Register
+	 * @typedef {'perk' | 'rasta' | 'carnival-poster' | 'carnival-poster-white' | 'ocean' | 'windies' | 'gold-cream' | 'caribana' | 'heritage-sepia' | 'editorial' | 'civic-ocean' | 'festival-poster'} Register
 	 */
 	/** @type {{ register?: Register, children?: import('svelte').Snippet }} */
 	let { register = 'heritage-sepia', children } = $props();

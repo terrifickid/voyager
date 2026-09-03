@@ -3,7 +3,7 @@
 	import Cta from './Cta.svelte';
 
 	/**
-	 * @typedef {'perk' | 'rasta' | 'carnival-poster' | 'carnival-poster-white' | 'ocean' | 'windies' | 'gold-cream' | 'caribana' | 'heritage-sepia'} Register
+	 * @typedef {'perk' | 'rasta' | 'carnival-poster' | 'carnival-poster-white' | 'ocean' | 'windies' | 'gold-cream' | 'caribana' | 'heritage-sepia' | 'editorial' | 'civic-ocean' | 'festival-poster'} Register
 	 */
 	/** @type {{ register?: Register }} */
 	let { register = 'perk' } = $props();
@@ -99,6 +99,21 @@
 
 	[data-register='caribana'].site-header {
 		--site-header-bg: var(--caribana-ground);
+		--site-header-text: var(--bone-50);
+	}
+
+	[data-register='editorial'].site-header {
+		--site-header-bg: rgba(241, 239, 233, 0.9);
+		--site-header-text: var(--ink);
+	}
+
+	[data-register='civic-ocean'].site-header {
+		--site-header-bg: var(--civic-ocean-ground);
+		--site-header-text: var(--civic-ocean-white);
+	}
+
+	[data-register='festival-poster'].site-header {
+		--site-header-bg: var(--festival-black);
 		--site-header-text: var(--bone-50);
 	}
 

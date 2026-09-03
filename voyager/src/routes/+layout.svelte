@@ -12,7 +12,7 @@
 	let { children } = $props();
 
 	/**
-	 * @typedef {'perk' | 'rasta' | 'carnival-poster' | 'carnival-poster-white' | 'ocean' | 'windies' | 'gold-cream' | 'caribana' | 'heritage-sepia'} Register
+	 * @typedef {'perk' | 'rasta' | 'carnival-poster' | 'carnival-poster-white' | 'ocean' | 'windies' | 'gold-cream' | 'caribana' | 'heritage-sepia' | 'editorial' | 'civic-ocean' | 'festival-poster'} Register
 	 */
 
 	/**
@@ -20,20 +20,7 @@
 	 * @returns {Register}
 	 */
 	function registerFor(pathname) {
-		if (
-			pathname === '/' ||
-			pathname.startsWith('/use-cases') ||
-			pathname === '/projects' ||
-			pathname.startsWith('/projects/trip-planner')
-		) {
-			return 'carnival-poster';
-		}
-		if (pathname === '/principles') return 'rasta';
-		if (pathname.startsWith('/network')) return 'rasta';
-		if (pathname.startsWith('/stack')) return 'carnival-poster';
-		if (pathname === '/build') return 'heritage-sepia';
-		if (pathname.startsWith('/docs')) return 'heritage-sepia';
-		return 'perk';
+		return 'carnival-poster';
 	}
 
 	const chromeRegister = $derived(registerFor(page.url.pathname));

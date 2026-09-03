@@ -10,7 +10,7 @@
 </svelte:head>
 
 <!-- Hero -->
-<RegisterSection register="rasta">
+<RegisterSection register="carnival-poster">
 <section class="mx-auto max-w-6xl px-6 pt-20 pb-12 lg:pt-28 lg:pb-16">
 	<div class="flex flex-col gap-8">
 		<span class="eyebrow">Voyager Pay</span>

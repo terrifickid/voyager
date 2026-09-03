@@ -10,7 +10,7 @@
 		coral: 'var(--pastel-coral)',
 		sky: 'var(--pastel-sky)',
 		rose: 'var(--pastel-rose)',
-		ink: 'var(--ink)'
+		ink: 'var(--register-text)'
 	};
 </script>
 

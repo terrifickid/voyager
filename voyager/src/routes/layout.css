@@ -219,6 +219,51 @@ html, body {
 	--register-hair-strong: var(--on-dark-hair-2);
 }
 
+[data-register='editorial'] {
+	--register-ground: var(--editorial-ground);
+	--register-text: var(--editorial-ink);
+	--register-muted: var(--muted);
+	--register-eyebrow: var(--editorial-ink);
+	--register-accent: var(--editorial-ink);
+	--register-accent-ink: var(--bone-50);
+	--register-highlight: var(--editorial-ink);
+	--register-card: var(--bone-100);
+	--register-on-dark-soft: var(--muted);
+	--register-hair: rgba(20, 20, 15, 0.10);
+	--register-hair-strong: rgba(20, 20, 15, 0.18);
+}
+
+[data-register='civic-ocean'] {
+	--register-ground: var(--civic-ocean-ground);
+	--register-text: var(--civic-ocean-white);
+	--register-muted: rgba(250, 250, 247, 0.68);
+	--register-eyebrow: var(--civic-ocean-gold);
+	--register-accent: var(--civic-ocean-gold);
+	--register-accent-ink: var(--ink);
+	--register-accent-hover: var(--civic-ocean-gold-deep);
+	--register-highlight: var(--civic-ocean-white);
+	--register-card: rgba(250, 250, 247, 0.06);
+	--register-card-teal: var(--teal);
+	--register-on-dark-soft: rgba(250, 250, 247, 0.72);
+	--register-hair: var(--on-dark-hair);
+	--register-hair-strong: var(--on-dark-hair-2);
+}
+
+[data-register='festival-poster'] {
+	--register-ground: var(--festival-black);
+	--register-text: var(--bone-50);
+	--register-muted: rgba(241, 239, 233, 0.65);
+	--register-eyebrow: var(--festival-yellow);
+	--register-accent: var(--festival-cyan);
+	--register-accent-ink: var(--ink);
+	--register-accent-hover: var(--festival-yellow);
+	--register-highlight: var(--festival-orange);
+	--register-card: rgba(241, 239, 233, 0.06);
+	--register-on-dark-soft: rgba(241, 239, 233, 0.7);
+	--register-hair: var(--on-dark-hair);
+	--register-hair-strong: var(--on-dark-hair-2);
+}
+
 [data-register] .register-section__card {
 	background-color: var(--register-card);
 	color: var(--register-text);

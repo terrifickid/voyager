@@ -1,6 +1,6 @@
 <script>
 	/**
-	 * @typedef {'perk' | 'rasta' | 'carnival-poster' | 'carnival-poster-white' | 'ocean' | 'windies' | 'gold-cream' | 'caribana' | 'heritage-sepia'} Register
+	 * @typedef {'perk' | 'rasta' | 'carnival-poster' | 'carnival-poster-white' | 'ocean' | 'windies' | 'gold-cream' | 'caribana' | 'heritage-sepia' | 'editorial' | 'civic-ocean' | 'festival-poster'} Register
 	 */
 	/** @type {{ register?: Register }} */
 	let { register = 'perk' } = $props();
@@ -17,7 +17,10 @@
 		windies: ['var(--windies-maroon)', 'var(--windies-gold)', 'var(--bone-50)'],
 		'gold-cream': ['var(--goldcream-gold)', 'var(--ink)', 'var(--goldcream-card)'],
 		caribana: ['var(--caribana-magenta)', 'var(--caribana-violet)', 'var(--bone-50)'],
-		'heritage-sepia': ['var(--heritage-sepia)', 'var(--heritage-rust)', 'var(--heritage-amber)']
+		'heritage-sepia': ['var(--heritage-sepia)', 'var(--heritage-rust)', 'var(--heritage-amber)'],
+		editorial: ['var(--ink)', 'var(--ink-2)', 'var(--muted)'],
+		'civic-ocean': ['var(--civic-ocean-gold)', 'var(--civic-ocean-white)', 'var(--civic-ocean-gold-deep)'],
+		'festival-poster': ['var(--festival-cyan)', 'var(--festival-yellow)', 'var(--festival-orange)']
 	};
 	const bars = $derived(palettes[register] ?? palettes['perk']);
 
@@ -241,6 +244,45 @@
 		--site-footer-rule: rgba(241, 239, 233, 0.18);
 		--site-footer-rule-text: rgba(241, 239, 233, 0.6);
 		--site-footer-eyebrow: var(--caribana-violet);
+	}
+
+	[data-register='editorial'].site-footer {
+		--site-footer-bg: var(--bone-100);
+		--site-footer-text: var(--ink);
+		--site-footer-lede: var(--ink-2);
+		--site-footer-link: var(--ink-2);
+		--site-footer-link-hover: var(--ink);
+		--site-footer-bullet: var(--ink);
+		--site-footer-lang-bg: var(--bone-200);
+		--site-footer-rule: var(--bone-200);
+		--site-footer-rule-text: var(--muted);
+		--site-footer-eyebrow: var(--muted);
+	}
+
+	[data-register='civic-ocean'].site-footer {
+		--site-footer-bg: var(--civic-ocean-ground);
+		--site-footer-text: var(--civic-ocean-white);
+		--site-footer-lede: rgba(250, 250, 247, 0.82);
+		--site-footer-link: rgba(250, 250, 247, 0.82);
+		--site-footer-link-hover: var(--civic-ocean-gold);
+		--site-footer-bullet: var(--civic-ocean-gold);
+		--site-footer-lang-bg: rgba(250, 250, 247, 0.08);
+		--site-footer-rule: rgba(250, 250, 247, 0.2);
+		--site-footer-rule-text: rgba(250, 250, 247, 0.6);
+		--site-footer-eyebrow: var(--civic-ocean-gold);
+	}
+
+	[data-register='festival-poster'].site-footer {
+		--site-footer-bg: var(--festival-black);
+		--site-footer-text: var(--bone-50);
+		--site-footer-lede: rgba(241, 239, 233, 0.82);
+		--site-footer-link: rgba(241, 239, 233, 0.82);
+		--site-footer-link-hover: var(--festival-yellow);
+		--site-footer-bullet: var(--festival-cyan);
+		--site-footer-lang-bg: rgba(241, 239, 233, 0.08);
+		--site-footer-rule: rgba(241, 239, 233, 0.18);
+		--site-footer-rule-text: rgba(241, 239, 233, 0.6);
+		--site-footer-eyebrow: var(--festival-yellow);
 	}
 
 	.site-footer__wordmark {

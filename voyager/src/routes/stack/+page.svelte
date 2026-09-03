@@ -1,7 +1,7 @@
 <script>
 	import Cta from '$lib/components/Cta.svelte';
 	import SectionHeader from '$lib/components/SectionHeader.svelte';
-	import SplitPanel from '$lib/components/SplitPanel.svelte';
+	import TricolorPanel from '$lib/components/TricolorPanel.svelte';
 	import RegisterSection from '$lib/components/RegisterSection.svelte';
 	import primitives from '$lib/data/primitives.json';
 	import PrimitiveCard from '$lib/components/PrimitiveCard.svelte';
@@ -24,8 +24,8 @@
 	</div>
 </section>
 
-<section class="mx-auto max-w-6xl px-6 pb-24">
-	<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-5">
+<section id="primitives" class="mx-auto max-w-6xl px-6 pb-24 scroll-mt-20">
+	<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 		{#each primitives as p (p.slug)}
 			<PrimitiveCard
 				register="carnival-poster"
@@ -37,22 +37,38 @@
 				href="/stack/{p.slug}"
 			/>
 		{/each}
+		<PrimitiveCard
+			register="carnival-poster"
+			id="sdk"
+			code="SDK · ONE SURFACE"
+			title="One Stripe-shaped call surface."
+			body="One TypeScript entry. Identity, payments, ramp, DMs, listings behind a single import. The SDK is what your app ships; the primitives are what it talks to."
+			icon="sparkle"
+			href="/build"
+		/>
 	</div>
 </section>
 
 <section class="mx-auto max-w-6xl px-6 pb-24">
-	<SplitPanel
-		theme="left-dark"
-		left={{
-			stat: { value: '5 + 1', label: 'PRIMITIVES · 1 SDK' },
-			title: 'Five primitives. One SDK.',
-			body: 'Each primitive solves one job. The SDK wires them together — identity, payment, ramp, messaging, discovery behind one Stripe-shaped surface.'
-		}}
-		right={{
-			eyebrow: '// why these five',
-			title: 'What we left out, and why.',
-			body: 'We did not pick a chat protocol, a streaming layer, or a CDN. Builders ship those on top. The five primitives are the smallest set that covers identity, money, fiat on/off, private messaging, and findability.'
-		}}
+	<TricolorPanel
+		register="carnival-poster"
+		items={[
+			{
+				label: 'Five primitives',
+				body: 'Each solves one job. Identity, payments, ramp, DMs, listings — the smallest set that covers what Caribbean builders actually need.',
+				href: '#primitives'
+			},
+			{
+				label: 'One SDK',
+				body: 'A single TypeScript entry. Stripe-shaped surface. The five primitives behind one import — no platform in the middle.',
+				href: '/build'
+			},
+			{
+				label: 'Builders ship the rest',
+				body: 'No chat protocol, streaming layer, or CDN picked for you. Those are your call. The five plus one cover everything else.',
+				href: '/principles'
+			}
+		]}
 	/>
 </section>
 

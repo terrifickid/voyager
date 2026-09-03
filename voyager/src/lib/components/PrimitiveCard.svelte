@@ -3,7 +3,7 @@
 	import Divider from './Divider.svelte';
 
 	/**
-	 * @typedef {'perk' | 'rasta' | 'carnival-poster' | 'carnival-poster-white' | 'ocean' | 'windies' | 'gold-cream' | 'caribana' | 'heritage-sepia'} Register
+	 * @typedef {'perk' | 'rasta' | 'carnival-poster' | 'carnival-poster-white' | 'ocean' | 'windies' | 'gold-cream' | 'caribana' | 'heritage-sepia' | 'editorial' | 'civic-ocean' | 'festival-poster'} Register
 	 */
 	/** @type {{ id: string, code: string, title: string, body: string, icon: string, href: string, register?: Register }} */
 	let { id, code, title, body, icon, href, register = 'perk' } = $props();
@@ -13,7 +13,7 @@
 	{id}
 	{href}
 	data-register={register}
-	class="group flex flex-col gap-4 rounded-[28px] p-7 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2"
+	class="group flex flex-col gap-4 rounded-[28px] p-7 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--register-text)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--register-ground)]"
 	style="background-color: var(--register-card); color: var(--register-text);"
 >
 	<Icon name={icon} tone="ink" size={28} />

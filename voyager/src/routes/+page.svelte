@@ -248,7 +248,7 @@
 
 <section class="mx-auto max-w-6xl px-6 pb-24">
 	<CarnivalRibbon
-		register="carnival-poster"
+register="carnival-poster"
 		eyebrow="Forward — a Caribbean cadence"
 		items={[
 			{ label: 'Five primitives' },

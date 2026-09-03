@@ -76,6 +76,22 @@
 	--caribana-violet: #9E5AFF;
 	--caribana-ground: #160A20;
 
+	/* Editorial discipline register (cdesign.json v2 — EDR) — Bob Marley / Rihanna / Fenty */
+	--editorial-ground: #F1EFE9;
+	--editorial-ink: #14140F;
+
+	/* Civic-ocean register (cdesign.json v2 — COR) — Visit Barbados */
+	--civic-ocean-ground: #002B5C;
+	--civic-ocean-gold: #F8C300;
+	--civic-ocean-gold-deep: #D89737;
+	--civic-ocean-white: #FFFFFF;
+
+	/* Festival-poster register (cdesign.json v2 — CDR dark variant) — Machel Montano */
+	--festival-black: #0A0A0A;
+	--festival-cyan: #00E2FF;
+	--festival-yellow: #FFFC00;
+	--festival-orange: #FF6900;
+
 	--register-ground: var(--bone-50);
 	--register-text: var(--ink);
 	--register-muted: var(--muted);

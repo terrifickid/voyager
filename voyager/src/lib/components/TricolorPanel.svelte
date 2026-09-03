@@ -1,9 +1,9 @@
 <script>
 	/**
 	 * @typedef {'perk' | 'rasta' | 'carnival-poster' | 'carnival-poster-white' | 'ocean' | 'windies' | 'gold-cream' | 'caribana' | 'heritage-sepia' | 'editorial' | 'civic-ocean' | 'festival-poster'} Register
-	 * @typedef {{ label: string, body?: string, href?: string }} RibbonItem
+	 * @typedef {{ label: string, body: string, href?: string }} TricolorItem
 	 */
-	/** @type {{ register?: Register, items: RibbonItem[] }} */
+	/** @type {{ register?: Register, items: TricolorItem[] }} */
 	let { register = 'carnival-poster', items } = $props();
 
 	const palettes = {
@@ -15,51 +15,46 @@
 		windies: ['var(--windies-maroon)', 'var(--windies-gold)', 'var(--bone-50)'],
 		'gold-cream': ['var(--goldcream-gold)', 'var(--ink)', 'var(--goldcream-card)'],
 		caribana: ['var(--caribana-magenta)', 'var(--caribana-violet)', 'var(--bone-50)'],
-		'heritage-sepia': ['var(--heritage-sepia)', 'var(--heritage-rust)', 'var(--heritage-amber)'],
-		editorial: ['var(--ink)', 'var(--ink-2)', 'var(--bone-300)'],
-		'civic-ocean': ['var(--civic-ocean-gold)', 'var(--civic-ocean-white)', 'var(--civic-ocean-gold-deep)'],
-		'festival-poster': ['var(--festival-cyan)', 'var(--festival-yellow)', 'var(--festival-orange)']
+		'heritage-sepia': ['var(--heritage-sepia)', 'var(--heritage-rust)', 'var(--heritage-amber)']
 	};
 	const cols = $derived(palettes[register] ?? palettes['perk']);
 	const cycle = (i) => cols[i % cols.length];
 </script>
 
-<section data-register={register} aria-label="Ribbon" class="carnival-ribbon">
+<section data-register={register} aria-label="Tricolor" class="tricolor-panel">
 	{#each items as it, i (it.label)}
-		<a href={it.href ?? '#'} class="carnival-ribbon__seg" style="background: {cycle(i)};">
-			<span class="carnival-ribbon__num">{String(i + 1).padStart(2, '0')}</span>
-			<span class="carnival-ribbon__label">{it.label}</span>
-			{#if it.body}
-				<span class="carnival-ribbon__body">{it.body}</span>
-			{/if}
+		<a href={it.href ?? '#'} class="tricolor-panel__band" style="background: {cycle(i)};">
+			<span class="tricolor-panel__num">{String(i + 1).padStart(2, '0')}</span>
+			<h3 class="tricolor-panel__label">{it.label}</h3>
+			<p class="tricolor-panel__body">{it.body}</p>
 		</a>
 	{/each}
 </section>
 
 <style>
-	.carnival-ribbon {
+	.tricolor-panel {
 		display: grid;
-		grid-template-columns: repeat(var(--ribbon-cols, 3), 1fr);
+		grid-template-columns: repeat(3, 1fr);
 		gap: 0;
 		border-radius: 28px;
 		overflow: hidden;
 	}
-	.carnival-ribbon__seg {
+	.tricolor-panel__band {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		min-height: 140px;
-		padding: 20px 22px;
+		gap: 12px;
+		min-height: 220px;
+		padding: 28px 28px 32px;
 		color: var(--ink);
 		text-decoration: none;
 		font-family: 'Space Grotesk', system-ui, sans-serif;
-		font-weight: 600;
 		transition: filter 0.15s ease;
 	}
-	.carnival-ribbon__seg:hover {
+	.tricolor-panel__band:hover {
 		filter: brightness(1.05);
 	}
-	.carnival-ribbon__num {
+	.tricolor-panel__num {
 		font-family: 'Inter', system-ui, sans-serif;
 		font-size: 11px;
 		font-weight: 700;
@@ -67,16 +62,22 @@
 		text-transform: uppercase;
 		opacity: 0.65;
 	}
-	.carnival-ribbon__label {
-		font-size: 18px;
-		line-height: 1.1;
+	.tricolor-panel__label {
+		font-size: 28px;
+		line-height: 1.05;
+		font-weight: 600;
+		letter-spacing: -0.01em;
 	}
-	.carnival-ribbon__body {
+	.tricolor-panel__body {
 		font-family: 'Inter', system-ui, sans-serif;
-		font-size: 12px;
+		font-size: 14px;
 		font-weight: 400;
-		line-height: 1.35;
+		line-height: 1.45;
 		opacity: 0.85;
-		margin-top: 4px;
+	}
+	@media (max-width: 768px) {
+		.tricolor-panel {
+			grid-template-columns: 1fr;
+		}
 	}
 </style>
