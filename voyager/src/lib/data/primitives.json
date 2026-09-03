@@ -1,0 +1,57 @@
+[
+	{
+		"slug": "identity",
+		"code": "P1",
+		"title": "Self-sovereign identity",
+		"icon": "lock",
+		"lede": "A Nostr keypair replaces email, password, and platform account. No custodian. Recovery is a 12-word seed.",
+		"what": "Nostr (Notes on a Public Message Network) uses public-key cryptography instead of usernames. Each user gets a keypair: a public key (npub) they share, and a private key (nsec) they keep. The private key signs every action. Lose the key and you lose the identity — so a 12-word seed phrase is the recovery mechanism.",
+		"why": "Caribbean apps built on platform accounts inherit the platform's risk: a payment processor deplatforms them, a regional bank cuts off the KYC vendor, a hosting provider exits. Nostr keys are interoperable with hundreds of apps and don't depend on any single company.",
+		"sdk": ["voyager.identity.create()", "voyager.identity.sign(event)", "voyager.identity.import(nsec)", "voyager.identity.export()"],
+		"kind": "kind:0 (profile), kind:10000 (relay list)"
+	},
+	{
+		"slug": "payments",
+		"code": "P2",
+		"title": "Lightning payment rail",
+		"icon": "bolt",
+		"lede": "Apps call the SDK. The user signs. The app never holds funds. Works from anywhere with internet.",
+		"what": "Lightning is a fast Bitcoin payment network. Invoices (BOLT11) carry a payment request. NWC (Nostr Wallet Connect, NIP-47) lets an app ask the user's wallet to pay without ever touching the private key. The wallet signs. Settlement happens on the base layer.",
+		"why": "Card networks decline Caribbean merchants. Banks require a US presence. Lightning works from any internet connection, charges no merchant fee, and doesn't care about geography.",
+		"sdk": ["voyager.pay.invoice(bolt11, opts)", "voyager.pay.nwc.connect(walletUrl)", "voyager.pay.subscribe(npub, onInvoice)"],
+		"kind": "BOLT11 invoice, NIP-47 NWC event"
+	},
+	{
+		"slug": "ramp",
+		"code": "P3",
+		"title": "Federated fiat ramp",
+		"icon": "globe",
+		"lede": "Independent Mostro nodes compete on rate and fee. Caribbean rails first. No platform in the middle.",
+		"what": "Mostro is a federated network of market makers. Each node publishes a profile (kind:38383) listing supported fiats, settlement methods, fees, and reputation. Wallets rank nodes per-order using a deterministic rubric. No single operator sits in the middle.",
+		"why": "Onboarding fiat is the hardest problem for a Caribbean app builder. Stripe doesn't serve them. Flutterwave has gaps. By federating the ramp, Voyager lets multiple operators compete for the trade instead of locking users into one custodian.",
+		"sdk": ["voyager.pay.quote(fiat, amount)", "voyager.pay.rampBuy({fiat, amount, method})", "voyager.pay.rampSell({fiat, amount, method})"],
+		"kind": "kind:38383 (node profile), kind:38384 (quote)"
+	},
+	{
+		"slug": "messaging",
+		"code": "P4",
+		"title": "Private messaging",
+		"icon": "chat",
+		"lede": "NIP-17 gift-wrapped DMs give any app end-to-end encrypted messaging without building a Signal clone.",
+		"what": "NIP-17 specifies 'gift-wrapped' direct messages. The sender encrypts to the recipient's public key, wraps that in a kind:1059 event, and publishes. Relays see opaque blobs. Only the recipient can decrypt. Order details, contract terms, addresses — none of it visible to relays.",
+		"why": "Order confirmation by SMS leaks phone numbers. Email leaks metadata to a third party. Signal is great but requires building a separate identity layer. NIP-17 reuses the user's Nostr identity and lets any builder ship messaging in a few SDK calls.",
+		"sdk": ["voyager.dm.send(toNpub, payload)", "voyager.dm.read()", "voyager.dm.subscribe(onMessage)"],
+		"kind": "kind:1059 (gift wrap), kind:14 (rumor)"
+	},
+	{
+		"slug": "discovery",
+		"code": "P5",
+		"title": "Discovery substrate",
+		"icon": "compass",
+		"lede": "Listings, profiles, and ramp quotes as signed Nostr events. Relays and indexers handle findability.",
+		"what": "Three Nostr event kinds cover most marketplace needs: kind:30402 (replaceable listings — accommodations, tours, goods), kind:30017 (stalls — a vendor's catalogue), kind:38383 (ramp quotes — federated fiat). Addressable means each (pubkey, kind, d-tag) tuple resolves to a single current value. Any relay or independent indexer can serve search.",
+		"why": "Central marketplaces (Airbnb, Etsy, Amazon) own discoverability and tax it. On Nostr, every listing is a signed public event. Search is fan-out across relays. The protocol doesn't ship a search UI — that's the app's job — but it makes search a one-call SDK operation.",
+		"sdk": ["voyager.listing.create({...})", "voyager.listing.search({region, category})", "voyager.listing.get(dTag)"],
+		"kind": "kind:30402 (listing), kind:30017 (stall), kind:38383 (ramp quote)"
+	}
+]

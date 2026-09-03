@@ -4,10 +4,17 @@
 	const ROOT = { label: 'Voyager', href: '/' };
 
 	const SHORT_LABELS = {
-		plan: 'Plan',
+		stack: 'Stack',
+		projects: 'Projects',
+		network: 'Network',
+		build: 'Build',
+		'use-cases': 'Use cases',
+		principles: 'Principles',
+		'trip-planner': 'Trip Planner',
+		'voyager-pay': 'Voyager Pay',
+		plan: 'Plan a trip',
 		preferences: 'Preferences',
-		docs: 'Docs',
-		pay: 'Voyager Pay'
+		docs: 'Docs'
 	};
 
 	function humanize(seg) {

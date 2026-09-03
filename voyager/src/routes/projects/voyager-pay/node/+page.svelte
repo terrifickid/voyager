@@ -19,8 +19,8 @@
 			A Mostro node is an independent market maker. It never touches fiat, never holds a customer balance, and cannot move sats unilaterally. Running one is a for-profit line item with real capital requirements. This page is for operators, not users.
 		</p>
 		<div class="flex flex-wrap items-center gap-3">
-			<Cta variant="primary" href="/pay">How Voyager Pay works</Cta>
-			<Cta variant="secondary" href="/pay/security">Security by design</Cta>
+			<Cta variant="primary" href="/projects/voyager-pay">How Voyager Pay works</Cta>
+			<Cta variant="secondary" href="/projects/voyager-pay/security">Security by design</Cta>
 		</div>
 	</div>
 </section>
@@ -158,6 +158,6 @@
 			<h3 class="mt-2 font-display text-xl text-ink">The Voyager Pay overview.</h3>
 			<p class="mt-2 text-sm text-ink-2">Five invariants, three layers, seven steps from request to settlement.</p>
 		</div>
-		<Cta variant="primary" href="/pay">Voyager Pay</Cta>
+		<Cta variant="primary" href="/projects/voyager-pay">Voyager Pay</Cta>
 	</div>
 </section>

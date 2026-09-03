@@ -20,7 +20,7 @@
 	<div class="flex flex-col gap-6 text-[17px] leading-relaxed text-ink-2">
 		<h2 id="the-five-design-invariants">The five design invariants</h2>
 		<p>
-			Each one is a constraint the protocol refuses to negotiate on. They are listed in full on the <a href="/pay" class="underline underline-offset-4">Pay page</a>. Here they are in plain English.
+			Each one is a constraint the protocol refuses to negotiate on. They are listed in full on the <a href="/projects/voyager-pay" class="underline underline-offset-4">Pay page</a>. Here they are in plain English.
 		</p>
 		<ul class="list-disc pl-5 flex flex-col gap-2">
 			<li><span class="font-display text-ink">No custody.</span> The protocol never holds funds. Settlement is atomic with the network or it does not happen.</li>

@@ -12,7 +12,7 @@
 		Read the spec behind Voyager.
 	</h1>
 	<p class="mt-6 max-w-2xl text-lg leading-relaxed text-ink-2">
-		Voyager rests on a few ideas. These pages walk through them in plain words. Pick the path that fits you, or read top-to-bottom.
+		Voyager is a toolkit. These pages walk through the ideas, the rails, and the design moves in plain words. Pick the path that fits you, or read top-to-bottom. The primitives live on the stack pages; this section is for the spec.
 	</p>
 	<div class="mt-8">
 		<Cta variant="primary" href="/docs/how-voyager-plans">Start with Lesson 1</Cta>
@@ -21,9 +21,9 @@
 
 <section class="pb-16">
 	<div class="flex flex-col gap-10">
-		<!-- Path 1: For travelers -->
+		<!-- Path 1: For builders shipping the showcase apps -->
 		<div class="flex flex-col gap-4">
-			<p class="eyebrow">For travelers</p>
+			<p class="eyebrow">For builders shipping the showcase apps</p>
 			<h2 id="for-travelers">How Voyager plans your trip in your browser.</h2>
 			<a
 				href="/docs/how-voyager-plans"

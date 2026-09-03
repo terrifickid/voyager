@@ -75,6 +75,6 @@
 			<h3 class="mt-2 font-display text-xl text-ink">Fair pricing — see the rubric run live.</h3>
 			<p class="mt-2 text-sm text-ink-2">The widget on the pricing page ranks the demo nodes per-order.</p>
 		</div>
-		<Cta variant="primary" href="/pay/pricing">Fair pricing</Cta>
+		<Cta variant="primary" href="/projects/voyager-pay/pricing">Fair pricing</Cta>
 	</div>
 </section>

@@ -20,8 +20,8 @@
 			A single operator has every reason to charge what the market will bear. A federation of independent operators does not. This page is about the mechanism, not the promise.
 		</p>
 		<div class="flex flex-wrap items-center gap-3">
-			<Cta variant="primary" href="/pay/node">Run a node</Cta>
-			<Cta variant="secondary" href="/pay">Back to Voyager Pay</Cta>
+			<Cta variant="primary" href="/projects/voyager-pay/node">Run a node</Cta>
+			<Cta variant="secondary" href="/projects/voyager-pay">Back to Voyager Pay</Cta>
 		</div>
 	</div>
 </section>
@@ -123,7 +123,7 @@
 		</ul>
 		<div class="mt-8 flex flex-wrap items-center gap-3">
 			<Cta variant="primary" href="/docs/how-price-discovery-works">Read the rubric in depth</Cta>
-			<Cta variant="secondary" href="/pay/node">See how to run a node</Cta>
+			<Cta variant="secondary" href="/projects/voyager-pay/node">See how to run a node</Cta>
 		</div>
 
 		<div class="mt-12 flex flex-col gap-6 rounded-[28px] bg-bone-100 p-8 sm:flex-row sm:items-center sm:justify-between">
@@ -132,7 +132,7 @@
 				<h3 class="mt-2 font-display text-xl text-ink">Run a node — anyone can join the federation.</h3>
 				<p class="mt-2 text-sm text-ink-2">What a node does, what it costs, what's in it for the operator.</p>
 			</div>
-			<Cta variant="primary" href="/pay/node">Continue</Cta>
+			<Cta variant="primary" href="/projects/voyager-pay/node">Continue</Cta>
 		</div>
 	</div>
 </section>

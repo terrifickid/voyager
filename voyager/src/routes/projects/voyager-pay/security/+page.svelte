@@ -94,7 +94,7 @@
 		</ul>
 		<div class="mt-8 flex flex-wrap items-center gap-3">
 			<Cta variant="primary" href="/docs/voyager-pay-eroi-audit">Read the EROI audit</Cta>
-			<Cta variant="secondary" href="/pay#extends">See the open design</Cta>
+			<Cta variant="secondary" href="/projects/voyager-pay#extends">See the open design</Cta>
 		</div>
 
 		<div class="mt-12 flex flex-col gap-6 rounded-[28px] bg-bone-100 p-8 sm:flex-row sm:items-center sm:justify-between">
@@ -103,7 +103,7 @@
 				<h3 class="mt-2 font-display text-xl text-ink">Fair pricing — why a federation charges less.</h3>
 				<p class="mt-2 text-sm text-ink-2">Competition on rate, fee, and reputation, not rent extraction.</p>
 			</div>
-			<Cta variant="primary" href="/pay/pricing">Continue</Cta>
+			<Cta variant="primary" href="/projects/voyager-pay/pricing">Continue</Cta>
 		</div>
 	</div>
 </section>

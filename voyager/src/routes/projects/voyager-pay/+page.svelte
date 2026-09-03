@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head>
-	<title>Voyager Pay — Money that moves like a Nostr note</title>
+	<title>Voyager Pay — Open payments for Caribbean-first apps</title>
 </svelte:head>
 
 <!-- §0 hero -->
@@ -22,8 +22,8 @@
 			Voyager Pay is an open protocol for sending money on the open web. There is no custodian in the middle and no account to lose. No platform in the middle. Signed events move over Nostr (a public message network). Settlement runs on Lightning (a fast Bitcoin payment network). A federation of competing market makers — called Mostro nodes — bridges fiat and Bitcoin.
 		</p>
 		<div class="flex flex-wrap items-center gap-3">
-			<Cta variant="primary" href="/pay/security">Why it's secure</Cta>
-			<Cta variant="secondary" href="/pay/pricing">Why prices are fair</Cta>
+			<Cta variant="primary" href="/projects/voyager-pay/security">Why it's secure</Cta>
+			<Cta variant="secondary" href="/projects/voyager-pay/pricing">Why prices are fair</Cta>
 		</div>
 	</div>
 </section>
@@ -38,7 +38,7 @@
 				Cross borders without handing your balance to a custodian. Read the security outcomes.
 			</p>
 			<div class="mt-2">
-				<Cta variant="tertiary" href="/pay/security">Security by design</Cta>
+				<Cta variant="tertiary" href="/projects/voyager-pay/security">Security by design</Cta>
 			</div>
 		</article>
 		<article class="flex flex-col gap-3 rounded-[28px] bg-bone-200 p-6">
@@ -48,7 +48,7 @@
 				A federation of independent operators competes on rate, fee, and reputation. No rent extraction. See how the wallet picks.
 			</p>
 			<div class="mt-2">
-				<Cta variant="tertiary" href="/pay/pricing">Fair pricing</Cta>
+				<Cta variant="tertiary" href="/projects/voyager-pay/pricing">Fair pricing</Cta>
 			</div>
 		</article>
 		<article class="flex flex-col gap-3 rounded-[28px] bg-bone-200 p-6">
@@ -58,7 +58,7 @@
 				Anyone can run a Mostro node. Earn fee revenue, accrue reputation, compete on a transparent rubric. See what it costs.
 			</p>
 			<div class="mt-2">
-				<Cta variant="tertiary" href="/pay/node">Run a node</Cta>
+				<Cta variant="tertiary" href="/projects/voyager-pay/node">Run a node</Cta>
 			</div>
 		</article>
 	</div>
@@ -268,6 +268,119 @@
 	</div>
 </section>
 
+<!-- MCP — list once, appear everywhere (migrated from home) -->
+<section class="mx-auto max-w-6xl px-6 pb-24">
+	<SectionHeader
+		eyebrow="MCP"
+		title="List once, appear everywhere."
+		lede="A single signed event fans out to every vendor kind on Voyager Pay — and to every agent host that connects through voyager-mcp."
+	/>
+
+	<div class="home-mcp-card mt-12 rounded-[32px] bg-bone-100 p-8 sm:p-12">
+		<div class="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
+
+			<figure class="home-mcp-mock">
+				<div class="home-mcp-mock__bar">
+					<span class="home-mcp-mock__dot" style="--c:var(--pastel-coral)"></span>
+					<span class="home-mcp-mock__dot" style="--c:var(--pastel-sky)"></span>
+					<span class="home-mcp-mock__dot" style="--c:var(--pastel-rose)"></span>
+					<span class="home-mcp-mock__title">mcp › claude desktop</span>
+				</div>
+			<pre class="home-mcp-mock__body" aria-hidden="true">
+<span class="t-muted">$</span> mcp.call("voyager.search", &#123;"near":"kyoto","when":"apr"&#125;)
+<span class="t-ink">&#123;</span>
+  <span class="t-key">"kind"</span>: <span class="t-str">30402</span>,
+  <span class="t-key">"matches"</span>: <span class="t-ink">[</span>
+    <span class="t-str">"fushimi-inari · early entry · 90 min"</span>,
+    <span class="t-str">"nishiki market · tasting loop"</span>,
+    <span class="t-str">"kiyomizu-dera · sunset · 60 min"</span>
+  <span class="t-ink">]</span>
+<span class="t-ink">&#125;</span>
+			</pre>
+				<figcaption class="mt-4 text-[13px] leading-snug text-muted">
+					What an agent sees: a single signed event, indexed and queryable.
+				</figcaption>
+			</figure>
+
+			<figure class="home-mcp-figure">
+				<svg class="home-mcp-svg" viewBox="0 0 520 360" width="100%"
+					 role="img" aria-labelledby="home-mcp-title home-mcp-desc">
+					<title id="home-mcp-title">A single event fans out to every agent host</title>
+					<desc id="home-mcp-desc">
+						A listing node on the left feeds a voyager-mcp hub in the center,
+						which radiates to four labelled agent surfaces.
+					</desc>
+
+					<line x1="60" y1="200" x2="246" y2="200" class="home-mcp-link home-mcp-link--solid"/>
+					<line x1="274" y1="200" x2="466" y2="100" class="home-mcp-link"/>
+					<line x1="274" y1="200" x2="466" y2="300" class="home-mcp-link"/>
+					<line x1="274" y1="200" x2="60"  y2="300" class="home-mcp-link"/>
+					<line x1="274" y1="200" x2="60"  y2="100" class="home-mcp-link"/>
+
+					<g>
+						<circle cx="60" cy="200" r="10" fill="var(--ink)"/>
+						<text x="60" y="232" class="home-mcp-label" text-anchor="middle">your listing</text>
+						<text x="60" y="170" class="home-mcp-sublabel" text-anchor="middle">kind:30402</text>
+					</g>
+
+					<g>
+						<circle cx="260" cy="200" r="20" fill="none" stroke="var(--ink)" stroke-width="1" opacity="0.25"/>
+						<circle cx="260" cy="200" r="14" fill="var(--pastel-sky)" stroke="var(--ink)" stroke-width="1.5"/>
+						<text x="260" y="238" class="home-mcp-label" text-anchor="middle">voyager-mcp</text>
+						<text x="260" y="170" class="home-mcp-sublabel" text-anchor="middle">read lens</text>
+					</g>
+
+					<g class="home-mcp-node" style="animation-delay:0s">
+						<circle cx="470" cy="100" r="10" fill="var(--bone-50)" stroke="var(--ink)" stroke-width="1.5"/>
+						<text x="470" y="82"  class="home-mcp-label" text-anchor="middle">Claude Desktop</text>
+					</g>
+					<g class="home-mcp-node" style="animation-delay:.6s">
+						<circle cx="470" cy="300" r="10" fill="var(--bone-50)" stroke="var(--ink)" stroke-width="1.5"/>
+						<text x="470" y="322" class="home-mcp-label" text-anchor="middle">ChatGPT</text>
+					</g>
+					<g class="home-mcp-node" style="animation-delay:1.2s">
+						<circle cx="60"  cy="300" r="10" fill="var(--bone-50)" stroke="var(--ink)" stroke-width="1.5"/>
+						<text x="60"  y="282" class="home-mcp-label" text-anchor="middle">IDE plugin</text>
+					</g>
+					<g class="home-mcp-node" style="animation-delay:1.8s">
+						<circle cx="60"  cy="100" r="10" fill="var(--bone-50)" stroke="var(--ink)" stroke-width="1.5"/>
+						<text x="60"  y="82"  class="home-mcp-label" text-anchor="middle">custom agent</text>
+					</g>
+				</svg>
+				<figcaption class="mt-4 text-[13px] leading-snug text-muted lg:text-left text-center">
+					One event. Four agent surfaces. Every new MCP host inherits it.
+				</figcaption>
+			</figure>
+		</div>
+
+		<ul class="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
+			<li class="home-mcp-tile">
+				<Icon name="chat" tone="violet" size={28}/>
+				<span class="eyebrow">Claude Desktop</span>
+			</li>
+			<li class="home-mcp-tile">
+				<Icon name="sparkle" tone="coral" size={28}/>
+				<span class="eyebrow">ChatGPT</span>
+			</li>
+			<li class="home-mcp-tile">
+				<Icon name="bolt" tone="sky" size={28}/>
+				<span class="eyebrow">IDE plugin</span>
+			</li>
+			<li class="home-mcp-tile">
+				<Icon name="globe" tone="rose" size={28}/>
+				<span class="eyebrow">custom agent</span>
+			</li>
+		</ul>
+	</div>
+
+	<p class="mt-8 max-w-2xl mx-auto text-lg leading-relaxed text-ink-2 text-center">
+		Publish a single kind:30402 and it fans out to every vendor kind on
+		Voyager Pay. The same listing also reaches agent hosts through
+		<a href="/projects/voyager-pay/vendors#mcp" class="underline underline-offset-2 decoration-[1.5px] font-semibold text-ink">voyager-mcp</a>
+		— so any AI surface that connects sees it too.
+	</p>
+</section>
+
 <!-- Final CTA -->
 <section class="mx-auto max-w-6xl px-6 pb-32">
 	<div class="rounded-[32px] bg-bone-100 p-10 sm:p-16 text-center">
@@ -279,7 +392,130 @@
 		</p>
 		<div class="mt-8 flex flex-wrap items-center justify-center gap-3">
 			<Cta variant="primary" href="/">Back to Voyager</Cta>
-			<Cta variant="secondary" href="/plan">Plan a trip</Cta>
+			<Cta variant="secondary" href="/projects/trip-planner/plan">Plan a trip</Cta>
 		</div>
 	</div>
 </section>
+
+<style>
+	.home-mcp-figure {
+		max-width: 28rem;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	@media (min-width: 1024px) {
+		.home-mcp-figure {
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+	.home-mcp-svg {
+		display: block;
+		overflow: visible;
+	}
+	.home-mcp-label {
+		font-family: var(--font-sans, system-ui, sans-serif);
+		font-size: 13px;
+		font-weight: 500;
+		fill: var(--ink);
+	}
+	.home-mcp-sublabel {
+		font-family: var(--font-mono, ui-monospace, monospace);
+		font-size: 11px;
+		fill: var(--ink);
+		opacity: 0.7;
+	}
+	.home-mcp-link {
+		stroke: var(--ink);
+		stroke-width: 1.5;
+		stroke-dasharray: 6 6;
+		animation: home-mcp-travel 1.6s linear infinite;
+	}
+	.home-mcp-link--solid {
+		stroke-dasharray: 0;
+		animation: none;
+	}
+	.home-mcp-node {
+		animation: home-mcp-pulse 2.4s ease-in-out infinite;
+		transform-origin: center;
+	}
+	@keyframes home-mcp-travel {
+		to {
+			stroke-dashoffset: -24;
+		}
+	}
+	@keyframes home-mcp-pulse {
+		50% {
+			opacity: 0.65;
+		}
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.home-mcp-link {
+			animation: none;
+		}
+		.home-mcp-node {
+			animation: none;
+		}
+	}
+	.home-mcp-mock {
+		border-radius: 24px;
+		background: var(--bone-200);
+		padding: 0;
+		overflow: hidden;
+		border: 0;
+		box-shadow: none;
+	}
+	.home-mcp-mock__bar {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		padding: 12px 16px;
+		border-bottom: 0;
+		background: var(--bone-300);
+	}
+	.home-mcp-mock__dot {
+		width: 10px;
+		height: 10px;
+		border-radius: 999px;
+		background: var(--c, var(--ink));
+		display: inline-block;
+	}
+	.home-mcp-mock__title {
+		margin-left: 8px;
+		font-family: var(--font-mono, ui-monospace, monospace);
+		font-size: 12px;
+		color: var(--ink-2);
+	}
+	.home-mcp-mock__body {
+		margin: 0;
+		padding: 18px 20px;
+		font-family: var(--font-mono, ui-monospace, monospace);
+		font-size: 13px;
+		line-height: 1.55;
+		color: var(--ink);
+		white-space: pre;
+		overflow-x: auto;
+		background: var(--bone-50);
+	}
+	.home-mcp-mock__body :global(.t-muted) {
+		color: var(--muted);
+	}
+	.home-mcp-mock__body :global(.t-ink) {
+		color: var(--ink);
+	}
+	.home-mcp-mock__body :global(.t-key) {
+		color: var(--ink-2);
+	}
+	.home-mcp-mock__body :global(.t-str) {
+		color: var(--ink-2);
+	}
+	.home-mcp-tile {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 10px;
+		padding: 18px;
+		border-radius: 24px;
+		background: var(--bone-200);
+	}
+</style>

@@ -128,7 +128,7 @@
 							</span>
 						</div>
 						<div>
-							<Cta variant="tertiary" href="/pay#ramp">View corridor</Cta>
+							<Cta variant="tertiary" href="/projects/voyager-pay#ramp">View corridor</Cta>
 						</div>
 					</article>
 				{/each}

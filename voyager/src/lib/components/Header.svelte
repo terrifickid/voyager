@@ -9,11 +9,11 @@
 	}
 
 	const links = [
-		{ href: '/', label: 'Home', exact: true },
-		{ href: '/plan', label: 'Plan a trip', exact: true },
-		{ href: '/pay', label: 'Voyager Pay', exact: true },
-		{ href: '/vendors', label: 'For vendors', exact: true },
-		{ href: '/docs', label: 'Docs', exact: true }
+		{ href: '/stack', label: 'Stack' },
+		{ href: '/projects', label: 'Projects' },
+		{ href: '/use-cases', label: 'Use cases' },
+		{ href: '/network', label: 'Network' },
+		{ href: '/docs', label: 'Docs' }
 	];
 </script>
 
@@ -36,8 +36,6 @@
 				</li>
 			{/each}
 		</ul>
-		<div class="md:hidden">
-			<a href="/plan" class="text-[15px] font-semibold text-ink underline underline-offset-4">Plan a trip</a>
-		</div>
+		<Cta variant="primary" href="/build">Start building</Cta>
 	</nav>
 </header>

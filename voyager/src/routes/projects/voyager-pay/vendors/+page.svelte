@@ -20,7 +20,7 @@
 		</p>
 		<div class="flex flex-wrap items-center gap-3">
 			<Cta variant="primary" href="/docs">Start selling</Cta>
-			<Cta variant="secondary" href="/pay">Read the protocol</Cta>
+			<Cta variant="secondary" href="/projects/voyager-pay">Read the protocol</Cta>
 		</div>
 	</div>
 </section>
@@ -330,7 +330,7 @@
 		</p>
 		<div class="mt-8 flex flex-wrap items-center justify-center gap-3">
 			<Cta variant="primary" href="/docs/how-voyager-pay-extends">Continue</Cta>
-			<Cta variant="secondary" href="/pay">Read the protocol</Cta>
+			<Cta variant="secondary" href="/projects/voyager-pay">Read the protocol</Cta>
 		</div>
 	</div>
 </section>

@@ -1,0 +1,75 @@
+[
+	{
+		"slug": "uc1",
+		"code": "UC1",
+		"title": "Independent artist admin & payments",
+		"short": "Receive sats, get booked, store contracts. No label, no manager, no US bank.",
+		"what": "Indie Caribbean artists are paid microscopic per-stream royalties by global DSPs, can't afford a manager or label, and have no good tool for tour planning, door-sales splits, merch, contracts, IP/publishing rights, gig booking.",
+		"how": "An app on Voyager lets an artist receive payment in sats, or local fiat via a Mostro ramp, get booked by venues, and store contracts — all without giving up their identity or paying 0.003¢ per stream.",
+		"primitives": ["P1 · Identity", "P2 · Payments", "P3 · Ramp", "P4 · Messaging", "P5 · Discovery"]
+	},
+	{
+		"slug": "uc2",
+		"code": "UC2",
+		"title": "Caribbean-to-Caribbean commerce",
+		"short": "A buyer-seller app that works across the region without a 30% cut.",
+		"what": "A Barbadian wants to buy something from Grenada and has no idea who to trust 30 minutes away. There is no Caribbean hub marketplace.",
+		"how": "A buyer-seller app on Voyager, using the v3 protocol's listing + order events, gives discoverability, payment, and dispute arbitration across the region without an intermediary that takes a 30% cut or a payment processor that won't serve them.",
+		"primitives": ["P1 · Identity", "P2 · Payments", "P3 · Ramp", "P5 · Discovery"]
+	},
+	{
+		"slug": "uc3",
+		"code": "UC3",
+		"title": "Concierge & tourism",
+		"short": "High-touch trip planning where the operator keeps the booking minus a tiny routing fee.",
+		"what": "High-touch trip planning for visitors to Barbados (and eventually other islands). The operator is the brand, the planner is the tool.",
+		"how": "The operator gets paid in sats or local fiat. The customer pays with whatever they have: Lightning, Lightning-via-ramp, or USD via Mostro. The operator keeps 100% of the booking minus a tiny Lightning routing fee. Trip Planner is the working reference for this use case.",
+		"primitives": ["P1 · Identity", "P2 · Payments", "P3 · Ramp", "P4 · Messaging", "P5 · Discovery"],
+		"reference": "/projects/trip-planner"
+	},
+	{
+		"slug": "uc4",
+		"code": "UC4",
+		"title": "Creator monetization without US bank",
+		"short": "Receive Lightning, optionally convert to local fiat via Mostro. No DSP needed.",
+		"what": "Caribbean creators get monetized on YouTube/Reels/TikTok only if they have a US bank. Most don't, and the cut is brutal.",
+		"how": "An app on Voyager lets a creator receive sats directly via Lightning, optionally convert to local fiat (JMD, TTD, BBD, XCD, GYD, HTG, BSD) via Mostro, and access a payment channel that doesn't require a US bank account.",
+		"primitives": ["P1 · Identity", "P2 · Payments", "P3 · Ramp", "P5 · Discovery"]
+	},
+	{
+		"slug": "uc5",
+		"code": "UC5",
+		"title": "Island-hopping logistics",
+		"short": "Regional transport booking and payment on the same primitives as everything else.",
+		"what": "Cheaper to fly Barbados → LA than Barbados → Trinidad. No ferry system. Inter-island logistics is a known gap.",
+		"how": "Apps on Voyager might integrate regional transport booking and payment. The protocol doesn't need to know about boats, but the toolkit's payment and identity primitives make a transport app 10x easier to ship than starting from Stripe.",
+		"primitives": ["P1 · Identity", "P2 · Payments", "P5 · Discovery"]
+	},
+	{
+		"slug": "uc6",
+		"code": "UC6",
+		"title": "Cultural discovery & hub",
+		"short": "A Caribbean-keyed social surface with identity built in. No platform to lose.",
+		"what": "There is no place online where Caribbean people just hang out and don't have to explain themselves. This is not a payment problem. It's an identity + discovery problem.",
+		"how": "Voyager's Nostr-keypair login and relay-set gives any builder a turnkey way to make a Caribbean-keyed community surface (timeline, group chat, marketplace) without rebuilding identity.",
+		"primitives": ["P1 · Identity", "P4 · Messaging", "P5 · Discovery"]
+	},
+	{
+		"slug": "uc7",
+		"code": "UC7",
+		"title": "Venue & performer matchmaking",
+		"short": "Verifiable reputation, signed gig records, atomic settlement between both sides.",
+		"what": "Indie artists can't find venues; venues can't find reliable indie artists. The less the artist knows, the easier it is to take advantage.",
+		"how": "An app on Voyager can store verifiable reputation (zaps, past-gigs as Nostr events), let venues post open slots, let artists apply, and settle payments atomically — without a CAA-style gatekeeper.",
+		"primitives": ["P1 · Identity", "P2 · Payments", "P3 · Ramp", "P4 · Messaging", "P5 · Discovery"]
+	},
+	{
+		"slug": "uc8",
+		"code": "UC8",
+		"title": "Sports, carnival, diaspora coordination",
+		"short": "Group bookings, tickets, remittances on the same primitives as everything else.",
+		"what": "West Indies cricket plays as one team; carnivals happen across NYC, London, Toronto. Diaspora coordination is the unspoken use case.",
+		"how": "Apps on Voyager can coordinate group bookings, ticket sales, and remittances for the diaspora community with the same primitives — no need to integrate 5 payment processors.",
+		"primitives": ["P1 · Identity", "P2 · Payments", "P3 · Ramp", "P4 · Messaging", "P5 · Discovery"]
+	}
+]

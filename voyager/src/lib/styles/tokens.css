@@ -13,6 +13,11 @@
 	--lime: #BEE93A;
 	--lime-ink: #14140F;
 
+	--night-900: #10233B;
+	--night-800: #18304F;
+	--night-100: #D7E2EE;
+	--on-dark: var(--bone-50);
+
 	--pastel-violet: #C9B6FF;
 	--pastel-coral: #FFB39E;
 	--pastel-sky: #A9D7FF;

@@ -16,6 +16,11 @@
 	--color-lime: #BEE93A;
 	--color-lime-ink: #14140F;
 
+	--color-night-900: #10233B;
+	--color-night-800: #18304F;
+	--color-night-100: #D7E2EE;
+	--color-on-dark: var(--color-bone-50);
+
 	--color-pastel-violet: #C9B6FF;
 	--color-pastel-coral: #FFB39E;
 	--color-pastel-sky: #A9D7FF;
