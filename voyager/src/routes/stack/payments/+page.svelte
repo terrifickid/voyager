@@ -12,7 +12,7 @@
 	<title>{p.title} — Voyager Stack · Caribbean-first</title>
 </svelte:head>
 
-<RegisterSection register="carnival-poster">
+<RegisterSection register="caribana">
 <section class="mx-auto max-w-6xl px-6 pt-16 pb-12 lg:pt-24">
 	<div class="flex flex-col gap-8">
 		<span class="eyebrow">{p.code} · lightning rail</span>

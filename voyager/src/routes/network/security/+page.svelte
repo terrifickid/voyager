@@ -10,7 +10,7 @@
 </svelte:head>
 
 <!-- §1 Foundation -->
-<RegisterSection register="carnival-poster">
+<RegisterSection register="ocean">
 <section class="mx-auto max-w-6xl px-6 pt-20 pb-20 lg:pt-28">
 	<SectionHeader
 		eyebrow="Foundation"

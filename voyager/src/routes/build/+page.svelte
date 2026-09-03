@@ -16,7 +16,7 @@
 	<title>Start building — Voyager · Caribbean-first rails</title>
 </svelte:head>
 
-<RegisterSection register="carnival-poster">
+<RegisterSection register="heritage-sepia">
 
 <section class="mx-auto max-w-6xl px-6 pt-16 pb-12 lg:pt-24">
 	<div class="flex flex-col gap-8">

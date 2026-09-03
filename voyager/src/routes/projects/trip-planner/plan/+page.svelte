@@ -92,7 +92,7 @@
   <title>Plan a trip — Voyager · Caribbean-first</title>
 </svelte:head>
 
-<RegisterSection register="carnival-poster">
+<RegisterSection register="editorial">
 <div class="mx-auto max-w-6xl px-6 pt-16 pb-24" class:hidden={submitted}>
   <PlanTripWizard {onFinish} hidden={submitted} />
 </div>
