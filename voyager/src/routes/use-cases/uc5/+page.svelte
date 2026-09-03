@@ -11,32 +11,32 @@
 	<title>{uc.code} · {uc.title} — Voyager · Caribbean-first</title>
 </svelte:head>
 
-<RegisterSection register="civic-ocean">
+<RegisterSection register="carnival-poster">
 <section class="mx-auto max-w-6xl px-6 pt-16 pb-12 lg:pt-24">
 	<div class="flex flex-col gap-8">
 		<span class="eyebrow">{uc.code} · use case</span>
-		<h1 class="font-display text-[44px] sm:text-[56px] lg:text-[72px] text-ink leading-[1.02] max-w-4xl">
+		<h1 class="font-display text-[44px] sm:text-[56px] lg:text-[72px] leading-[1.02] max-w-4xl">
 			{uc.title}.
 		</h1>
-		<p class="max-w-2xl text-lg leading-relaxed text-ink-2">{uc.short}</p>
+		<p class="max-w-2xl text-lg leading-relaxed">{uc.short}</p>
 	</div>
 </section>
 
 <section class="mx-auto max-w-6xl px-6 pb-16">
 	<div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
-		<div class="rounded-[28px] bg-bone-100 p-8">
+		<div class="rounded-[28px] p-8" style="background-color: var(--register-card);">
 			<span class="eyebrow">The problem</span>
-			<p class="mt-3 text-lg leading-relaxed text-ink-2">{uc.what}</p>
+			<p class="mt-3 text-lg leading-relaxed">{uc.what}</p>
 		</div>
-		<div class="rounded-[28px] bg-bone-100 p-8">
+		<div class="rounded-[28px] p-8" style="background-color: var(--register-card);">
 			<span class="eyebrow">How Voyager fits</span>
-			<p class="mt-3 text-lg leading-relaxed text-ink-2">{uc.how}</p>
+			<p class="mt-3 text-lg leading-relaxed">{uc.how}</p>
 		</div>
 	</div>
 </section>
 
 <section class="mx-auto max-w-6xl px-6 pb-16">
-	<div class="rounded-[28px] bg-bone-200 p-8">
+	<div class="rounded-[28px] p-8" style="background-color: var(--register-card);">
 		<span class="eyebrow">Primitives in play</span>
 		<ul class="mt-4 flex flex-wrap gap-3">
 			{#each uc.primitives as pr (pr)}
@@ -47,7 +47,7 @@
 </section>
 
 <section class="mx-auto max-w-6xl px-6 pb-32">
-	<div class="rounded-[32px] bg-bone-100 p-8 sm:p-12">
+	<div class="rounded-[32px] p-8 sm:p-12" style="background-color: var(--register-card);">
 		<SectionHeader
 			eyebrow="Next"
 			title="See how a builder ships this."

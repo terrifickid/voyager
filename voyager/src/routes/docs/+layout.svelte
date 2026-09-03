@@ -4,7 +4,11 @@
 	import TableOfContents from '$lib/components/TableOfContents.svelte';
 	import RegisterSection from '$lib/components/RegisterSection.svelte';
 
-	let { children } = $props();
+	/**
+	 * @typedef {'civic-ocean' | 'editorial' | 'rasta' | 'carnival-poster' | 'heritage-sepia'} Register
+	 */
+	/** @type {{ register?: Register, children?: import('svelte').Snippet }} */
+	let { register = 'rasta', children } = $props();
 
 	let contentEl = $state(null);
 
@@ -35,8 +39,8 @@
 	}
 </script>
 
-<div class="mx-auto max-w-7xl px-4 sm:px-6 pt-10 pb-12 md:pt-14">
-	<RegisterSection register="editorial">
+<div class="mx-auto max-w-6xl px-4 sm:px-6 pt-10 pb-12 md:pt-14">
+	<RegisterSection {register}>
 	<div
 		class="grid grid-cols-1 gap-10 md:grid-cols-[220px_1fr] lg:grid-cols-[220px_minmax(0,1fr)_200px] lg:gap-x-10"
 	>
@@ -54,7 +58,10 @@
 										<a
 											href={lesson.slug}
 											aria-current={active ? 'page' : undefined}
-											class="block text-[15px] leading-snug py-1.5 hover:underline underline-offset-[6px] decoration-[1.5px] {active ? 'font-semibold text-ink underline' : 'text-ink-2'}"
+											class="block text-[15px] leading-snug py-1.5 hover:underline underline-offset-[6px] decoration-[1.5px]"
+											style={active
+												? 'font-weight: 600; color: var(--rasta-gold); text-decoration: underline;'
+												: 'color: var(--register-on-dark-soft);'}
 										>
 											{lesson.title}
 										</a>
@@ -82,6 +89,12 @@
 </div>
 
 <style>
+	.docs-prose {
+		color: var(--register-on-dark-soft);
+	}
+	.docs-prose :global(*) {
+		color: inherit;
+	}
 	.docs-prose :global(h1) {
 		scroll-margin-top: 5rem;
 		font-family: 'Space Grotesk', system-ui, sans-serif;
@@ -89,7 +102,7 @@
 		line-height: 1.1;
 		font-weight: 600;
 		letter-spacing: -0.02em;
-		color: var(--ink);
+		color: var(--register-text);
 	}
 	.docs-prose :global(h2) {
 		scroll-margin-top: 5rem;
@@ -98,7 +111,7 @@
 		line-height: 1.25;
 		font-weight: 600;
 		letter-spacing: -0.01em;
-		color: var(--ink);
+		color: var(--register-text);
 		margin-top: 2.5rem;
 	}
 	.docs-prose :global(h2:first-of-type) {
@@ -110,27 +123,27 @@
 		line-height: 1.3;
 		font-weight: 600;
 		letter-spacing: -0.005em;
-		color: var(--ink);
+		color: var(--register-text);
 		margin-top: 1.75rem;
 	}
 	.docs-prose :global(p) {
 		font-size: 1rem;
 		line-height: 1.65;
-		color: var(--ink-2);
+		color: var(--register-on-dark-soft);
 		margin-top: 1rem;
 	}
 	.docs-prose :global(p:first-of-type) {
 		margin-top: 0;
 	}
 	.docs-prose :global(strong) {
-		color: var(--ink);
+		color: var(--register-text);
 		font-weight: 600;
 	}
 	.docs-prose :global(ul),
 	.docs-prose :global(ol) {
 		margin-top: 1rem;
 		padding-left: 1.5rem;
-		color: var(--ink-2);
+		color: var(--register-on-dark-soft);
 	}
 	.docs-prose :global(ul) {
 		list-style-type: disc;
@@ -144,27 +157,27 @@
 		padding-left: 0.375rem;
 	}
 	.docs-prose :global(li::marker) {
-		color: var(--muted);
+		color: var(--register-muted);
 	}
 	.docs-prose :global(code) {
 		font-family: var(--font-mono, ui-monospace, monospace);
 		font-size: 0.8125rem;
 		font-weight: 500;
-		color: var(--ink);
-		background: var(--bone-200);
+		color: var(--register-text);
+		background: var(--register-card);
 		padding: 1px 6px;
 		border-radius: 6px;
 	}
 	.docs-prose :global(pre) {
 		margin-top: 1.25rem;
 		border-radius: 20px;
-		background: var(--bone-200);
+		background: var(--register-card);
 		padding: 1rem 1.25rem;
 		overflow-x: auto;
 		font-family: var(--font-mono, ui-monospace, monospace);
 		font-size: 13px;
 		line-height: 1.6;
-		color: var(--ink);
+		color: var(--register-text);
 	}
 	.docs-prose :global(pre code) {
 		background: transparent;
@@ -177,11 +190,11 @@
 		margin-top: 1rem;
 		width: 100%;
 		font-size: 0.875rem;
-		color: var(--ink-2);
+		color: var(--register-on-dark-soft);
 		border-collapse: collapse;
 	}
 	.docs-prose :global(thead) {
-		color: var(--ink);
+		color: var(--register-text);
 		font-weight: 500;
 		text-align: left;
 	}
@@ -191,6 +204,6 @@
 		vertical-align: top;
 	}
 	.docs-prose :global(tbody tr) {
-		border-top: 1px solid var(--bone-200);
+		border-top: 1px solid var(--register-hair);
 	}
 </style>

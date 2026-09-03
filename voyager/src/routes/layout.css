@@ -59,8 +59,8 @@
 }
 
 html, body {
-	background: var(--bone-50);
-	color: var(--ink-2);
+	background: var(--register-ground);
+	color: var(--register-text);
 	font-family: 'Inter', system-ui, sans-serif;
 	-webkit-font-smoothing: antialiased;
 }
@@ -84,6 +84,9 @@ html, body {
 .register-section {
 	background-color: var(--register-ground);
 	color: var(--register-text);
+}
+.register-section :global(*) {
+	color: inherit;
 }
 
 [data-register='civic-ocean'] {

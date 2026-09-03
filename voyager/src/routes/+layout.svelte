@@ -20,13 +20,17 @@
 	 * @returns {Register}
 	 */
 	function registerFor(pathname) {
-		if (pathname === '/projects' || pathname.startsWith('/projects/trip-planner')) {
+		if (
+			pathname === '/' ||
+			pathname.startsWith('/use-cases') ||
+			pathname === '/projects' ||
+			pathname.startsWith('/projects/trip-planner')
+		) {
 			return 'carnival-poster';
 		}
 		if (pathname === '/principles') return 'rasta';
 		if (pathname === '/build') return 'heritage-sepia';
-		if (pathname === '/') return 'carnival-poster';
-		if (pathname.startsWith('/docs')) return 'editorial';
+		if (pathname.startsWith('/docs')) return 'rasta';
 		return 'civic-ocean';
 	}
 
@@ -102,7 +106,7 @@
 </script>
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
-<div class="flex min-h-screen flex-col bg-bone-50 text-ink-2">
+<div class="flex min-h-screen flex-col" data-register={chromeRegister} style="background-color: var(--register-ground); color: var(--register-text);">
 	<Header register={chromeRegister} />
 	<main class="flex-1">
 		{#if page.url.pathname !== '/'}

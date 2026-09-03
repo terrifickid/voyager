@@ -8,10 +8,10 @@
 
 <section class="pt-4 pb-12">
 	<p class="eyebrow">Overview</p>
-	<h1 class="mt-3 font-display text-ink" id="overview">
+	<h1 class="mt-3 font-display" id="overview" style="color: var(--register-text);">
 		Read the spec behind Voyager.
 	</h1>
-	<p class="mt-6 max-w-2xl text-lg leading-relaxed text-ink-2">
+	<p class="mt-6 max-w-2xl text-lg leading-relaxed" style="color: var(--register-on-dark-soft);">
 		Voyager is a toolkit. These pages walk through the ideas, the rails, and the design moves in plain words. Pick the path that fits you, or read top-to-bottom. The primitives live on the stack pages; this section is for the spec.
 	</p>
 	<div class="mt-8">
@@ -24,7 +24,7 @@
 		<!-- Path 1: For builders shipping the showcase apps -->
 		<div class="flex flex-col gap-4">
 			<p class="eyebrow">For builders shipping the showcase apps</p>
-			<h2 id="for-travelers">How Voyager plans your trip in your browser.</h2>
+			<h2 id="for-travelers" style="color: var(--register-text);">How Voyager plans your trip in your browser.</h2>
 			<a
 				href="/docs/how-voyager-plans"
 				class="rounded-[24px] bg-bone-100 p-6 hover:bg-bone-200 transition-colors"
@@ -38,7 +38,7 @@
 		<!-- Path 2: For the curious (rubrics) -->
 		<div class="flex flex-col gap-4">
 			<p class="eyebrow">For the curious</p>
-			<h2 id="for-the-curious">What a rubric is, and how it drives the model.</h2>
+			<h2 id="for-the-curious" style="color: var(--register-text);">What a rubric is, and how it drives the model.</h2>
 			<div class="flex flex-col gap-3">
 				<a
 					href="/docs/what-is-a-rubric"
@@ -62,7 +62,7 @@
 		<!-- Path 3: For the protocol-curious -->
 		<div class="flex flex-col gap-4">
 			<p class="eyebrow">For the protocol-curious</p>
-			<h2 id="for-the-protocol-curious">How Voyager Pay works, and why the design holds.</h2>
+			<h2 id="for-the-protocol-curious" style="color: var(--register-text);">How Voyager Pay works, and why the design holds.</h2>
 			<div class="flex flex-col gap-3">
 				<a
 					href="/docs/how-voyager-pay-works"
@@ -116,7 +116,7 @@
 		</div>
 
 		<div class="mt-4">
-			<a href="/docs/how-voyager-plans" class="inline-flex items-center gap-1 text-ink underline underline-offset-4 decoration-[1.5px] font-semibold">
+			<a href="/docs/how-voyager-plans" class="inline-flex items-center gap-1 underline underline-offset-4 decoration-[1.5px] font-semibold" style="color: var(--rasta-gold);">
 				Read in order
 				<span aria-hidden="true" class="text-[1.05em] leading-none">›</span>
 			</a>
