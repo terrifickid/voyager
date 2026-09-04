@@ -1,0 +1,10 @@
+{
+	"snippet": "<script src=\"https://cdn.voyager.caribbean/embed.js\"\n        data-relays=\"relay.bz,relay.jm,relay.lisbon.pt\"\n        data-query=\"caribbean goods\"\n        data-kind=\"30402\"\n        data-limit=\"3\"\n        defer><\/script>\n\n<!-- Optional: a single <div> target. Without one, the embed appends to <body>. -->\n<div id=\"voyager-rail\"><\/div>",
+	"hostPage": {
+		"url": "https://any-existing-site.example/hotel/belize",
+		"title": "Tropic Reef Lodge — San Pedro, Belize",
+		"blurb": "Beachfront rooms, snorkel gear, and a coffee bar that roasts its own beans.",
+		"cta": "Book a room"
+	},
+	"injectionDom": "<aside class=\"voyager-rail\">\n  <h3>Related from Caribbean sellers</h3>\n  <ul>\n    <li><a href=\"#\">Xunantunich Tours · BZD $180</a></li>\n    <li><a href=\"#\">Blue Hole Snorkel Charter · 12.4k zaps</a></li>\n    <li><a href=\"#\">Belize Coffee Bar — beans, 250 g · 9.8k zaps</a></li>\n  </ul>\n  <p class=\"voyager-rail-foot\">All inference happens in the visitor's browser. No telemetry leaves the device.</p>\n</aside>"
+}

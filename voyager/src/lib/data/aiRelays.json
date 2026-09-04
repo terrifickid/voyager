@@ -1,0 +1,5 @@
+[
+	{ "url": "wss://relay.bz", "name": "relay.bz", "region": "Belize City, BZ", "status": "live", "avgLatencyMs": 84 },
+	{ "url": "wss://relay.jm", "name": "relay.jm", "region": "Kingston, JM", "status": "live", "avgLatencyMs": 62 },
+	{ "url": "wss://relay.lisbon.pt", "name": "relay.lisbon.pt", "region": "Lisbon, PT", "status": "connecting", "avgLatencyMs": 184 }
+]

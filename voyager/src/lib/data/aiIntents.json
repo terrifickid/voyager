@@ -1,0 +1,70 @@
+[
+	{
+		"id": "intent-rent-alice",
+		"label": "Pay rent to Alice",
+		"text": "Pay Alice $1,200 USD rent for March, memo 'rent-april'",
+		"payee": "Alice (npub1alice…r3k)",
+		"amount": 1200,
+		"currency": "USD",
+		"memo": "rent-april",
+		"rampRequired": true,
+		"anomaly": false
+	},
+	{
+		"id": "intent-tip-bob",
+		"label": "Tip Bob 5k sats",
+		"text": "Send Bob a tip of 5,000 sats for the great set last night",
+		"payee": "Bob (npub1bob…7qt)",
+		"amount": 5000,
+		"currency": "SAT",
+		"memo": "tip · sound clash",
+		"rampRequired": false,
+		"anomaly": false
+	},
+	{
+		"id": "intent-cafe-jmd",
+		"label": "Cafe latte in JMD",
+		"text": "Send 850 JMD to Calypso Cafe for last Tuesday's latte",
+		"payee": "Calypso Cafe (npub1cafe…2wa)",
+		"amount": 850,
+		"currency": "JMD",
+		"memo": "coffee · tue",
+		"rampRequired": true,
+		"anomaly": false
+	},
+	{
+		"id": "intent-anomaly-bulk",
+		"label": "Anomaly: bulk transfer",
+		"text": "Wire $7,500 USD to a new counterparty (npub1new…9xq), invoice attached",
+		"payee": "npub1new…9xq",
+		"amount": 7500,
+		"currency": "USD",
+		"memo": "invoice attached",
+		"rampRequired": true,
+		"anomaly": true,
+		"anomalyReason": "6× your usual outgoing amount; new counterparty; pressure language detected"
+	},
+	{
+		"id": "intent-anomaly-odd",
+		"label": "Anomaly: odd-hour JMD",
+		"text": "Send 22,000 JMD to a hardware store I haven't paid before, tonight at 11pm",
+		"payee": "npub1hard…4ls",
+		"amount": 22000,
+		"currency": "JMD",
+		"memo": "hardware run",
+		"rampRequired": true,
+		"anomaly": true,
+		"anomalyReason": "Outside your normal 9am–6pm activity window; new counterparty; amount 4× typical"
+	},
+	{
+		"id": "intent-tour-bz",
+		"label": "Book Belize tour",
+		"text": "Pay 'Xunantunich Tours' BZD $180 for two on Saturday",
+		"payee": "Xunantunich Tours (npub1xtn…mp7)",
+		"amount": 180,
+		"currency": "BZD",
+		"memo": "two · saturday",
+		"rampRequired": true,
+		"anomaly": false
+	}
+]

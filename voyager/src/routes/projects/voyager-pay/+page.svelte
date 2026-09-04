@@ -6,6 +6,7 @@
 	import RampQuoteAggregator from '$lib/components/RampQuoteAggregator.svelte';
 	import RegisterSection from '$lib/components/RegisterSection.svelte';
 	import SoundSystemStrip from '$lib/components/SoundSystemStrip.svelte';
+	import PayAiAssistCard from '$lib/components/PayAiAssistCard.svelte';
 	import nodes from '$lib/data/mostroNodes.json';
 
 	const SOUND_SYSTEMS = nodes.map((n) => ({ name: n.name, region: n.region, feePct: n.feePct }));
@@ -190,6 +191,34 @@
 			</li>
 		{/each}
 	</ol>
+</section>
+
+<!-- AI assist in the loop -->
+<section class="mx-auto max-w-6xl px-6 pb-24">
+	<div class="rounded-[32px] bg-[var(--register-card)] p-8 sm:p-12 border border-[var(--register-hair)]">
+		<SectionHeader
+			eyebrow="// ai assist in the loop"
+			title="Type it. The agent parses it."
+			lede="You don't need a form. You need a sentence — the local agent extracts the wire-format fields and stops, so the protocol stays auditable."
+		/>
+		<div class="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-start">
+			<PayAiAssistCard register="carnival-poster" variant="compact" />
+			<ul class="flex flex-col gap-4 text-[15px] leading-relaxed text-[var(--register-muted)]">
+				<li>
+					<span class="font-display text-[var(--register-text)]">Parses sentences into events.</span>
+					Payee, amount, currency, memo — extracted locally and shown side-by-side before you sign.
+				</li>
+				<li>
+					<span class="font-display text-[var(--register-text)]">Does not call a server.</span>
+					The model runs in your browser (WebLLM / WASM). Prompts and history never leave the device.
+				</li>
+				<li>
+					<span class="font-display text-[var(--register-text)]">Never overrides your intent.</span>
+					The agent proposes; you sign. It can flag an anomaly and pause — it cannot sign for you.
+				</li>
+			</ul>
+		</div>
+	</div>
 </section>
 
 <!-- §7 fiat ramp -->
