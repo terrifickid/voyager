@@ -14,22 +14,19 @@
 
 	const lessons = [
 		{ slug: '/docs', title: 'Overview', eyebrow: 'Start here', desc: 'What this section covers and the recommended reading order.' },
-		{ slug: '/docs/how-voyager-plans', title: 'How Voyager plans your trip in your browser', eyebrow: 'Lesson 1', desc: 'Local-first AI, WebGPU, prompt assembly, and rubric-ranked places.' },
-		{ slug: '/docs/what-is-a-rubric', title: 'What a rubric is', eyebrow: 'Lesson 2', desc: 'Criteria, levels, descriptors — and why contrast is the engine.' },
-		{ slug: '/docs/rubrics-evaluate-and-generate', title: 'How rubrics evaluate and generate', eyebrow: 'Lesson 3', desc: 'The same rubric as a judge and as a generation rule.' },
-		{ slug: '/docs/how-voyager-pay-works', title: 'How Voyager Pay works', eyebrow: 'Lesson 4', desc: 'Five invariants, three layers, seven steps from request to settlement.' },
-		{ slug: '/docs/what-is-eroi', title: 'What EROI is', eyebrow: 'Lesson 5', desc: 'A security rubric: how much it costs to extract value from a system, set against how much the extracted value is worth.' },
-		{ slug: '/docs/why-systems-get-captured', title: 'Why a capturable system invites capture', eyebrow: 'Lesson 6', desc: 'Concentrated, visible, separable value is an open invitation.' },
-		{ slug: '/docs/voyager-pay-eroi-audit', title: 'How Voyager Pay satisfies the EROI rubric', eyebrow: 'Lesson 7', desc: 'Dispersion, information, coupling — the audit table and the score profile.' },
-		{ slug: '/docs/how-price-discovery-works', title: 'How price discovery works on Voyager Pay', eyebrow: 'Inserted after Lesson 8', desc: 'The §7.4 rubric, why the 0.6 / 0.2 / 0.2 weights bias toward honest operators, and why fees trend toward cost-plus-margin.' },
-		{ slug: '/docs/how-voyager-pay-extends', title: 'How Voyager Pay extends', eyebrow: 'Lesson 9', desc: 'A substrate, a tag prefix, and a convention document — why any vendor kind can ship without amending the protocol.' }
+		{ slug: '/docs/sdk-surface', title: 'SDK surface', eyebrow: 'SDK', desc: 'The fourteen verbs, grouped by area.' },
+		{ slug: '/docs/nostr-primitives', title: 'Nostr primitives', eyebrow: 'SDK', desc: 'Events, kinds, and NIPs the SDK speaks.' },
+		{ slug: '/docs/how-voyager-pay-works', title: 'How Voyager Pay works', eyebrow: 'Protocol', desc: 'Custody-free, identity-free Lightning rail over signed Nostr events.' },
+		{ slug: '/docs/how-price-discovery-works', title: 'How price discovery works', eyebrow: 'Protocol', desc: 'How a federation of Mostro nodes produces the prices a customer sees.' },
+		{ slug: '/docs/how-voyager-pay-extends', title: 'How Voyager Pay extends', eyebrow: 'Protocol', desc: 'New vendor kinds ship by publishing a v-tag convention. No protocol change.' },
+		{ slug: '/docs/security-model', title: 'Security model', eyebrow: 'Security', desc: 'Keys, no custody, no telemetry, and the user-brings-the-key boundary.' }
 	];
 
 	const sections = [
-		{ label: 'Overview', items: [lessons[0]] },
-		{ label: 'The trip planner', items: [lessons[1]] },
-		{ label: 'Rubrics & generation', items: [lessons[2], lessons[3]] },
-		{ label: 'Voyager Pay & EROI', items: lessons.slice(4) }
+		{ label: 'Start here', items: [lessons[0]] },
+		{ label: 'SDK', items: [lessons[1], lessons[2]] },
+		{ label: 'Protocol', items: [lessons[3], lessons[4], lessons[5]] },
+		{ label: 'Security', items: [lessons[6]] }
 	];
 
 	function isActive(slug) {

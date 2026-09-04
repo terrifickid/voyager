@@ -113,7 +113,7 @@
 			lede="We think this design rewards the honest operator. The rest of this page shows what makes that true."
 		/>
 		<div class="mt-6">
-			<Cta variant="tertiary" href="/docs/voyager-pay-eroi-audit">Read the full EROI audit</Cta>
+			<Cta variant="tertiary" href="/docs/security-model">Read the security model</Cta>
 		</div>
 		<div class="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
 			<article class="flex flex-col gap-3 rounded-[28px] bg-[var(--register-card)] p-6">

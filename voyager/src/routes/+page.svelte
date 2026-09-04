@@ -54,7 +54,7 @@
       id: "sdk",
       code: "SDK · ONE SURFACE",
       title: "One unified call surface.",
-      body: "One TypeScript entry. Identity, payments, ramp, DMs, listings behind a single import. The SDK is what your app ships; the primitives are what it talks to.",
+      body: "One ESM entry. Identity, payments, ramp, DMs, listings behind a single import. The SDK is what your app ships; the primitives are what it talks to.",
       icon: "sparkle",
       href: "/build",
     },
@@ -369,7 +369,7 @@
           ></span>
           <span
             class="ml-2 font-mono text-[12px]"
-            style="color: var(--register-on-dark-soft);">your-app.ts</span
+            style="color: var(--register-on-dark-soft);">your-app.js</span
           >
         </div>
         <pre

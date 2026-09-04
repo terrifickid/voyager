@@ -8,7 +8,7 @@
 </svelte:head>
 
 <section class="pt-4 pb-12">
-	<span class="eyebrow">Lesson 9 — For the protocol-curious</span>
+	<span class="eyebrow">Protocol</span>
 	<h1 class="mt-3 font-display text-[40px] sm:text-[52px] text-ink leading-[1.05]">
 		How Voyager Pay extends.
 	</h1>
@@ -143,10 +143,10 @@ tags:
 <section class="pb-32">
 	<div class="rounded-[24px] bg-bone-100 p-6 sm:p-7 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
 		<div>
-			<span class="eyebrow">End of the docs</span>
-			<h3 class="mt-2 font-display text-xl text-ink">That is the whole spec.</h3>
-			<p class="mt-2 text-sm text-ink-2">Back to the overview to jump to any lesson again.</p>
+			<span class="eyebrow">Next</span>
+			<h3 class="mt-2 font-display text-xl text-ink">Security model</h3>
+			<p class="mt-2 text-sm text-ink-2">Keys, no custody, no telemetry, and the boundary the SDK respects.</p>
 		</div>
-		<Cta variant="primary" href="/docs">Back to docs overview</Cta>
+		<Cta variant="primary" href="/docs/security-model">Continue</Cta>
 	</div>
 </section>

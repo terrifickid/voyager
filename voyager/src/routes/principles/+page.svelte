@@ -102,8 +102,7 @@
 		</article>
 	</div>
 	<div class="mt-8 flex flex-wrap gap-3">
-		<Cta variant="tertiary" href="/docs/what-is-eroi" class="text-bone-50! hover:text-rasta-gold!">What EROI is</Cta>
-		<Cta variant="tertiary" href="/docs/why-systems-get-captured" class="text-bone-50! hover:text-rasta-gold!">Why systems get captured</Cta>
+		<Cta variant="tertiary" href="/docs/security-model" class="text-bone-50! hover:text-rasta-gold!">Read the security model</Cta>
 	</div>
 </section>
 
@@ -162,7 +161,7 @@
 			'Should voyager-stage ship in v0.1, or wait for voyager-concierge to land? Concierge first is the conservative call.',
 			'Do we want a hosted indexer at all, or do we let apps run their own relay subscriptions? Hosted indexer helps builder velocity; it gives us leverage we shouldn\'t want.',
 			'What\'s the smallest viable regional-hub social surface we\'d ship as a third showcase app? Probably none in v0.1; flag for v0.2.',
-			'Should the SDK ship in TypeScript, Python, and Go from day one, or just TS? TS only for v0.1; others when there\'s demand.'
+			'Should the SDK ship in multiple runtimes (Python, Go) from day one, or ESM only? ESM only for v0.1; others when there\'s demand.'
 		] as q, i (i)}
 			<li class="rounded-[24px] bg-[var(--register-card)] p-6 text-[15px] leading-relaxed text-[var(--register-muted)]">
 				<span class="font-display text-[var(--register-text)]">Q{i + 1}.</span> {q}

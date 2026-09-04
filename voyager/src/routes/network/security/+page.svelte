@@ -92,10 +92,10 @@
 		<ul class="mt-6 flex flex-col gap-3 text-[var(--register-muted)]">
 			<li>Today, Voyager Pay is a spec, a demo widget, and a Caribbean-tuned reference node. The outcomes above describe the structural properties of the protocol, not the state of a shipped product.</li>
 			<li>Dispute resolution is per-node and reputation-weighted. The spec does not impose arbitration.</li>
-			<li>Four honest limits remain. The full EROI audit lists them and the mitigations each one leans on.</li>
+			<li>Four honest limits remain. The security model page lists them and the mitigations each one leans on.</li>
 		</ul>
 		<div class="mt-8 flex flex-wrap items-center gap-3">
-			<Cta variant="primary" href="/docs/voyager-pay-eroi-audit">Read the EROI audit</Cta>
+			<Cta variant="primary" href="/docs/security-model">Read the security model</Cta>
 			<Cta variant="secondary" href="/projects/voyager-pay#extends">See the open design</Cta>
 		</div>
 

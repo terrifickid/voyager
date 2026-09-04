@@ -42,7 +42,7 @@
 			id="sdk"
 			code="SDK · ONE SURFACE"
 			title="One unified call surface. AI inside."
-			body="One TypeScript entry. Identity, payments, ramp, DMs, listings behind a single import. The SDK is what your app ships; the primitives are what it talks to. The in-browser AI agent lives across all five primitives — search relays, parse payments, sign listings — never a remote model."
+			body="One ESM entry. Identity, payments, ramp, DMs, listings behind a single import. The SDK is what your app ships; the primitives are what it talks to. The in-browser AI agent lives across all five primitives — search relays, parse payments, sign listings — never a remote model."
 			icon="sparkle"
 			href="/build"
 		/>
@@ -60,7 +60,7 @@
 			},
 			{
 				label: 'One SDK',
-				body: 'A single TypeScript entry. Unified surface. Five primitives, one in-browser AI agent — no platform in the middle.',
+				body: 'A single ESM entry. Unified surface. Five primitives, one in-browser AI agent — no platform in the middle.',
 				href: '/build'
 			},
 			{

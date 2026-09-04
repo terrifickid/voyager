@@ -10,24 +10,12 @@
 
 <RegisterSection register="carnival-poster">
 
-<section class="mx-auto max-w-6xl px-6 pt-16 pb-12 lg:pt-24">
-	<div class="flex flex-col gap-8">
-		<span class="eyebrow">// start building</span>
-		<h1 class="font-display text-[48px] sm:text-[64px] lg:text-[80px] text-[var(--register-text)] leading-[0.95] max-w-4xl">
-			Ship the first Caribbean app that doesn't need a US bank.
-		</h1>
-		<p class="max-w-2xl text-lg leading-relaxed text-[var(--register-text)]">
-			The SDK is open source. The protocol is the product. Voyager-the-business never sits between you and your users.
-		</p>
-	</div>
-</section>
-
 <!-- SDK get-started -->
-<section class="mx-auto max-w-6xl px-6 pb-20">
+<section class="mx-auto max-w-6xl px-6 pt-16 pb-20 lg:pt-24">
 	<SectionHeader
 		eyebrow="// the SDK"
-		title="Get started in five lines."
-		lede="A unified surface, Nostr underneath. The SDK hides the keys, the wire format, the relay fan-out — and an in-browser AI agent that runs across all five primitives."
+		title="Get started in one import."
+		lede="Nostr-native. Lean. ~500 lines in one ESM file. The SDK hides the wire format and the relay fan-out. You bring the keys."
 	/>
 	<div class="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-[1.2fr_1fr] lg:items-start">
 		<figure class="rounded-[24px] bg-[var(--register-ground)] border border-[var(--register-hair)] overflow-hidden">
@@ -35,25 +23,49 @@
 				<span class="h-2.5 w-2.5 rounded-full" style="background: var(--heritage-amber);"></span>
 				<span class="h-2.5 w-2.5 rounded-full" style="background: var(--heritage-sepia);"></span>
 				<span class="h-2.5 w-2.5 rounded-full" style="background: var(--heritage-rust);"></span>
-				<span class="ml-2 font-mono text-[12px] text-[var(--register-muted)]">your-app.ts</span>
+				<span class="ml-2 font-mono text-[12px] text-[var(--register-muted)]">your-app.js</span>
 			</div>
-			<pre class="m-0 px-6 py-5 font-mono text-[13px] leading-[1.6] text-[var(--register-text)] bg-[var(--register-card)] overflow-x-auto"><span class="text-[var(--register-muted)]">// install: npm i @voyager/sdk</span>
-<span class="text-[var(--register-text)]">import</span> &#123; voyager &#125; <span class="text-[var(--register-text)]">from</span> <span style="color: var(--register-accent)">"@voyager/sdk"</span>;
+			<pre class="m-0 px-6 py-5 font-mono text-[13px] leading-[1.6] text-[var(--register-text)] bg-[var(--register-card)] overflow-x-auto"><span class="text-[var(--register-muted)]">// install: npm i voyager-sdk</span>
+<span class="text-[var(--register-text)]">import</span> * <span class="text-[var(--register-text)]">as</span> voyager <span class="text-[var(--register-text)]">from</span> <span style="color: var(--register-accent)">"voyager-sdk"</span>;
 
-<span class="text-[var(--register-text)]">const</span> me = <span class="text-[var(--register-text)]">await</span> voyager.identity.create();
-<span class="text-[var(--register-text)]">const</span> invoice = <span class="text-[var(--register-text)]">await</span> voyager.pay.invoice(bolt11);
-<span class="text-[var(--register-text)]">const</span> quotes  = <span class="text-[var(--register-text)]">await</span> voyager.pay.quote(<span style="color: var(--register-accent)">"JMD"</span>, <span style="color: var(--register-accent)">5000</span>);
-<span class="text-[var(--register-text)]">await</span> voyager.listing.create(&#123; kind: <span style="color: var(--register-accent)">30402</span>, title, region &#125;);
-<span class="text-[var(--register-text)]">await</span> voyager.dm.send(toNpub, &#123; orderId, terms &#125;);</pre>
+<span class="text-[var(--register-muted)]">// Configure once at app entry</span>
+voyager.config(&#123;
+  defaultRelays: [<span style="color: var(--register-accent)">"wss://relay.damus.io"</span>, <span style="color: var(--register-accent)">"wss://nos.lol"</span>, <span style="color: var(--register-accent)">"wss://relay.nostr.band"</span>],
+  timeout: <span style="color: var(--register-accent)">10000</span>,
+&#125;);
+
+<span class="text-[var(--register-muted)]">// Bring your own key (nsec from a hardware signer, NIP-46 remote signer, etc.)</span>
+<span class="text-[var(--register-text)]">const</span> me = <span class="text-[var(--register-text)]">await</span> voyager.fromNsec(<span style="color: var(--register-accent)">"nsec1..."</span>);
+
+<span class="text-[var(--register-muted)]">// Or for SDK exploration only — refuses to run in production:</span>
+<span class="text-[var(--register-text)]">const</span> me = <span class="text-[var(--register-text)]">await</span> voyager.demoKey();
+
+<span class="text-[var(--register-muted)]">// Build + sign a listing (kind 30402)</span>
+<span class="text-[var(--register-text)]">const</span> listing = <span class="text-[var(--register-text)]">await</span> voyager.listing(
+  &#123; d: <span style="color: var(--register-accent)">"snapper-001"</span>, title: <span style="color: var(--register-accent)">"Fresh whole snapper"</span>, price: [<span style="color: var(--register-accent)">"42000"</span>, <span style="color: var(--register-accent)">"sats"</span>] &#125;,
+  me.nsec
+);
+
+<span class="text-[var(--register-muted)]">// Publish (first-OK across relays) or read (fan-out + dedup)</span>
+<span class="text-[var(--register-text)]">await</span> voyager.publish(listing);
+<span class="text-[var(--register-text)]">const</span> listings = <span class="text-[var(--register-text)]">await</span> voyager.listings(&#123; author: someVendorNpub &#125;);
+
+<span class="text-[var(--register-muted)]">// Subscribe live</span>
+voyager.on(&#123; kinds: [<span style="color: var(--register-accent)">30402</span>], authors: [someVendorNpub] &#125;, (ev) =&gt; &#123;
+  console.log(<span style="color: var(--register-accent)">"new listing:"</span>, ev);
+&#125;);
+
+<span class="text-[var(--register-muted)]">// NIP-17 gift-wrapped DM</span>
+<span class="text-[var(--register-text)]">await</span> voyager.dmSend(recipientNpub, &#123; type: <span style="color: var(--register-accent)">"order_request"</span>, items: [...] &#125;, me.nsec);</pre>
 		</figure>
 		<div class="flex flex-col gap-4 rounded-[28px] bg-[var(--register-card)] p-7">
 			<span class="eyebrow">What you get</span>
 			<ul class="flex flex-col gap-3 text-[15px] text-[var(--register-muted)]">
-				<li>Identity, payments, ramp, messaging, and discovery in one package.</li>
-				<li>MIT or Apache license. No royalty, no telemetry, no required attribution.</li>
-				<li>TypeScript today. Python and Go when there's demand.</li>
-				<li>Host a web app, a Node service, or a serverless function. No daemon required.</li>
-				<li>An in-browser AI agent that augments every primitive. Never a remote model.</li>
+				<li>One ESM file, ~500 lines. Zero runtime deps (relies on @noble/curves + @noble/hashes).</li>
+				<li>MIT. No telemetry. No required attribution.</li>
+				<li>JavaScript today. Runs in Node 22+ and any modern browser.</li>
+				<li>Web app, Node service, or serverless function. No daemon, no relay pool.</li>
+				<li>User-brings-the-key. SDK does not generate keys — hardware signers and NIP-46 remote signers integrate cleanly.</li>
 			</ul>
 		</div>
 	</div>
@@ -65,15 +77,126 @@
 		<div class="p-8 sm:p-12 flex flex-col gap-5 bg-[var(--register-ground)]">
 			<span class="eyebrow">// the SDK</span>
 			<h2 class="font-display text-[36px] sm:text-[44px] leading-[1.05] max-w-md text-[var(--register-text)]">Unified surface.</h2>
-			<p class="text-[15px] leading-relaxed text-[var(--register-muted)] max-w-md">A handful of well-named calls. The SDK hides the keys, the wire format, and the relay fan-out. MIT or Apache. No telemetry. No required attribution.</p>
+			<p class="text-[15px] leading-relaxed text-[var(--register-muted)] max-w-md">A handful of well-named calls. The SDK hides the wire format and the relay fan-out. MIT. No telemetry. No required attribution.</p>
 		</div>
 		<div class="p-8 sm:p-12 flex flex-col gap-5" style="background-color: var(--register-accent); color: var(--register-accent-ink);">
 			<span class="eyebrow" style="--register-eyebrow: var(--register-accent-ink); opacity: 0.7">// what's inside</span>
-			<h2 class="font-display text-[36px] sm:text-[44px] leading-[1.05] max-w-md" style="color: var(--register-accent-ink)">Five primitives, ten calls.</h2>
-			<p class="text-[15px] leading-relaxed max-w-md" style="color: var(--register-accent-ink)">identity.create, pay.invoice, pay.quote, listing.create, dm.send, dm.read — that is most of what builders need. The rest is configuration, not new API.</p>
+			<h2 class="font-display text-[36px] sm:text-[44px] leading-[1.05] max-w-md" style="color: var(--register-accent-ink)">Four substrates, fourteen verbs.</h2>
+			<p class="text-[15px] leading-relaxed max-w-md" style="color: var(--register-accent-ink)">identity (demoKey, fromNsec), signing (sign, verify, eventId), listings &amp; stalls (30402, 30017), DMs (NIP-17), ramp (38383 intent + quote). Relay transport is config + publish + get + on. That is most of what builders need. The rest is configuration, not new API.</p>
 			<div class="mt-2">
-				<Cta variant="primary" href="/docs" class="bg-ink! text-bone-50! hover:bg-ink-2!">Read the docs</Cta>
+				<Cta variant="secondary" href="/docs" class="border-ink! text-ink! hover:bg-ink! hover:text-[var(--register-accent)]!">Read the docs</Cta>
 			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Key model -->
+<section class="mx-auto max-w-6xl px-6 pb-20">
+	<SectionHeader
+		eyebrow="// key model"
+		title="You bring the key. The SDK never holds it."
+		lede="Hardware signer. NIP-46 remote signer. nsec paste. The SDK parses, validates, and signs. It does not generate, store, or export."
+	/>
+	<div class="mt-10 flex flex-col gap-5 rounded-[28px] bg-[var(--register-card)] p-8 text-[15px] leading-relaxed text-[var(--register-muted)]">
+		<p>
+			<span class="font-display text-[var(--register-text)]">No keygen.</span> The SDK refuses to invent an identity for you. <code class="font-mono text-[var(--register-text)]">voyager.fromNsec('nsec1…')</code> is the only production path; keys live wherever the user keeps them.
+		</p>
+		<p>
+			<span class="font-display text-[var(--register-text)]">A shared demo key, refused in production.</span> <code class="font-mono text-[var(--register-text)]">voyager.demoKey()</code> exists so the first 30 minutes of poking the API doesn't require a wallet. It throws <code class="font-mono text-[var(--register-text)]">VoyagerError('DEMO_KEY_DISABLED')</code> when <code class="font-mono text-[var(--register-text)]">NODE_ENV === 'production'</code> or the hostname matches a production pattern.
+		</p>
+		<p>
+			<span class="font-display text-[var(--register-text)]">One signing call.</span> <code class="font-mono text-[var(--register-text)]">voyager.sign(template, sk)</code> produces a canonical Nostr event; <code class="font-mono text-[var(--register-text)]">voyager.verify(event)</code> checks it. No remote signer handshake in the SDK — that's the integrator's job (NIP-46 bunker, hardware wallet bridge).
+		</p>
+	</div>
+</section>
+
+<!-- Verb reference -->
+<section class="mx-auto max-w-6xl px-6 pb-24">
+	<SectionHeader
+		eyebrow="// the surface"
+		title="Fourteen verbs. Grouped by area."
+		lede="Pass-through for raw event shape. Parse-on-read. Fan-out reads. Real-time on()."
+	/>
+	<div class="mt-10 rounded-[28px] bg-[var(--register-card)] p-8">
+		<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+			<div class="flex flex-col gap-2">
+				<h3 class="font-display text-lg text-[var(--register-text)]">Identity</h3>
+				<ul class="flex flex-col gap-1 font-mono text-[13px] text-[var(--register-muted)]">
+					<li><code class="text-[var(--register-text)]">demoKey()</code> <span class="opacity-70">→ &#123;npub, nsec&#125;</span></li>
+					<li><code class="text-[var(--register-text)]">fromNsec(nsec)</code> <span class="opacity-70">→ &#123;npub, nsec&#125;</span></li>
+				</ul>
+			</div>
+			<div class="flex flex-col gap-2">
+				<h3 class="font-display text-lg text-[var(--register-text)]">Signing &amp; verification</h3>
+				<ul class="flex flex-col gap-1 font-mono text-[13px] text-[var(--register-muted)]">
+					<li><code class="text-[var(--register-text)]">sign(template, sk)</code></li>
+					<li><code class="text-[var(--register-text)]">verify(event)</code></li>
+					<li><code class="text-[var(--register-text)]">eventId(event)</code></li>
+					<li><code class="text-[var(--register-text)]">serializeEvent(event)</code></li>
+				</ul>
+			</div>
+			<div class="flex flex-col gap-2">
+				<h3 class="font-display text-lg text-[var(--register-text)]">Listings (kind 30402)</h3>
+				<ul class="flex flex-col gap-1 font-mono text-[13px] text-[var(--register-muted)]">
+					<li><code class="text-[var(--register-text)]">listing(input, sk)</code></li>
+					<li><code class="text-[var(--register-text)]">updateListing(d, patch, sk)</code></li>
+					<li><code class="text-[var(--register-text)]">listings(&#123;relays, author, d, kinds, timeout&#125;)</code></li>
+				</ul>
+			</div>
+			<div class="flex flex-col gap-2">
+				<h3 class="font-display text-lg text-[var(--register-text)]">Stalls (kind 30017)</h3>
+				<ul class="flex flex-col gap-1 font-mono text-[13px] text-[var(--register-muted)]">
+					<li><code class="text-[var(--register-text)]">stall(input, sk)</code></li>
+					<li><code class="text-[var(--register-text)]">updateStall(d, patch, sk)</code></li>
+					<li><code class="text-[var(--register-text)]">stalls(&#123;relays, author, timeout&#125;)</code></li>
+				</ul>
+			</div>
+			<div class="flex flex-col gap-2">
+				<h3 class="font-display text-lg text-[var(--register-text)]">DMs (NIP-17)</h3>
+				<ul class="flex flex-col gap-1 font-mono text-[13px] text-[var(--register-muted)]">
+					<li><code class="text-[var(--register-text)]">dmSend(toNpub, payload, sk, &#123;relays, dryRun?&#125;)</code></li>
+					<li><code class="text-[var(--register-text)]">dmOpen(giftwrap, sk)</code></li>
+					<li><code class="text-[var(--register-text)]">dmInbox(sk, &#123;relays, since, until, limit&#125;)</code></li>
+				</ul>
+			</div>
+			<div class="flex flex-col gap-2">
+				<h3 class="font-display text-lg text-[var(--register-text)]">Ramp (kind 38383)</h3>
+				<ul class="flex flex-col gap-1 font-mono text-[13px] text-[var(--register-muted)]">
+					<li><code class="text-[var(--register-text)]">rampIntent(&#123;side, amt, fiat, method?, z?&#125;, sk)</code></li>
+					<li><code class="text-[var(--register-text)]">rampQuote(intentOrId, quote, sk)</code></li>
+					<li><code class="text-[var(--register-text)]">rampQuotes(&#123;intentId, relays, timeout&#125;)</code></li>
+				</ul>
+			</div>
+			<div class="flex flex-col gap-2">
+				<h3 class="font-display text-lg text-[var(--register-text)]">Relay transport</h3>
+				<ul class="flex flex-col gap-1 font-mono text-[13px] text-[var(--register-muted)]">
+					<li><code class="text-[var(--register-text)]">publish(relay | relays, event)</code></li>
+					<li><code class="text-[var(--register-text)]">get(relay | relays, filter)</code></li>
+					<li><code class="text-[var(--register-text)]">on(filter, callback)</code> <span class="opacity-70">→ unsub()</span></li>
+					<li><code class="text-[var(--register-text)]">config(&#123;defaultRelays, timeout&#125;)</code></li>
+				</ul>
+			</div>
+			<div class="flex flex-col gap-2">
+				<h3 class="font-display text-lg text-[var(--register-text)]">Misc</h3>
+				<ul class="flex flex-col gap-1 font-mono text-[13px] text-[var(--register-muted)]">
+					<li><code class="text-[var(--register-text)]">parse(event)</code></li>
+					<li><code class="text-[var(--register-text)]">npubEncode(pubBytes)</code></li>
+					<li><code class="text-[var(--register-text)]">nsecEncode(skBytes)</code></li>
+					<li><code class="text-[var(--register-text)]">VoyagerError</code> <span class="opacity-70">— typed error with .code</span></li>
+				</ul>
+			</div>
+		</div>
+		<div class="mt-10 flex flex-wrap items-center gap-3">
+			<a
+				href="https://github.com/terrifickid/voyager-sdk"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="sdk-github-link inline-flex items-center gap-2 rounded-pill px-5 py-3 text-[15px] font-semibold leading-none transition-colors"
+			>
+				Read the SDK on GitHub
+				<span aria-hidden="true" class="text-[1.05em] leading-none -mr-0.5">›</span>
+			</a>
+			<Cta variant="secondary" href="/docs">Read the docs</Cta>
 		</div>
 	</div>
 </section>
@@ -146,5 +269,18 @@
 			</div>
 		</div>
 	</section>
+
+<style>
+	.sdk-github-link {
+		background-color: var(--register-accent);
+		color: var(--register-accent-ink);
+	}
+	.sdk-github-link:hover {
+		background-color: var(
+			--register-accent-hover,
+			color-mix(in srgb, var(--register-accent) 92%, black)
+		);
+	}
+</style>
 
 </RegisterSection>
