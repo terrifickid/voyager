@@ -7,12 +7,12 @@
 	import MasCampByline from '$lib/components/MasCampByline.svelte';
 	import useCases from '$lib/data/useCases.json';
 
-	const MAS_CAMPS = [
-		{ label: 'Bacchanal', note: 'mas · road march' },
-		{ label: 'Kaiso House', note: 'tent · storytelling' },
-		{ label: 'Lime Yard', note: 'fete · meet-up' },
-		{ label: 'Playing Mas', note: 'procession' },
-		{ label: 'Soca Stage', note: 'stage · performance' }
+	const PRIMITIVES = [
+		{ label: 'Identity', note: 'self-sovereign login' },
+		{ label: 'Payments', note: 'Lightning rail' },
+		{ label: 'Ramp', note: 'federated fiat' },
+		{ label: 'Messaging', note: 'NIP-17 gift wrap' },
+		{ label: 'Discovery', note: 'signed listings' }
 	];
 </script>
 
@@ -40,7 +40,7 @@
 		{/each}
 	</div>
 	<div class="mt-12">
-		<MasCampByline register="carnival-poster" eyebrow="UC7 + UC8 · mas camp register" camps={MAS_CAMPS} />
+		<MasCampByline register="carnival-poster" eyebrow="Five primitives · one SDK" camps={PRIMITIVES} />
 	</div>
 </section>
 

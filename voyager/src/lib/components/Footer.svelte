@@ -71,8 +71,6 @@
 				{ label: 'Mostro nodes', href: '/network' },
 				{ label: 'Run a node', href: '/network/node' },
 				{ label: 'Security model', href: '/network/security' },
-				{ label: 'Relays', href: '/network#relays' },
-				{ label: 'Indexer', href: '/network#indexer' },
 				{ label: 'Principles', href: '/principles' }
 			]
 		}
