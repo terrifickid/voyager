@@ -59,6 +59,20 @@
 			</div>
 		</div>
 
+		<!-- Path 2.5: For AI-curious builders -->
+		<div class="flex flex-col gap-4">
+			<p class="eyebrow">For AI-curious builders</p>
+			<h2 id="for-ai-curious" style="color: var(--register-text);">How the in-browser AI agent fits.</h2>
+			<a
+				href="/projects/ai"
+				class="rounded-[24px] bg-[var(--register-card)] p-6 hover:bg-[var(--register-card)] transition-colors"
+			>
+				<span class="eyebrow">Showcase</span>
+				<h3 class="mt-2 font-display text-2xl text-[var(--register-text)]">Voyager AI — One agent across the five primitives</h3>
+				<p class="mt-2 text-[var(--register-muted)]">A walkable view of the in-browser agent: intent parsing for Voyager Pay, search/write/embed for Nostr, and the data boundary at every primitive.</p>
+			</a>
+		</div>
+
 		<!-- Path 3: For the protocol-curious -->
 		<div class="flex flex-col gap-4">
 			<p class="eyebrow">For the protocol-curious</p>

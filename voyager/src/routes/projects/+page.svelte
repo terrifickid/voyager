@@ -24,7 +24,7 @@
 			Showcase apps.
 		</h1>
 		<p class="max-w-2xl text-lg leading-relaxed text-[var(--register-text)]">
-			Voyager-the-business ships 5 showcases to demonstrate the toolkit. They are demos, not products. Builders ship the rest.
+			Voyager-the-business ships 3 showcases to demonstrate the toolkit. They are demos, not products. Builders ship the rest.
 		</p>
 	</div>
 </section>
@@ -59,45 +59,17 @@
 				<span aria-hidden="true" class="text-[1.05em] leading-none transition-transform group-hover:translate-x-0.5">›</span>
 			</span>
 		</a>
-		<a href="/projects/ai-pay" class="group flex flex-col gap-4 rounded-[32px] bg-[var(--register-card)] p-8 transition-colors hover:bg-[var(--register-hair)]">
-			<div class="flex items-center justify-between">
-				<span class="eyebrow">voyager-ai · pay</span>
-				<span class="font-mono text-[12px] text-[var(--register-muted)]">live</span>
-			</div>
-			<h2 class="font-display text-[36px] leading-[1.05] text-[var(--register-text)]">Voyager Pay AI Assist</h2>
-			<p class="text-[15px] leading-relaxed text-[var(--register-muted)]">
-				Type a sentence. The local agent parses it, ranks Mostro nodes, and flags anomalies before you sign.
-			</p>
-			<span class="mt-2 inline-flex items-center gap-1 text-[14px] font-semibold text-[var(--register-text)]">
-				Open Voyager Pay AI
-				<span aria-hidden="true" class="text-[1.05em] leading-none transition-transform group-hover:translate-x-0.5">›</span>
-			</span>
-		</a>
-		<a href="/projects/nostr-ai" class="group flex flex-col gap-4 rounded-[32px] bg-[var(--register-card)] p-8 transition-colors hover:bg-[var(--register-hair)]">
-			<div class="flex items-center justify-between">
-				<span class="eyebrow">nostr-ai</span>
-				<span class="font-mono text-[12px] text-[var(--register-muted)]">live</span>
-			</div>
-			<h2 class="font-display text-[36px] leading-[1.05] text-[var(--register-text)]">In-browser Nostr AI</h2>
-			<p class="text-[15px] leading-relaxed text-[var(--register-muted)]">
-				A Nostr client with a local model bolted on. Search relays, sign listings, embed in any site — without a server.
-			</p>
-			<span class="mt-2 inline-flex items-center gap-1 text-[14px] font-semibold text-[var(--register-text)]">
-				Open Nostr AI
-				<span aria-hidden="true" class="text-[1.05em] leading-none transition-transform group-hover:translate-x-0.5">›</span>
-			</span>
-		</a>
 		<a href="/projects/ai" class="group flex flex-col gap-4 rounded-[32px] bg-[var(--register-card)] p-8 transition-colors hover:bg-[var(--register-hair)]">
 			<div class="flex items-center justify-between">
 				<span class="eyebrow">voyager-ai</span>
 				<span class="font-mono text-[12px] text-[var(--register-muted)]">live</span>
 			</div>
-			<h2 class="font-display text-[36px] leading-[1.05] text-[var(--register-text)]">Unified AI showcase</h2>
+			<h2 class="font-display text-[36px] leading-[1.05] text-[var(--register-text)]">Voyager AI</h2>
 			<p class="text-[15px] leading-relaxed text-[var(--register-muted)]">
-				One agent across the five primitives. Tabbed showcase combining Voyager Pay AI and Nostr AI in one place.
+				The intelligence layer across Identity, Payments, Ramp, Messaging, and Discovery. Search relays, sign listings, and parse payments — in your browser.
 			</p>
 			<span class="mt-2 inline-flex items-center gap-1 text-[14px] font-semibold text-[var(--register-text)]">
-				Open Unified AI
+				Open Voyager AI
 				<span aria-hidden="true" class="text-[1.05em] leading-none transition-transform group-hover:translate-x-0.5">›</span>
 			</span>
 		</a>

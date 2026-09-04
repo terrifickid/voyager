@@ -54,10 +54,10 @@
 	<div class="flex flex-col gap-8">
 		<span class="eyebrow">Open toolkit · Caribbean first</span>
 		<h1 class="font-display text-[56px] sm:text-[80px] lg:text-[112px] leading-[0.95] max-w-5xl" style="color: var(--register-text);">
-			An open toolkit for building Caribbean-first apps.
+			An open AI toolkit for building Caribbean-first apps.
 		</h1>
 		<p class="max-w-2xl text-lg leading-relaxed" style="color: var(--register-on-dark-soft);">
-			Five primitives, one SDK, no platform in the middle. Voyager gives any developer in the region — or in the diaspora — the rails to ship apps that don't route through US/EU payment processors.
+			Five primitives, one SDK, no platform in the middle. Voyager gives any developer in the region — or in the diaspora — the rails to ship apps that don't route through US/EU payment processors. The SDK ships an in-browser AI agent that runs across all five primitives — never a remote model.
 		</p>
 		<div class="flex flex-wrap items-center gap-3">
 			<Cta variant="primary" href="/build">Start building</Cta>
@@ -86,9 +86,9 @@
 	<SectionHeader
 		eyebrow="// built on Voyager"
 		title="Apps shipped on the toolkit."
-		lede="Two showcase apps live today. The rest is what builders ship."
+		lede="Three showcase apps live today. The rest is what builders ship."
 	/>
-	<div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
+	<div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
 		<a
 			href="/projects/trip-planner"
 			class="group flex flex-col gap-5 rounded-[32px] p-8 transition-colors"
@@ -120,6 +120,23 @@
 			</p>
 			<span class="mt-auto inline-flex items-center gap-1 text-[14px] font-semibold" style="color: var(--carnival-cyan);">
 				Open Voyager Pay
+				<span aria-hidden="true" class="text-[1.05em] leading-none transition-transform group-hover:translate-x-0.5">›</span>
+			</span>
+		</a>
+		<a
+			href="/projects/ai"
+			class="group flex flex-col gap-5 rounded-[32px] p-8 transition-colors"
+			style="background-color: var(--register-card-teal); color: var(--register-text);"
+		>
+			<div class="flex items-center justify-between">
+				<span class="eyebrow">voyager-ai</span>
+			</div>
+			<h3 class="font-display text-[36px] leading-[1.05]" style="color: var(--register-text);">Voyager AI</h3>
+			<p class="text-[15px] leading-relaxed" style="color: var(--register-on-dark-soft);">
+				The in-browser agent that lives across the five primitives. Parses intent, ranks relays, signs listings. Never a remote model.
+			</p>
+			<span class="mt-auto inline-flex items-center gap-1 text-[14px] font-semibold" style="color: var(--carnival-cyan);">
+				Open Voyager AI
 				<span aria-hidden="true" class="text-[1.05em] leading-none transition-transform group-hover:translate-x-0.5">›</span>
 			</span>
 		</a>
@@ -192,10 +209,10 @@
 		<div class="flex flex-col gap-5">
 			<span class="eyebrow">// the SDK</span>
 			<h2 class="font-display text-[40px] sm:text-[52px] lg:text-[64px] max-w-xl leading-[1.02]" style="color: var(--register-text);">
-				Stripe-shaped surface, Nostr underneath.
+				Stripe-shaped surface, Nostr underneath. AI inside the SDK.
 			</h2>
 			<p class="max-w-md text-lg leading-relaxed" style="color: var(--register-on-dark-soft);">
-				A handful of well-named calls. The SDK hides the keys, the wire format, and the relay fan-out.
+				A handful of well-named calls — and an in-browser AI agent. The SDK hides the keys, the wire format, the relay fan-out, and the model.
 			</p>
 			<div class="mt-2">
 				<Cta variant="primary" href="/build">Read the SDK docs</Cta>

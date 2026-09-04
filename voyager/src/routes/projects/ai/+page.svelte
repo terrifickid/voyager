@@ -52,13 +52,13 @@
 			that doesn't have to.
 		</p>
 		<div class="flex flex-wrap items-center gap-3">
-			<Cta variant="primary" href="/projects/ai-pay">Open Voyager Pay AI Assist</Cta>
-			<Cta variant="secondary" href="/docs/voyager-ai-architecture">Read the architecture note</Cta>
+			<Cta variant="primary" href="#pay-ai-assist">See the Pay agent</Cta>
+			<Cta variant="secondary" href="#nostr-ai-agent">See the Nostr agent</Cta>
 		</div>
 	</div>
 </section>
 
-<section class="mx-auto max-w-6xl px-6 pb-20">
+<section id="nostr-ai-agent" class="mx-auto max-w-6xl px-6 pb-20">
 	<SectionHeader
 		eyebrow="// nostr ai · search · write · embed"
 		title="The Nostr-side agent in one shell."
@@ -69,11 +69,11 @@
 	</div>
 </section>
 
-<section class="mx-auto max-w-6xl px-6 pb-20">
+<section id="pay-ai-assist" class="mx-auto max-w-6xl px-6 pb-20">
 	<SectionHeader
 		eyebrow="// pay ai assist"
-		title="The same Pay agent — in this page too."
-		lede="Same component, also available as its own showcase at /projects/ai-pay."
+		title="The Pay agent — same surface, in your browser."
+		lede="Type a sentence; the agent parses intent, ranks Mostro nodes, and flags anomalies before you sign. Both surfaces live here, on the single Voyager AI showcase."
 	/>
 	<div class="mt-10">
 		<PayAiAssistCard register="carnival-poster" variant="full" />
@@ -105,10 +105,10 @@
 <section class="mx-auto max-w-6xl px-6 pb-32">
 	<div class="rounded-[32px] bg-[var(--register-card)] p-10 sm:p-16 text-center border border-[var(--register-hair)]">
 		<h2 class="font-display text-[36px] sm:text-[48px] lg:text-[56px] text-[var(--register-text)] max-w-3xl mx-auto leading-[1.05]">
-			Showcases, not products.
+			Voyager AI. The intelligence layer your wallet and your relays share.
 		</h2>
 		<p class="mt-6 max-w-xl mx-auto text-lg text-[var(--register-muted)]">
-			Three showcase apps demonstrate what the AI layer can do. The protocol is the product.
+			One agent, two surfaces, three showcases. The protocol is the product.
 		</p>
 		<div class="mt-8 flex flex-wrap items-center justify-center gap-3">
 			<Cta variant="primary" href="/projects">All showcase apps</Cta>

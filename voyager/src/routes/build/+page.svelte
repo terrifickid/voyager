@@ -35,7 +35,7 @@
 	<SectionHeader
 		eyebrow="// the SDK"
 		title="Get started in five lines."
-		lede="A Stripe-shaped surface, Nostr underneath. The SDK hides the keys, the wire format, and the relay fan-out."
+		lede="A Stripe-shaped surface, Nostr underneath. The SDK hides the keys, the wire format, the relay fan-out — and an in-browser AI agent that runs across all five primitives."
 	/>
 	<div class="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-[1.2fr_1fr] lg:items-start">
 		<figure class="rounded-[24px] bg-[var(--register-ground)] border border-[var(--register-hair)] overflow-hidden">
@@ -61,6 +61,7 @@
 				<li>MIT or Apache license. No royalty, no telemetry, no required attribution.</li>
 				<li>TypeScript today. Python and Go when there's demand.</li>
 				<li>Host a web app, a Node service, or a serverless function. No daemon required.</li>
+				<li>An in-browser AI agent that augments every primitive. Never a remote model.</li>
 			</ul>
 		</div>
 	</div>
