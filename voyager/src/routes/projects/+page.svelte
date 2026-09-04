@@ -3,12 +3,16 @@
 	import SectionHeader from '$lib/components/SectionHeader.svelte';
 	import RegisterSection from '$lib/components/RegisterSection.svelte';
 	import RoadMarchRibbon from '$lib/components/RoadMarchRibbon.svelte';
+	import ProjectFilter from '$lib/components/ProjectFilter.svelte';
+	import projects from '$lib/data/projects.json';
 
 	const ROAD_MARCH = [
 		{ year: '2024', name: 'voyager-concierge alpha', note: 'first trip-planner build' },
 		{ year: '2025', name: 'voyager-pay · spec v0.1', note: 'protocol-shaped, Nostr underneath' },
 		{ year: '2026', name: 'Mostro federation', note: 'JMD, TTD, BBD · XCD rails live' }
 	];
+
+	const CATEGORIES = ['all', 'ai', 'payments', 'marketplace', 'concierge', 'logistics', 'social'];
 </script>
 
 <svelte:head>
@@ -24,82 +28,13 @@
 			Showcase apps.
 		</h1>
 		<p class="max-w-2xl text-lg leading-relaxed text-[var(--register-text)]">
-			Voyager-the-business ships 3 showcases to demonstrate the toolkit. They are demos, not products. Builders ship the rest.
+			One showcase is live today. More land as builders ship on the toolkit.
 		</p>
 	</div>
 </section>
 
 <section class="mx-auto max-w-6xl px-6 pb-16">
-	<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-		<a href="/projects/trip-planner" class="group flex flex-col gap-4 rounded-[32px] bg-[var(--register-card)] p-8 transition-colors hover:bg-[var(--register-hair)]">
-			<div class="flex items-center justify-between">
-				<span class="eyebrow">voyager-concierge</span>
-				<span class="font-mono text-[12px] text-[var(--register-muted)]">live</span>
-			</div>
-			<h2 class="font-display text-[36px] leading-[1.05] text-[var(--register-text)]">Trip Planner</h2>
-			<p class="text-[15px] leading-relaxed text-[var(--register-muted)]">
-				A high-touch itinerary builder. Hour-by-hour plans from real places, your style, your budget. Pays through Voyager Pay.
-			</p>
-			<span class="mt-2 inline-flex items-center gap-1 text-[14px] font-semibold text-[var(--register-text)]">
-				Open Trip Planner
-				<span aria-hidden="true" class="text-[1.05em] leading-none transition-transform group-hover:translate-x-0.5">›</span>
-			</span>
-		</a>
-		<a href="/projects/voyager-pay" class="group flex flex-col gap-4 rounded-[32px] bg-[var(--register-card)] p-8 transition-colors hover:bg-[var(--register-hair)]">
-			<div class="flex items-center justify-between">
-				<span class="eyebrow">voyager-pay</span>
-				<span class="font-mono text-[12px] text-[var(--register-muted)]">live</span>
-			</div>
-			<h2 class="font-display text-[36px] leading-[1.05] text-[var(--register-text)]">Voyager Pay</h2>
-			<p class="text-[15px] leading-relaxed text-[var(--register-muted)]">
-				An open payments protocol with a federated fiat ramp, a Caribbean-tuned reference node, and a demo checkout widget.
-			</p>
-			<span class="mt-2 inline-flex items-center gap-1 text-[14px] font-semibold text-[var(--register-text)]">
-				Open Voyager Pay
-				<span aria-hidden="true" class="text-[1.05em] leading-none transition-transform group-hover:translate-x-0.5">›</span>
-			</span>
-		</a>
-		<a href="/projects/ai" class="group flex flex-col gap-4 rounded-[32px] bg-[var(--register-card)] p-8 transition-colors hover:bg-[var(--register-hair)]">
-			<div class="flex items-center justify-between">
-				<span class="eyebrow">voyager-ai</span>
-				<span class="font-mono text-[12px] text-[var(--register-muted)]">live</span>
-			</div>
-			<h2 class="font-display text-[36px] leading-[1.05] text-[var(--register-text)]">Voyager AI</h2>
-			<p class="text-[15px] leading-relaxed text-[var(--register-muted)]">
-				The intelligence layer across Identity, Payments, Ramp, Messaging, and Discovery. Search relays, sign listings, and parse payments — in your browser.
-			</p>
-			<span class="mt-2 inline-flex items-center gap-1 text-[14px] font-semibold text-[var(--register-text)]">
-				Open Voyager AI
-				<span aria-hidden="true" class="text-[1.05em] leading-none transition-transform group-hover:translate-x-0.5">›</span>
-			</span>
-		</a>
-	</div>
-</section>
-
-<section class="mx-auto max-w-6xl px-6 pb-16">
-	<SectionHeader
-		eyebrow="// opportunities for builders"
-		title="Two more showcase apps, ready to ship."
-		lede="Voyager will host these if a Caribbean builder team wants to take them on. The protocol and SDK do the heavy lifting."
-	/>
-	<div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
-		<article class="flex flex-col gap-3 rounded-[28px] bg-[var(--register-card)] border border-[var(--register-hair)] p-7">
-			<span class="eyebrow" style="--register-eyebrow: var(--teal-bright)">opportunity</span>
-			<h3 class="font-display text-2xl text-[var(--register-text)] leading-tight">voyager-stage</h3>
-			<p class="text-[15px] leading-relaxed text-[var(--register-muted)]">
-				Indie artist admin: long-lived identity, reputation accumulation via zaps, contract storage, tour payment splits. Built if there's demand after concierge ships.
-			</p>
-			<p class="text-[13px] text-[var(--register-muted)]">UC1 + UC7</p>
-		</article>
-		<article class="flex flex-col gap-3 rounded-[28px] bg-[var(--register-card)] border border-[var(--register-hair)] p-7">
-			<span class="eyebrow" style="--register-eyebrow: var(--teal-bright)">opportunity</span>
-			<h3 class="font-display text-2xl text-[var(--register-text)] leading-tight">voyager-market</h3>
-			<p class="text-[15px] leading-relaxed text-[var(--register-muted)]">
-				Generic buyer/seller marketplace for Caribbean goods. Demonstrates search, listings, escrow-free Lightning payments, dispute via Mostro arbiter.
-			</p>
-			<p class="text-[13px] text-[var(--register-muted)]">UC2</p>
-		</article>
-	</div>
+	<ProjectFilter items={projects} categories={CATEGORIES} register="carnival-poster" />
 </section>
 
 <section class="mx-auto max-w-6xl px-6 pb-32">

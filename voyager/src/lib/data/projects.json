@@ -1,0 +1,11 @@
+[
+  {
+    "slug": "voyager-ai",
+    "code": "voyager-ai",
+    "title": "Voyager AI",
+    "body": "The intelligence layer across Identity, Payments, Ramp, Messaging, and Discovery. Search relays, sign listings, and parse payments — in your browser.",
+    "href": "/projects/ai",
+    "category": "ai",
+    "status": "live"
+  }
+]

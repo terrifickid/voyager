@@ -86,43 +86,9 @@
 	<SectionHeader
 		eyebrow="// built on Voyager"
 		title="Apps shipped on the toolkit."
-		lede="Three showcase apps live today. The rest is what builders ship."
+		lede="One showcase app is live today. More land as builders ship on the toolkit."
 	/>
-	<div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-		<a
-			href="/projects/trip-planner"
-			class="group flex flex-col gap-5 rounded-[32px] p-8 transition-colors"
-			style="background-color: var(--register-card-teal); color: var(--register-text);"
-		>
-			<div class="flex items-center justify-between">
-				<span class="eyebrow">voyager-concierge</span>
-			</div>
-			<h3 class="font-display text-[36px] leading-[1.05]" style="color: var(--register-text);">Trip Planner</h3>
-			<p class="text-[15px] leading-relaxed" style="color: var(--register-on-dark-soft);">
-				Day-by-day itineraries built in the browser from real places, your style, and your budget. Pays through Voyager Pay.
-			</p>
-			<span class="mt-auto inline-flex items-center gap-1 text-[14px] font-semibold" style="color: var(--carnival-cyan);">
-				Open Trip Planner
-				<span aria-hidden="true" class="text-[1.05em] leading-none transition-transform group-hover:translate-x-0.5">›</span>
-			</span>
-		</a>
-		<a
-			href="/projects/voyager-pay"
-			class="group flex flex-col gap-5 rounded-[32px] p-8 transition-colors"
-			style="background-color: var(--register-card-teal); color: var(--register-text);"
-		>
-			<div class="flex items-center justify-between">
-				<span class="eyebrow">voyager-pay</span>
-			</div>
-			<h3 class="font-display text-[36px] leading-[1.05]" style="color: var(--register-text);">Voyager Pay</h3>
-			<p class="text-[15px] leading-relaxed" style="color: var(--register-on-dark-soft);">
-				An open payments protocol. No custody. Settlement on Lightning. A federation of competing Mostro nodes bridges fiat.
-			</p>
-			<span class="mt-auto inline-flex items-center gap-1 text-[14px] font-semibold" style="color: var(--carnival-cyan);">
-				Open Voyager Pay
-				<span aria-hidden="true" class="text-[1.05em] leading-none transition-transform group-hover:translate-x-0.5">›</span>
-			</span>
-		</a>
+	<div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-1 lg:grid-cols-3">
 		<a
 			href="/projects/ai"
 			class="group flex flex-col gap-5 rounded-[32px] p-8 transition-colors"
