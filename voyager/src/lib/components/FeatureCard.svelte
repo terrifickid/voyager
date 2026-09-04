@@ -5,7 +5,7 @@
 	let { icon, tone = 'violet', eyebrow, title, body } = $props();
 </script>
 
-<article class="flex flex-col gap-4 rounded-[28px] bg-[var(--register-card)] p-7">
+<article class="flex flex-col gap-4 rounded-[28px] p-7" style="background-color: var(--register-card);">
 	<Icon name={icon} {tone} size={32} />
 	<span class="eyebrow">{eyebrow}</span>
 	<h3 class="font-display text-[28px] text-[var(--register-text)] leading-[1.05]">{title}</h3>

@@ -16,6 +16,7 @@
 		principles: 'Principles',
 		'trip-planner': 'Trip Planner',
 		'voyager-pay': 'Voyager Pay',
+		'voyager-mcp': 'Voyager MCP',
 		plan: 'Plan a trip',
 		preferences: 'Preferences',
 		docs: 'Docs'
@@ -28,7 +29,7 @@
 		return seg
 			.split('-')
 			.map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-			.join(' | ');
+			.join(' ');
 	}
 
 	function labelFor(seg) {

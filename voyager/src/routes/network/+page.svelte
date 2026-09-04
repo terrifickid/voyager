@@ -3,17 +3,9 @@
 	import SectionHeader from '$lib/components/SectionHeader.svelte';
 	import SplitPanel from '$lib/components/SplitPanel.svelte';
 	import RegisterSection from '$lib/components/RegisterSection.svelte';
-	import SoundSystemStrip from '$lib/components/SoundSystemStrip.svelte';
-	import HeritageLineage from '$lib/components/HeritageLineage.svelte';
 	import nodes from '$lib/data/mostroNodes.json';
 
 	const REFERENCE_NODE = 'voyager-caribbean';
-	const SOUND_SYSTEMS = nodes.map((n) => ({ name: n.name, region: n.region, feePct: n.feePct }));
-	const LINEAGE = [
-		{ label: 'Alpha 2026', note: 'Builder validation · regional input' },
-		{ label: 'Oct 2026', note: 'Five primitives — alpha' },
-		{ label: 'Now', note: 'Open rails · alpha 2026' }
-	];
 
 	function fmtSats(n) {
 		return new Intl.NumberFormat('en-US').format(n);
@@ -146,13 +138,6 @@
 	</div>
 	<div class="mt-8">
 		<Cta variant="secondary" href="/build#economics">Builder economics</Cta>
-	</div>
-</section>
-
-<section class="mx-auto max-w-6xl px-6 pb-20">
-	<SoundSystemStrip register="carnival-poster" eyebrow="Sound systems · Mostro federation" systems={SOUND_SYSTEMS} />
-	<div class="mt-10">
-		<HeritageLineage register="carnival-poster" eyebrow="Platform lineage" stages={LINEAGE} caption="Builder validation → primitives → open rails — the same lineage shape, adapted to software." />
 	</div>
 </section>
 </RegisterSection>

@@ -57,8 +57,8 @@
 											aria-current={active ? 'page' : undefined}
 											class="block text-[15px] leading-snug py-1.5 hover:underline underline-offset-[6px] decoration-[1.5px]"
 											style={active
-												? 'font-weight: 600; color: var(--rasta-gold); text-decoration: underline;'
-												: 'color: var(--register-on-dark-soft);'}
+												? 'font-weight: 600; text-decoration: underline;'
+												: ''}
 										>
 											{lesson.title}
 										</a>
@@ -89,30 +89,25 @@
 	.docs-prose {
 		color: var(--register-on-dark-soft);
 	}
-	.docs-prose :global(*) {
-		color: inherit;
-	}
 	.docs-prose :global(h1) {
 		scroll-margin-top: 5rem;
 		font-family: 'Space Grotesk', system-ui, sans-serif;
-		font-size: clamp(2rem, 4vw + 1rem, 2.75rem);
-		line-height: 1.1;
+		font-size: 2.5rem;
+		line-height: 1.05;
 		font-weight: 600;
 		letter-spacing: -0.02em;
 		color: var(--register-text);
+		margin-top: 1rem;
 	}
 	.docs-prose :global(h2) {
 		scroll-margin-top: 5rem;
 		font-family: 'Space Grotesk', system-ui, sans-serif;
-		font-size: 1.5rem;
+		font-size: 1.375rem;
 		line-height: 1.25;
 		font-weight: 600;
 		letter-spacing: -0.01em;
 		color: var(--register-text);
-		margin-top: 2.5rem;
-	}
-	.docs-prose :global(h2:first-of-type) {
-		margin-top: 1.5rem;
+		margin-top: 2rem;
 	}
 	.docs-prose :global(h3) {
 		scroll-margin-top: 5rem;
@@ -167,7 +162,7 @@
 	}
 	.docs-prose :global(pre) {
 		margin-top: 1.25rem;
-		border-radius: 20px;
+		border-radius: 24px;
 		background: var(--register-card);
 		padding: 1rem 1.25rem;
 		overflow-x: auto;
@@ -175,6 +170,8 @@
 		font-size: 13px;
 		line-height: 1.6;
 		color: var(--register-text);
+		border: 0;
+		box-shadow: none;
 	}
 	.docs-prose :global(pre code) {
 		background: transparent;
@@ -182,6 +179,15 @@
 		border-radius: 0;
 		color: inherit;
 		font-weight: inherit;
+	}
+	.docs-prose :global(a) {
+		color: var(--register-text);
+		text-decoration: underline;
+		text-underline-offset: 3px;
+		text-decoration-thickness: 1.5px;
+	}
+	.docs-prose :global(a:hover) {
+		color: var(--heritage-amber);
 	}
 	.docs-prose :global(table) {
 		margin-top: 1rem;

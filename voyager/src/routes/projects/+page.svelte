@@ -2,15 +2,8 @@
 	import Cta from '$lib/components/Cta.svelte';
 	import SectionHeader from '$lib/components/SectionHeader.svelte';
 	import RegisterSection from '$lib/components/RegisterSection.svelte';
-	import RoadMarchRibbon from '$lib/components/RoadMarchRibbon.svelte';
 	import ProjectFilter from '$lib/components/ProjectFilter.svelte';
 	import projects from '$lib/data/projects.json';
-
-	const ROAD_MARCH = [
-		{ year: '2024', name: 'voyager-concierge alpha', note: 'first trip-planner build' },
-		{ year: '2025', name: 'voyager-pay · spec v0.1', note: 'protocol-shaped, Nostr underneath' },
-		{ year: '2026', name: 'Mostro federation', note: 'JMD, TTD, BBD · XCD rails live' }
-	];
 
 	const CATEGORIES = ['all', 'ai', 'payments', 'marketplace', 'concierge', 'logistics', 'social'];
 </script>
@@ -48,13 +41,5 @@
 <Cta variant="primary" href="/build">Start building</Cta>
 		<Cta variant="secondary" href="/use-cases">See use cases</Cta>
 	</div>
-</section>
-
-<section class="mx-auto max-w-6xl px-6 pt-16 pb-32 border-t border-teal-bright">
-	<RoadMarchRibbon
-		register="carnival-poster"
-		eyebrow="Road march · Voyager showcase lineage"
-		winners={ROAD_MARCH}
-	/>
 </section>
 </RegisterSection>

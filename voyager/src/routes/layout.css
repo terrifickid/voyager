@@ -96,8 +96,11 @@ html, body {
 	--register-eyebrow: var(--muted);
 	--register-accent: var(--lime);
 	--register-accent-ink: var(--lime-ink);
+	--register-accent-hover: #A8D32A;
 	--register-card: var(--bone-100);
 	--register-on-dark-soft: rgba(241, 239, 233, 0.7);
+	--register-hair: rgba(20, 20, 15, 0.08);
+	--register-hair-strong: rgba(20, 20, 15, 0.14);
 }
 
 [data-register='rasta'] {

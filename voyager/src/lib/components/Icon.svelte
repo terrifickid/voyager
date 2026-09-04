@@ -6,10 +6,10 @@
 	let { name, tone = 'violet', class: extra = '', size = 28 } = $props();
 
 	const toneFill = {
-		violet: 'var(--pastel-violet)',
-		coral: 'var(--pastel-coral)',
-		sky: 'var(--pastel-sky)',
-		rose: 'var(--pastel-rose)',
+		violet: 'var(--color-pastel-violet)',
+		coral: 'var(--color-pastel-coral)',
+		sky: 'var(--color-pastel-sky)',
+		rose: 'var(--color-pastel-rose)',
 		ink: 'var(--register-text)',
 		cyan: 'var(--carnival-cyan)',
 		magenta: 'var(--carnival-magenta)',

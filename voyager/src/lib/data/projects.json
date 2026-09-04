@@ -7,5 +7,23 @@
     "href": "/projects/ai",
     "category": "ai",
     "status": "live"
+  },
+  {
+    "slug": "voyager-pay",
+    "code": "voyager-pay",
+    "title": "Voyager Pay",
+    "body": "Open payments protocol. Custody-free, identity-free Lightning rail over signed Nostr events. A federation of Mostro nodes does the market-making.",
+    "href": "/projects/voyager-pay",
+    "category": "payments",
+    "status": "live"
+  },
+  {
+    "slug": "voyager-mcp",
+    "code": "voyager-mcp",
+    "title": "Voyager MCP",
+    "body": "An MCP server so AI can consume the Nostr kind directory. Stateless read lens over the SDK — listings, stalls, ramp quotes, DMs — exposed as MCP resources.",
+    "href": "/projects/voyager-mcp",
+    "category": "marketplace",
+    "status": "live"
   }
 ]
