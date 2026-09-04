@@ -2,9 +2,22 @@
 	import Cta from '$lib/components/Cta.svelte';
 	import SectionHeader from '$lib/components/SectionHeader.svelte';
 	import RegisterSection from '$lib/components/RegisterSection.svelte';
+	import MasCampByline from '$lib/components/MasCampByline.svelte';
 	import useCases from '$lib/data/useCases.json';
 
+	const PRIMITIVE_NOTES = {
+		Identity: 'self-sovereign login',
+		Payments: 'Lightning rail',
+		Ramp: 'federated fiat',
+		Messaging: 'NIP-17 gift wrap',
+		Discovery: 'signed listings'
+	};
+
 	const uc = useCases.find((x) => x.slug === 'uc3');
+	const primitivesInPlay = uc.primitives.map((s) => {
+		const name = s.split(' · ')[1];
+		return { label: name, note: PRIMITIVE_NOTES[name] };
+	});
 </script>
 
 <svelte:head>
@@ -35,15 +48,8 @@
 	</div>
 </section>
 
-<section class="mx-auto max-w-6xl px-6 pb-16">
-	<div class="rounded-[28px] p-8" style="background-color: var(--register-card);">
-		<span class="eyebrow">Primitives in play</span>
-		<ul class="mt-4 flex flex-wrap gap-3">
-			{#each uc.primitives as pr (pr)}
-				<li class="rounded-pill bg-bone-50 px-4 py-2 text-[13px] font-semibold text-ink">{pr}</li>
-			{/each}
-		</ul>
-	</div>
+<section class="mx-auto max-w-6xl px-6 pb-32">
+	<MasCampByline register="carnival-poster" eyebrow="Primitives in play" camps={primitivesInPlay} />
 </section>
 
 <section class="mx-auto max-w-6xl px-6 pb-32">

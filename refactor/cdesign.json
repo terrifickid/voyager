@@ -56,15 +56,15 @@
   "register_taxonomy_discovered": {
     "civic_ocean_register (COR)": "Public-sector / tourism-board / civic body. Navy/teal + warm accent + photographic hero. visitbarbados, caribbeanbeat, socanews.",
     "editorial_discipline_register (EDC)": "Iconic artist / beauty brand. B&W restraint, no CTA, custom-display sans or no display at all, large negative space. bobmarley, rihanna, beyonce, fenty.",
-    "cultural_distinct_register (CDR)": "Contemporary music / diaspora community / carnival. Cultural script lettering, festival-poster aesthetics, handcraft palette, photographic hero with painted/illustration overlay. largeup, koffee, machel, wiadca.",
+    "cultural_distinct_register (CDR)": "Contemporary music / regional community / carnival. Cultural script lettering, festival-poster aesthetics, handcraft palette, photographic hero with painted/illustration overlay. largeup, koffee, machel, wiadca.",
     "platform_extraction_register (PEX) — out-of-class": "Generic CMS / SPA / dynamic-pricing platform. Empty art tiles, anti-patterns, surveillance-theatre, no cultural specificity. spotify, ticketmaster, travelocity."
   },
   "criteria": [
     {
       "id": "C1",
       "name": "Caribbean-cultural anchoring (the unifying class criterion)",
-      "what_it_checks": "The site declares a real cultural commitment somewhere on the surface — community, place, performance, diaspora, history, language — and that declaration is from the inside, not stock imagery imported from outside.",
-      "observable": "At least one of: visible Caribbean place-name or person (not as decoration), local language register in copy, community-association or artist-or-organizer byline (not corporate legal-fine-print), diaspora-coded iconography (carnival regalia, soca/dancehall/calypso framing), brand name that roots in place (not generic travel/CMS). NOT measurable by cultural stock photos alone.",
+      "what_it_checks": "The site declares a real cultural commitment somewhere on the surface — community, place, performance, history, language — and that declaration is from the inside, not stock imagery imported from outside.",
+      "observable": "At least one of: visible Caribbean place-name or person (not as decoration), local language register in copy, community-association or artist-or-organizer byline (not corporate legal-fine-print), community-coded iconography (carnival regalia, soca/dancehall/calypso framing), brand name that roots in place (not generic travel/CMS). NOT measurable by cultural stock photos alone.",
       "weight": 0.16,
       "levels": [
         {
@@ -88,7 +88,7 @@
           "descriptor": "Cultural specificity is absent or only geographic in the URL. Generic SaaS or platform-shell register. (This is the spotify/ticketmaster register.)"
         }
       ],
-      "generation_rule": "Pick ONE anchor element — community name, artist/creator credit, place + practice — and surface it in the hero or footer where a sign-up signal usually lives. Don't say 'we celebrate Caribbean culture' — show who and where and when. Where appropriate, allow vernacular/dialect in nav labels (seanpaul.com's 'Yaad', 'Chunes', 'Pree Dis', 'Dutty Rock' as a register-allowed authentic signal), and where the work has credibility carry it visibly (festival laurels / press strip / 'as seen in' module — a Caribbean-artist social-proof convention).\n\nFor civic/cultural/regional sites, anchor in a Caribbean flag or land signal (specific maroon / ultramarine / gold / sky-blue / magenta-feather), include a named civic body / byline / issue stamp where the work is journalism or governance, and acknowledge diaspora awareness when the register is cross-Atlantic carnival (caribana/Toronto + nottinghill/London pattern — different palettes but same host-city-diaspora remit).",
+      "generation_rule": "Pick ONE anchor element — community name, artist/creator credit, place + practice — and surface it in the hero or footer where a sign-up signal usually lives. Don't say 'we celebrate Caribbean culture' — show who and where and when. Where appropriate, allow vernacular/dialect in nav labels (seanpaul.com's 'Yaad', 'Chunes', 'Pree Dis', 'Dutty Rock' as a register-allowed authentic signal), and where the work has credibility carry it visibly (festival laurels / press strip / 'as seen in' module — a Caribbean-artist social-proof convention).\n\nFor civic/cultural/regional sites, anchor in a Caribbean flag or land signal (specific maroon / ultramarine / gold / sky-blue / magenta-feather), include a named civic body / byline / issue stamp where the work is journalism or governance, and acknowledge regional awareness when the register is cross-Atlantic carnival (caribana/Toronto + nottinghill/London pattern — different palettes but same host-city-carnival remit).",
       "pitfalls": [
         "Stock beach/palm-tree cliche used as the primary Caribbean signal",
         "Generic 'travel' or 'tickets' website with no community or creator visibility",
@@ -99,7 +99,7 @@
         "Substituting a brand-name H1 ('CARICOM' / 'PMO' / 'Soca News' literal wordmark) for a value statement — except for the few cases where the brand-name H1 IS the value statement (e.g. visitbarbados wordmark-as-place-mark)"
       ],
       "evidence": [
-        "wiadcacarnival.org (community-association seal + 'I ❤ NY CARNIVAL' diaspora-coded festival band)",
+        "wiadcacarnival.org (community-association seal + 'I ❤ NY CARNIVAL' community-coded festival band)",
         "koffee (real contemporary artist + listener-shaped hero copy)",
         "largeup (Caribbean music/arts/lifestyle via handwritten-script editorial logo)",
         "bobmarley (named estate/legacy → 'HOPE ROAD LAS VEGAS' as cultural anchor)",
@@ -109,7 +109,7 @@
         "alisonhinds_tourism: 'The Caribbean Queen of Soca' (Bebas Neue blue 34px) — crowns a single Caribbean artist with a regal Caribbean label; tourism + government endorsement + artist reverence crossover the rubric must admit",
         "windies: maroon #660028 + yellow #fbed00 hero with full-bleed cricketer photo — Caribbean flag-palette anchoring done right",
         "caribbeanbeat: byline + issue number + Most Popular Now sidebar + photo credits — editorial credibility decomposed into multiple observable signals",
-        "caribana (Toronto) + nottinghill (London): diaspora-carnival cross-Atlantic with different palettes but a shared host-city-diaspora voice",
+        "caribana (Toronto) + nottinghill (London): carnival cross-Atlantic with different palettes but a shared host-city-carnival voice",
         "visitbarbados: civic-compliance hero as a legitimate one-job-per-screen variant for government-affiliated tourism sites",
         "beenieman_dancehallmag: named bylines (Claude Mills, DancehallMag Team) + dated editorial cards as Caribbean-cultural-anchoring signals beyond the brand itself",
         "ncctt: 'National Carnival Commission of Trinidad and Tobago' — institutional byline as anchoring; publishes ranked competition results (Brass Bacchanal 2026 full points table) as cultural transparency",
@@ -152,14 +152,14 @@
         "Bright-everything (no ground, no discipline, no hierarchy)",
         "SSA-SaaS-blue + orange used as a substitute for commitment",
         "Generic institutional blue/grey chrome where Caribbean palette is missing (pmo_barbados, nottinghill, caricom UN-agency read)",
-        "Using only national-flag tokens (red/gold/black for one site) instead of register-appropriate palette (a culture magazine / civic body / diaspora carnival each have non-flag palettes that are still legitimate)"
+        "Using only national-flag tokens (red/gold/black for one site) instead of register-appropriate palette (a culture magazine / civic body / carnival each have non-flag palettes that are still legitimate)"
       ],
       "evidence": [
         "visitbarbados: navy ground + gold + white = clean civic-ocean register",
         "bobmarley + beyonce + rihanna + fenty: B&W or near-B&W ground with restrained single accent (or none) = editorial register",
         "largeup + koffee: warm cultural-distinct (gold/cream/red-painted + ocean blue + wood) = legitimate third register",
         "Caribbean flag-palette anchors (real hexes from tokens.json): maroon #660028 (windies), ultramarine #0028a7 (alisonhinds_tourism), gold #fbed00 (windies CTA), near-black #0a0a0a for body + maroon nav band",
-        "Magenta H1 #ed177a (caribana) + violet #9e5aff body = diaspora-carnival non-flag palette, register-allowed",
+        "Magenta H1 #ed177a (caribana) + violet #9e5aff body = carnival non-flag palette, register-allowed",
         "Regalia-palette exceptions (white + red logo + charcoal nav band on caribbeanbeat / largeup) = editorial-discipline register, also register-allowed"
       ],
       "v0_1_change": "v0.1's C1 'ocean-teal anchor' and C2 'sunshine + carnival accent' BOTH survive here as parts of one wider criterion: any of the three register palettes is acceptable; the invariant is discipline within a register. This criterion is now register-invariant and harder to game by painting Caribbean-flag colors."
@@ -349,8 +349,8 @@
     {
       "id": "C7",
       "name": "Imagery rooted in real Caribbean people and practice",
-      "what_it_checks": "Imagery depicts specific real Caribbean culture — community, performance, places, lived-in scenes, diaspora gatherings — not stock beach/palm postcard, not posed-generic lifestyle, not 3D abstract mascot art, not platform-gridded generic album art.",
-      "observable": "Photography or illustration depicts identifiable real scenes or people with Caribbean/diaspora context. ZERO obvious stock watermarks, ZERO posed-generic lifestyle, ZERO 3D abstract mascots, ZERO beach-palm-tree postcards as the primary visual, ZERO platform-gridded generic album art.",
+      "what_it_checks": "Imagery depicts specific real Caribbean culture — community, performance, places, lived-in scenes, community gatherings — not stock beach/palm postcard, not posed-generic lifestyle, not 3D abstract mascot art, not platform-gridded generic album art.",
+      "observable": "Photography or illustration depicts identifiable real scenes or people with Caribbean/regional context. ZERO obvious stock watermarks, ZERO posed-generic lifestyle, ZERO 3D abstract mascots, ZERO beach-palm-tree postcards as the primary visual, ZERO platform-gridded generic album art.",
       "weight": 0.08,
       "levels": [
         {
@@ -374,7 +374,7 @@
           "descriptor": "Watermarked stock, 3D abstract mascots, generic art-tile grids, or imagery with no Caribbean context."
         }
       ],
-      "generation_rule": "Use real photography of specific Caribbean/diaspora culture — carnival, live performance, actual ocean/streets, community gatherings. Never stock beach/palm postcard. Never posed-generic lifestyle. Never abstract mascots. Never a generic art-tile grid.",
+      "generation_rule": "Use real photography of specific Caribbean/regional culture — carnival, live performance, actual ocean/streets, community gatherings. Never stock beach/palm postcard. Never posed-generic lifestyle. Never abstract mascots. Never a generic art-tile grid.",
       "pitfalls": [
         "Beach/palm-tree postcard cliche",
         "Watermarked stock",

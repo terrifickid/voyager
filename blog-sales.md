@@ -15,12 +15,12 @@ Back to essays
 How Voyager works, and why the Caribbean benefits from building on it
 ~ 7 min read · by the Voyager team
 
-Voyager is an open toolkit for the region's apps. It gives any developer in the region — or in the diaspora — a single TypeScript surface for identity, payments, fiat on- and off-ramps, private messaging, and discovery, all on top of open protocols. This post walks through how the toolkit is put together, what that means for the people who build with it, and what is live today.
+Voyager is an open toolkit for the region's apps. It gives any developer in the region — wherever they are based — a single TypeScript surface for identity, payments, fiat on- and off-ramps, private messaging, and discovery, all on top of open protocols. This post walks through how the toolkit is put together, what that means for the people who build with it, and what is live today.
 
 1. The opportunity
    Caribbean builders face a familiar problem. The payment and identity stack most apps in the region depend on is foreign-domiciled, and it treats the region as a high-friction catchment. Settlement takes longer. Fees are higher. Eligibility is narrower. Documentation is heavier. The pricing differences are visible. The structural reasons for them are not.
 
-What that means in practice: a developer shipping a marketplace, a booking app, a creator-monetization tool, or a remittance product on a US-domiciled processor pays for the privilege in three ways — transaction fees, compliance overhead, and the ongoing risk that a policy change at the processor can remove their access overnight. For Caribbean use cases — cross-island commerce, regional transport, independent artist admin, diaspora remittances — those costs add up to a product that is harder to ship and harder to keep online.
+What that means in practice: a developer shipping a marketplace, a booking app, a creator-monetization tool, or a remittance product on a US-domiciled processor pays for the privilege in three ways — transaction fees, compliance overhead, and the ongoing risk that a policy change at the processor can remove their access overnight. For Caribbean use cases — cross-island commerce, regional transport, independent artist admin, cross-border remittances — those costs add up to a product that is harder to ship and harder to keep online.
 
 There is a better substrate available. It is open, it is regional, and it does not require permission from any single chokepoint to operate. That substrate is what Voyager packages into a single SDK.
 
@@ -73,9 +73,9 @@ All three apps are open and accessible from the site. The protocol behind them i
 Three concrete first moves.
 
 Read the SDK surface. Identity create, invoice pay, fiat quote, listing create, DM send — five calls, one unified entry point. The friction of evaluation is measured in hours, not weeks.
-Pick a use case you already have. Independent creator monetization, cross-border commerce, concierge booking, regional transport, diaspora coordination. The toolkit already has a slot for the thing you were going to build on a hosted payments platform anyway.
+Pick a use case you already have. Independent creator monetization, cross-border commerce, concierge booking, regional transport, cross-border coordination. The toolkit already has a slot for the thing you were going to build on a hosted payments platform anyway.
 Talk to the alpha team. Caribbean builder teams — one in Jamaica, one in Trinidad — are being selected by use case, not by technical prestige. The selection criterion is whether you have a job to do, not whether you have a credential.
-If you are not a developer: every Caribbean artist, small business, concierge operator, or remittance-sending diaspora resident who adopts a self-sovereign identity this quarter is one more node on the regional mesh — and one more user that the open internet cannot de-platform.
+If you are not a developer: every Caribbean artist, small business, concierge operator, or remittance-sending regional resident who adopts a self-sovereign identity this quarter is one more node on the regional mesh — and one more user that the open internet cannot de-platform.
 
 Voyager is open. The rails are open. The apps are open. The rest is shipping.
 

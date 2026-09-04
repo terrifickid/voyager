@@ -4,16 +4,7 @@
 	import SplitPanel from '$lib/components/SplitPanel.svelte';
 	import UseCaseCard from '$lib/components/UseCaseCard.svelte';
 	import RegisterSection from '$lib/components/RegisterSection.svelte';
-	import MasCampByline from '$lib/components/MasCampByline.svelte';
 	import useCases from '$lib/data/useCases.json';
-
-	const PRIMITIVES = [
-		{ label: 'Identity', note: 'self-sovereign login' },
-		{ label: 'Payments', note: 'Lightning rail' },
-		{ label: 'Ramp', note: 'federated fiat' },
-		{ label: 'Messaging', note: 'NIP-17 gift wrap' },
-		{ label: 'Discovery', note: 'signed listings' }
-	];
 </script>
 
 <svelte:head>
@@ -38,9 +29,6 @@
 		{#each useCases as uc (uc.slug)}
 			<UseCaseCard register="carnival-poster" id={uc.slug} code={uc.code} title={uc.title} body={uc.short} href="/use-cases/{uc.slug}" />
 		{/each}
-	</div>
-	<div class="mt-12">
-		<MasCampByline register="carnival-poster" eyebrow="Five primitives · one SDK" camps={PRIMITIVES} />
 	</div>
 </section>
 

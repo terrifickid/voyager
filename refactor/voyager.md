@@ -1,7 +1,7 @@
 Voyager Platform — v0.1 prototype brief
 Status: working draft (pre-rubric)
 Layer: product/platform doc (uses VOYAGER_PROTOCOL.md as one underlying rail)
-Audience: builders in the Caribbean + diaspora, app integrators, alpha partners, ourselves
+Audience: builders in the Caribbean and abroad, app integrators, alpha partners, ourselves
 
 Companion docs:
 
@@ -21,7 +21,7 @@ Pivots from the v3 protocol-era framing:
 - "Trip planner for tourists" -> "Toolkit for builders serving the Caribbean"
 - "Voyager Pay" -> "Voyager" (platform, no single product surface)
 - Voyager-the-business builds one reference app -> Voyager-the-business operates one rail/SDK set + a couple of showcase apps; everyone else builds their own
-- Implicit audience: end users of our app -> Explicit audience: developers, indie operators, content creators, concierge services, music platforms, regional SMEs, CARICOM-adjacent initiatives, and Caribbean diaspora communities
+- Implicit audience: end users of our app -> Explicit audience: developers, indie operators, content creators, concierge services, music platforms, regional SMEs, CARICOM-adjacent initiatives, and Caribbean regional communities
 
 The underlying rails (Nostr identity, Lightning payments, Mostro federated fiat ramp, NIP-17 encrypted DMs, no-custody throughout, no KYC inside the protocol) remain untouched. They are now presented as **primitives other apps consume**, not as a single end-user product.
 
@@ -29,7 +29,7 @@ The underlying rails (Nostr identity, Lightning payments, Mostro federated fiat 
 
 1. The pitch in one paragraph
 
-Voyager is an open toolkit for the region's applications. It gives any developer in the region (or in the diaspora) a small, well-documented set of primitives — a self-sovereign login (Nostr keypair), a payment rail that works even where Visa/MasterCard don't (Lightning), a federated fiat on/off ramp that doesn't require the developer to be a regulated money services business (Mostro), and a privacy-preserving messaging substrate (NIP-17 gift-wrapped DMs). Builders ship apps on top; end users get a Caribbean-shaped internet that doesn't route through US/EU payment processors and doesn't ask them to leave their own country to participate.
+Voyager is an open toolkit for the region's applications. It gives any developer in the region (wherever they are based) a small, well-documented set of primitives — a self-sovereign login (Nostr keypair), a payment rail that works even where Visa/MasterCard don't (Lightning), a federated fiat on/off ramp that doesn't require the developer to be a regulated money services business (Mostro), and a privacy-preserving messaging substrate (NIP-17 gift-wrapped DMs). Builders ship apps on top; end users get a Caribbean-shaped internet that doesn't route through US/EU payment processors and doesn't ask them to leave their own country to participate.
 
 ---
 
@@ -58,8 +58,8 @@ UC6 — Authentic cultural discovery / Caribbean hub
 UC7 — Booking/matchmaking for venues and independent performers
 "The less the artist knows, the easier it is to take advantage." Indie artists can't find venues; venues can't find reliable indie artists. An app on Voyager can store verifiable reputation (zaps, past-gigs as Nostr events), let venues post open slots, let artists apply, and settle payments atomically — without a CAA-style gatekeeper.
 
-UC8 — Sports, carnival, and diaspora coordination
-West Indies cricket plays as one team; carnivals happen across NYC/London/Toronto. Apps on Voyager can coordinate group bookings, ticket sales, and remittances for the diaspora community with the same primitives — no need to integrate 5 payment processors.
+UC8 — Sports, carnival, and cross-border coordination
+West Indies cricket plays as one team; carnivals happen across NYC/London/Toronto. Apps on Voyager can coordinate group bookings, ticket sales, and remittances for regional communities with the same primitives — no need to integrate 5 payment processors.
 
 ---
 
@@ -167,7 +167,7 @@ Target alpha partners, in priority order:
 
 1. The Barbados-based concierge operation — already an advisor + already has a use case. The concierge demo ships first; their feedback shapes SDK ergonomics.
 2. Two additional Caribbean builder teams TBD — one in Jamaica (music-adjacent), one in Trinidad (commerce-adjacent). Selected by what use case they want to ship, not by technical prestige.
-3. Diaspora developers with Caribbean heritage — distributed globally, often locked out of "US-only" platforms themselves. They become the bridge users.
+3. Caribbean-heritage developers based anywhere — distributed globally, often locked out of "US-only" platforms themselves. They become the bridge users.
 4. CARICOM-adjacent policy/standards conversations — late-stage, only after the alpha apps prove out. Not a v0.1 activity.
 
 Non-goals for v0.1: any kind of national rollout, any kind of token launch, any kind of VC raise.

@@ -66,10 +66,10 @@
 	{
 		"slug": "uc8",
 		"code": "UC8",
-		"title": "Sports, carnival, diaspora coordination",
+		"title": "Sports, carnival, cross-border coordination",
 		"short": "Group bookings, tickets, remittances on the same primitives as everything else.",
-		"what": "West Indies cricket plays as one team; carnivals happen across NYC, London, Toronto. Diaspora coordination is the unspoken use case.",
-		"how": "Apps on Voyager can coordinate group bookings, ticket sales, and remittances for the diaspora community with the same primitives — no need to integrate 5 payment processors.",
+		"what": "West Indies cricket plays as one team; carnivals happen across NYC, London, Toronto. Cross-border coordination is the unspoken use case.",
+		"how": "Apps on Voyager can coordinate group bookings, ticket sales, and remittances for the regional community with the same primitives — no need to integrate 5 payment processors.",
 		"primitives": ["P1 · Identity", "P2 · Payments", "P3 · Ramp", "P4 · Messaging", "P5 · Discovery"]
 	}
 ]

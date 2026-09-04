@@ -138,7 +138,7 @@
 				Ship on the toolkit. We'll help you ship.
 			</h2>
 			<p class="mt-6 max-w-xl mx-auto text-lg" style="color: var(--register-accent-ink); opacity: 0.8">
-				Two Caribbean builder teams TBD — one Jamaica, one Trinidad — selected by what use case they want to ship, not by technical prestige. Diaspora developers welcome.
+				Two Caribbean builder teams TBD — one Jamaica, one Trinidad — selected by what use case they want to ship, not by technical prestige. Remote developers welcome.
 			</p>
 			<div class="mt-8 flex flex-wrap items-center justify-center gap-3">
 				<Cta variant="primary" href="mailto:hello@voyager.example?subject=Alpha%20build" class="bg-ink! text-bone-50! hover:bg-ink-2!">Email the alpha team</Cta>

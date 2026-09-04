@@ -90,7 +90,7 @@ Observable: zero countdowns, "only N left", fake strikethroughs, bait pricing, h
 
 ### C7 — Authentic Caribbean imagery, not tourism cliché (w 0.15)
 
-What: real Caribbean culture (mas, performers, actual ocean/streets, diaspora) — never stock beach postcard, generic lifestyle, or 3D mascots.
+What: real Caribbean culture (mas, performers, actual ocean/streets, community life) — never stock beach postcard, generic lifestyle, or 3D mascots.
 Observable: specific real people/place/performance; no watermarked stock; no posed-generic; no 3D abstracts.
 
 - 4: lived-in, documentary-feeling Caribbean culture in frame

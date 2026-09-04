@@ -119,7 +119,7 @@ These use cases were named by builders during early alpha validation, including 
 
 **UC7 — Venue and performer matchmaking.** "The less the artist knows, the easier it is to take advantage of her." Indie artists cannot find venues; venues cannot find reliable indie artists. An app on Voyager stores verifiable reputation (zaps, past gigs as Nostr events), lets venues post open slots, lets artists apply, and settles payments atomically — without a CAA-style gatekeeper.
 
-**UC8 — Sports, carnival, and diaspora coordination.** West Indies cricket plays as one team; carnivals happen across New York, London, and Toronto. Apps on Voyager coordinate group bookings, ticket sales, and remittances for the diaspora community on the same primitives as everything else, with no need to integrate five payment processors.
+**UC8 — Sports, carnival, and cross-border coordination.** West Indies cricket plays as one team; carnivals happen across New York, London, and Toronto. Apps on Voyager coordinate group bookings, ticket sales, and remittances for the regional community on the same primitives as everything else, with no need to integrate five payment processors.
 
 Each of these is the biosphere lever translated into a Caribbean-shape problem. Each one ratchets the region's EROI against any future imperial actor a small step higher. None of them requires anyone to wait for Voyager-the-business to do anything.
 
@@ -188,7 +188,7 @@ Three concrete first moves:
 2. **Pick a use case you already have.** If you are an artist manager, that is UC1. If you sell across borders, UC2. If you book tours, UC7. The platform already has a named slot for the thing you were going to build on a hosted payments platform anyway.
 3. **Talk to the alpha team.** Two additional Caribbean builder teams — one in Jamaica, one in Trinidad — are being selected by use case, not technical prestige. The selection criterion is whether you have a job to do, not whether you have a credential. [source: VOYAGER_PLATFORM_v0.1.md §7]
 
-If you are not a developer: every Caribbean artist, small business, concierge operator, or remittance-sending diaspora resident who adopts a self-sovereign identity this quarter is one more node that does not depend on a US-domiciled account to exist. That is the ratchet at personal scale. The math compounds either way.
+If you are not a developer: every Caribbean artist, small business, concierge operator, or remittance-sending regional resident who adopts a self-sovereign identity this quarter is one more node that does not depend on a US-domiciled account to exist. That is the ratchet at personal scale. The math compounds either way.
 
 ---
 

@@ -113,7 +113,7 @@
     {
       id: "uc8",
       code: "UC8",
-      title: "Sports, carnival, diaspora coordination",
+      title: "Sports, carnival, cross-border coordination",
       body: "Group bookings, tickets, remittances on the same primitives as everything else.",
       href: "/use-cases/uc8",
     },
@@ -134,14 +134,13 @@
       class="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-3 gap-y-1 px-6 py-2.5 text-[13px] font-medium"
     >
       <span>
-        <span class="font-semibold">Voyager</span> — an open toolkit for the region's
-        apps. Now in alpha.
+        <span class="font-semibold">Voyager</span> — Online now, our project submission for FutureCaribbean Buildathon!
       </span>
       <a
-        href="/build"
+        href="/blog"
         class="inline-flex items-center gap-1 underline underline-offset-2 decoration-[1.5px] font-semibold"
       >
-        Start building
+        Read the Blog
         <span aria-hidden="true" class="text-[1.05em] leading-none">›</span>
       </a>
     </div>

@@ -49,7 +49,7 @@
 		<p><span class="font-display text-[var(--register-text)]">Trip planner for tourists</span> &rarr; <span class="font-display text-[var(--register-text)]">Toolkit for the region's builders.</span></p>
 		<p><span class="font-display text-[var(--register-text)]">Voyager Pay as the product</span> &rarr; <span class="font-display text-[var(--register-text)]">Voyager as the platform.</span> No single product surface.</p>
 		<p><span class="font-display text-[var(--register-text)]">One reference app</span> &rarr; <span class="font-display text-[var(--register-text)]">One rail set + a couple of showcase apps.</span> Builders ship the rest.</p>
-		<p><span class="font-display text-[var(--register-text)]">Implicit end users</span> &rarr; <span class="font-display text-[var(--register-text)]">Explicit regional builders, integrators, creators, concierge operators, SMEs, and diaspora communities.</span></p>
+		<p><span class="font-display text-[var(--register-text)]">Implicit end users</span> &rarr; <span class="font-display text-[var(--register-text)]">Explicit regional builders, integrators, creators, concierge operators, SMEs, and regional communities.</span></p>
 	</div>
 </section>
 
