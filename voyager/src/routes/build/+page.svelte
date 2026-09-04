@@ -2,18 +2,10 @@
 	import Cta from '$lib/components/Cta.svelte';
 	import SectionHeader from '$lib/components/SectionHeader.svelte';
 	import RegisterSection from '$lib/components/RegisterSection.svelte';
-	import HeritageLineage from '$lib/components/HeritageLineage.svelte';
-
-	const LINEAGE = [
-		{ label: 'mento', note: 'pre-reggae · 1950s' },
-		{ label: 'ska', note: '1960s' },
-		{ label: 'rocksteady', note: 'mid 1960s' },
-		{ label: 'reggae', note: 'late 1960s→' }
-	];
 </script>
 
 <svelte:head>
-	<title>Start building — Voyager · Caribbean-first rails</title>
+	<title>Start building — Voyager · open rails</title>
 </svelte:head>
 
 <RegisterSection register="carnival-poster">
@@ -35,7 +27,7 @@
 	<SectionHeader
 		eyebrow="// the SDK"
 		title="Get started in five lines."
-		lede="A Stripe-shaped surface, Nostr underneath. The SDK hides the keys, the wire format, the relay fan-out — and an in-browser AI agent that runs across all five primitives."
+		lede="A unified surface, Nostr underneath. The SDK hides the keys, the wire format, the relay fan-out — and an in-browser AI agent that runs across all five primitives."
 	/>
 	<div class="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-[1.2fr_1fr] lg:items-start">
 		<figure class="rounded-[24px] bg-[var(--register-ground)] border border-[var(--register-hair)] overflow-hidden">
@@ -72,7 +64,7 @@
 	<div class="grid grid-cols-1 lg:grid-cols-2 rounded-[28px] overflow-hidden">
 		<div class="p-8 sm:p-12 flex flex-col gap-5 bg-[var(--register-ground)]">
 			<span class="eyebrow">// the SDK</span>
-			<h2 class="font-display text-[36px] sm:text-[44px] leading-[1.05] max-w-md text-[var(--register-text)]">Stripe-shaped surface.</h2>
+			<h2 class="font-display text-[36px] sm:text-[44px] leading-[1.05] max-w-md text-[var(--register-text)]">Unified surface.</h2>
 			<p class="text-[15px] leading-relaxed text-[var(--register-muted)] max-w-md">A handful of well-named calls. The SDK hides the keys, the wire format, and the relay fan-out. MIT or Apache. No telemetry. No required attribution.</p>
 		</div>
 		<div class="p-8 sm:p-12 flex flex-col gap-5" style="background-color: var(--register-accent); color: var(--register-accent-ink);">
@@ -155,11 +147,4 @@
 		</div>
 	</section>
 
-<section class="mx-auto max-w-6xl px-6 pb-32">
-	<HeritageLineage
-		eyebrow="We ship what we build — a Caribbean sequence"
-		stages={LINEAGE}
-		caption="mento → ska → rocksteady → reggae. Each one built on the last, not against it. Voyager builds on the same sequence."
-	/>
-</section>
 </RegisterSection>

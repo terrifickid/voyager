@@ -13,7 +13,7 @@
 </script>
 
 <svelte:head>
-	<title>Voyager Pay — Open payments for Caribbean-first apps</title>
+	<title>Voyager Pay — Open payments for the region's apps</title>
 </svelte:head>
 
 <RegisterSection register="carnival-poster">

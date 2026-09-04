@@ -44,8 +44,7 @@
 		{
 			title: 'PROJECTS/',
 			links: [
-				{ label: 'Trip Planner', href: '/projects/trip-planner' },
-				{ label: 'Voyager Pay', href: '/projects/voyager-pay' },
+				{ label: 'Voyager AI', href: '/projects/ai' },
 				{ label: 'All projects', href: '/projects' }
 			]
 		},
@@ -83,7 +82,7 @@
 			<div class="flex flex-col gap-5">
 				<a href="/" class="site-footer__wordmark font-display text-2xl">Voyager</a>
 				<p class="site-footer__lede max-w-xs text-[15px] leading-relaxed">
-					An open toolkit for building Caribbean-first apps. Five primitives, one SDK, no platform in the middle.
+					An open toolkit for the region's apps. Five primitives, one SDK, no platform in the middle.
 				</p>
 				<div class="flex items-center gap-2">
 					<button

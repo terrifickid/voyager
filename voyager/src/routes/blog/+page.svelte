@@ -36,7 +36,7 @@
 	<div class="blog-body flex flex-col gap-6 text-[17px] leading-[1.7]" style="color: var(--register-text);">
 
 		<p>
-			Voyager is an open toolkit for building Caribbean-first apps. The reason it is well-suited to the region is not a feature list — it is the architecture. This post walks through the three security principles the substrate follows, where they came from, and what they mean for the apps you ship on them.
+			Voyager is an open toolkit for the region's apps. The reason it is well-suited to the region is not a feature list — it is the architecture. This post walks through the three security principles the substrate follows, where they came from, and what they mean for the apps you ship on them.
 		</p>
 
 		<h2 id="principle" class="font-display text-[28px] sm:text-[36px] mt-8 mb-2 leading-[1.1]">
@@ -92,7 +92,7 @@
 		</h2>
 
 		<p>
-			Voyager is one Stripe-shaped SDK, plus five primitives that sit underneath it.
+			Voyager is one unified SDK, plus five primitives that sit underneath it.
 		</p>
 
 		<ul class="list-disc pl-6 flex flex-col gap-2">

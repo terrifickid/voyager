@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-	<title>For vendors — Voyager · Caribbean-first marketplace</title>
+	<title>For vendors — Voyager · marketplace</title>
 </svelte:head>
 
 <!-- Hero -->

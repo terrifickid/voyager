@@ -104,7 +104,7 @@ final CTA band already does closing work).
 - **Left (night-900)**: stat `5 + 1` / `PRIMITIVES · 1 SDK`. Title `Five
   primitives. One SDK.` Body: "Each primitive solves one job. The SDK
   wires them together — identity, payment, ramp, messaging, discovery
-  behind one Stripe-shaped surface."
+  behind one unified surface."
 - **Right (bone-100)**: eyebrow `// why these five`. Title `What we left
   out, and why.` Body: "We did not pick a chat protocol, a streaming
   layer, or a CDN. Builders ship those on top. The five primitives
@@ -118,9 +118,8 @@ final CTA band already does closing work).
   eight products.` Body: "Each use case is something a builder would
   ship, not something Voyager runs. The platform makes them possible;
   the apps are yours."
-- **Right (bone-100)**: eyebrow `// methodology`. Title `From the Sep 2
-  advisory call.` Body: "These are the jobs Caribbean builders named in
-  the Sep 2 2026 call with Shontelle Layne. Each one is a target for
+- **Right (bone-100)**: eyebrow `// methodology`. Title `From early builder validation.` Body: "These are the jobs builders identified for
+  the toolkit. Each one is a target for
   some app a builder ships on Voyager — the list is what the platform
   should make easy, not what Voyager builds."
 
@@ -139,7 +138,7 @@ final CTA band already does closing work).
 ### 4. `/build` — between SDK get-started and economics
 
 - **Theme**: `left-dark`.
-- **Left (night-900)**: eyebrow `// the SDK`. Title `Stripe-shaped
+- **Left (night-900)**: eyebrow `// the SDK`. Title `Unified
   surface.` Body: "A handful of well-named calls. The SDK hides the
   keys, the wire format, and the relay fan-out. MIT or Apache. No
   telemetry. No required attribution."

@@ -42,7 +42,7 @@
 		"title": "Island-hopping logistics",
 		"short": "Regional transport booking and payment on the same primitives as everything else.",
 		"what": "Cheaper to fly Barbados → LA than Barbados → Trinidad. No ferry system. Inter-island logistics is a known gap.",
-		"how": "Apps on Voyager might integrate regional transport booking and payment. The protocol doesn't need to know about boats, but the toolkit's payment and identity primitives make a transport app 10x easier to ship than starting from Stripe.",
+		"how": "Apps on Voyager might integrate regional transport booking and payment. The protocol doesn't need to know about boats, but the toolkit's payment and identity primitives make a transport app 10x easier to ship than starting from a hosted payments stack.",
 		"primitives": ["P1 · Identity", "P2 · Payments", "P5 · Discovery"]
 	},
 	{

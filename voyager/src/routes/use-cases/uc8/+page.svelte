@@ -15,7 +15,7 @@
 </script>
 
 <svelte:head>
-	<title>{uc.code} · {uc.title} — Voyager · Caribbean-first</title>
+	<title>{uc.code} · {uc.title} — Voyager · open toolkit</title>
 </svelte:head>
 
 <RegisterSection register="carnival-poster">

@@ -11,17 +11,17 @@
 		{ label: 'Builders ship the apps', href: '#' },
 		{ label: 'The protocol is the product', href: '#' },
 		{ label: 'Capture-resistant by design', href: '#' },
-		{ label: 'Caribbean rails first', href: '#' }
+		{ label: 'Open rails', href: '#' }
 	];
 	const LINEAGE = [
-		{ label: 'Sep 2 2026', note: 'Advisory call · Shontelle Layne' },
+		{ label: 'Alpha 2026', note: 'Builder validation · regional input' },
 		{ label: 'Oct 2026', note: 'Five primitives — alpha' },
-		{ label: 'Now', note: 'Open rails · Caribbean-first' }
+		{ label: 'Now', note: 'Open rails · alpha 2026' }
 	];
 </script>
 
 <svelte:head>
-	<title>Principles — Voyager · Caribbean-first</title>
+	<title>Principles — Voyager · open rails</title>
 </svelte:head>
 
 <RegisterSection register="carnival-poster">
@@ -43,13 +43,13 @@
 	<SectionHeader
 		eyebrow="// what changed"
 		title="From a trip planner to a toolkit."
-		lede="The Sep 2 2026 advisory call made it clear: the value isn't in the trip planner. The trip planner was the means to build the rails. The rails are now built."
+		lede="Early alpha validation made it clear: the value isn't in the trip planner. The trip planner was the means to build the rails. The rails are now built."
 	/>
 	<div class="mt-10 flex flex-col gap-6 rounded-[28px] bg-[var(--register-card)] p-8 text-lg leading-relaxed text-[var(--register-muted)]">
-		<p><span class="font-display text-[var(--register-text)]">Trip planner for tourists</span> &rarr; <span class="font-display text-[var(--register-text)]">Toolkit for builders serving the Caribbean.</span></p>
+		<p><span class="font-display text-[var(--register-text)]">Trip planner for tourists</span> &rarr; <span class="font-display text-[var(--register-text)]">Toolkit for the region's builders.</span></p>
 		<p><span class="font-display text-[var(--register-text)]">Voyager Pay as the product</span> &rarr; <span class="font-display text-[var(--register-text)]">Voyager as the platform.</span> No single product surface.</p>
 		<p><span class="font-display text-[var(--register-text)]">One reference app</span> &rarr; <span class="font-display text-[var(--register-text)]">One rail set + a couple of showcase apps.</span> Builders ship the rest.</p>
-		<p><span class="font-display text-[var(--register-text)]">Implicit end users</span> &rarr; <span class="font-display text-[var(--register-text)]">Explicit Caribbean builders, integrators, creators, concierge operators, regional SMEs, CARICOM-adjacent initiatives, and diaspora communities.</span></p>
+		<p><span class="font-display text-[var(--register-text)]">Implicit end users</span> &rarr; <span class="font-display text-[var(--register-text)]">Explicit regional builders, integrators, creators, concierge operators, SMEs, and diaspora communities.</span></p>
 	</div>
 </section>
 
@@ -133,11 +133,11 @@
 	/>
 	<ol class="mt-10 flex flex-col gap-4">
 		{#each [
-			{ n: 1, t: 'SDK ergonomics', b: 'If builders find it easier than Stripe, they stay. If they don\'t, they leave. v0.1 priority.' },
+			{ n: 1, t: 'SDK ergonomics', b: 'If builders find it easier than the alternatives, they stay. If they don\'t, they leave. v0.1 priority.' },
 			{ n: 2, t: 'More ramp operators', b: 'The fiat ramp is a federation. Voyager operates one; community operators bring redundancy and reputation.' },
 			{ n: 3, t: 'Builder guidance', b: 'Regulatory checklists, reference architectures, the alpha program. Builders shouldn\'t learn alone.' },
 			{ n: 4, t: 'Independent indexers', b: 'Capture risk at the platform layer is real. Seeding parallel indexers early keeps discovery plural.' },
-			{ n: 5, t: 'Cultural authenticity', b: 'A platform designed in Texas for Caribbean builders is going to miss things. The advisory call is the start.' }
+			{ n: 5, t: 'Cultural authenticity', b: 'A platform designed in Texas for the region\'s builders is going to miss things. Builder validation is the start.' }
 		] as item (item.n)}
 			<li class="flex gap-5 rounded-[28px] bg-[var(--register-card)] p-6">
 				<span class="font-display text-2xl text-[var(--register-text)] leading-none">{item.n}</span>
@@ -161,7 +161,7 @@
 		{#each [
 			'Should voyager-stage ship in v0.1, or wait for voyager-concierge to land? Concierge first is the conservative call.',
 			'Do we want a hosted indexer at all, or do we let apps run their own relay subscriptions? Hosted indexer helps builder velocity; it gives us leverage we shouldn\'t want.',
-			'What\'s the smallest viable "Caribbean hub" social surface we\'d ship as a third showcase app? Probably none in v0.1; flag for v0.2.',
+			'What\'s the smallest viable regional-hub social surface we\'d ship as a third showcase app? Probably none in v0.1; flag for v0.2.',
 			'Should the SDK ship in TypeScript, Python, and Go from day one, or just TS? TS only for v0.1; others when there\'s demand.'
 		] as q, i (i)}
 			<li class="rounded-[24px] bg-[var(--register-card)] p-6 text-[15px] leading-relaxed text-[var(--register-muted)]">
@@ -183,7 +183,7 @@
 		register="carnival-poster"
 		eyebrow="Platform lineage — same shape as the music"
 		stages={LINEAGE}
-		caption="Sep 2 advisory call → five primitives → open rails. A lineage from prior art, not nostalgia."
+		caption="Builder validation → five primitives → open rails. A lineage from prior art, not nostalgia."
 	/>
 </section>
 </RegisterSection>

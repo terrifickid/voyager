@@ -14,7 +14,7 @@ Companion docs:
 
 0. What changed and why
 
-Earlier Voyager work targeted a single end-user surface — a travel concierge / trip-planner built on top of Lightning rails. The Sep 2 2026 advisory call with Shontelle Layne (Barbados-based artist and music-industry operator) and parallel reads of Caribbean creator pain points made it clear that the value is not in the trip-planner. The trip-planner was a vehicle to get the rails built, and the rails are now built. What the Caribbean actually needs is a toolkit other people can build on.
+Earlier Voyager work targeted a single end-user surface — a travel concierge / trip-planner built on top of Lightning rails. Early alpha validation and parallel reads of regional creator pain points made it clear that the value is not in the trip-planner. The trip-planner was a vehicle to get the rails built, and the rails are now built. What the region actually needs is a toolkit other people can build on.
 
 Pivots from the v3 protocol-era framing:
 
@@ -29,13 +29,13 @@ The underlying rails (Nostr identity, Lightning payments, Mostro federated fiat 
 
 1. The pitch in one paragraph
 
-Voyager is an open toolkit for building Caribbean-first applications. It gives any developer in the region (or in the diaspora) a small, well-documented set of primitives — a self-sovereign login (Nostr keypair), a payment rail that works even where Visa/MasterCard don't (Lightning), a federated fiat on/off ramp that doesn't require the developer to be a regulated money services business (Mostro), and a privacy-preserving messaging substrate (NIP-17 gift-wrapped DMs). Builders ship apps on top; end users get a Caribbean-shaped internet that doesn't route through US/EU payment processors and doesn't ask them to leave their own country to participate.
+Voyager is an open toolkit for the region's applications. It gives any developer in the region (or in the diaspora) a small, well-documented set of primitives — a self-sovereign login (Nostr keypair), a payment rail that works even where Visa/MasterCard don't (Lightning), a federated fiat on/off ramp that doesn't require the developer to be a regulated money services business (Mostro), and a privacy-preserving messaging substrate (NIP-17 gift-wrapped DMs). Builders ship apps on top; end users get a Caribbean-shaped internet that doesn't route through US/EU payment processors and doesn't ask them to leave their own country to participate.
 
 ---
 
-2. Use cases Shontelle named (Caribbean ground truth)
+2. Use cases from early alpha validation (regional ground truth)
 
-These are the jobs-to-be-done surfaced by the Sep 2 advisory call. Each is a target use case for some app a builder would ship on Voyager; the list below is the set Voyager-the-platform should make easy.
+These are the jobs-to-be-done surfaced by early alpha validation. Each is a target use case for some app a builder would ship on Voyager; the list below is the set Voyager-the-platform should make easy.
 
 UC1 — Independent artist admin & payments
 Indie Caribbean artists are paid microscopic per-stream royalties by global DSPs, can't afford a manager or label, and have no good tool for: tour planning, door-sales splits, merch, contracts, IP/publishing rights, gig booking. An app on Voyager lets an artist receive payment in sats (or local fiat via a Mostro ramp), get booked by venues, and store contracts — all without giving up their identity or paying 0.003¢ per stream.
@@ -50,7 +50,7 @@ UC4 — Content monetization for region-locked creators
 Caribbean creators get monetized on YouTube/Reels/TikTok only if they have a US bank. An app on Voyager lets a creator receive sats directly (Lightning), optionally convert to local fiat (JMD/TTD/BBD/XCD/GYD/HTG/BSD via Mostro), and access a payment channel that doesn't require a US bank account.
 
 UC5 — Island-hopping logistics
-Cheaper to fly Barbados→LA than Barbados→Trinidad. No ferry system. Apps on Voyager (eventually) might integrate regional transport booking + payment — the protocol doesn't need to know about boats, but the toolkit's payment and identity primitives make a transport app 10x easier to ship than starting from Stripe.
+Cheaper to fly Barbados→LA than Barbados→Trinidad. No ferry system. Apps on Voyager (eventually) might integrate regional transport booking + payment — the protocol doesn't need to know about boats, but the toolkit's payment and identity primitives make a transport app 10x easier to ship than starting from a hosted payments stack.
 
 UC6 — Authentic cultural discovery / Caribbean hub
 "There is no place online where Caribbean people just hang out and don't have to explain themselves." This is not a payment problem; it's an identity + discovery problem. Voyager's Nostr-keypair login + relay-set gives any builder a turnkey way to make a Caribbean-keyed community surface (timeline, group chat, marketplace) without rebuilding identity.
@@ -148,14 +148,14 @@ What we cannot sustainably charge for, and won't try to:
 
 6. EROI: how the platform defends its builders
 
-This is the part that justifies the platform framing rather than the trip-planner framing. Every Caribbean app that ships today inherits the structural weakness of its host (Stripe won't serve them, US bank required, US-only KYC, etc.). Every Caribbean app that ships on Voyager inherits the protocol's defense profile (F=3, O=3, B=3 — see VOYAGER_PROTOCOL.md §11).
+This is the part that justifies the platform framing rather than the trip-planner framing. Every Caribbean app that ships today inherits the structural weakness of its host (hosted card processors won't serve them, US bank required, US-only KYC, etc.). Every Caribbean app that ships on Voyager inherits the protocol's defense profile (F=3, O=3, B=3 — see VOYAGER_PROTOCOL.md §11).
 
 That's the offer: ship an app on Voyager and you inherit a system where:
 
 - A tax authority or hostile acquirer cannot seize your user base (no platform-account; users hold their own keys)
 - A payment processor can't de-platform you (no payment-processor dependency at all)
 - A single subpoena can't enumerate your users (NIP-17 DMs; no central inbox)
-- A regional regulator can't categorise your marketplace the way it would a Stripe-connected one (no category fits; you're closer to email + cash than to a marketplace)
+- A regional regulator can't categorise your marketplace the way it would a card-network-connected one (no category fits; you're closer to email + cash than to a marketplace)
 
 Scoring is in VOYAGER_PLATFORM_v0.1_rubric.md.
 
@@ -165,7 +165,7 @@ Scoring is in VOYAGER_PLATFORM_v0.1_rubric.md.
 
 Target alpha partners, in priority order:
 
-1. Shontelle Layne + Lily's concierge operation (Barbados) — already an advisor + already has a use case. The concierge demo ships first; their feedback shapes SDK ergonomics.
+1. The Barbados-based concierge operation — already an advisor + already has a use case. The concierge demo ships first; their feedback shapes SDK ergonomics.
 2. Two additional Caribbean builder teams TBD — one in Jamaica (music-adjacent), one in Trinidad (commerce-adjacent). Selected by what use case they want to ship, not by technical prestige.
 3. Diaspora developers with Caribbean heritage — distributed globally, often locked out of "US-only" platforms themselves. They become the bridge users.
 4. CARICOM-adjacent policy/standards conversations — late-stage, only after the alpha apps prove out. Not a v0.1 activity.
@@ -177,7 +177,7 @@ Non-goals for v0.1: any kind of national rollout, any kind of token launch, any 
 8. Risks and what's still open
 
 R1. SDK ergonomics vs. crypto-native developer
-Nostr + Lightning + NWC are well-documented but unfamiliar to most Caribbean app developers. SDK has to hide the keys completely and present a Stripe-shaped surface. If we can't get there in v0.1, builders will go back to Stripe (where they can serve, sometimes) or Flutterwave (where they often can't serve Caribbean).
+Nostr + Lightning + NWC are well-documented but unfamiliar to most Caribbean app developers. SDK has to hide the keys completely and present a unified surface. If we can't get there in v0.1, builders will go back to a hosted payments provider (where they can serve, sometimes) or Flutterwave (where they often can't serve Caribbean).
 
 R2. Mostro node operator density
 The fiat ramp only works if there are Mostro nodes reachable in Caribbean-relevant currencies. Voyager-the-business can run one; we need community nodes for redundancy and reputation. If community nodes don't appear, the ramp is a single point of failure.
@@ -189,7 +189,7 @@ R4. Capture risk at the platform layer
 Voyager-the-business still hosts the indexer, the docs site, the SDK repo, and the reference node. If we get acquired, those are capturable. The protocol survives; the showcase apps survive; but builder discoverability (indexer) and fiat ramp density (reference node) would degrade. This is a real risk; mitigation is to seed independent indexers and independent Mostro node operators early, so the platform layer is never the only one.
 
 R5. Cultural-authenticity gap
-A platform designed in Marfa, Texas for Caribbean builders is going to miss things. The advisory call is the start, not the end. v0.1 ships only after at least one Caribbean builder team has used the SDK to ship something we'd be willing to show a stranger.
+A platform designed in Marfa, Texas for Caribbean builders is going to miss things. Builder validation is the start, not the end. v0.1 ships only after at least one Caribbean builder team has used the SDK to ship something we'd be willing to show a stranger.
 
 ---
 

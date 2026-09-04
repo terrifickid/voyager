@@ -63,7 +63,6 @@ Run from `voyager/`:
 ## Out of scope
 
 - Editing `package.json`, `vite.config.js`, or any source code.
-- Caribbean-first → "Open toolkit (no regional prefix)" copy edit (separate plan).
 - If `[PLUGIN_TIMINGS]` still prints after the clean build: next move is `rolldownOptions.input.checks.pluginTimings = false`. Not part of this plan.
 
 ## Validation

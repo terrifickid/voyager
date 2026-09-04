@@ -89,7 +89,7 @@
 </script>
 
 <svelte:head>
-  <title>Plan a trip — Voyager · Caribbean-first</title>
+  <title>Plan a trip — Voyager · open toolkit</title>
 </svelte:head>
 
 <RegisterSection register="carnival-poster">

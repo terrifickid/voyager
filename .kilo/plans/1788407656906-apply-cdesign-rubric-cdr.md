@@ -3,7 +3,7 @@
 ## Goal
 
 Apply the `refactor/cdesign.json` rubric **heavily** to the existing Voyager site so
-every page reads as heavily authentic Caribbean web design — not "Caribbean-first
+every page reads as heavily authentic Caribbean web design — not "open-rails
 in copy, generic-SaaS in chrome." Each page commits to a single register family
 (picked from a closed set) and the page's main color matches its register. Sections
 within a page may shift register as long as each section commits to one.
@@ -80,7 +80,7 @@ total. Each page picks a primary; sections may opt into a different one.
 
 | Route | Primary register | Why |
 |---|---|---|
-| `/` | `editorial` | Bob-Marley-style restraint as the brand's "Caribbean-first declaration." Black/white hero on bone. Loud accent only on a single band (SplitPanel goes rasta or carnival). |
+| `/` | `editorial` | Bob-Marley-style restraint as the brand's "open-rails declaration." Black/white hero on bone. Loud accent only on a single band (SplitPanel goes rasta or carnival). |
 | `/stack` | `civic-ocean` | Builder-trust surface — keep the navy/lime. |
 | `/stack/identity`, `/payments`, `/ramp`, `/messaging`, `/discovery` | `civic-ocean` (each) | Same; navy/lime. Optionally one section per page may slip into `editorial` for a "deep dive" band. |
 | `/projects` | `carnival-poster` | Showcases — magenta/cyan/gold register fits the "Apps shipped on the toolkit" frame. |
@@ -100,10 +100,9 @@ page max; the rest of the page stays in the primary.
 
 This is the rubric's spec translated into per-file changes.
 
-**C1 — Caribbean-cultural anchoring.** Add visible byline: a "Voyager advisory
-call" line, "Sep 2 2026 call with Shontelle Layne" where already cited, and
+**C1 — Caribbean-cultural anchoring.** Add visible byline: a "Voyager early builder validation" line, "early builder validation" where already cited, and
 where missing add an eyebrow line naming a real community signal (e.g.
-"// caribbean-first · alpha 2026"). Hero gets a Caribbean place-name in
+"// open-rails · alpha 2026"). Hero gets a Caribbean place-name in
 type-led composition. Each route's `<title>` gets a "Caribbean" cue where
 appropriate.
 
@@ -137,8 +136,8 @@ criterion across the board. Acceptable trade-off — the rubric is honest about
 this in the plan. The C7 evidence requirement is partially met by:
 - SVG illustrations of carnival-poster geometry, ribbon strips, sound-system
   stacks, mas-camp tent shapes (inline SVG components).
-- Bylines naming real Caribbean figures where they appear in copy (Shontelle
-  Layne, Mostro operators, the advisory-call participants).
+- Bylines naming real Caribbean figures where they appear in copy (Mostro
+  operators, the advisory-call participants).
 - Verbs / register in copy ("playing mas", "lime", "forward", "big up",
   "pree", "yaad", "chunes", "dutty rock") with no photographic reliance.
 
@@ -171,8 +170,7 @@ language, not decoration.
 **C13 — Lover's rock / ska / rocksteady / mento heritage display.** Heritage-
 sepia register on `/build` carries this. Add a heritage register line:
 "Built on a sequence: mento → ska → rocksteady → reggae" on `/build` or
-`/principles`, with explicit lineage not nostalgia. The "Sep 2 advisory call"
-is the equivalent: a real event with a real lineage from the prior art.
+`/principles`, with explicit lineage not nostalgia. The "early builder validation" phase is the equivalent: a real event with a real lineage from the prior art.
 
 ## Imagery without photography — concrete substitutes
 
@@ -226,7 +224,7 @@ In `voyager/src/lib/components/`:
   "Forward. / We ship the rails."
 - `/principles` — wrap in `rasta`. Add `<MasCampByline>` listing the
   "principles" as mas-camp bylines (as a metaphor). Add a `<HeritageLineage>`
-  for the platform's own lineage (advisory call → toolkit).
+  for the platform's own lineage (early builder validation → toolkit).
 - `/build` — wrap in `heritage-sepia`. Add `<HeritageLineage>` for the
   mento → ska → rocksteady → reggae sequence, plus a "we ship what we
   build" cadence at the bottom.

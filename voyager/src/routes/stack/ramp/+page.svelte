@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head>
-	<title>{p.title} — Voyager Stack · Caribbean-first</title>
+	<title>{p.title} — Voyager Stack · open toolkit</title>
 </svelte:head>
 
 <RegisterSection register="carnival-poster">

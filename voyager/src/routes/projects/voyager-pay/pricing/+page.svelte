@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-	<title>Fair pricing — Voyager Pay · Caribbean-first</title>
+	<title>Fair pricing — Voyager Pay · open rails</title>
 </svelte:head>
 
 <!-- Hero -->

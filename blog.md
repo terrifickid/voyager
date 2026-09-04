@@ -48,11 +48,11 @@ That is the abstract argument. Now translate it.
 
 A Caribbean payment stack today is concentrated. It runs through Visa and Mastercard, settles through correspondent US bank accounts, and is gated by a handful of US-domiciled payment processors. The "fuel" — your money, your identity, your reputation, your contract — sits in a small number of high-density nodes a regulator can reach with one subpoena and a processor can seize with a policy change. The standing army of compliance is funded by your transaction fees. The EROI of the imperial machine against you, the Caribbean builder, is well above one.
 
-What does "scattering the granary" look like for a Caribbean-first internet?
+What does "scattering the granary" look like for an open-rails internet?
 
 | Imperial lever              | Biosphere version                  | Caribbean-Voyager version                                        |
 | --------------------------- | ---------------------------------- | ---------------------------------------------------------------- |
-| Concentrated grain          | Annual monoculture + central silo  | Stripe / US bank + card network                                  |
+| Concentrated grain          | Annual monoculture + central silo  | Card network / US bank                                           |
 | Distributed food            | Perennial polyculture              | Self-sovereign Nostr identity (P1)                               |
 | Centralized irrigation dam  | Single dam / canal                 | US-domiciled processor KYC + AML                                 |
 | Decentralized water capture | Ponds, swales, soil organic matter | Federated fiat ramp — many Mostro nodes competing (P3)           |
@@ -95,7 +95,7 @@ The Voyager protocol scores its own structural defense on three dimensions, each
 
 The aggregate target is "≥2 across all three." Voyager is at 3,3,3. The protocol survives without Voyager-the-business. The showcase apps survive without Voyager-the-business. Only the indexer and the reference Mostro node are capturable as Voyager-the-business assets, and both are explicitly seeded for independent operation from the start. [source: VOYAGER_PLATFORM_v0.1.md §6, R4]
 
-What that score buys a builder is this: any Caribbean app that ships today inherits the structural weakness of its host. A marketplace built on Stripe inherits Stripe's terms-of-service risk, Stripe's de-platforming risk, and Stripe's regulatory exposure. A marketplace built on Voyager inherits Voyager's defense profile. A tax authority cannot seize your user base because there is no platform-account to seize. A payment processor cannot de-platform you because there is no payment-processor dependency. A single subpoena cannot enumerate your users because NIP-17 DMs are end-to-end encrypted and there is no central inbox. A regional regulator cannot categorize your marketplace the way it would a Stripe-connected one, because you are closer to email-and-cash than to a marketplace. [source: VOYAGER_PLATFORM_v0.1.md §6]
+What that score buys a builder is this: any Caribbean app that ships today inherits the structural weakness of its host. A marketplace built on a hosted payments platform inherits the host's terms-of-service risk, de-platforming risk, and regulatory exposure. A marketplace built on Voyager inherits Voyager's defense profile. A tax authority cannot seize your user base because there is no platform-account to seize. A payment processor cannot de-platform you because there is no payment-processor dependency. A single subpoena cannot enumerate your users because NIP-17 DMs are end-to-end encrypted and there is no central inbox. A regional regulator cannot categorize your marketplace the way it would a card-network-connected one, because you are closer to email-and-cash than to a marketplace. [source: VOYAGER_PLATFORM_v0.1.md §6]
 
 This is what "inherit the protocol's defense profile" means in practice. You ship an app on Voyager and your EROI against any future imperial actor is structurally improved.
 
@@ -103,7 +103,7 @@ This is what "inherit the protocol's defense profile" means in practice. You shi
 
 ## 6. The eight jobs the toolkit already makes easier
 
-These use cases were named by Caribbean builders on the September 2 2026 advisory call, including a Barbados-based artist and music-industry operator. Each one is a real job the regional economy cannot currently do well. Each one becomes buildable on Voyager. [source: VOYAGER_PLATFORM_v0.1.md §2; live site Use Cases section]
+These use cases were named by builders during early alpha validation, including a Barbados-based artist and music-industry operator. Each one is a real job the regional economy cannot currently do well. Each one becomes buildable on Voyager. [source: VOYAGER_PLATFORM_v0.1.md §2; live site Use Cases section]
 
 **UC1 — Independent artist admin and payments.** Indie Caribbean artists are paid microscopic per-stream royalties by global DSPs, cannot afford a manager or label, and have no good tool for tour planning, door-sales splits, merch, contracts, IP/publishing rights, or gig booking. An app on Voyager lets an artist receive payment in sats, get booked by venues, and store contracts — without giving up their identity or paying fractions of a cent per stream.
 
@@ -113,7 +113,7 @@ These use cases were named by Caribbean builders on the September 2 2026 advisor
 
 **UC4 — Creator monetization without a US bank.** Caribbean creators get monetized on YouTube, Reels, and TikTok only if they have a US bank. An app on Voyager lets a creator receive sats directly, optionally convert to local fiat (JMD, TTD, BBD, XCD, GYD, HTG, BSD) via Mostro, and access a payment channel that does not require a US bank account.
 
-**UC5 — Island-hopping logistics.** It is cheaper to fly Barbados to Los Angeles than Barbados to Trinidad. There is no regional ferry system. An app on Voyager integrates regional transport booking and payment on the same primitives as everything else. The protocol does not need to know about boats; the toolkit's payment and identity primitives make a transport app an order of magnitude easier to ship than starting from Stripe.
+**UC5 — Island-hopping logistics.** It is cheaper to fly Barbados to Los Angeles than Barbados to Trinidad. There is no regional ferry system. An app on Voyager integrates regional transport booking and payment on the same primitives as everything else. The protocol does not need to know about boats; the toolkit's payment and identity primitives make a transport app an order of magnitude easier to ship than starting from a hosted payments stack.
 
 **UC6 — Cultural discovery and Caribbean hub.** "There is no place online where Caribbean people just hang out and do not have to explain themselves." This is not a payment problem; it is an identity and discovery problem. Voyager's Nostr-keypair login plus relay-set gives any builder a turnkey way to make a Caribbean-keyed community surface (timeline, group chat, marketplace) without rebuilding identity.
 
@@ -170,7 +170,7 @@ Dispersion is not absolute. A sufficiently mobile and ruthless actor can still r
 
 For Voyager specifically: SDK ergonomics could fail if the developer experience does not hide the keys well enough; Mostro node density could fail if community operators do not appear in Caribbean-relevant currencies; an app builder could ship a regulated activity without realizing it; Voyager-the-business could still be acquired and its hosted assets seized; cultural authenticity gaps could persist if the platform is designed from too far away. [source: VOYAGER_PLATFORM_v0.1.md §8 R1–R5]
 
-These are real risks. They are also the risks you accept in exchange for not depending on a single chokepoint you do not control. The imperial alternative is: no risks, until the one risk you could not price finally arrives and takes your merchant account, your OAuth provider, your banking partner, or your Stripe access.
+These are real risks. They are also the risks you accept in exchange for not depending on a single chokepoint you do not control. The imperial alternative is: no risks, until the one risk you could not price finally arrives and takes your merchant account, your OAuth provider, your banking partner, or your payment-processor access.
 
 The biosphere lever response to the limits is the ratchet response: design must be implemented faster than the centralizing power can adapt. Each successful local conversion shrinks the surface available for imperial harvest. The compounding friction is what makes the threshold crossing durable. [source: blog/1.md, the acceleration passage]
 
@@ -184,8 +184,8 @@ If you are a Caribbean developer reading this, you do not have to wait for Voyag
 
 Three concrete first moves:
 
-1. **Read the SDK surface.** Identity create, invoice pay, fiat quote, listing create, DM send — five calls, one Stripe-shaped entry point. The friction of evaluation is measured in hours, not weeks. [source: VOYAGER_PLATFORM_v0.1.md §3.2]
-2. **Pick a use case you already have.** If you are an artist manager, that is UC1. If you sell across borders, UC2. If you book tours, UC7. The platform already has a named slot for the thing you were going to build on Stripe anyway.
+1. **Read the SDK surface.** Identity create, invoice pay, fiat quote, listing create, DM send — five calls, one unified entry point. The friction of evaluation is measured in hours, not weeks. [source: VOYAGER_PLATFORM_v0.1.md §3.2]
+2. **Pick a use case you already have.** If you are an artist manager, that is UC1. If you sell across borders, UC2. If you book tours, UC7. The platform already has a named slot for the thing you were going to build on a hosted payments platform anyway.
 3. **Talk to the alpha team.** Two additional Caribbean builder teams — one in Jamaica, one in Trinidad — are being selected by use case, not technical prestige. The selection criterion is whether you have a job to do, not whether you have a credential. [source: VOYAGER_PLATFORM_v0.1.md §7]
 
 If you are not a developer: every Caribbean artist, small business, concierge operator, or remittance-sending diaspora resident who adopts a self-sovereign identity this quarter is one more node that does not depend on a US-domiciled account to exist. That is the ratchet at personal scale. The math compounds either way.
@@ -200,7 +200,7 @@ The biosphere-defense literature is clear: you do not beat an empire by being be
 
 Voyager is an attempt to implement that lever for the Caribbean at the level of money, identity, and discovery. It does not require anyone to ask anyone's permission. It does not require waiting for a regulator. It requires builders — and there are builders in the region who are already shipping on it.
 
-The imperial machine's EROI against the Caribbean goes down each time a Caribbean app ships on Voyager instead of Stripe. That is the same arithmetic as the biosphere, applied to a regional stack.
+The imperial machine's EROI against the Caribbean goes down each time a Caribbean app ships on Voyager instead of on a hosted payments platform. That is the same arithmetic as the biosphere, applied to a regional stack.
 
 We do not need to fight the empire. We need to make fighting us expensive. The rest is metabolic.
 

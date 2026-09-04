@@ -17,7 +17,7 @@
 </script>
 
 <svelte:head>
-	<title>Use cases — Voyager · Caribbean-first toolkit</title>
+	<title>Use cases — Voyager · open toolkit</title>
 </svelte:head>
 
 <RegisterSection register="carnival-poster">
@@ -28,7 +28,7 @@
 			Eight jobs the toolkit makes easy.
 		</h1>
 		<p class="max-w-2xl text-lg leading-relaxed">
-			These are the jobs-to-be-done surfaced by the Sep 2 2026 advisory call with Shontelle Layne. Each is a target use case for some app a builder would ship on Voyager.
+			These are the jobs-to-be-done for the toolkit. Each is a target use case for some app a builder would ship on Voyager.
 		</p>
 	</div>
 </section>
@@ -54,8 +54,8 @@
 		}}
 		right={{
 			eyebrow: '// methodology',
-			title: 'From the Sep 2 advisory call.',
-			body: 'These are the jobs Caribbean builders named in the Sep 2 2026 call with Shontelle Layne. Each one is a target for some app a builder ships on Voyager — the list is what the platform should make easy, not what Voyager builds.'
+			title: 'From early builder validation.',
+			body: 'These are the jobs builders identified for the toolkit. Each one is a target for some app a builder ships on Voyager — the list is what the platform should make easy, not what Voyager builds.'
 		}}
 	/>
 </section>

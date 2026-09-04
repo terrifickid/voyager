@@ -16,7 +16,7 @@
 </script>
 
 <svelte:head>
-	<title>Projects — Voyager · Caribbean-first showcases</title>
+	<title>Projects — Voyager · showcases</title>
 </svelte:head>
 
 <RegisterSection register="carnival-poster">

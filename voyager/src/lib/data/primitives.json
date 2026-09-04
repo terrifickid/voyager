@@ -28,7 +28,7 @@
 		"icon": "globe",
 		"lede": "Independent Mostro nodes compete on rate and fee. Caribbean rails first. No platform in the middle.",
 		"what": "Mostro is a federated network of market makers. Each node publishes a profile (kind:38383) listing supported fiats, settlement methods, fees, and reputation. Wallets rank nodes per-order using a deterministic rubric. No single operator sits in the middle.",
-		"why": "Onboarding fiat is the hardest problem for a Caribbean app builder. Stripe doesn't serve them. Flutterwave has gaps. By federating the ramp, Voyager lets multiple operators compete for the trade instead of locking users into one custodian.",
+		"why": "Onboarding fiat is the hardest problem for a Caribbean app builder. Hosted card processors don't serve them. Flutterwave has gaps. By federating the ramp, Voyager lets multiple operators compete for the trade instead of locking users into one custodian.",
 		"sdk": ["voyager.pay.quote(fiat, amount)", "voyager.pay.rampBuy({fiat, amount, method})", "voyager.pay.rampSell({fiat, amount, method})"],
 		"kind": "kind:38383 (node profile), kind:38384 (quote)"
 	},

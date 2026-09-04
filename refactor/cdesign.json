@@ -2,7 +2,7 @@
   "rubric_id": "voyager-web-design-v2-screenshots",
   "version": "0.1",
   "title": "Voyager Web Design v2 — screenshots-grounded",
-  "class": "visual-design.caribbean-first-web-brand",
+  "class": "visual-design.open-rails-web-brand",
   "intended_use": "both",
   "notes": "v2 of the Voyager web-design rubric. Built from PNG screenshots in /home/tk/voyager/shots/ + the extracted-tokens JSON at the same path. v0.1 (advisory-call-grounded) at /home/tk/rubric/rubrics/voyager_web_design.json is unmodified and remains valid; this v2 sits alongside as a broader-evidence counterpart.\n\nRefutation from slice A (gov/cultural evidence): v0.1 C5's '≤20 words above the fold' was implicit about a value-statement job. visitbarbados's actual hero is a Customs/Immigration compliance banner ('Arriving in Barbados soon? Please make sure to fill out your Online Customs and Immigration form before your arrival'). Government-affiliated tourism sites may legitimately use the hero for compliance, not aspiration. v2's C5 below admits both as legitimate one-job-per-screen.",
   "build_provenance": {
@@ -38,7 +38,7 @@
       "seanpaul",
       "shaggy",
       "shaggy_bio",
-      "shontelle",
+      "koffee",
       "socanews",
       "windies"
     ],
@@ -249,7 +249,7 @@
         "tokens.json: Bebas Neue + Oswald + Manrope (bobmarley), Bangers + sans (festival/carnival register), Montserrat / Roboto / Open Sans / Raleway across body sites",
         "largeup: handwritten script logo + clean body sans — committed two-voice system",
         "koffee: handcrafted painted display + warm-gold ground — committed",
-        "shontelle ships 72px helvetica-w01-bold h1 over a 10px Arial body — accidental scale drift, not design"
+        "fentybeauty ships a 72px display over a 10px body — accidental scale drift, not design"
       ],
       "v0_1_change": "v0.1's C4 ('Bold display type, clean sans body') retained AND widened to admit the handcraft/hand-script path that v0.1 missed. v0.1 allowed only the condensed-bold display family; v2 legitimizes Bangers/handcraft/painted too because largeup and koffee use it successfully."
     },
@@ -426,7 +426,7 @@
         "Multiple competing <h1>s (one per section) breaking the document outline"
       ],
       "evidence": [
-        "shontelle: <h1> is 'QUEEN OF THE PEN.', matches the visible hero (working example)",
+        "koffee: <h1> matches the visible hero (working example)",
         "tokens.json: beyonce, shaggy, shaggy_bio, nkotb all measured h1_count=0 — primary failure mode for global/legacy Caribbean-artist sites",
         "fenty (fentybeauty.com): also h1_count=0 — extends the failure mode into the beauty-brand register"
       ],
@@ -465,7 +465,7 @@
         "Sign-up-to-use / premium-only CTAs on a community site that should be reciprocal (donate / become-a-member)",
         "Bot-wall / cookie-gate-first rendering as a defense — every signal-capable visitor gets the wall first",
         "Bot-or-Not challenge page captured as the 'homepage' (extraction site's surface IS the anti-pattern)",
-        "In-house organizational promos conflated with third-party display advertising (both are different categories; only third-party ads are anti-Caribbean-first)",
+        "In-house organizational promos conflated with third-party display advertising (both are different categories; only third-party ads are anti-open-rails)",
         "Hidden pricing extraction: dynamic pricing UI, opaque service fees, royalty splits with no public disclosure"
       ],
       "evidence": [

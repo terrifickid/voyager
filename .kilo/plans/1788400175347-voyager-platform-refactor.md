@@ -128,7 +128,7 @@ reused. Check imports before touching any of them.
 1. Ribbon (as above).
 2. Hero: ONE statement ≤20 words, ONE primary CTA (`Start building`) + secondary
    (`See projects`). Cultural anchor (cdesign C1): name the region plainly —
-   e.g. "An open toolkit for building Caribbean-first apps." Real h1 = hero text.
+   e.g. "An open toolkit for the region's apps." Real h1 = hero text.
 3. Five-primitives strip (cards + dotted dividers, links into /stack/*).
 4. "Built on Voyager" projects showcase: Trip Planner card + Voyager Pay card.
 5. Voyager Pay — built in: existing band + `PayCheckoutCard` VERBATIM (peak tones).

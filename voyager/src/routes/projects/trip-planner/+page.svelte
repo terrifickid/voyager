@@ -53,7 +53,7 @@
 </script>
 
 <svelte:head>
-	<title>Trip Planner — Voyager · Caribbean-first showcase</title>
+	<title>Trip Planner — Voyager · showcase</title>
 </svelte:head>
 
 <RegisterSection register="carnival-poster">

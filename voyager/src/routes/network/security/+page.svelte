@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-	<title>Security by design — Voyager Pay · Caribbean-first</title>
+	<title>Security by design — Voyager Pay · open rails</title>
 </svelte:head>
 
 <!-- §1 Foundation -->

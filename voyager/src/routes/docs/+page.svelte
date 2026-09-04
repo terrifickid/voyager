@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Documentation — Voyager · Caribbean-first spec</title>
+	<title>Documentation — Voyager · open spec</title>
 </svelte:head>
 
 <section class="pt-4 pb-12">

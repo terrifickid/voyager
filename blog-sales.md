@@ -15,7 +15,7 @@ Back to essays
 How Voyager works, and why the Caribbean benefits from building on it
 ~ 7 min read · by the Voyager team
 
-Voyager is an open toolkit for building Caribbean-first apps. It gives any developer in the region — or in the diaspora — a single TypeScript surface for identity, payments, fiat on- and off-ramps, private messaging, and discovery, all on top of open protocols. This post walks through how the toolkit is put together, what that means for the people who build with it, and what is live today.
+Voyager is an open toolkit for the region's apps. It gives any developer in the region — or in the diaspora — a single TypeScript surface for identity, payments, fiat on- and off-ramps, private messaging, and discovery, all on top of open protocols. This post walks through how the toolkit is put together, what that means for the people who build with it, and what is live today.
 
 1. The opportunity
    Caribbean builders face a familiar problem. The payment and identity stack most apps in the region depend on is foreign-domiciled, and it treats the region as a high-friction catchment. Settlement takes longer. Fees are higher. Eligibility is narrower. Documentation is heavier. The pricing differences are visible. The structural reasons for them are not.
@@ -25,7 +25,7 @@ What that means in practice: a developer shipping a marketplace, a booking app, 
 There is a better substrate available. It is open, it is regional, and it does not require permission from any single chokepoint to operate. That substrate is what Voyager packages into a single SDK.
 
 2. What Voyager is
-   Voyager is one Stripe-shaped SDK, plus five primitives that sit underneath it.
+   Voyager is one unified SDK, plus five primitives that sit underneath it.
 
 Identity. Users sign in with a self-sovereign keypair instead of email and password. Recovery is a 12-word seed the user writes down once.
 Payments. Apps call the SDK. The user's wallet signs. The app never holds funds. Settlement is on Lightning.
@@ -72,8 +72,8 @@ All three apps are open and accessible from the site. The protocol behind them i
 
 Three concrete first moves.
 
-Read the SDK surface. Identity create, invoice pay, fiat quote, listing create, DM send — five calls, one Stripe-shaped entry point. The friction of evaluation is measured in hours, not weeks.
-Pick a use case you already have. Independent creator monetization, cross-border commerce, concierge booking, regional transport, diaspora coordination. The toolkit already has a slot for the thing you were going to build on Stripe anyway.
+Read the SDK surface. Identity create, invoice pay, fiat quote, listing create, DM send — five calls, one unified entry point. The friction of evaluation is measured in hours, not weeks.
+Pick a use case you already have. Independent creator monetization, cross-border commerce, concierge booking, regional transport, diaspora coordination. The toolkit already has a slot for the thing you were going to build on a hosted payments platform anyway.
 Talk to the alpha team. Caribbean builder teams — one in Jamaica, one in Trinidad — are being selected by use case, not by technical prestige. The selection criterion is whether you have a job to do, not whether you have a credential.
 If you are not a developer: every Caribbean artist, small business, concierge operator, or remittance-sending diaspora resident who adopts a self-sovereign identity this quarter is one more node on the regional mesh — and one more user that the open internet cannot de-platform.
 
@@ -90,7 +90,7 @@ Start building
 See projects
 ›
 Voyager
-An open toolkit for building Caribbean-first apps. Five primitives, one SDK, no platform in the middle.
+An open toolkit for the region's apps. Five primitives, one SDK, no platform in the middle.
 
 English
 ⌄

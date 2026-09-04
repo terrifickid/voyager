@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>Preferences — Voyager · Trip Planner · Caribbean-first</title>
+	<title>Preferences — Voyager · Trip Planner · open rails</title>
 </svelte:head>
 
 <RegisterSection register="carnival-poster">

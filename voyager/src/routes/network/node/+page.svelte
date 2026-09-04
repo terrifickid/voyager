@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-	<title>Run a node — Voyager Pay · Caribbean-first</title>
+	<title>Run a node — Voyager Pay · open rails</title>
 </svelte:head>
 
 <!-- Hero -->

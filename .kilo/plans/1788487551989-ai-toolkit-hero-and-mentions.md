@@ -5,7 +5,7 @@
 Lead with the AI angle on the home hero — the toolkit now ships an in-browser AI agent in the SDK — and add a short, consistent AI mention to a handful of pages where it belongs. Don't over-saturate. AI is one of the things the toolkit ships, not a rebrand.
 
 User-confirmed scope:
-- Hero h1 → "An open AI toolkit for building Caribbean-first apps." (eyebrow unchanged).
+- Hero h1 → "An open AI toolkit for the region's apps." (eyebrow unchanged).
 - Touch: home SDK band, `/stack`, `/build`, `/docs` landing.
 - Do NOT touch: home ribbon, site-wide `<svelte:head>` title pattern, Header/Footer.
 
@@ -21,11 +21,11 @@ User-confirmed scope:
 ### 1. `voyager/src/routes/+page.svelte` — home
 
 **Hero (lines 53–67).**
-- h1: `"An open toolkit for building Caribbean-first apps."` → `"An open AI toolkit for building Caribbean-first apps."`
+- h1: `"An open toolkit for the region's apps."` → `"An open AI toolkit for the region's apps."`
 - Hero lede (line 60): append `"The SDK ships an in-browser AI agent that runs across all five primitives — never a remote model."` to the end of the existing paragraph. Keep the existing sentence intact; this is one added sentence.
 
-**SDK band (lines 190–219, "Stripe-shaped surface, Nostr underneath").**
-- h2: `"Stripe-shaped surface, Nostr underneath."` → `"Stripe-shaped surface, Nostr underneath. AI inside the SDK."`
+**SDK band (lines 190–219, "Unified surface, Nostr underneath").**
+- h2: `"Unified surface, Nostr underneath."` → `"Unified surface, Nostr underneath. AI inside the SDK."`
 - Lede (line 198): `"A handful of well-named calls. The SDK hides the keys, the wire format, and the relay fan-out."` → `"A handful of well-named calls — and an in-browser AI agent. The SDK hides the keys, the wire format, the relay fan-out, and the model."`
 - No changes to the terminal mock block.
 
@@ -34,23 +34,23 @@ User-confirmed scope:
 ### 2. `voyager/src/routes/stack/+page.svelte`
 
 **SDK card (lines 40–48, the `<PrimitiveCard id="sdk" .../>`).**
-- `title`: `"One Stripe-shaped call surface."` → `"One Stripe-shaped call surface. AI inside."`
+- `title`: `"One unified call surface."` → `"One unified call surface. AI inside."`
 - `body`: append `" The in-browser AI agent lives across all five primitives — search relays, parse payments, sign listings — never a remote model."` to the existing body string.
 
 **TricolorPanel "One SDK" item (lines 62–65).**
-- `body`: `"A single TypeScript entry. Stripe-shaped surface. The five primitives behind one import — no platform in the middle."` → `"A single TypeScript entry. Stripe-shaped surface. Five primitives, one in-browser AI agent — no platform in the middle."`
+- `body`: `"A single TypeScript entry. Unified surface. The five primitives behind one import — no platform in the middle."` → `"A single TypeScript entry. Unified surface. Five primitives, one in-browser AI agent — no platform in the middle."`
 
 **Do not touch**: hero, primitives grid (other than the SDK card above), other TricolorPanel items, the closing "Pick the primitive" CTA.
 
 ### 3. `voyager/src/routes/build/+page.svelte`
 
 **SDK get-started lede (line 38).**
-- `"A Stripe-shaped surface, Nostr underneath. The SDK hides the keys, the wire format, and the relay fan-out."` → `"A Stripe-shaped surface, Nostr underneath. The SDK hides the keys, the wire format, the relay fan-out — and an in-browser AI agent that runs across all five primitives."`
+- `"A unified surface, Nostr underneath. The SDK hides the keys, the wire format, and the relay fan-out."` → `"A unified surface, Nostr underneath. The SDK hides the keys, the wire format, the relay fan-out — and an in-browser AI agent that runs across all five primitives."`
 
 **"What you get" bullet list (lines 59–64).**
 - Add a final bullet: `<li>An in-browser AI agent that augments every primitive. Never a remote model.</li>`
 
-**Do not touch**: hero, terminal mock, "Stripe-shaped surface / Five primitives, ten calls" panels, economics, regulatory posture, alpha CTA, HeritageLineage.
+**Do not touch**: hero, terminal mock, "Unified surface / Five primitives, ten calls" panels, economics, regulatory posture, alpha CTA, HeritageLineage.
 
 ### 4. `voyager/src/routes/docs/+page.svelte`
 
@@ -87,7 +87,7 @@ voyager/src/routes/docs/+page.svelte            EDIT (add "For AI-curious builde
 ## Risks
 
 - **Wording drift**: the new "in-browser AI agent that runs across all five primitives" phrasing is repeated on four pages. Keep it identical so the site reads as one voice. If a future change updates one, update all four.
-- **Hero character length**: the new h1 (`"An open AI toolkit for building Caribbean-first apps."`) is one word longer than the old one. At `text-[56px]` it still fits within `max-w-5xl`; at `lg:text-[112px]` it wraps but the existing h1 wraps too. No layout risk.
+- **Hero character length**: the new h1 (`"An open AI toolkit for the region's apps."`) is one word longer than the old one. At `text-[56px]` it still fits within `max-w-5xl`; at `lg:text-[112px]` it wraps but the existing h1 wraps too. No layout risk.
 - **Stale link**: `/projects/ai` already links to a non-existent `/docs/voyager-ai-architecture`. Out of scope here, but worth flagging — the new `/docs` card for AI-curious builders deliberately points at the live `/projects/ai` instead.
 - **Tone drift**: the existing site language is "Five primitives, one SDK." Adding "AI" everywhere risks losing that rhythm. The plan keeps additions to one sentence each and keeps the "five primitives, one SDK" line untouched everywhere it exists.
 
