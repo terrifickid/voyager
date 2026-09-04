@@ -18,7 +18,7 @@
 	<title>{uc.code} · {uc.title} — Voyager · Caribbean-first</title>
 </svelte:head>
 
-<RegisterSection register="rasta">
+<RegisterSection register="carnival-poster">
 <section class="mx-auto max-w-6xl px-6 pt-16 pb-12 lg:pt-24">
 	<div class="flex flex-col gap-8">
 		<span class="eyebrow">{uc.code} · use case</span>
@@ -54,7 +54,7 @@
 </section>
 
 <section class="mx-auto max-w-6xl px-6 pb-12">
-	<MasCampByline register="rasta" eyebrow="Mas camps & kaiso tents" camps={MAS_CAMPS} />
+	<MasCampByline register="carnival-poster" eyebrow="Mas camps & kaiso tents" camps={MAS_CAMPS} />
 </section>
 
 <section class="mx-auto max-w-6xl px-6 pb-32">

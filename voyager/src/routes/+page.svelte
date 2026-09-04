@@ -14,7 +14,8 @@
 		{ id: 'p2', code: 'P2 · PAYMENTS', title: 'Lightning payment rail', body: 'Apps call the SDK. The user signs. The app never holds funds. Works from anywhere with internet.', icon: 'bolt', href: '/stack/payments' },
 		{ id: 'p3', code: 'P3 · RAMP', title: 'Federated fiat ramp', body: 'Independent Mostro nodes compete on rate and fee. Caribbean rails first. No platform in the middle.', icon: 'globe', href: '/stack/ramp' },
 		{ id: 'p4', code: 'P4 · MESSAGING', title: 'Private messaging', body: 'NIP-17 gift-wrapped DMs give any app end-to-end encrypted messaging without building a Signal clone.', icon: 'chat', href: '/stack/messaging' },
-		{ id: 'p5', code: 'P5 · DISCOVERY', title: 'Discovery substrate', body: 'Listings, profiles, and ramp quotes as signed Nostr events. Relays and indexers handle findability.', icon: 'compass', href: '/stack/discovery' }
+		{ id: 'p5', code: 'P5 · DISCOVERY', title: 'Discovery substrate', body: 'Listings, profiles, and ramp quotes as signed Nostr events. Relays and indexers handle findability.', icon: 'compass', href: '/stack/discovery' },
+		{ id: 'sdk', code: 'SDK · ONE SURFACE', title: 'One Stripe-shaped call surface.', body: 'One TypeScript entry. Identity, payments, ramp, DMs, listings behind a single import. The SDK is what your app ships; the primitives are what it talks to.', icon: 'sparkle', href: '/build' }
 	];
 
 	const USE_CASES = [
@@ -72,7 +73,7 @@
 		title="Five primitives, one SDK."
 		lede="Each primitive solves one job. The SDK wires them together for builders."
 	/>
-	<div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-5">
+	<div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 		{#each PRIMITIVES as p (p.id)}
 			<PrimitiveCard id={p.id} code={p.code} title={p.title} body={p.body} icon={p.icon} href={p.href} register="carnival-poster" />
 		{/each}
@@ -94,7 +95,6 @@
 		>
 			<div class="flex items-center justify-between">
 				<span class="eyebrow">voyager-concierge</span>
-				<span class="font-mono text-[12px]" style="color: var(--register-muted);">live</span>
 			</div>
 			<h3 class="font-display text-[36px] leading-[1.05]" style="color: var(--register-text);">Trip Planner</h3>
 			<p class="text-[15px] leading-relaxed" style="color: var(--register-on-dark-soft);">
@@ -112,7 +112,6 @@
 		>
 			<div class="flex items-center justify-between">
 				<span class="eyebrow">voyager-pay</span>
-				<span class="font-mono text-[12px]" style="color: var(--register-muted);">live</span>
 			</div>
 			<h3 class="font-display text-[36px] leading-[1.05]" style="color: var(--register-text);">Voyager Pay</h3>
 			<p class="text-[15px] leading-relaxed" style="color: var(--register-on-dark-soft);">

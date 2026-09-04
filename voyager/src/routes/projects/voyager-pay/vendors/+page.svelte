@@ -10,14 +10,14 @@
 </svelte:head>
 
 <!-- Hero -->
-<RegisterSection register="neo">
+<RegisterSection register="carnival-poster">
 <section class="mx-auto max-w-6xl px-6 pt-20 pb-12 lg:pt-28 lg:pb-16">
 	<div class="flex flex-col gap-8">
 		<span class="eyebrow">For merchants</span>
-		<h1 class="font-display text-[44px] sm:text-[56px] lg:text-[64px] text-ink max-w-4xl leading-[1.02]">
+		<h1 class="font-display text-[44px] sm:text-[56px] lg:text-[64px] text-[var(--register-text)] max-w-4xl leading-[1.02]">
 			Open protocol. Federated. Uncensorable.
 		</h1>
-		<p class="max-w-2xl text-lg leading-relaxed text-ink-2">
+		<p class="max-w-2xl text-lg leading-relaxed text-[var(--register-muted)]">
 			Sell anything that has a price — physical goods, stays, services, digital downloads, experiences. No platform sits between you and the buyer, and the marketplace is designed to reward honest operators. The protocol makes the cost of taking value from the network higher than the value taken.
 		</p>
 		<div class="flex flex-wrap items-center gap-3">
@@ -30,30 +30,30 @@
 <!-- Three audiences (vendor perspective) -->
 <section class="mx-auto max-w-6xl px-6 pb-20">
 	<div class="grid grid-cols-1 gap-4 md:grid-cols-3">
-		<article class="flex flex-col gap-3 rounded-[28px] bg-bone-200 p-6">
+		<article class="flex flex-col gap-3 rounded-[28px] bg-[var(--register-card)] p-6">
 			<Icon name="map-pin" tone="sky" size={28} />
-			<h3 class="font-display text-xl text-ink leading-tight">For independent sellers</h3>
-			<p class="text-sm leading-relaxed text-ink-2">
+			<h3 class="font-display text-xl text-[var(--register-text)] leading-tight">For independent sellers</h3>
+			<p class="text-sm leading-relaxed text-[var(--register-muted)]">
 				A single operator listing physical goods, a craftsperson, a market stall. One nostr key, one signed listing, every agent host that connects to Voyager MCP sees it.
 			</p>
 			<div class="mt-2">
 				<Cta variant="tertiary" href="#what-you-can-sell">What you can sell</Cta>
 			</div>
 		</article>
-		<article class="flex flex-col gap-3 rounded-[28px] bg-bone-200 p-6">
+		<article class="flex flex-col gap-3 rounded-[28px] bg-[var(--register-card)] p-6">
 			<Icon name="bed" tone="violet" size={28} />
-			<h3 class="font-display text-xl text-ink leading-tight">For service businesses</h3>
-			<p class="text-sm leading-relaxed text-ink-2">
+			<h3 class="font-display text-xl text-[var(--register-text)] leading-tight">For service businesses</h3>
+			<p class="text-sm leading-relaxed text-[var(--register-muted)]">
 				Stays, tours, guides, consulting hours, digital downloads. The same wire format carries them. Add your own fields under a custom namespace without forking the protocol.
 			</p>
 			<div class="mt-2">
 				<Cta variant="tertiary" href="#what-you-can-sell">What you can sell</Cta>
 			</div>
 		</article>
-		<article class="flex flex-col gap-3 rounded-[28px] bg-bone-200 p-6">
+		<article class="flex flex-col gap-3 rounded-[28px] bg-[var(--register-card)] p-6">
 			<Icon name="globe" tone="coral" size={28} />
-			<h3 class="font-display text-xl text-ink leading-tight">For anyone, anywhere</h3>
-			<p class="text-sm leading-relaxed text-ink-2">
+			<h3 class="font-display text-xl text-[var(--register-text)] leading-tight">For anyone, anywhere</h3>
+			<p class="text-sm leading-relaxed text-[var(--register-muted)]">
 				Pseudonymous at the protocol layer, cross-border by default, no KYC tier to satisfy. The keys you hold are the identity your customers remember.
 			</p>
 			<div class="mt-2">
@@ -66,11 +66,11 @@
 <!-- In-page TOC -->
 <nav class="mx-auto max-w-6xl px-6 pb-16" aria-label="On this page">
 	<ul class="flex flex-wrap gap-x-6 gap-y-2 text-[15px] font-medium">
-		<li><a href="#what-you-can-sell" class="text-ink underline underline-offset-4 decoration-[1.5px]">What you can sell</a></li>
-		<li><a href="#why-fair" class="text-ink underline underline-offset-4 decoration-[1.5px]">Why the marketplace is fair</a></li>
-		<li><a href="#mcp" class="text-ink underline underline-offset-4 decoration-[1.5px]">MCP — list once, appear everywhere</a></li>
-		<li><a href="#how-it-works" class="text-ink underline underline-offset-4 decoration-[1.5px]">How listing works</a></li>
-		<li><a href="#what-you-keep" class="text-ink underline underline-offset-4 decoration-[1.5px]">What you keep</a></li>
+		<li><a href="#what-you-can-sell" class="text-[var(--register-text)] underline underline-offset-4 decoration-[1.5px]">What you can sell</a></li>
+		<li><a href="#why-fair" class="text-[var(--register-text)] underline underline-offset-4 decoration-[1.5px]">Why the marketplace is fair</a></li>
+		<li><a href="#mcp" class="text-[var(--register-text)] underline underline-offset-4 decoration-[1.5px]">MCP — list once, appear everywhere</a></li>
+		<li><a href="#how-it-works" class="text-[var(--register-text)] underline underline-offset-4 decoration-[1.5px]">How listing works</a></li>
+		<li><a href="#what-you-keep" class="text-[var(--register-text)] underline underline-offset-4 decoration-[1.5px]">What you keep</a></li>
 	</ul>
 </nav>
 
@@ -82,35 +82,35 @@
 		lede="Listings are signed events on nostr. A reserved v tag namespace carries your category — the convention ships the schema, you fill in the fields."
 	/>
 	<div class="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-		<article class="flex flex-col gap-3 rounded-[28px] bg-bone-200 p-6">
+		<article class="flex flex-col gap-3 rounded-[28px] bg-[var(--register-card)] p-6">
 			<Icon name="map-pin" tone="sky" size={28} />
 			<span class="eyebrow">voyager.listing.v1</span>
-			<h3 class="font-display text-xl text-ink leading-tight">Physical goods</h3>
-			<p class="text-sm leading-relaxed text-ink-2">
+			<h3 class="font-display text-xl text-[var(--register-text)] leading-tight">Physical goods</h3>
+			<p class="text-sm leading-relaxed text-[var(--register-muted)]">
 				Snapper, sandals, hardware. Ship weight, pickup, courier — all in the same event shape. The relay doesn't care what's in the box.
 			</p>
 		</article>
-		<article class="flex flex-col gap-3 rounded-[28px] bg-bone-200 p-6">
+		<article class="flex flex-col gap-3 rounded-[28px] bg-[var(--register-card)] p-6">
 			<Icon name="bed" tone="violet" size={28} />
 			<span class="eyebrow">voyager.accommodation.v1</span>
-			<h3 class="font-display text-xl text-ink leading-tight">Stays & experiences</h3>
-			<p class="text-sm leading-relaxed text-ink-2">
+			<h3 class="font-display text-xl text-[var(--register-text)] leading-tight">Stays & experiences</h3>
+			<p class="text-sm leading-relaxed text-[var(--register-muted)]">
 				Rooms, rentals, weeks. Add check-in, check-out, capacity, group size without changing the wire format.
 			</p>
 		</article>
-		<article class="flex flex-col gap-3 rounded-[28px] bg-bone-200 p-6">
+		<article class="flex flex-col gap-3 rounded-[28px] bg-[var(--register-card)] p-6">
 			<Icon name="sparkle" tone="rose" size={28} />
 			<span class="eyebrow">voyager.service.v1</span>
-			<h3 class="font-display text-xl text-ink leading-tight">Services & digital</h3>
-			<p class="text-sm leading-relaxed text-ink-2">
+			<h3 class="font-display text-xl text-[var(--register-text)] leading-tight">Services & digital</h3>
+			<p class="text-sm leading-relaxed text-[var(--register-muted)]">
 				Hours, deliverables, downloads. The same kind:30402 event carries your rate, your scope, your deliverable URI.
 			</p>
 		</article>
-		<article class="flex flex-col gap-3 rounded-[28px] bg-bone-200 p-6">
+		<article class="flex flex-col gap-3 rounded-[28px] bg-[var(--register-card)] p-6">
 			<Icon name="compass" tone="coral" size={28} />
 			<span class="eyebrow">Custom namespace</span>
-			<h3 class="font-display text-xl text-ink leading-tight">Anything with a price</h3>
-			<p class="text-sm leading-relaxed text-ink-2">
+			<h3 class="font-display text-xl text-[var(--register-text)] leading-tight">Anything with a price</h3>
+			<p class="text-sm leading-relaxed text-[var(--register-muted)]">
 				Invent your own v tag under your namespace. The protocol guarantees event structure and forwarding — your semantics ride on top without forking anything.
 			</p>
 		</article>
@@ -119,36 +119,36 @@
 
 <!-- §2 Why fair -->
 <section id="why-fair" class="mx-auto max-w-6xl px-6 pb-20 scroll-mt-20">
-	<div class="rounded-[32px] bg-bone-100 p-8 sm:p-12">
+	<div class="rounded-[32px] bg-[var(--register-card)] p-8 sm:p-12">
 		<SectionHeader
 			eyebrow="Why the marketplace is fair"
 			title="Fair by construction."
 			lede="The design refuses the failure modes that make platforms capturable. Three properties hold at the protocol layer — not as a policy choice, as a property of the design."
 		/>
 		<ol class="mt-10 flex flex-col gap-5">
-			<li class="flex gap-5 rounded-[28px] bg-bone-200 p-6">
-				<span class="font-display text-3xl text-ink leading-none">1</span>
+			<li class="flex gap-5 rounded-[28px] bg-[var(--register-card)] p-6">
+				<span class="font-display text-3xl text-[var(--register-text)] leading-none">1</span>
 				<div class="flex flex-col gap-2">
-					<h3 class="font-display text-xl text-ink leading-tight">Operators compete.</h3>
-					<p class="text-[15px] leading-relaxed text-ink-2">
+					<h3 class="font-display text-xl text-[var(--register-text)] leading-tight">Operators compete.</h3>
+					<p class="text-[15px] leading-relaxed text-[var(--register-muted)]">
 						Mostro nodes compete on rate, fee, and reputation. You pick the one your buyer uses. No house takes a cut on the match — the protocol never holds funds and never sets a price.
 					</p>
 				</div>
 			</li>
-			<li class="flex gap-5 rounded-[28px] bg-bone-200 p-6">
-				<span class="font-display text-3xl text-ink leading-none">2</span>
+			<li class="flex gap-5 rounded-[28px] bg-[var(--register-card)] p-6">
+				<span class="font-display text-3xl text-[var(--register-text)] leading-none">2</span>
 				<div class="flex flex-col gap-2">
-					<h3 class="font-display text-xl text-ink leading-tight">Your listings live anywhere.</h3>
-					<p class="text-[15px] leading-relaxed text-ink-2">
+					<h3 class="font-display text-xl text-[var(--register-text)] leading-tight">Your listings live anywhere.</h3>
+					<p class="text-[15px] leading-relaxed text-[var(--register-muted)]">
 						Listings live on public relays. Take one relay down and four more still have them. The relay set is a federation, not a tenant.
 					</p>
 				</div>
 			</li>
-			<li class="flex gap-5 rounded-[28px] bg-bone-200 p-6">
-				<span class="font-display text-3xl text-ink leading-none">3</span>
+			<li class="flex gap-5 rounded-[28px] bg-[var(--register-card)] p-6">
+				<span class="font-display text-3xl text-[var(--register-text)] leading-none">3</span>
 				<div class="flex flex-col gap-2">
-					<h3 class="font-display text-xl text-ink leading-tight">Honest operators are rewarded.</h3>
-					<p class="text-[15px] leading-relaxed text-ink-2">
+					<h3 class="font-display text-xl text-[var(--register-text)] leading-tight">Honest operators are rewarded.</h3>
+					<p class="text-[15px] leading-relaxed text-[var(--register-muted)]">
 						The same extraction-cost rubric Voyager Pay was built against applies here. The cost of taking value from the network runs structurally higher than the value taken.
 					</p>
 				</div>
@@ -159,7 +159,7 @@
 
 <!-- §3 MCP — list once, appear everywhere -->
 <section id="mcp" class="mx-auto max-w-6xl px-6 pb-20 scroll-mt-20">
-	<div class="rounded-[32px] bg-bone-100 p-8 sm:p-12">
+	<div class="rounded-[32px] bg-[var(--register-card)] p-8 sm:p-12">
 		<div class="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
 			<SectionHeader
 				eyebrow="MCP"
@@ -224,19 +224,19 @@
 						<text x="528" y="224" class="mcp-label" text-anchor="start">ChatGPT</text>
 					</g>
 				</svg>
-				<figcaption class="mt-4 text-[13px] leading-snug text-muted lg:text-left text-center">
+				<figcaption class="mt-4 text-[13px] leading-snug text-[var(--register-muted)] lg:text-left text-center">
 					One signed event. Four agent surfaces. Every new MCP host inherits it.
 				</figcaption>
 			</figure>
 		</div>
-		<p class="mt-8 max-w-2xl text-lg leading-relaxed text-ink-2">
+		<p class="mt-8 max-w-2xl text-lg leading-relaxed text-[var(--register-muted)]">
 			Publish a single kind:30402 and voyager-mcp fans it out to every agent host on the
 			network — today, and every host that connects tomorrow.
 		</p>
-		<div class="mt-10 rounded-[28px] bg-bone-200 p-6">
+		<div class="mt-10 rounded-[28px] bg-[var(--register-card)] p-6">
 			<span class="eyebrow">How it works</span>
-			<p class="mt-3 text-[15px] leading-relaxed text-ink-2">
-				voyager-mcp subscribes to kind:30402, kind:30017, and kind:38383 across the public relay set, builds an in-memory projection, and exposes search, quote, and order tools to any compliant agent host. Anyone can run an instance — the canonical one is free to use, rate-limited, and the protocol doesn't gatekeep specialized or vendor-hosted deployments. See the full strategy and implementation paper at <code class="font-mono text-ink">MCP.md</code> in the repo.
+			<p class="mt-3 text-[15px] leading-relaxed text-[var(--register-muted)]">
+				voyager-mcp subscribes to kind:30402, kind:30017, and kind:38383 across the public relay set, builds an in-memory projection, and exposes search, quote, and order tools to any compliant agent host. Anyone can run an instance — the canonical one is free to use, rate-limited, and the protocol doesn't gatekeep specialized or vendor-hosted deployments. See the full strategy and implementation paper at <code class="font-mono text-[var(--register-text)]">MCP.md</code> in the repo.
 			</p>
 		</div>
 		<div class="mt-8">
@@ -253,65 +253,65 @@
 		lede="Plain English from key to agent discovery. Every step is a signed event or a relay hop."
 	/>
 	<div class="mt-12 grid grid-cols-1 gap-4 md:grid-cols-3">
-		<article class="flex flex-col gap-3 rounded-[28px] bg-bone-200 p-6">
+		<article class="flex flex-col gap-3 rounded-[28px] bg-[var(--register-card)] p-6">
 			<Icon name="save" tone="sky" size={28} />
-			<h3 class="font-display text-xl text-ink leading-tight">1. Publish</h3>
-			<p class="text-sm leading-relaxed text-ink-2">
+			<h3 class="font-display text-xl text-[var(--register-text)] leading-tight">1. Publish</h3>
+			<p class="text-sm leading-relaxed text-[var(--register-muted)]">
 				Sign a kind:30402 event with your nostr key. Title, price, category tags, your fields — all on a single signed event you control.
 			</p>
 		</article>
-		<article class="flex flex-col gap-3 rounded-[28px] bg-bone-200 p-6">
+		<article class="flex flex-col gap-3 rounded-[28px] bg-[var(--register-card)] p-6">
 			<Icon name="share" tone="violet" size={28} />
-			<h3 class="font-display text-xl text-ink leading-tight">2. Relay</h3>
-			<p class="text-sm leading-relaxed text-ink-2">
+			<h3 class="font-display text-xl text-[var(--register-text)] leading-tight">2. Relay</h3>
+			<p class="text-sm leading-relaxed text-[var(--register-muted)]">
 				The event lands on the public relay set within seconds. The relays are a federation — your listing fans out to whichever ones accept your pubkey policy.
 			</p>
 		</article>
-		<article class="flex flex-col gap-3 rounded-[28px] bg-bone-200 p-6">
+		<article class="flex flex-col gap-3 rounded-[28px] bg-[var(--register-card)] p-6">
 			<Icon name="bolt" tone="coral" size={28} />
-			<h3 class="font-display text-xl text-ink leading-tight">3. Discover</h3>
-			<p class="text-sm leading-relaxed text-ink-2">
+			<h3 class="font-display text-xl text-[var(--register-text)] leading-tight">3. Discover</h3>
+			<p class="text-sm leading-relaxed text-[var(--register-muted)]">
 				voyager-mcp and every compatible agent host see it. Search, quote, compare, initiate order — all from a single signed event you published once.
 			</p>
 		</article>
 	</div>
-	<p class="mt-10 max-w-2xl text-lg leading-relaxed text-ink-2">
+	<p class="mt-10 max-w-2xl text-lg leading-relaxed text-[var(--register-muted)]">
 		No approval step. No review queue. No platform in the middle.
 	</p>
 </section>
 
 <!-- §5 What you keep -->
 <section id="what-you-keep" class="mx-auto max-w-6xl px-6 pb-20 scroll-mt-20">
-	<div class="rounded-[32px] bg-bone-100 p-8 sm:p-12">
+	<div class="rounded-[32px] bg-[var(--register-card)] p-8 sm:p-12">
 		<SectionHeader
 			eyebrow="What you keep"
 			title="Three things no platform can take."
 			lede="The protocol hands them to you by construction — not as a promise, as a property of the design."
 		/>
 		<ul class="mt-10 flex flex-col gap-5">
-			<li class="flex gap-5 rounded-[28px] bg-bone-200 p-6">
+			<li class="flex gap-5 rounded-[28px] bg-[var(--register-card)] p-6">
 				<Icon name="lock" tone="sky" size={28} />
 				<div class="flex flex-col gap-2">
-					<h3 class="font-display text-xl text-ink leading-tight">Your keys.</h3>
-					<p class="text-[15px] leading-relaxed text-ink-2">
+					<h3 class="font-display text-xl text-[var(--register-text)] leading-tight">Your keys.</h3>
+					<p class="text-[15px] leading-relaxed text-[var(--register-muted)]">
 						You sign your own events. No one else can revoke your listings, pause your stall, or rewrite your history. The key is the storefront.
 					</p>
 				</div>
 			</li>
-			<li class="flex gap-5 rounded-[28px] bg-bone-200 p-6">
+			<li class="flex gap-5 rounded-[28px] bg-[var(--register-card)] p-6">
 				<Icon name="check" tone="violet" size={28} />
 				<div class="flex flex-col gap-2">
-					<h3 class="font-display text-xl text-ink leading-tight">Your reputation.</h3>
-					<p class="text-[15px] leading-relaxed text-ink-2">
+					<h3 class="font-display text-xl text-[var(--register-text)] leading-tight">Your reputation.</h3>
+					<p class="text-[15px] leading-relaxed text-[var(--register-muted)]">
 						Endorsements and zaps are tied to your npub, not to a tenant ID. If you switch storefronts, your ratings follow the key.
 					</p>
 				</div>
 			</li>
-			<li class="flex gap-5 rounded-[28px] bg-bone-200 p-6">
+			<li class="flex gap-5 rounded-[28px] bg-[var(--register-card)] p-6">
 				<Icon name="chat" tone="coral" size={28} />
 				<div class="flex flex-col gap-2">
-					<h3 class="font-display text-xl text-ink leading-tight">Your customers.</h3>
-					<p class="text-[15px] leading-relaxed text-ink-2">
+					<h3 class="font-display text-xl text-[var(--register-text)] leading-tight">Your customers.</h3>
+					<p class="text-[15px] leading-relaxed text-[var(--register-muted)]">
 						No intermediary owns the buyer relationship. Order traffic is gift-wrapped (encrypted end-to-end) — only the two keys see it. Detached value loses worth — it can't be redirected without its rightful context.
 					</p>
 				</div>
@@ -322,12 +322,12 @@
 
 <!-- Final CTA -->
 <section class="mx-auto max-w-6xl px-6 pb-32">
-	<div class="rounded-[32px] bg-bone-100 p-10 sm:p-16 text-center">
+	<div class="rounded-[32px] bg-[var(--register-card)] p-10 sm:p-16 text-center">
 		<span class="eyebrow">Next step</span>
-		<h2 class="mt-4 font-display text-[40px] sm:text-[52px] lg:text-[64px] text-ink max-w-3xl mx-auto leading-[1.02]">
+		<h2 class="mt-4 font-display text-[40px] sm:text-[52px] lg:text-[64px] text-[var(--register-text)] max-w-3xl mx-auto leading-[1.02]">
 			Start selling.
 		</h2>
-		<p class="mt-6 max-w-xl mx-auto text-lg text-ink-2">
+		<p class="mt-6 max-w-xl mx-auto text-lg text-[var(--register-muted)]">
 			The convention-side spec walks through the v tag namespacing, the wire format, and a worked kind:30402 example you can sign and publish.
 		</p>
 		<div class="mt-8 flex flex-wrap items-center justify-center gap-3">

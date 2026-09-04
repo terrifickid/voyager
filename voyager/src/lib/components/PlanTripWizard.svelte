@@ -449,14 +449,14 @@
   }
 </script>
 
-<div class="mx-auto flex max-w-2xl flex-col gap-8 text-ink-2" class:hidden>
+<div class="mx-auto flex max-w-2xl flex-col gap-8 text-[var(--register-muted)]" class:hidden>
   <header class="flex flex-col gap-3">
     <span class="eyebrow">Plan a trip</span>
-    <h1 class="font-display text-[40px] sm:text-[52px] text-ink leading-[1.02]">
+    <h1 class="font-display text-[40px] sm:text-[52px] text-[var(--register-text)] leading-[1.02]">
       Tell us where. We'll do the rest.
     </h1>
-    <p class="text-sm text-muted">Step {stepIndex + 1} of {STEPS.length} — {currentStep.title}</p>
-    <div class="h-1.5 w-full overflow-hidden rounded-full bg-bone-200">
+    <p class="text-sm text-[var(--register-muted)]">Step {stepIndex + 1} of {STEPS.length} — {currentStep.title}</p>
+    <div class="h-1.5 w-full overflow-hidden rounded-full bg-[var(--register-card)]">
       <div
         class="h-full rounded-full bg-ink transition-all"
         style="width: {progress}%"
@@ -465,12 +465,12 @@
   </header>
 
   <div
-    class="flex flex-col gap-4 rounded-[28px] bg-bone-100 p-7"
+    class="flex flex-col gap-4 rounded-[28px] bg-[var(--register-card)] p-7"
     aria-label={currentStep.title}
   >
     {#if currentStep.id === 'destination'}
       <label class="flex flex-col gap-2">
-        <span class="text-sm font-medium text-ink">Destination</span>
+        <span class="text-sm font-medium text-[var(--register-text)]">Destination</span>
         <input
           type="text"
           bind:value={draft.destination}
@@ -486,7 +486,7 @@
               );
             }}
           placeholder="e.g. Kyoto, Japan"
-          class="w-full rounded-2xl bg-bone-50 p-4 text-ink placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-ink"
+          class="w-full rounded-2xl bg-[var(--register-card-teal)] p-4 text-[var(--register-text)] placeholder:text-[var(--register-muted)] focus:outline-none focus:ring-2 focus:ring-[var(--register-text)]"
         />
       </label>
 
@@ -540,20 +540,20 @@
           />
         </div>
         {#if dateError}
-          <p class="text-sm text-ink">{dateError}</p>
+          <p class="text-sm text-[var(--register-text)]">{dateError}</p>
         {/if}
       </div>
 
     {:else if currentStep.id === 'travelers'}
       <div class="flex flex-col gap-5">
         <div class="flex items-center justify-between gap-3">
-          <span class="text-sm font-medium text-ink">Adults</span>
+          <span class="text-sm font-medium text-[var(--register-text)]">Adults</span>
           <div class="flex items-center gap-2">
             <button
               type="button"
               aria-label="Decrease adults"
               onclick={() => setAdults(draft.travelers.adults - 1)}
-              class="h-10 w-10 rounded-full bg-bone-200 text-lg text-ink hover:bg-bone-300"
+              class="h-10 w-10 rounded-full bg-[var(--register-card)] text-lg text-[var(--register-text)] hover:opacity-80"
             >−</button>
             <input
               type="number"
@@ -562,25 +562,25 @@
               bind:value={draft.travelers.adults}
               onkeydown={onInputKeydown}
               oninput={(e) => setAdults(+e.currentTarget.value)}
-              class="w-16 rounded-2xl bg-bone-50 p-2 text-center text-ink focus:outline-none focus:ring-2 focus:ring-ink"
+              class="w-16 rounded-2xl bg-[var(--register-card-teal)] p-2 text-center text-[var(--register-text)] focus:outline-none focus:ring-2 focus:ring-[var(--register-text)]"
             />
             <button
               type="button"
               aria-label="Increase adults"
               onclick={() => setAdults(draft.travelers.adults + 1)}
-              class="h-10 w-10 rounded-full bg-bone-200 text-lg text-ink hover:bg-bone-300"
+              class="h-10 w-10 rounded-full bg-[var(--register-card)] text-lg text-[var(--register-text)] hover:opacity-80"
             >+</button>
           </div>
         </div>
 
         <div class="flex items-center justify-between gap-3">
-          <span class="text-sm font-medium text-ink">Kids</span>
+          <span class="text-sm font-medium text-[var(--register-text)]">Kids</span>
           <div class="flex items-center gap-2">
             <button
               type="button"
               aria-label="Decrease kids"
               onclick={() => setKids(draft.travelers.kids - 1)}
-              class="h-10 w-10 rounded-full bg-bone-200 text-lg text-ink hover:bg-bone-300"
+              class="h-10 w-10 rounded-full bg-[var(--register-card)] text-lg text-[var(--register-text)] hover:opacity-80"
             >−</button>
             <input
               type="number"
@@ -589,26 +589,26 @@
               bind:value={draft.travelers.kids}
               onkeydown={onInputKeydown}
               oninput={(e) => setKids(+e.currentTarget.value)}
-              class="w-16 rounded-2xl bg-bone-50 p-2 text-center text-ink focus:outline-none focus:ring-2 focus:ring-ink"
+              class="w-16 rounded-2xl bg-[var(--register-card-teal)] p-2 text-center text-[var(--register-text)] focus:outline-none focus:ring-2 focus:ring-[var(--register-text)]"
             />
             <button
               type="button"
               aria-label="Increase kids"
               onclick={() => setKids(draft.travelers.kids + 1)}
-              class="h-10 w-10 rounded-full bg-bone-200 text-lg text-ink hover:bg-bone-300"
+              class="h-10 w-10 rounded-full bg-[var(--register-card)] text-lg text-[var(--register-text)] hover:opacity-80"
             >+</button>
           </div>
         </div>
 
         {#if draft.travelers.kids > 0}
-          <div class="flex flex-col gap-3 rounded-2xl bg-bone-200 p-4">
+          <div class="flex flex-col gap-3 rounded-2xl bg-[var(--register-card)] p-4">
             <span class="eyebrow">
               Kids' | ages
             </span>
             <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
               {#each draft.travelers.kidsAges as age, i (i)}
                 <label class="flex flex-col gap-1">
-                  <span class="text-xs text-muted">Kid {i + 1}</span>
+                  <span class="text-xs text-[var(--register-muted)]">Kid {i + 1}</span>
                   <input
                     type="number"
                     min="0"
@@ -616,7 +616,7 @@
                     value={age}
                     onkeydown={onInputKeydown}
                     oninput={(e) => setKidAge(i, +e.currentTarget.value)}
-                    class="w-full rounded-2xl bg-bone-50 p-2 text-center text-ink focus:outline-none focus:ring-2 focus:ring-ink"
+                    class="w-full rounded-2xl bg-[var(--register-card-teal)] p-2 text-center text-[var(--register-text)] focus:outline-none focus:ring-2 focus:ring-[var(--register-text)]"
                   />
                 </label>
               {/each}
@@ -626,13 +626,13 @@
       </div>
 
     {:else if currentStep.id === 'archetype'}
-      <p class="text-sm text-muted">Pick the closest fit.</p>
+      <p class="text-sm text-[var(--register-muted)]">Pick the closest fit.</p>
       <div class="grid grid-cols-1 gap-2">
         {#each CONFIG.archetypes as opt (opt.id)}
           <label
             class="flex cursor-pointer items-center gap-3 rounded-2xl p-3 transition-colors
-                   bg-bone-200 hover:bg-bone-300
-                   {draft.archetype === opt.id ? 'bg-ink text-bone-50' : ''}"
+                   bg-[var(--register-card)] hover:opacity-80
+                   {draft.archetype === opt.id ? 'bg-ink text-[var(--register-ground)]' : ''}"
           >
             <input
               type="radio"
@@ -643,15 +643,15 @@
             />
             <span class="text-2xl">{opt.icon}</span>
             <span class="flex flex-col">
-              <strong class="font-medium {draft.archetype === opt.id ? 'text-bone-50' : 'text-ink'}">{opt.label}</strong>
-              <small class="text-sm {draft.archetype === opt.id ? 'text-bone-200' : 'text-muted'}">{opt.description}</small>
+              <strong class="font-medium {draft.archetype === opt.id ? 'text-[var(--register-ground)]' : 'text-[var(--register-text)]'}">{opt.label}</strong>
+              <small class="text-sm {draft.archetype === opt.id ? 'text-[var(--register-muted)]' : 'text-[var(--register-muted)]'}">{opt.description}</small>
             </span>
           </label>
         {/each}
       </div>
 
     {:else if currentStep.id === 'tags'}
-      <p class="text-sm text-muted">Optional — pick as many as you like.</p>
+      <p class="text-sm text-[var(--register-muted)]">Optional — pick as many as you like.</p>
       <div class="flex flex-col gap-5">
         {#each CONFIG.tagGroups as group (group.id)}
           <div class="flex flex-col gap-2">
@@ -662,8 +662,8 @@
               {#each group.options as opt (opt.id)}
                 <label
                   class="cursor-pointer rounded-pill px-4 py-2 text-sm transition-colors
-                         bg-bone-200 text-ink hover:bg-bone-300
-                         {draft.tags.includes(opt.id) ? 'bg-ink text-bone-50' : ''}"
+                         bg-[var(--register-card)] text-[var(--register-text)] hover:opacity-80
+                         {draft.tags.includes(opt.id) ? 'bg-ink text-[var(--register-ground)]' : ''}"
                 >
                   <input
                     type="checkbox"
@@ -680,7 +680,7 @@
       </div>
 
     {:else if currentStep.id === 'budget'}
-      <p class="text-sm text-muted">Rough daily spend comfort.</p>
+      <p class="text-sm text-[var(--register-muted)]">Rough daily spend comfort.</p>
       <div class="flex gap-2">
         {#each [1, 2, 3, 4, 5] as level (level)}
           <button
@@ -701,8 +701,8 @@
             }}
             class="flex-1 rounded-2xl py-3 text-lg tracking-widest transition-colors
                    {draft.budget === level
-                     ? 'bg-ink text-bone-50'
-                     : 'bg-bone-200 text-ink hover:bg-bone-300'}"
+                     ? 'bg-ink text-[var(--register-ground)]'
+                     : 'bg-[var(--register-card)] text-[var(--register-text)] hover:opacity-80'}"
           >
             {"$".repeat(level)}
           </button>
@@ -711,15 +711,15 @@
 
     {:else if currentStep.id === 'note'}
       <label class="flex flex-col gap-2">
-        <span class="text-sm font-medium text-ink">Anything else?</span>
+        <span class="text-sm font-medium text-[var(--register-text)]">Anything else?</span>
         <textarea
           bind:value={draft.note}
           maxlength={NOTE_MAX}
           rows="3"
           placeholder="e.g. I hate crowded tourist traps. I wake up early but hate rushing."
-          class="w-full resize-y rounded-2xl bg-bone-50 p-4 text-ink placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-ink"
+          class="w-full resize-y rounded-2xl bg-[var(--register-card-teal)] p-4 text-[var(--register-text)] placeholder:text-[var(--register-muted)] focus:outline-none focus:ring-2 focus:ring-[var(--register-text)]"
         ></textarea>
-        <span class="text-right text-xs text-muted">{noteLen}/{NOTE_MAX}</span>
+        <span class="text-right text-xs text-[var(--register-muted)]">{noteLen}/{NOTE_MAX}</span>
       </label>
     {/if}
   </div>
@@ -729,7 +729,7 @@
       type="button"
       onclick={back}
       disabled={stepIndex === 0}
-      class="inline-flex items-center gap-1.5 text-ink underline underline-offset-4 decoration-[1.5px] disabled:opacity-40 disabled:cursor-not-allowed"
+      class="inline-flex items-center gap-1.5 text-[var(--register-text)] underline underline-offset-4 decoration-[1.5px] disabled:opacity-40 disabled:cursor-not-allowed"
     >
       <span aria-hidden="true">‹</span> Back
     </button>

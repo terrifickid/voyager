@@ -20,7 +20,7 @@
 	<title>Use cases — Voyager · Caribbean-first toolkit</title>
 </svelte:head>
 
-<RegisterSection register="rasta">
+<RegisterSection register="carnival-poster">
 <section class="mx-auto max-w-6xl px-6 pt-16 pb-12 lg:pt-24">
 	<div class="flex flex-col gap-8">
 		<span class="eyebrow">// use cases</span>
@@ -36,11 +36,11 @@
 <section class="mx-auto max-w-6xl px-6 pb-24">
 	<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
 		{#each useCases as uc (uc.slug)}
-			<UseCaseCard register="rasta" id={uc.slug} code={uc.code} title={uc.title} body={uc.short} href="/use-cases/{uc.slug}" />
+			<UseCaseCard register="carnival-poster" id={uc.slug} code={uc.code} title={uc.title} body={uc.short} href="/use-cases/{uc.slug}" />
 		{/each}
 	</div>
 	<div class="mt-12">
-		<MasCampByline register="rasta" eyebrow="UC7 + UC8 · mas camp register" camps={MAS_CAMPS} />
+		<MasCampByline register="carnival-poster" eyebrow="UC7 + UC8 · mas camp register" camps={MAS_CAMPS} />
 	</div>
 </section>
 

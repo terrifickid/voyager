@@ -1,6 +1,6 @@
 <script>
 	/**
-	 * @typedef {'violet' | 'coral' | 'sky' | 'rose' | 'ink'} Tone
+	 * @typedef {'violet' | 'coral' | 'sky' | 'rose' | 'ink' | 'cyan' | 'magenta' | 'gold'} Tone
 	 */
 	/** @type {{ name: string, tone?: Tone, class?: string, size?: number }} */
 	let { name, tone = 'violet', class: extra = '', size = 28 } = $props();
@@ -10,7 +10,10 @@
 		coral: 'var(--pastel-coral)',
 		sky: 'var(--pastel-sky)',
 		rose: 'var(--pastel-rose)',
-		ink: 'var(--register-text)'
+		ink: 'var(--register-text)',
+		cyan: 'var(--carnival-cyan)',
+		magenta: 'var(--carnival-magenta)',
+		gold: 'var(--carnival-gold)'
 	};
 </script>
 

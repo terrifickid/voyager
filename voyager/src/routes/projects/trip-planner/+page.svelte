@@ -56,21 +56,21 @@
 	<title>Trip Planner — Voyager · Caribbean-first showcase</title>
 </svelte:head>
 
-<RegisterSection register="neo">
+<RegisterSection register="carnival-poster">
 
 <!-- Hero -->
 <section class="mx-auto max-w-6xl px-6 pt-16 pb-20 lg:pt-24 lg:pb-28">
 	<div class="grid grid-cols-1 items-center gap-16 lg:grid-cols-[1.05fr_1fr]">
 		<div class="flex flex-col gap-8">
 			<span class="eyebrow">Trip Planner — a Voyager showcase app</span>
-			<h1 class="font-display text-[56px] sm:text-[72px] lg:text-[92px] text-ink leading-[0.95]">
+			<h1 class="font-display text-[56px] sm:text-[72px] lg:text-[92px] text-[var(--register-text)] leading-[0.95]">
 				Plan it.<br />Pay it.<br />Take the trip.
 			</h1>
-			<p class="max-w-xl text-lg leading-relaxed text-ink-2">
+			<p class="max-w-xl text-lg leading-relaxed text-[var(--register-muted)]">
 				Tell Voyager where you're going and how you travel. It builds a day-by-day plan from real places, your style, and your budget — right in your browser.
 			</p>
-			<p class="max-w-xl text-lg leading-relaxed text-ink-2">
-				Ready to book? <span class="font-semibold text-ink">Voyager Pay</span> handles the money. It routes your booking to the vendors who actually deserve it — no middleman taking a cut or freezing the funds.
+			<p class="max-w-xl text-lg leading-relaxed text-[var(--register-muted)]">
+				Ready to book? <span class="font-semibold text-[var(--register-text)]">Voyager Pay</span> handles the money. It routes your booking to the vendors who actually deserve it — no middleman taking a cut or freezing the funds.
 			</p>
 			<div class="flex flex-wrap items-center gap-3">
 				<Cta variant="primary" href="/projects/trip-planner/plan">Plan a trip</Cta>
@@ -85,7 +85,7 @@
 
 <!-- How it works -->
 <section id="how" class="mx-auto max-w-6xl px-6 pb-24">
-	<div class="rounded-[32px] bg-bone-100 p-10 sm:p-14">
+	<div class="rounded-[32px] bg-[var(--register-card)] p-10 sm:p-14">
 		<SectionHeader
 			eyebrow="How it works"
 			title="Three steps. That's it."
@@ -97,11 +97,11 @@
 				{ n: 2, t: 'We build your itinerary.', b: 'Our AI puts together a day-by-day plan using real places. Tweak anything you want.' },
 				{ n: 3, t: 'Book it safely with Voyager Pay.', b: 'Pay through Voyager Pay and you\'re protected the whole way through. Good price, good experience, no surprises.' }
 			] as step (step.n)}
-				<li class="flex gap-5 rounded-[28px] bg-bone-200 p-6">
-					<span class="font-display text-3xl text-ink leading-none">{step.n}</span>
+				<li class="flex gap-5 rounded-[28px] bg-[var(--register-card)] p-6">
+					<span class="font-display text-3xl text-[var(--register-text)] leading-none">{step.n}</span>
 					<div class="flex flex-col gap-2">
-						<h3 class="font-display text-xl text-ink leading-tight">{step.t}</h3>
-						<p class="text-[15px] leading-relaxed text-ink-2">{step.b}</p>
+						<h3 class="font-display text-xl text-[var(--register-text)] leading-tight">{step.t}</h3>
+						<p class="text-[15px] leading-relaxed text-[var(--register-muted)]">{step.b}</p>
 					</div>
 				</li>
 			{/each}
@@ -209,11 +209,11 @@
 
 <!-- Final CTA -->
 <section class="mx-auto max-w-6xl px-6 pb-32">
-	<div class="rounded-[32px] bg-bone-100 p-10 sm:p-16 text-center">
-		<h2 class="font-display text-[40px] sm:text-[56px] lg:text-[72px] text-ink max-w-3xl mx-auto leading-[1.02]">
+	<div class="rounded-[32px] bg-[var(--register-card)] p-10 sm:p-16 text-center">
+		<h2 class="font-display text-[40px] sm:text-[56px] lg:text-[72px] text-[var(--register-text)] max-w-3xl mx-auto leading-[1.02]">
 			Stop planning the trip. Start taking it.
 		</h2>
-		<p class="mt-6 max-w-xl mx-auto text-lg text-ink-2">
+		<p class="mt-6 max-w-xl mx-auto text-lg text-[var(--register-muted)]">
 			Open Voyager. Answer seven prompts. Get a plan you can use, in your browser.
 		</p>
 		<div class="mt-8 flex flex-wrap items-center justify-center gap-3">
@@ -225,7 +225,7 @@
 
 <section class="mx-auto max-w-6xl px-6 pb-32">
 	<RoadMarchRibbon
-		register="neo"
+		register="carnival-poster"
 		eyebrow="Road march · trip planner milestones"
 		winners={[
 			{ year: '2024', name: 'concierge alpha', note: 'first itinerary build, in-browser' },

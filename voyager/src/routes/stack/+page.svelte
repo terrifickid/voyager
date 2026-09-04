@@ -11,7 +11,7 @@
 	<title>Stack — Voyager · Caribbean-first toolkit</title>
 </svelte:head>
 
-<RegisterSection register="caribana">
+<RegisterSection register="carnival-poster">
 <section class="mx-auto max-w-6xl px-6 pt-16 pb-12 lg:pt-24">
 	<div class="flex flex-col gap-8">
 		<span class="eyebrow">// the stack</span>
@@ -28,7 +28,7 @@
 	<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 		{#each primitives as p (p.slug)}
 			<PrimitiveCard
-				register="caribana"
+				register="carnival-poster"
 				id={p.code.toLowerCase()}
 				code="{p.code} · {p.title.split(' | ')[0].toUpperCase()}"
 				title={p.title}
@@ -38,7 +38,7 @@
 			/>
 		{/each}
 		<PrimitiveCard
-			register="caribana"
+			register="carnival-poster"
 			id="sdk"
 			code="SDK · ONE SURFACE"
 			title="One Stripe-shaped call surface."
@@ -51,7 +51,7 @@
 
 <section class="mx-auto max-w-6xl px-6 pb-24">
 	<TricolorPanel
-		register="caribana"
+		register="carnival-poster"
 		items={[
 			{
 				label: 'Five primitives',

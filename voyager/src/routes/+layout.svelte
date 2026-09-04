@@ -20,13 +20,6 @@
 	 * @returns {Register}
 	 */
 	function registerFor(pathname) {
-		if (pathname.startsWith('/stack')) return 'caribana';
-		if (pathname.startsWith('/projects')) return 'neo';
-		if (pathname.startsWith('/use-cases')) return 'rasta';
-		if (pathname.startsWith('/network')) return 'ocean';
-		if (pathname.startsWith('/build')) return 'heritage-sepia';
-		if (pathname.startsWith('/docs')) return 'heritage-sepia';
-		if (pathname === '/principles') return 'rasta';
 		return 'carnival-poster';
 	}
 

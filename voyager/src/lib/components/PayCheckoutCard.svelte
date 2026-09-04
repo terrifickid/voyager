@@ -200,7 +200,7 @@
 
 		<!-- Currency -->
 		<div class="flex flex-col gap-2">
-			<span class="eyebrow">Currency</span>
+			<span class="text-[11px] font-semibold tracking-[0.14em] uppercase text-ink">Currency</span>
 			<div class="flex flex-wrap gap-2">
 				{#each fiats as f (f)}
 					<button
@@ -219,7 +219,7 @@
 
 		<!-- Vendor -->
 		<div class="flex flex-col gap-2" data-vendor-menu>
-			<span class="eyebrow">Paying</span>
+			<span class="text-[11px] font-semibold tracking-[0.14em] uppercase text-ink">Paying</span>
 			<div class="relative">
 			<button
 				type="button"
@@ -262,7 +262,7 @@
 
 		<!-- Amount -->
 		<div class="flex flex-col gap-1">
-			<span class="eyebrow">Amount</span>
+			<span class="text-[11px] font-semibold tracking-[0.14em] uppercase text-ink">Amount</span>
 			<span class="font-display text-2xl text-ink leading-tight">
 				{fmtSats(vendor.amountSats)} <span class="text-base text-ink-2">sats</span>
 			</span>
@@ -271,7 +271,7 @@
 		<!-- Providers -->
 		<div class="flex flex-col gap-2">
 			<div class="flex items-baseline justify-between">
-				<span class="eyebrow">Providers</span>
+				<span class="text-[11px] font-semibold tracking-[0.14em] uppercase text-ink">Providers</span>
 				<span class="text-xs text-muted">{ranked.length} ranked</span>
 			</div>
 			{#if ranked.length === 0}
@@ -322,7 +322,7 @@
 		<!-- Total + Pay -->
 		<div class="mt-auto flex items-center justify-between gap-4 pt-2">
 			<div class="flex flex-col gap-1">
-				<span class="eyebrow">Total</span>
+				<span class="text-[11px] font-semibold tracking-[0.14em] uppercase text-ink">Total</span>
 				<span class="font-display text-2xl text-ink leading-tight">
 					{fmtSats(vendor.amountSats)} <span class="text-base text-ink-2">sats</span>
 				</span>

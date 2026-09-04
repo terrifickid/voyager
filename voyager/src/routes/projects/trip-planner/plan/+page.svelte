@@ -92,7 +92,7 @@
   <title>Plan a trip — Voyager · Caribbean-first</title>
 </svelte:head>
 
-<RegisterSection register="neo">
+<RegisterSection register="carnival-poster">
 <div class="mx-auto max-w-6xl px-6 pt-16 pb-24" class:hidden={submitted}>
   <PlanTripWizard {onFinish} hidden={submitted} />
 </div>
@@ -102,55 +102,55 @@
       <div class="flex flex-wrap items-end justify-between gap-6">
         <div class="flex flex-col gap-3">
           <span class="eyebrow">Your trip</span>
-          <h1 class="font-display text-[44px] sm:text-[60px] text-ink leading-[1.02] max-w-2xl">
+          <h1 class="font-display text-[44px] sm:text-[60px] text-[var(--register-text)] leading-[1.02] max-w-2xl">
             {concept?.title ?? 'Your itinerary'}
           </h1>
         </div>
         <Cta variant="secondary" onclick={edit}>Edit my answers</Cta>
       </div>
-      <p class="text-sm text-muted">Demo build. Generated from local fixtures on your device.</p>
+      <p class="text-sm text-[var(--register-muted)]">Demo build. Generated from local fixtures on your device.</p>
     </header>
 
     <PersonalityGraph />
 
     {#if loading}
-      <p class="rounded-[28px] bg-bone-100 p-8 text-center text-sm text-muted">
+      <p class="rounded-[28px] bg-[var(--register-card)] p-8 text-center text-sm text-[var(--register-muted)]">
         Building your itinerary…
       </p>
     {:else}
       <div class="flex flex-col gap-6">
         {#if !concept && itinerary.length === 0 && candidates.length === 0}
-          <p class="rounded-[28px] bg-bone-100 p-8 text-center text-sm text-muted">
+          <p class="rounded-[28px] bg-[var(--register-card)] p-8 text-center text-sm text-[var(--register-muted)]">
             Nothing yet. Answer the prompts and submit to see your plan.
           </p>
         {/if}
 
         {#if concept}
-          <article class="rounded-[28px] bg-bone-200 p-8 flex flex-col gap-5">
+          <article class="rounded-[28px] bg-[var(--register-card)] p-8 flex flex-col gap-5">
             <span class="eyebrow">Trip concept</span>
-            <h2 class="font-display text-[32px] text-ink leading-[1.05]">{concept.title}</h2>
-            <p class="text-[15px] leading-relaxed text-ink-2">{concept.summary}</p>
+            <h2 class="font-display text-[32px] text-[var(--register-text)] leading-[1.05]">{concept.title}</h2>
+            <p class="text-[15px] leading-relaxed text-[var(--register-muted)]">{concept.summary}</p>
             <dl class="grid grid-cols-1 gap-5 text-sm sm:grid-cols-3">
               <div class="flex flex-col gap-1">
                 <dt class="eyebrow">Base</dt>
-                <dd class="text-ink-2">{concept.logistics.base}</dd>
+                <dd class="text-[var(--register-muted)]">{concept.logistics.base}</dd>
               </div>
               <div class="flex flex-col gap-1">
                 <dt class="eyebrow">Getting around</dt>
-                <dd class="text-ink-2">{concept.logistics.transit}</dd>
+                <dd class="text-[var(--register-muted)]">{concept.logistics.transit}</dd>
               </div>
               <div class="flex flex-col gap-1">
                 <dt class="eyebrow">Best time to go</dt>
-                <dd class="text-ink-2">{concept.logistics.bestTime}</dd>
+                <dd class="text-[var(--register-muted)]">{concept.logistics.bestTime}</dd>
               </div>
             </dl>
             {#if concept.highlights?.length}
               <div>
                 <p class="eyebrow">What you'll remember</p>
-                <ul class="mt-3 flex flex-col gap-2 text-[15px] text-ink-2">
+                <ul class="mt-3 flex flex-col gap-2 text-[15px] text-[var(--register-muted)]">
                   {#each concept.highlights as h (h)}
                     <li class="flex items-baseline gap-2">
-                      <span aria-hidden="true" class="text-ink">›</span>
+                      <span aria-hidden="true" class="text-[var(--register-text)]">›</span>
                       <span>{h}</span>
                     </li>
                   {/each}
@@ -163,9 +163,9 @@
         {#if itinerary.length > 0}
           <div class="flex flex-col gap-6">
             {#each itinerary as day (day.dayNumber)}
-              <article class="rounded-[28px] bg-bone-100 p-8 flex flex-col gap-5">
+              <article class="rounded-[28px] bg-[var(--register-card)] p-8 flex flex-col gap-5">
                 <header class="flex items-baseline justify-between gap-3">
-                  <h3 class="font-display text-[26px] text-ink leading-[1.05]">
+                  <h3 class="font-display text-[26px] text-[var(--register-text)] leading-[1.05]">
                     Day {day.dayNumber} — {day.theme}
                   </h3>
                 </header>
@@ -174,28 +174,28 @@
                     {@const doCell = slotCell(slot.do)}
                     {@const eatCell = slotCell(slot.eat)}
                     {@const stayCell = slotCell(slot.stay)}
-                    <div class="rounded-2xl bg-bone-200 p-5">
+                    <div class="rounded-2xl bg-[var(--register-card)] p-5">
                       <p class="eyebrow">{slotLabels[slot.label] ?? slot.label}</p>
                       <div class="mt-3 flex flex-col gap-2 text-[15px]">
                         {#if stayCell}
                           <div class="flex flex-col gap-0.5">
                             <span class="eyebrow">Stay</span>
-                            <span class="text-ink">{stayCell.name}</span>
-                            <span class="text-muted">{stayCell.note}</span>
+                            <span class="text-[var(--register-text)]">{stayCell.name}</span>
+                            <span class="text-[var(--register-muted)]">{stayCell.note}</span>
                           </div>
                         {/if}
                         {#if eatCell}
                           <div class="flex flex-col gap-0.5">
                             <span class="eyebrow">Eat</span>
-                            <span class="text-ink">{eatCell.name}</span>
-                            <span class="text-muted">{eatCell.note}</span>
+                            <span class="text-[var(--register-text)]">{eatCell.name}</span>
+                            <span class="text-[var(--register-muted)]">{eatCell.note}</span>
                           </div>
                         {/if}
                         {#if doCell}
                           <div class="flex flex-col gap-0.5">
                             <span class="eyebrow">Do</span>
-                            <span class="text-ink">{doCell.name}</span>
-                            <span class="text-muted">{doCell.note}</span>
+                            <span class="text-[var(--register-text)]">{doCell.name}</span>
+                            <span class="text-[var(--register-muted)]">{doCell.note}</span>
                           </div>
                         {/if}
                       </div>
@@ -208,24 +208,24 @@
         {/if}
 
         {#if candidates.length > 0}
-          <article class="rounded-[28px] bg-bone-200 p-8 flex flex-col gap-5">
+          <article class="rounded-[28px] bg-[var(--register-card)] p-8 flex flex-col gap-5">
             <div class="flex items-baseline justify-between gap-3">
-              <h3 class="font-display text-[26px] text-ink leading-[1.05]">Other places you might like</h3>
-              <span class="text-sm text-muted">From the local places fixture</span>
+              <h3 class="font-display text-[26px] text-[var(--register-text)] leading-[1.05]">Other places you might like</h3>
+              <span class="text-sm text-[var(--register-muted)]">From the local places fixture</span>
             </div>
             <ul class="grid grid-cols-1 gap-3 md:grid-cols-2">
               {#each candidates as place (place.id)}
-                <li class="rounded-2xl bg-bone-100 p-5">
+                <li class="rounded-2xl bg-[var(--register-card)] p-5">
                   <div class="flex items-baseline justify-between gap-2">
-                    <p class="text-[15px] font-semibold text-ink">{place.name}</p>
-                    <span class="text-sm text-muted">{'★'.repeat(Math.round(place.rating))}</span>
+                    <p class="text-[15px] font-semibold text-[var(--register-text)]">{place.name}</p>
+                    <span class="text-sm text-[var(--register-muted)]">{'★'.repeat(Math.round(place.rating))}</span>
                   </div>
-                  <p class="mt-1 text-xs text-muted">{place.kind} · {place.address}</p>
-                  <p class="mt-3 text-[15px] text-ink-2">{place.note}</p>
+                  <p class="mt-1 text-xs text-[var(--register-muted)]">{place.kind} · {place.address}</p>
+                  <p class="mt-3 text-[15px] text-[var(--register-muted)]">{place.note}</p>
                   {#if place.tags?.length}
                     <div class="mt-3 flex flex-wrap gap-1">
                       {#each place.tags as t (t)}
-                        <span class="rounded-pill bg-bone-200 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-muted">{t}</span>
+                        <span class="rounded-pill bg-[var(--register-card)] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--register-muted)]">{t}</span>
                       {/each}
                     </div>
                   {/if}

@@ -30,7 +30,7 @@
 	<title>Network — Voyager · Caribbean-first federation</title>
 </svelte:head>
 
-<RegisterSection register="ocean">
+<RegisterSection register="carnival-poster">
 <section class="mx-auto max-w-6xl px-6 pt-16 pb-12 lg:pt-24">
 	<div class="flex flex-col gap-8">
 		<span class="eyebrow">// the network</span>
@@ -150,9 +150,9 @@
 </section>
 
 <section class="mx-auto max-w-6xl px-6 pb-20">
-	<SoundSystemStrip register="ocean" eyebrow="Sound systems · Mostro federation" systems={SOUND_SYSTEMS} />
+	<SoundSystemStrip register="carnival-poster" eyebrow="Sound systems · Mostro federation" systems={SOUND_SYSTEMS} />
 	<div class="mt-10">
-		<HeritageLineage register="ocean" eyebrow="Platform lineage" stages={LINEAGE} caption="Advisory call → primitives → open rails — the same lineage shape, adapted to software." />
+		<HeritageLineage register="carnival-poster" eyebrow="Platform lineage" stages={LINEAGE} caption="Advisory call → primitives → open rails — the same lineage shape, adapted to software." />
 	</div>
 </section>
 </RegisterSection>

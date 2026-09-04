@@ -34,33 +34,33 @@
   };
 </script>
 
-<section class="flex flex-col gap-3 p-6 rounded-[28px] bg-bone-100">
+<section class="flex flex-col gap-3 p-6 rounded-[28px] bg-[var(--register-card)]">
   <h2 class="eyebrow">
     Personality
   </h2>
   {#if hasSignal && type}
-    <p class="text-ink-2">
-      Closest type: <strong class="font-semibold text-ink">{type.icon} {type.label}</strong>
+    <p class="text-[var(--register-muted)]">
+      Closest type: <strong class="font-semibold text-[var(--register-text)]">{type.icon} {type.label}</strong>
     </p>
     <div class="flex flex-col gap-2">
       {#each scoringTraits as t (t.key)}
         <div class="flex items-center gap-3 text-sm">
-          <span class="w-40 shrink-0 text-muted">{t.display}</span>
-          <span class="relative flex-1 h-3 bg-bone-200 rounded-full overflow-hidden">
-            <span class="absolute left-1/2 top-0 bottom-0 w-px" style="background: var(--bone-300);"></span>
+          <span class="w-40 shrink-0 text-[var(--register-muted)]">{t.display}</span>
+          <span class="relative flex-1 h-3 bg-[var(--register-card)] rounded-full overflow-hidden">
+            <span class="absolute left-1/2 top-0 bottom-0 w-px" style="background: var(--register-muted);"></span>
             <span
               class="absolute top-0 bottom-0 rounded-full bg-ink"
               style={fillStyle(personality[t.key])}
             ></span>
           </span>
-          <span class="w-12 text-right font-mono tabular-nums text-ink-2">
+          <span class="w-12 text-right font-mono tabular-nums text-[var(--register-muted)]">
             {personality[t.key].toFixed(2)}
           </span>
         </div>
       {/each}
     </div>
   {:else}
-    <p class="text-muted">
+    <p class="text-[var(--register-muted)]">
       Pick an archetype or a few tags — your type appears here in real time.
     </p>
   {/if}
