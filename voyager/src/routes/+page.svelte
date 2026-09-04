@@ -62,7 +62,7 @@
 		<div class="flex flex-wrap items-center gap-3">
 			<Cta variant="primary" href="/build">Start building</Cta>
 			<Cta variant="secondary" href="/projects">See projects</Cta>
-			<Cta variant="secondary" href="/blog">Read the essay</Cta>
+			<Cta variant="secondary" href="/blog">Read the blog</Cta>
 		</div>
 	</div>
 </section>

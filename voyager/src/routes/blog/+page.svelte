@@ -169,64 +169,6 @@
 
 		<hr class="my-4 border-0 h-px" style="background: var(--register-hair);" />
 
-		<h2 id="live" class="font-display text-[28px] sm:text-[36px] mt-8 mb-2 leading-[1.1]">
-			6. What's live today
-		</h2>
-
-		<p>
-			Three apps are shipping on the toolkit today, and each one is a live demonstration that the security model holds in production.
-		</p>
-
-		<p>
-			<strong>Voyager-Concierge (Trip Planner).</strong> A trip-planning app that builds day-by-day itineraries in the browser from real places, the traveler's style, and the traveler's budget. Settlement is on Lightning. The app demonstrates that the SDK is shippable in production for a real consumer product.
-		</p>
-
-		<p>
-			<strong>Voyager Pay.</strong> An open payments protocol on top of the toolkit. No custody. Settlement on Lightning. A federation of competing Mostro nodes bridges fiat — multiple operators are live in the on-site demo, and the user picks the best quote. The user holds the funds throughout.
-		</p>
-
-		<p>
-			<strong>Voyager AI.</strong> The in-browser agent that lives across all five primitives. It parses intent for Voyager Pay, ranks relays for discovery, and signs listings. It runs locally; it never calls a remote service. The AI is part of the SDK, not a separate vendor.
-		</p>
-
-		<p>
-			All three apps are open and accessible from the site. The protocol behind them is open source. The SDK is callable today. The alpha partners named on the platform brief are already shipping.
-		</p>
-
-		<hr class="my-4 border-0 h-px" style="background: var(--register-hair);" />
-
-		<h2 id="get-started" class="font-display text-[28px] sm:text-[36px] mt-8 mb-2 leading-[1.1]">
-			7. How to get started
-		</h2>
-
-		<p>
-			If you are a Caribbean developer reading this, you do not have to wait for Voyager to do anything. The toolkit is open. The SDK is callable. The showcase apps are live references.
-		</p>
-
-		<p>Three concrete first moves.</p>
-
-		<ol class="list-decimal pl-6 flex flex-col gap-2">
-			<li>
-				<strong>Read the SDK surface.</strong> Identity create, invoice pay, fiat quote, listing create, DM send — five calls, one Stripe-shaped entry point. The friction of evaluation is measured in hours, not weeks.
-			</li>
-			<li>
-				<strong>Pick a use case you already have.</strong> Independent creator monetization, cross-border commerce, concierge booking, regional transport, diaspora coordination. The toolkit already has a slot for the thing you were going to build on Stripe anyway.
-			</li>
-			<li>
-				<strong>Talk to the alpha team.</strong> Caribbean builder teams — one in Jamaica, one in Trinidad — are being selected by use case, not by technical prestige. The selection criterion is whether you have a job to do, not whether you have a credential.
-			</li>
-		</ol>
-
-		<p>
-			If you are not a developer: every Caribbean artist, small business, concierge operator, or remittance-sending diaspora resident who adopts a self-sovereign identity this quarter is one more node on the regional mesh — and one more user on the open internet.
-		</p>
-
-		<p>
-			The toolkit is open. The rails are open. The apps are open. The rest is shipping.
-		</p>
-
-		<hr class="my-4 border-0 h-px" style="background: var(--register-hair);" />
-
 		<footer class="mt-8 flex flex-col gap-4 text-sm" style="color: var(--register-muted);">
 			<p class="leading-relaxed">
 				<em>Sources:</em> VOYAGER_PLATFORM_v0.1.md (Caribbean-grounded use cases, primitives, regulatory posture, builder economics); VOYAGER_PROTOCOL.md §11 (defense-dimension scoring definitions); live site voyager-gamma-ten.vercel.app (showcase apps, on-site Mostro federation demo, SDK surface).
