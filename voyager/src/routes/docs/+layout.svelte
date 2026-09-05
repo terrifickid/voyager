@@ -1,6 +1,5 @@
 <script>
 	import { page } from '$app/state';
-	import Cta from '$lib/components/Cta.svelte';
 	import TableOfContents from '$lib/components/TableOfContents.svelte';
 	import RegisterSection from '$lib/components/RegisterSection.svelte';
 
@@ -68,11 +67,8 @@
 						</li>
 					{/each}
 				</ul>
-			</nav>
-			<div class="mt-8 hidden md:block">
-				<Cta variant="tertiary" href="/docs">Back to overview</Cta>
-			</div>
-		</aside>
+</nav>
+	</aside>
 		<article bind:this={contentEl} class="min-w-0 docs-prose max-w-prose lg:py-2">
 			{@render children()}
 		</article>

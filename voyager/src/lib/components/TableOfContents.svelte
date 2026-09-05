@@ -1,12 +1,19 @@
 <script>
+	import { page } from '$app/state';
+
 	let { contentEl } = $props();
 
 	let headings = $state([]);
 	let activeId = $state('');
 
 	$effect(() => {
-		if (!contentEl) return;
-		const found = Array.from(contentEl.querySelectorAll('h2, h3'))
+		void page.url.pathname;
+		const target = contentEl;
+		if (!target) {
+			headings = [];
+			return;
+		}
+		const found = Array.from(target.querySelectorAll('h2, h3'))
 			.filter((h) => h.id)
 			.map((h) => ({
 				id: h.id,
@@ -14,6 +21,7 @@
 				level: h.tagName === 'H2' ? 2 : 3
 			}));
 		headings = found;
+		activeId = '';
 
 		if (found.length === 0) return;
 		const observer = new IntersectionObserver(
@@ -24,7 +32,7 @@
 			{ rootMargin: '-80px 0px -70% 0px', threshold: 0 }
 		);
 		found.forEach(({ id }) => {
-			const el = document.getElementById(id);
+			const el = target.querySelector(`#${CSS.escape(id)}`) || document.getElementById(id);
 			if (el) observer.observe(el);
 		});
 		return () => observer.disconnect();

@@ -1,5 +1,4 @@
 <script>
-	import Cta from '$lib/components/Cta.svelte';
 </script>
 
 <svelte:head>
@@ -13,7 +12,7 @@
 </section>
 
 <section>
-	<h2>Design invariants</h2>
+	<h2 id="design-invariants">Design invariants</h2>
 	<p>The protocol refuses to negotiate on five points:</p>
 	<ul>
 		<li><strong>No custody.</strong> The protocol never holds funds. Settlement is atomic with the network or it does not happen.</li>
@@ -25,14 +24,14 @@
 </section>
 
 <section>
-	<h2>Layers</h2>
+	<h2 id="layers">Layers</h2>
 	<p><strong>Wallets.</strong> Mobile and desktop wallets that sign events, manage keys, and show the user's balance. Wallets are interchangeable. No wallet is privileged. A Voyager Pay wallet holds a Nostr keypair (secp256k1) and a Lightning wallet (LNURL, NWC, or self-custodial).</p>
 	<p><strong>Reference clients.</strong> Open-source implementations that prove the protocol works end-to-end. They validate event shapes against the spec, render order books and reputation, and hand off final settlement to Lightning. They are demos, not gatekeepers.</p>
 	<p><strong>Wire format.</strong> Signed Nostr events of well-defined kinds. Anyone can read them. Only counterparties can write to their own orders. There is no central server, no privileged relay, no admin key. Two kinds carry the load: <code class="font-mono">kind:38383</code> for Mostro-node profiles and intent/quote pairs, and NIP-17 gift-wrapped messages between counterparties.</p>
 </section>
 
 <section>
-	<h2>The flow</h2>
+	<h2 id="the-flow">The flow</h2>
 	<ol>
 		<li>The customer's wallet picks an amount, a fiat, and a method. It reads every reachable Mostro node's <code class="font-mono">kind:38383</code> profile and ranks them on rate, fee, and reputation.</li>
 		<li>The wallet opens a NIP-17 gift-wrapped order to the chosen node's public key. The relay sees only ciphertext.</li>
@@ -45,12 +44,10 @@
 </section>
 
 <section>
-	<h2>The Mostro federation</h2>
+	<h2 id="mostro-federation">The Mostro federation</h2>
 	<p>A Mostro node is an independent market maker that bridges fiat and Bitcoin. Each node publishes its profile — region, supported fiats, settlement methods, fees, HODL liquidity, reputation — as a <code class="font-mono">kind:38383</code> event. Wallets rank them per-order. No single operator sits in the middle of the network.</p>
 </section>
 
 <section>
-	<p>
-		<Cta variant="primary" href="/docs/how-price-discovery-works">Continue</Cta>
-	</p>
+	<p>Continue to <a href="/docs/how-price-discovery-works">How price discovery works</a>.</p>
 </section>

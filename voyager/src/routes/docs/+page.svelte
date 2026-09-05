@@ -1,5 +1,4 @@
 <script>
-	import Cta from '$lib/components/Cta.svelte';
 </script>
 
 <svelte:head>
@@ -10,13 +9,10 @@
 	<span class="eyebrow">Overview</span>
 	<h1>The Voyager spec.</h1>
 	<p>Voyager is a Nostr-native toolkit. These pages describe the SDK surface, the primitives it speaks, and the protocol that runs on top. Pick the path that fits you, or read top to bottom.</p>
-	<p>
-		<Cta variant="primary" href="/docs/sdk-surface">Start with the SDK surface</Cta>
-	</p>
 </section>
 
 <section>
-	<h2>SDK</h2>
+	<h2 id="sdk">SDK</h2>
 	<p>The verbs, the events, the NIPs.</p>
 	<ul>
 		<li><a href="/docs/sdk-surface">SDK surface</a> — fourteen verbs, grouped by area. Identity, signing, listings, stalls, DMs, ramp, relay transport.</li>
@@ -25,7 +21,7 @@
 </section>
 
 <section>
-	<h2>Protocol</h2>
+	<h2 id="protocol">Protocol</h2>
 	<p>How Voyager Pay works, how prices form, and how new vendor kinds ship.</p>
 	<ul>
 		<li><a href="/docs/how-voyager-pay-works">How Voyager Pay works</a> — custody-free, identity-free Lightning rail over signed Nostr events.</li>
@@ -35,7 +31,7 @@
 </section>
 
 <section>
-	<h2>Security</h2>
+	<h2 id="security">Security</h2>
 	<p>Keys, no custody, no telemetry. The boundary the SDK respects.</p>
 	<ul>
 		<li><a href="/docs/security-model">Security model</a> — user brings the key. SDK parses, validates, and signs. It does not generate, store, or export.</li>

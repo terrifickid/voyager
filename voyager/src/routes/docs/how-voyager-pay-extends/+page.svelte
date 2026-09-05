@@ -1,5 +1,4 @@
 <script>
-	import Cta from '$lib/components/Cta.svelte';
 </script>
 
 <svelte:head>
@@ -13,7 +12,7 @@
 </section>
 
 <section>
-	<h2>The substrate is fixed.</h2>
+	<h2 id="substrate">The substrate is fixed.</h2>
 	<p>The protocol guarantees event structure and forwarding integrity. It does not guarantee event semantics. The three substrate promises:</p>
 	<ul>
 		<li>Events are signed and replaceable by <code class="font-mono">pubkey + d</code> — the vendor's public key plus a stable listing identifier.</li>
@@ -24,7 +23,7 @@
 </section>
 
 <section>
-	<h2>Conventions are extensible.</h2>
+	<h2 id="conventions">Conventions are extensible.</h2>
 	<p>A convention is a short document that defines one vendor sub-namespace. Conventions ride alongside the required fields, never inside them. The listing stays a listing — the convention just adds the fields a particular vendor kind needs.</p>
 	<pre><code>kind: 30402
 tags:
@@ -40,7 +39,7 @@ tags:
 </section>
 
 <section>
-	<h2>The v tag.</h2>
+	<h2 id="v-tag">The v tag.</h2>
 	<p>A v tag is just a normal Nostr tag whose first element is the literal string <code class="font-mono">v</code>. The second element names the convention. The remaining elements are key and value pairs in that convention's order.</p>
 	<pre><code>["v", "&lt;convention-namespace&gt;", "&lt;key-1&gt;", "&lt;value-1&gt;", "&lt;key-2&gt;", "&lt;value-2&gt;", ...]</code></pre>
 	<p><strong>Plain English:</strong> a v tag is a labelled key-value list scoped to one convention. A client that does not recognise the convention namespace ignores the whole tag. Nothing else changes.</p>
@@ -48,7 +47,7 @@ tags:
 </section>
 
 <section>
-	<h2>What you can ship.</h2>
+	<h2 id="what-you-can-ship">What you can ship.</h2>
 	<p>The same listing shape carries every vendor kind. The four below are illustrative, not exhaustive. New conventions can declare any field they need.</p>
 	<ul>
 		<li><strong>voyager.listing.v1</strong> — Physical goods. Snapper, sandals, hardware. Ship weight, pickup, courier in the same event shape.</li>
@@ -59,7 +58,7 @@ tags:
 </section>
 
 <section>
-	<h2>How to add a new convention.</h2>
+	<h2 id="add-new-convention">How to add a new convention.</h2>
 	<p>No protocol change is needed. Anyone can ship a new vendor kind by following four steps.</p>
 	<ol>
 		<li><strong>Name the namespace.</strong> Pick a stable id like <code class="font-mono">voyager.&lt;kind&gt;.v1</code>. The version suffix lets you evolve without breaking old events.</li>
@@ -71,7 +70,5 @@ tags:
 </section>
 
 <section>
-	<p>
-		<Cta variant="primary" href="/docs/security-model">Continue</Cta>
-	</p>
+	<p>Continue to <a href="/docs/security-model">Security model</a>.</p>
 </section>
