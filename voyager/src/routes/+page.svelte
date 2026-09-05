@@ -205,7 +205,7 @@
       <a
         href="/projects/ai"
         class="group flex flex-col gap-5 rounded-[32px] p-8 transition-colors"
-        style="background-color: var(--register-card); color: var(--register-text);"
+        style="background-color: var(--register-card-teal); color: var(--register-text);"
       >
         <div class="flex items-center justify-between">
           <span class="eyebrow">voyager-ai</span>
@@ -419,7 +419,7 @@
   <section class="mx-auto max-w-6xl px-6 pb-32">
     <div
       class="rounded-[32px] p-10 sm:p-16 text-center"
-      style="background-color: var(--register-card);"
+      style="background-color: var(--register-card-teal);"
     >
       <h2
         class="font-display text-[40px] sm:text-[56px] lg:text-[72px] max-w-3xl mx-auto leading-[1.02]"

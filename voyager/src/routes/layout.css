@@ -126,7 +126,7 @@ html, body {
 	--register-secondary-ink: var(--teal-ink);
 	--register-highlight: var(--carnival-magenta);
 	--register-card: rgba(241, 239, 233, 0.06);
-	--register-card: var(--teal-deep);
+	--register-card-teal: var(--teal-deep);
 	--register-on-dark-soft: rgba(241, 239, 233, 0.7);
 	--register-hair: var(--on-dark-hair);
 	--register-hair-strong: var(--on-dark-hair-2);
@@ -153,7 +153,7 @@ html, body {
 	--register-accent-hover: var(--carnival-cyan-strong);
 	--register-highlight: var(--carnival-gold);
 	--register-card: var(--carnival-white-card);
-	--register-card: var(--teal-deep);
+	--register-card-teal: var(--teal-deep);
 	--register-on-dark-soft: var(--ink-2);
 	--register-hair: rgba(20, 20, 15, 0.10);
 	--register-hair-strong: rgba(20, 20, 15, 0.18);
@@ -171,7 +171,7 @@ html, body {
 	--register-secondary-ink: var(--teal-ink);
 	--register-highlight: var(--carnival-cyan);
 	--register-card: rgba(241, 239, 233, 0.05);
-	--register-card: var(--teal-deep);
+	--register-card-teal: var(--teal-deep);
 	--register-on-dark-soft: rgba(241, 239, 233, 0.7);
 	--register-hair: var(--on-dark-hair);
 	--register-hair-strong: var(--on-dark-hair-2);
@@ -251,7 +251,7 @@ html, body {
 	--register-secondary-ink: var(--mc-text);
 	--register-highlight: var(--mc-highlight);
 	--register-card: var(--mc-ground-soft);
-	--register-card: var(--mc-ground-deep);
+	--register-card-teal: var(--mc-ground-deep);
 	--register-on-dark-soft: var(--mc-muted);
 	--register-hair: rgba(242, 242, 240, 0.12);
 	--register-hair-strong: rgba(242, 242, 240, 0.22);
@@ -269,7 +269,7 @@ html, body {
 	--register-secondary-ink: var(--trinidad-black);
 	--register-highlight: var(--trinidad-white);
 	--register-card: rgba(10, 10, 10, 0.18);
-	--register-card: var(--trinidad-red-deep);
+	--register-card-teal: var(--trinidad-red-deep);
 	--register-on-dark-soft: rgba(244, 232, 213, 0.78);
 	--register-hair: rgba(244, 232, 213, 0.18);
 	--register-hair-strong: rgba(244, 232, 213, 0.32);
@@ -287,7 +287,7 @@ html, body {
 	--register-secondary-ink: var(--orange-cream);
 	--register-highlight: var(--orange-white);
 	--register-card: rgba(0, 123, 255, 0.18);
-	--register-card: var(--orange-cobalt);
+	--register-card-teal: var(--orange-cobalt);
 	--register-on-dark-soft: rgba(244, 232, 213, 0.78);
 	--register-hair: rgba(244, 232, 213, 0.2);
 	--register-hair-strong: rgba(244, 232, 213, 0.34);
@@ -305,7 +305,7 @@ html, body {
 	--register-secondary-ink: var(--neo-cream);
 	--register-highlight: var(--neo-white);
 	--register-card: rgba(0, 123, 255, 0.18);
-	--register-card: var(--neo-cobalt);
+	--register-card-teal: var(--neo-cobalt);
 	--register-on-dark-soft: rgba(244, 232, 213, 0.78);
 	--register-hair: rgba(244, 232, 213, 0.2);
 	--register-hair-strong: rgba(244, 232, 213, 0.34);
@@ -355,7 +355,7 @@ html, body {
 	--register-accent-hover: var(--civic-ocean-gold-deep);
 	--register-highlight: var(--civic-ocean-white);
 	--register-card: rgba(250, 250, 247, 0.06);
-	--register-card: var(--teal);
+	--register-card-teal: var(--teal);
 	--register-on-dark-soft: rgba(250, 250, 247, 0.72);
 	--register-hair: var(--on-dark-hair);
 	--register-hair-strong: var(--on-dark-hair-2);
