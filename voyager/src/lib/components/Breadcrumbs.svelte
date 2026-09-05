@@ -19,7 +19,8 @@
 		'voyager-mcp': 'Voyager MCP',
 		plan: 'Plan a trip',
 		preferences: 'Preferences',
-		docs: 'Docs'
+		docs: 'Docs',
+		rfc: 'RFC'
 	};
 
 	/** @type {{ register?: Register }} */

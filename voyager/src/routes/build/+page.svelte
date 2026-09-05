@@ -205,6 +205,23 @@ voyager.on(&#123; kinds: [<span style="color: var(--register-accent)">30402</spa
 	</div>
 </section>
 
+<!-- The full protocol RFC -->
+<section class="mx-auto max-w-6xl px-6 pb-20">
+	<div class="rounded-[28px] bg-[var(--register-card)] p-8 sm:p-10">
+		<span class="eyebrow">// the spec</span>
+		<h2 class="mt-3 font-display text-[36px] sm:text-[44px] leading-[1.05] max-w-2xl" style="color: var(--register-text);">
+			The full protocol RFC.
+		</h2>
+		<p class="mt-4 max-w-2xl text-[15px] leading-relaxed" style="color: var(--register-muted);">
+			DRAFT, version 0.4.0. For implementers, auditors, and operators — RFC 2119 normative language, JSON-Schema for substrate events, conformance test vectors, and the SDK contract.
+		</p>
+		<div class="mt-6 flex flex-wrap items-center gap-3">
+			<Cta variant="primary" href="/docs/rfc" class="bg-ink! text-bone-50! hover:bg-ink-2!">Read the RFC</Cta>
+			<Cta variant="secondary" href="https://github.com/terrifickid/voyager-sdk/blob/master/VOYAGER_RFC.md" class="border-ink! text-ink! hover:bg-ink! hover:text-[var(--register-accent)]!">View on GitHub</Cta>
+		</div>
+	</div>
+</section>
+
 <!-- Economics -->
 <section id="economics" class="mx-auto max-w-6xl px-6 pb-20 scroll-mt-20">
 	<SectionHeader

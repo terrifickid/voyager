@@ -18,14 +18,15 @@
 		{ slug: '/docs/how-voyager-pay-works', title: 'How Voyager Pay works', eyebrow: 'Protocol', desc: 'Custody-free, identity-free Lightning rail over signed Nostr events.' },
 		{ slug: '/docs/how-price-discovery-works', title: 'How price discovery works', eyebrow: 'Protocol', desc: 'How a federation of Mostro nodes produces the prices a customer sees.' },
 		{ slug: '/docs/how-voyager-pay-extends', title: 'How Voyager Pay extends', eyebrow: 'Protocol', desc: 'New vendor kinds ship by publishing a v-tag convention. No protocol change.' },
+		{ slug: '/docs/rfc', title: 'Protocol RFC', eyebrow: 'Protocol', desc: 'The canonical spec: event kinds, tag grammar, state machines, JSON-Schema.' },
 		{ slug: '/docs/security-model', title: 'Security model', eyebrow: 'Security', desc: 'Keys, no custody, no telemetry, and the user-brings-the-key boundary.' }
 	];
 
 	const sections = [
 		{ label: 'Start here', items: [lessons[0]] },
 		{ label: 'SDK', items: [lessons[1], lessons[2]] },
-		{ label: 'Protocol', items: [lessons[3], lessons[4], lessons[5]] },
-		{ label: 'Security', items: [lessons[6]] }
+		{ label: 'Protocol', items: [lessons[3], lessons[4], lessons[5], lessons[6]] },
+		{ label: 'Security', items: [lessons[7]] }
 	];
 
 	function isActive(slug) {
@@ -204,5 +205,86 @@
 	}
 	.docs-prose :global(tbody tr) {
 		border-top: 1px solid var(--register-hair);
+	}
+	.docs-prose :global(details) {
+		margin-top: 2rem;
+		border: 1px solid var(--register-hair);
+		border-radius: 18px;
+		background: var(--register-ground);
+		padding: 0.5rem 1.25rem;
+	}
+	.docs-prose :global(details[open]) {
+		padding-bottom: 1.5rem;
+	}
+	.docs-prose :global(details summary) {
+		cursor: pointer;
+		font-family: 'Space Grotesk', system-ui, sans-serif;
+		font-size: 1.25rem;
+		line-height: 1.3;
+		font-weight: 600;
+		color: var(--register-text);
+		padding: 0.75rem 0;
+		list-style: none;
+	}
+	.docs-prose :global(details summary::-webkit-details-marker) {
+		display: none;
+	}
+	.docs-prose :global(details summary::before) {
+		content: '+';
+		display: inline-block;
+		width: 1.25rem;
+		color: var(--register-muted);
+		font-family: var(--font-mono, ui-monospace, monospace);
+	}
+	.docs-prose :global(details[open] summary::before) {
+		content: '−';
+	}
+	.docs-prose :global(.appendix-summary) {
+		font-size: 0.95rem;
+		font-weight: 400;
+		color: var(--register-muted);
+		margin-top: 0.25rem;
+	}
+	.docs-prose :global(.rfc-meta-strip) {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+		gap: 0.75rem 1.25rem;
+		margin-top: 1.5rem;
+		padding: 1rem 1.25rem;
+		border-radius: 18px;
+		background: var(--register-card);
+		font-size: 0.8125rem;
+		line-height: 1.4;
+	}
+	.docs-prose :global(.rfc-meta-strip > div) {
+		display: flex;
+		flex-direction: column;
+	}
+	.docs-prose :global(.rfc-meta-strip dt) {
+		font-family: var(--font-mono, ui-monospace, monospace);
+		color: var(--register-muted);
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+		font-size: 0.6875rem;
+	}
+	.docs-prose :global(.rfc-meta-strip dd) {
+		color: var(--register-text);
+		font-weight: 500;
+		margin-top: 0.25rem;
+		margin-left: 0;
+	}
+	.docs-prose :global(.rfc-footer) {
+		margin-top: 3rem;
+		padding-top: 1.5rem;
+		border-top: 1px solid var(--register-hair);
+		color: var(--register-muted);
+		font-size: 0.875rem;
+	}
+	.docs-prose :global(.rfc-footer a) {
+		color: var(--register-text);
+	}
+	.docs-prose :global(pre.ascii) {
+		line-height: 1.35;
+		white-space: pre;
 	}
 </style>
