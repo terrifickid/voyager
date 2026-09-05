@@ -11,13 +11,17 @@
 <RegisterSection register="carnival-poster">
 
 <!-- SDK get-started -->
-<section class="mx-auto max-w-6xl px-6 pt-16 pb-20 lg:pt-24">
-	<SectionHeader
-		eyebrow="// the SDK"
-		title="Get started in one import."
-		lede="Nostr-native. Lean. ~500 lines in one ESM file. The SDK hides the wire format and the relay fan-out. You bring the keys."
-	/>
-	<div class="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-[1.2fr_1fr] lg:items-start">
+<section class="mx-auto max-w-6xl px-6 pt-16 pb-12 lg:pt-24">
+	<div class="flex flex-col gap-8">
+		<span class="eyebrow">// the SDK</span>
+		<h1 class="font-display text-[48px] sm:text-[64px] lg:text-[80px] leading-[0.95] max-w-4xl" style="color: var(--register-text);">
+			Ship with one import.
+		</h1>
+		<p class="max-w-2xl text-lg leading-relaxed" style="color: var(--register-on-dark-soft);">
+			Nostr-native. Lean. ~500 lines in one ESM file. The SDK hides the wire format and the relay fan-out. You bring the keys.
+		</p>
+	</div>
+	<div class="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-[1.2fr_1fr] lg:items-start">
 		<figure class="rounded-[24px] bg-[var(--register-ground)] border border-[var(--register-hair)] overflow-hidden">
 			<div class="flex items-center gap-2 px-5 py-3 border-b border-[var(--register-hair)]">
 				<span class="h-2.5 w-2.5 rounded-full" style="background: var(--heritage-amber);"></span>
@@ -25,7 +29,7 @@
 				<span class="h-2.5 w-2.5 rounded-full" style="background: var(--heritage-rust);"></span>
 				<span class="ml-2 font-mono text-[12px] text-[var(--register-muted)]">your-app.js</span>
 			</div>
-			<pre class="m-0 px-6 py-5 font-mono text-[13px] leading-[1.6] text-[var(--register-text)] bg-[var(--register-card)] overflow-x-auto"><span class="text-[var(--register-muted)]">// install: npm i voyager-sdk</span>
+			<pre class="m-0 px-6 py-5 font-mono text-[13px] leading-[1.6] text-[var(--register-text)] bg-[var(--register-card)] overflow-x-auto"><span class="text-[var(--register-muted)]">// one ESM file, ~500 lines</span>
 <span class="text-[var(--register-text)]">import</span> * <span class="text-[var(--register-text)]">as</span> voyager <span class="text-[var(--register-text)]">from</span> <span style="color: var(--register-accent)">"voyager-sdk"</span>;
 
 <span class="text-[var(--register-muted)]">// Configure once at app entry</span>
