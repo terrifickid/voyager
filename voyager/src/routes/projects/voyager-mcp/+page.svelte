@@ -134,19 +134,19 @@
 					</g>
 
 					<g class="market-mcp-node" style="animation-delay:0s">
-						<circle cx="470" cy="100" r="10" fill="var(--register-card-teal)" stroke="var(--register-text)" stroke-width="1.5"/>
+						<circle cx="470" cy="100" r="10" fill="var(--register-card)" stroke="var(--register-text)" stroke-width="1.5"/>
 						<text x="470" y="82"  class="market-mcp-label" text-anchor="middle">Claude Desktop</text>
 					</g>
 					<g class="market-mcp-node" style="animation-delay:.6s">
-						<circle cx="470" cy="300" r="10" fill="var(--register-card-teal)" stroke="var(--register-text)" stroke-width="1.5"/>
+						<circle cx="470" cy="300" r="10" fill="var(--register-card)" stroke="var(--register-text)" stroke-width="1.5"/>
 						<text x="470" y="322" class="market-mcp-label" text-anchor="middle">ChatGPT</text>
 					</g>
 					<g class="market-mcp-node" style="animation-delay:1.2s">
-						<circle cx="60"  cy="300" r="10" fill="var(--register-card-teal)" stroke="var(--register-text)" stroke-width="1.5"/>
+						<circle cx="60"  cy="300" r="10" fill="var(--register-card)" stroke="var(--register-text)" stroke-width="1.5"/>
 						<text x="60"  y="282" class="market-mcp-label" text-anchor="middle">IDE plugin</text>
 					</g>
 					<g class="market-mcp-node" style="animation-delay:1.8s">
-						<circle cx="60"  cy="100" r="10" fill="var(--register-card-teal)" stroke="var(--register-text)" stroke-width="1.5"/>
+						<circle cx="60"  cy="100" r="10" fill="var(--register-card)" stroke="var(--register-text)" stroke-width="1.5"/>
 						<text x="60"  y="82"  class="market-mcp-label" text-anchor="middle">custom agent</text>
 					</g>
 				</svg>
@@ -275,7 +275,7 @@
 		gap: 8px;
 		padding: 12px 16px;
 		border-bottom: 0;
-		background: var(--register-card-teal);
+		background: var(--register-card);
 	}
 	.market-mcp-mock__dot {
 		width: 10px;

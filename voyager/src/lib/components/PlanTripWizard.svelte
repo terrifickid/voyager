@@ -486,7 +486,7 @@
               );
             }}
           placeholder="e.g. Kyoto, Japan"
-          class="w-full rounded-2xl bg-[var(--register-card-teal)] p-4 text-[var(--register-text)] placeholder:text-[var(--register-muted)] focus:outline-none focus:ring-2 focus:ring-[var(--register-text)]"
+          class="w-full rounded-2xl bg-[var(--register-card)] p-4 text-[var(--register-text)] placeholder:text-[var(--register-muted)] focus:outline-none focus:ring-2 focus:ring-[var(--register-text)]"
         />
       </label>
 
@@ -562,7 +562,7 @@
               bind:value={draft.travelers.adults}
               onkeydown={onInputKeydown}
               oninput={(e) => setAdults(+e.currentTarget.value)}
-              class="w-16 rounded-2xl bg-[var(--register-card-teal)] p-2 text-center text-[var(--register-text)] focus:outline-none focus:ring-2 focus:ring-[var(--register-text)]"
+              class="w-16 rounded-2xl bg-[var(--register-card)] p-2 text-center text-[var(--register-text)] focus:outline-none focus:ring-2 focus:ring-[var(--register-text)]"
             />
             <button
               type="button"
@@ -589,7 +589,7 @@
               bind:value={draft.travelers.kids}
               onkeydown={onInputKeydown}
               oninput={(e) => setKids(+e.currentTarget.value)}
-              class="w-16 rounded-2xl bg-[var(--register-card-teal)] p-2 text-center text-[var(--register-text)] focus:outline-none focus:ring-2 focus:ring-[var(--register-text)]"
+              class="w-16 rounded-2xl bg-[var(--register-card)] p-2 text-center text-[var(--register-text)] focus:outline-none focus:ring-2 focus:ring-[var(--register-text)]"
             />
             <button
               type="button"
@@ -616,7 +616,7 @@
                     value={age}
                     onkeydown={onInputKeydown}
                     oninput={(e) => setKidAge(i, +e.currentTarget.value)}
-                    class="w-full rounded-2xl bg-[var(--register-card-teal)] p-2 text-center text-[var(--register-text)] focus:outline-none focus:ring-2 focus:ring-[var(--register-text)]"
+                    class="w-full rounded-2xl bg-[var(--register-card)] p-2 text-center text-[var(--register-text)] focus:outline-none focus:ring-2 focus:ring-[var(--register-text)]"
                   />
                 </label>
               {/each}
@@ -717,7 +717,7 @@
           maxlength={NOTE_MAX}
           rows="3"
           placeholder="e.g. I hate crowded tourist traps. I wake up early but hate rushing."
-          class="w-full resize-y rounded-2xl bg-[var(--register-card-teal)] p-4 text-[var(--register-text)] placeholder:text-[var(--register-muted)] focus:outline-none focus:ring-2 focus:ring-[var(--register-text)]"
+          class="w-full resize-y rounded-2xl bg-[var(--register-card)] p-4 text-[var(--register-text)] placeholder:text-[var(--register-muted)] focus:outline-none focus:ring-2 focus:ring-[var(--register-text)]"
         ></textarea>
         <span class="text-right text-xs text-[var(--register-muted)]">{noteLen}/{NOTE_MAX}</span>
       </label>

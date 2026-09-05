@@ -18,7 +18,7 @@
 
 	<div
 		class="relative rounded-[44px] p-3"
-		style="background: var(--register-card-teal); box-shadow: 0 28px 60px -28px rgba(20,20,15,0.35);"
+		style="background: var(--register-card); box-shadow: 0 28px 60px -28px rgba(20,20,15,0.35);"
 	>
 		<div class="rounded-[36px] overflow-hidden bg-bone-50">
 			<div class="flex items-center justify-between px-5 pt-4 pb-2">
