@@ -97,10 +97,10 @@
 
 <style>
 	.split-panel {
-		background-color: var(--bone-100);
+		background-color: transparent;
 	}
 	.split-panel__dark {
-		background-color: var(--teal-deep);
+		background-color: var(--register-card);
 		color: var(--bone-50);
 	}
 	.split-panel__light {
