@@ -266,6 +266,7 @@
 		padding: 22px;
 		background: var(--register-card);
 		border: 1px solid var(--register-hair);
+		min-width: 0;
 	}
 	.modes {
 		display: inline-flex;
@@ -312,13 +313,20 @@
 	}
 	.row-3 {
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		gap: 8px;
+		grid-template-columns: 1fr;
+		gap: 12px;
+	}
+	@media (min-width: 640px) {
+		.row-3 {
+			grid-template-columns: 1fr 1fr 1fr;
+			gap: 8px;
+		}
 	}
 	.field {
 		display: flex;
 		flex-direction: column;
 		gap: 4px;
+		min-width: 0;
 	}
 	.field-label {
 		font-family: var(--font-mono, ui-monospace, monospace);
@@ -336,6 +344,9 @@
 		color: var(--register-text);
 		font-size: 14px;
 		font-family: inherit;
+		width: 100%;
+		min-width: 0;
+		box-sizing: border-box;
 	}
 	.input:focus,
 	.textarea:focus {
