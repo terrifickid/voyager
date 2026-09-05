@@ -22,14 +22,14 @@ Voyager is an open toolkit for the region's apps. It gives any developer in the 
 
 What that means in practice: a developer shipping a marketplace, a booking app, a creator-monetization tool, or a remittance product on a US-domiciled processor pays for the privilege in three ways — transaction fees, compliance overhead, and the ongoing risk that a policy change at the processor can remove their access overnight. For Caribbean use cases — cross-island commerce, regional transport, independent artist admin, cross-border remittances — those costs add up to a product that is harder to ship and harder to keep online.
 
-There is a better substrate available. It is open, it is regional, and it does not require permission from any single chokepoint to operate. That substrate is what Voyager packages into a single SDK.
+There is a better substrate available. It is open, it is regional, and it does not require permission from any single point of control to operate. That substrate is what Voyager packages into a single SDK.
 
 2. What Voyager is
    Voyager is one unified SDK, plus five primitives that sit underneath it.
 
 Identity. Users sign in with a self-sovereign keypair instead of email and password. Recovery is a 12-word seed the user writes down once.
 Payments. Apps call the SDK. The user's wallet signs. The app never holds funds. Settlement is on Lightning.
-Ramp. A federation of independent Mostro nodes quotes rates to convert between fiat and Bitcoin over Lightning. The user picks the best quote. No single node is a chokepoint.
+Ramp. A federation of independent Mostro nodes quotes rates to convert between fiat and Bitcoin over Lightning. The user picks the best quote. No single node is required.
 Messaging. NIP-17 gift-wrapped DMs give any app end-to-end encrypted messaging without becoming a Signal competitor.
 Discovery. Listings, profiles, and ramp quotes are signed Nostr events. Relays and indexers handle findability.
 Each primitive solves one job. Together they cover the surface area most Caribbean builders actually need. The SDK wires them into a single import — identity, payments, ramp, DMs, and listings behind one call surface.

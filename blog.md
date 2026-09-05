@@ -40,7 +40,7 @@ The Caribbean is exactly such a user base. The Caribbean is, in the language of 
 
 ## 3. What "scattering the granary" means in 2026
 
-For a biosphere, the four design levers are: perennial polycultures instead of annual monocrops; decentralized water storage instead of central dams; regional seed networks instead of central gene banks; distributed processing instead of single chokepoint factories. All four are needed in parallel. Any single lever left incomplete leaves a residual concentrated pathway that an extractor can still seize. [source: blog/1.md, the four-levers passage]
+For a biosphere, the four design levers are: perennial polycultures instead of annual monocrops; decentralized water storage instead of central dams; regional seed networks instead of central gene banks; distributed processing instead of single centralized factories. All four are needed in parallel. Any single lever left incomplete leaves a residual concentrated pathway that an extractor can still seize. [source: blog/1.md, the four-levers passage]
 
 The deeper point is structural, not agricultural. **The most durable protection is design, not decree.** You do not protect a system from extraction by passing a law against it. You protect it by making the system metabolically hostile to extraction in the first place. Once the fuel cannot be cheaply concentrated, the imperial reactor loses the energy needed to sustain the complexity that defines it. Complexity flips from asset to liability, and the system either fragments or collapses under its own weight. [source: blog/1.md, the structural-defense conclusion]
 
@@ -75,13 +75,13 @@ Voyager implements the ratchet as five primitives plus an SDK. Each primitive is
 
 **P2 — Lightning payment rail.** Apps call the SDK. The SDK talks to the user's wallet. The user signs. The app never holds funds. There is no merchant account to lose, no card network to de-platform you from, no chargeback reserve. Settlement is on Lightning, which means settlement is final, atomic, and works from anywhere with internet — including islands where card-present terminals are still expensive to deploy. [source: VOYAGER_PLATFORM_v0.1.md §3.1 P2]
 
-**P3 — Federated fiat ramp (Mostro).** This is the lever that turns Lightning into Caribbean money. Mostro is a network of independent nodes that quote a price to convert between fiat and Bitcoin over Lightning. Anyone can run one. The Voyager SDK lets an app offer the user a "buy sats with JMD" button without the app integrating fiat directly — the SDK finds the top three quotes from reachable Mostro nodes and lets the user pick. The reference node is operated by Voyager; community nodes are expected and welcome. No single node is a chokepoint. The Caribbean rail density is the ratchet. [source: VOYAGER_PLATFORM_v0.1.md §3.1 P3; live site]
+**P3 — Federated fiat ramp (Mostro).** This is the lever that turns Lightning into Caribbean money. Mostro is a network of independent nodes that quote a price to convert between fiat and Bitcoin over Lightning. Anyone can run one. The Voyager SDK lets an app offer the user a "buy sats with JMD" button without the app integrating fiat directly — the SDK finds the top three quotes from reachable Mostro nodes and lets the user pick. The reference node is operated by Voyager; community nodes are expected and welcome. No single node is required. The Caribbean rail density is the ratchet. [source: VOYAGER_PLATFORM_v0.1.md §3.1 P3; live site]
 
 **P4 — NIP-17 private messaging.** Gift-wrapped DMs give any app end-to-end encrypted messaging without becoming a Signal competitor. Order details, contract terms, address information — none of it visible to relays or to anyone running an indexer. This is the privacy-preserving substrate Caribbean commerce has always lacked; the previous workaround was "trust the middleman," and the middleman was always extractable. [source: VOYAGER_PLATFORM_v0.1.md §3.1 P4]
 
 **P5 — Discovery substrate (Nostr relays + signed events).** Listings, profiles, ramp quotes — all public, all signed, all discoverable by anyone running a relay or indexer. There is no central marketplace because there does not need to be. A Barbados seller lists a service; a Trinidad buyer finds it; payment and settlement route through P2 and P3; the contract terms route through P4; nothing requires permission from a US-domiciled platform. [source: VOYAGER_PLATFORM_v0.1.md §3.1 P5]
 
-The five primitives work in parallel. Any one of them left as a single-vendor dependency leaves a residual chokepoint. Taken together, they implement the four biosphere levers in software.
+The five primitives work in parallel. Any one of them left as a single-vendor dependency leaves a residual single point of control. Taken together, they implement the four biosphere levers in software.
 
 ---
 
@@ -170,7 +170,7 @@ Dispersion is not absolute. A sufficiently mobile and ruthless actor can still r
 
 For Voyager specifically: SDK ergonomics could fail if the developer experience does not hide the keys well enough; Mostro node density could fail if community operators do not appear in Caribbean-relevant currencies; an app builder could ship a regulated activity without realizing it; Voyager-the-business could still be acquired and its hosted assets seized; cultural authenticity gaps could persist if the platform is designed from too far away. [source: VOYAGER_PLATFORM_v0.1.md §8 R1–R5]
 
-These are real risks. They are also the risks you accept in exchange for not depending on a single chokepoint you do not control. The imperial alternative is: no risks, until the one risk you could not price finally arrives and takes your merchant account, your OAuth provider, your banking partner, or your payment-processor access.
+These are real risks. They are also the risks you accept in exchange for not depending on a single point of control you do not control. The imperial alternative is: no risks, until the one risk you could not price finally arrives and takes your merchant account, your OAuth provider, your banking partner, or your payment-processor access.
 
 The biosphere lever response to the limits is the ratchet response: design must be implemented faster than the centralizing power can adapt. Each successful local conversion shrinks the surface available for imperial harvest. The compounding friction is what makes the threshold crossing durable. [source: blog/1.md, the acceleration passage]
 

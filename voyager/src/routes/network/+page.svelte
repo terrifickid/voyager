@@ -116,7 +116,7 @@
 <section id="indexer" class="mx-auto max-w-6xl px-6 pb-32 scroll-mt-20">
 	<SectionHeader
 		eyebrow="Indexer"
-		title="An optional cache, never a chokepoint."
+		title="An optional cache, never a single point of failure."
 		lede="Voyager-the-business operates an optional indexer for builder velocity. Independent operators are encouraged to seed parallel indexers so the platform layer is never the only path."
 	/>
 	<div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">

@@ -98,7 +98,7 @@
 		<ul class="list-disc pl-6 flex flex-col gap-2">
 			<li><strong>Identity.</strong> Users sign in with a self-sovereign keypair instead of email and password. Recovery is a 12-word seed the user writes down once.</li>
 			<li><strong>Payments.</strong> Apps call the SDK. The user's wallet signs. The app never holds funds. Settlement is on Lightning.</li>
-			<li><strong>Ramp.</strong> A federation of independent Mostro nodes quotes rates to convert between fiat and Bitcoin over Lightning. The user picks the best quote. No single node is a chokepoint.</li>
+			<li><strong>Ramp.</strong> A federation of independent Mostro nodes quotes rates to convert between fiat and Bitcoin over Lightning. The user picks the best quote. No single node is required.</li>
 			<li><strong>Messaging.</strong> NIP-17 gift-wrapped DMs give any app end-to-end encrypted messaging without becoming a Signal competitor.</li>
 			<li><strong>Discovery.</strong> Listings, profiles, and ramp quotes are signed Nostr events. Relays and indexers handle findability.</li>
 		</ul>
@@ -126,7 +126,7 @@
 		</p>
 
 		<p>
-			<strong>Ramp raises Dispersion further.</strong> A federation of independent Mostro nodes quotes rates to convert between fiat and Bitcoin over Lightning. No single node is a chokepoint. If one node goes offline, another takes its place. The user picks the best quote. The substrate is stronger the more operators join.
+			<strong>Ramp raises Dispersion further.</strong> A federation of independent Mostro nodes quotes rates to convert between fiat and Bitcoin over Lightning. No single node is required. If one node goes offline, another takes its place. The user picks the best quote. The substrate is stronger the more operators join.
 		</p>
 
 		<p>

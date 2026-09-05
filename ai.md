@@ -311,7 +311,7 @@ The Defense Score Recalculated
 Aggregate: F=3, O=3, B=3. The AI layer does not degrade the protocol's defense posture because it adds no new custodian, no new inventory, and no new binding.
 
 The One Caveat: Model Provenance
-The only residual chokepoint is where the model weights come from. If you fetch them from HuggingFace's CDN, you inherit HuggingFace's availability and terms. The ratchet-compatible fix is:
+The only residual point of control is where the model weights come from. If you fetch them from HuggingFace's CDN, you inherit HuggingFace's availability and terms. The ratchet-compatible fix is:
 Pin weights by hash in the app manifest. The browser verifies the hash after download.
 Mirror weights via Nostr kind:1063 file events or IPFS, so multiple hosts serve the same verified blob.
 Allow user-supplied models. A power user drops their own .gguf into the Origin Private File System and the app loads it.
