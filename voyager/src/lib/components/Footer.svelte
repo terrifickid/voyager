@@ -45,7 +45,8 @@
 			title: 'PROJECTS/',
 			links: [
 				{ label: 'Voyager AI', href: '/projects/ai' },
-				{ label: 'All projects', href: '/projects' }
+				{ label: 'Voyager Pay', href: '/projects/voyager-pay' },
+				{ label: 'Voyager MCP', href: '/projects/voyager-mcp' }
 			]
 		},
 		{
