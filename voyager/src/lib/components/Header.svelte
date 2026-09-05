@@ -1,6 +1,7 @@
 <script>
 	import { page } from '$app/state';
 	import Cta from './Cta.svelte';
+	import FooterBars from './FooterBars.svelte';
 
 	/**
 	 * @typedef {'perk' | 'rasta' | 'carnival-poster' | 'carnival-poster-white' | 'ocean' | 'windies' | 'gold-cream' | 'caribana' | 'heritage-sepia' | 'editorial' | 'civic-ocean' | 'festival-poster' | 'monochrome-caribbean' | 'trinidad' | 'orange-sun' | 'tiffany' | 'maroon-nights'} Register
@@ -21,11 +22,40 @@
 		{ href: '/network', label: 'Network' },
 		{ href: '/build', label: 'Build' }
 	];
+
+	const palettes = {
+		'perk': ['var(--night-900)', 'var(--night-800)', 'transparent'],
+		rasta: ['var(--rasta-red)', 'var(--rasta-gold)', 'var(--rasta-green)'],
+		'carnival-poster': ['var(--carnival-cyan)', 'var(--carnival-magenta)', 'var(--carnival-gold)'],
+		'carnival-poster-white': ['var(--carnival-magenta)', 'var(--carnival-cyan)', 'var(--carnival-gold)'],
+		ocean: ['var(--ocean-gold)', 'var(--night-800)', 'var(--teal-bright)'],
+		windies: ['var(--windies-maroon)', 'var(--windies-gold)', 'var(--bone-50)'],
+		'gold-cream': ['var(--goldcream-gold)', 'var(--ink)', 'var(--goldcream-card)'],
+		caribana: ['var(--caribana-magenta)', 'var(--caribana-violet)', 'var(--bone-50)'],
+		'heritage-sepia': ['var(--heritage-sepia)', 'var(--heritage-rust)', 'var(--heritage-amber)'],
+		editorial: ['var(--ink)', 'var(--ink-2)', 'var(--muted)'],
+		'civic-ocean': ['var(--civic-ocean-gold)', 'var(--civic-ocean-white)', 'var(--civic-ocean-gold-deep)'],
+		'festival-poster': ['var(--festival-cyan)', 'var(--festival-yellow)', 'var(--festival-orange)'],
+		'monochrome-caribbean': ['var(--mc-text)', 'var(--mc-ink-soft)', 'var(--mc-ground-soft)'],
+		'trinidad': ['var(--trinidad-red)', 'var(--trinidad-gold)', 'var(--trinidad-green)'],
+		'orange-sun': ['var(--orange-sun)', 'var(--orange-blue)', 'var(--orange-sun-deep)'],
+		neo: ['var(--neo-base)', 'var(--neo-blue)', 'var(--neo-base-deep)'],
+		tiffany: ['var(--tiffany-blue)', 'var(--tiffany-gold)', 'var(--tiffany-blue-deep)'],
+		'maroon-nights': ['var(--mn-gold)', 'var(--mn-cream)', 'var(--mn-gold-warm)']
+	};
+	const bars = $derived(palettes[register] ?? palettes['perk']);
+
+	const brandmarkHeights = [14, 20, 26, 18, 24, 16, 22, 28];
 </script>
 
 <header class="site-header" data-register={register}>
 	<nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-		<a href="/" class="site-header__wordmark font-display text-2xl">Voyager</a>
+		<a href="/" class="site-header__brandmark flex items-center gap-3">
+			<span class="site-header__brandmark-bars">
+				<FooterBars {bars} heights={brandmarkHeights} barWidth={4} containerHeight={28} gap={3} />
+			</span>
+			<span class="site-header__wordmark font-display text-2xl">Voyager</span>
+		</a>
 		<ul class="hidden items-center gap-8 md:flex">
 			{#each links as link (link.href)}
 				{@const active = isActive(link.href, link.exact)}
@@ -149,6 +179,17 @@
 
 	.site-header__wordmark {
 		color: var(--site-header-text);
+	}
+
+	.site-header__brandmark {
+		text-decoration: none;
+		color: var(--site-header-text);
+	}
+
+	.site-header__brandmark-bars {
+		display: inline-flex;
+		align-items: center;
+		height: 28px;
 	}
 
 	.site-header__link {

@@ -6,29 +6,6 @@
 	let { register = 'perk' } = $props();
 
 	import Icon from './Icon.svelte';
-	import FooterBars from './FooterBars.svelte';
-
-	const palettes = {
-		'perk': ['var(--night-900)', 'var(--night-800)', 'transparent'],
-		rasta: ['var(--rasta-red)', 'var(--rasta-gold)', 'var(--rasta-green)'],
-		'carnival-poster': ['var(--carnival-cyan)', 'var(--carnival-magenta)', 'var(--carnival-gold)'],
-		'carnival-poster-white': ['var(--carnival-magenta)', 'var(--carnival-cyan)', 'var(--carnival-gold)'],
-		ocean: ['var(--ocean-gold)', 'var(--night-800)', 'var(--teal-bright)'],
-		windies: ['var(--windies-maroon)', 'var(--windies-gold)', 'var(--bone-50)'],
-		'gold-cream': ['var(--goldcream-gold)', 'var(--ink)', 'var(--goldcream-card)'],
-		caribana: ['var(--caribana-magenta)', 'var(--caribana-violet)', 'var(--bone-50)'],
-		'heritage-sepia': ['var(--heritage-sepia)', 'var(--heritage-rust)', 'var(--heritage-amber)'],
-		editorial: ['var(--ink)', 'var(--ink-2)', 'var(--muted)'],
-		'civic-ocean': ['var(--civic-ocean-gold)', 'var(--civic-ocean-white)', 'var(--civic-ocean-gold-deep)'],
-		'festival-poster': ['var(--festival-cyan)', 'var(--festival-yellow)', 'var(--festival-orange)'],
-		'monochrome-caribbean': ['var(--mc-text)', 'var(--mc-ink-soft)', 'var(--mc-ground-soft)'],
-		'trinidad': ['var(--trinidad-red)', 'var(--trinidad-gold)', 'var(--trinidad-green)'],
-		'orange-sun': ['var(--orange-sun)', 'var(--orange-blue)', 'var(--orange-sun-deep)'],
-		neo: ['var(--neo-base)', 'var(--neo-blue)', 'var(--neo-base-deep)'],
-		tiffany: ['var(--tiffany-blue)', 'var(--tiffany-gold)', 'var(--tiffany-blue-deep)'],
-		'maroon-nights': ['var(--mn-gold)', 'var(--mn-cream)', 'var(--mn-gold-warm)']
-	};
-	const bars = $derived(palettes[register] ?? palettes['perk']);
 
 	const columns = [
 		{
@@ -117,10 +94,6 @@
 		<div class="mt-16 flex flex-col gap-3 site-footer__rule border-t pt-6 text-sm md:flex-row md:items-center md:justify-between">
 			<p>© {new Date().getFullYear()} Voyager. Demo build.</p>
 			<p>Open rails, no custody. Users hold their own keys.</p>
-		</div>
-
-		<div class="mt-8">
-			<FooterBars {bars} />
 		</div>
 	</div>
 </footer>
