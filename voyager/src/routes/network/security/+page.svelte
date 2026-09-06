@@ -77,7 +77,7 @@
 		</article>
 		<article class="flex flex-col gap-3 rounded-[28px] bg-[var(--register-card)] p-6">
 			<Icon name="compass" tone="ink" size={28} />
-			<h3 class="font-display text-xl text-[var(--register-text)] leading-tight">Your wallet, your choice.</h3>
+			<h3 class="font-display text-xl text-[var(--register-text)] leading-tight">Your Wallet</h3>
 			<p class="text-sm leading-relaxed text-[var(--register-muted)]">
 				Wallets connect via NWC (Nostr Wallet Connect, a standard for talking to a remote wallet over Nostr). The URI is one-time-paste, budget-scoped, and revocable. No wallet is privileged by the protocol. You sign with your key, not with an account.
 			</p>

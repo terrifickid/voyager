@@ -133,7 +133,8 @@
     <div
       class="mx-auto max-w-6xl px-6 py-2.5 text-center text-[13px] font-medium"
     >
-      <span class="font-semibold">Voyager</span> — Online now, our project submission for FutureCaribbean Buildathon!
+      <span class="font-semibold">Voyager</span> — Online now, our project
+      submission for FutureCaribbean Buildathon!
       <a
         href="/blog"
         class="inline whitespace-nowrap underline underline-offset-2 decoration-[1.5px] font-semibold"
